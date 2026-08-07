@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "graphrag",
+    "term": "GraphRAG (Graph Retrieval-Augmented Generation)",
+    "definition": "An advanced Retrieval-Augmented Generation architecture that utilizes a Knowledge Graph instead of, or alongside, a vector database to preserve the semantic relationships between entities.",
+    "context": "While standard Vector RAG excels at retrieving conceptually similar text chunks, it fails at multi-hop reasoning (e.g., 'Which employees have access to the server that crashed on Tuesday?'). GraphRAG maps documents into nodes and edges, allowing the LLM to traverse explicit deterministic relationships, drastically reducing hallucinations in complex enterprise environments."
+  },
+  {
+    "slug": "deterministic-routing",
+    "term": "Deterministic Routing (Semantic Routing)",
+    "definition": "The architectural practice of intercepting an LLM prompt and classifying its intent using a smaller, fast embedding model before deciding which agent, prompt chain, or tool to invoke.",
+    "context": "Instead of relying on a massive LLM like GPT-4 to autonomously decide what to do (which introduces latency and probabilistic failure), Deterministic Routing uses vector similarity to strictly map user queries to pre-defined execution paths, ensuring 100% predictable system behavior."
+  },
+  {
+    "slug": "pydantic-validation",
+    "term": "Pydantic Schema Validation",
+    "definition": "The enforcement of strict, strongly-typed JSON output structures from a Large Language Model using the Pydantic Python library.",
+    "context": "Enterprise AI pipelines cannot consume unstructured text. By passing a Pydantic schema to an LLM (often via function calling/tool use APIs), engineers force the model to output data that perfectly matches the required downstream database structure, acting as a critical anti-hallucination guardrail."
+  },
+  {
+    "slug": "context-window-truncation",
+    "term": "Context Window Truncation",
+    "definition": "A failure mode where the combined length of the system prompt, retrieval chunks, and user query exceeds the maximum token limit of the foundational model, causing the model to silently drop the oldest information.",
+    "context": "In RAG pipelines, returning too many semantic chunks can push critical grounding data out of the context window. This leads to severe hallucinations, as the model attempts to generate an answer without the necessary retrieved context."
+  },
+  {
+    "slug": "generative-engine-optimization",
+    "term": "Generative Engine Optimization (GEO)",
+    "definition": "The evolution of Search Engine Optimization (SEO). The practice of structuring data, text, and metadata to be explicitly cited by Large Language Models (LLMs) and AI answer engines rather than ranking in traditional search results.",
+    "context": "Traditional SEO relies on keywords and backlinks to rank in Google's 10 blue links. GEO relies on factual density, machine-readable schemas (like JSON-LD), and specialized text files (like llms.txt) to guarantee an AI agent selects a specific brand as the definitive source of truth when synthesizing a response."
+  }
+]

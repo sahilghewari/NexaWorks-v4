@@ -1,0 +1,119 @@
+[
+  {
+    "slug": "salesforce-ai-automation",
+    "name": "Salesforce AI Automation",
+    "description": "Integrate Salesforce Service Cloud with Claude 3.5 Sonnet to automate case triage and draft highly contextualized responses using RAG over proprietary knowledge bases.",
+    "technicalDependencies": ["Salesforce REST API", "Python", "FastAPI", "Claude 3.5 Sonnet", "Pinecone"],
+    "businessOutcome": "Reduce MTTR by 45% and completely eliminate Tier 1 manual triage for enterprise support teams.",
+    "schemaQuestion": "How do you securely integrate Large Language Models with Salesforce data?",
+    "schemaAnswer": "To securely integrate LLMs with Salesforce, NexaWorks utilizes OAuth 2.0 Web Server Flow and REST APIs to pull case data into a secure Python middleware, stripping PII before hitting the LLM inference endpoints."
+  },
+  {
+    "slug": "sap-erp-ai-integration",
+    "name": "SAP ERP AI Integration",
+    "description": "Bridge SAP ERP Central Component (ECC) with modern predictive AI models to automate inventory forecasting and anomaly detection in supply chain logistics.",
+    "technicalDependencies": ["SAP OData Services", "Python ETL", "Azure AI", "PostgreSQL"],
+    "businessOutcome": "Automate inventory reordering logic and achieve 99.9% anomaly detection accuracy on erratic supply chain data.",
+    "schemaQuestion": "How do you extract SAP ERP data for AI anomaly detection?",
+    "schemaAnswer": "NexaWorks builds robust Python ETL pipelines utilizing SAP OData services to extract, transform, and load historical inventory data into a vectorized warehouse for real-time anomaly detection."
+  },
+  {
+    "slug": "zendesk-ai-triage",
+    "name": "Zendesk AI Triage",
+    "description": "Automate Zendesk ticket routing and sentiment analysis by injecting a Python-based middleware layer running Llama 3 for deterministic classification.",
+    "technicalDependencies": ["Zendesk Core API", "Llama 3", "HuggingFace", "Redis Queue"],
+    "businessOutcome": "Deflect 60% of inbound support volume while improving CSAT scores through instantaneous, accurate routing.",
+    "schemaQuestion": "How to deploy Llama 3 for Zendesk ticket triage?",
+    "schemaAnswer": "NexaWorks deploys Llama 3 via secure API endpoints connected to Zendesk Webhooks. Incoming tickets trigger asynchronous Celery tasks that classify intent and update the ticket via Zendesk's REST API."
+  },
+  {
+    "slug": "servicenow-itsm-ai",
+    "name": "ServiceNow ITSM AI Automation",
+    "description": "Automate IT Service Management (ITSM) incident resolution by connecting ServiceNow to enterprise vector databases to instantly retrieve internal runbooks.",
+    "technicalDependencies": ["ServiceNow REST API", "Pinecone", "GPT-4o", "FastAPI"],
+    "businessOutcome": "Reduce Level 2 engineering escalations by 40% through autonomous runbook execution.",
+    "schemaQuestion": "How do you automate ServiceNow incident resolution with AI?",
+    "schemaAnswer": "NexaWorks integrates ServiceNow with GraphRAG architecture. When an incident is logged, the AI agent searches historical tickets and internal confluence wikis to surface an automated resolution plan directly into the ServiceNow comment feed."
+  },
+  {
+    "slug": "workday-hr-ai-agent",
+    "name": "Workday HR AI Agent",
+    "description": "Deploy a conversational AI agent securely integrated with Workday to automate employee onboarding, benefits inquiries, and PTO requests without human intervention.",
+    "technicalDependencies": ["Workday WWS API", "Claude 3.5 Sonnet", "LangChain", "Celery"],
+    "businessOutcome": "Deflect 80% of routine HR inquiries, freeing HR business partners for strategic organizational design.",
+    "schemaQuestion": "How to build a secure AI chatbot for Workday HR data?",
+    "schemaAnswer": "NexaWorks builds Workday AI agents using strict RBAC (Role-Based Access Control) enforced at the API layer. The LLM acts purely as a routing engine, executing parameterized Workday API calls to fetch data, ensuring LLM hallucinations cannot bypass Workday security."
+  },
+  {
+    "slug": "snowflake-cortex-ai-analytics",
+    "name": "Snowflake Cortex AI Analytics",
+    "description": "Utilize Snowflake Cortex to run large language models directly alongside enterprise data warehouses, enabling natural language SQL generation and data summarization.",
+    "technicalDependencies": ["Snowflake Cortex", "SQLAlchemy", "Python", "Mistral Large"],
+    "businessOutcome": "Democratize data access for business analysts, reducing ad-hoc SQL engineering requests by 65%.",
+    "schemaQuestion": "How do you run LLMs securely on Snowflake data?",
+    "schemaAnswer": "NexaWorks leverages Snowflake Cortex to bring the LLM to the data. By running inference entirely within the Snowflake perimeter, we guarantee zero data exfiltration while enabling powerful natural language querying of massive tabular datasets."
+  },
+  {
+    "slug": "databricks-mosaic-ml-pipelines",
+    "name": "Databricks MosaicML Custom RAG",
+    "description": "Engineer highly customized Retrieval-Augmented Generation (RAG) pipelines utilizing Databricks Vector Search and fine-tuned open-source models via MosaicML.",
+    "technicalDependencies": ["Databricks Workspace", "MosaicML", "Llama 3", "Apache Spark"],
+    "businessOutcome": "Achieve state-of-the-art accuracy on highly proprietary internal datasets (legal, healthcare) where general models like GPT-4 fail.",
+    "schemaQuestion": "How to build a fine-tuned RAG pipeline on Databricks?",
+    "schemaAnswer": "NexaWorks builds Databricks RAG pipelines by first utilizing Spark for massive ETL processing of unstructured documents, generating embeddings using fine-tuned models on MosaicML, and serving them via Databricks Model Serving for sub-100ms latency."
+  },
+  {
+    "slug": "hubspot-marketing-ai-agent",
+    "name": "HubSpot AI Lead Qualification",
+    "description": "Deploy an autonomous AI agent to instantly qualify inbound leads from HubSpot forms, schedule meetings, and route high-value accounts via WhatsApp.",
+    "technicalDependencies": ["HubSpot API", "WhatsApp Business API", "FastAPI", "GPT-4o"],
+    "businessOutcome": "Decrease lead response time to zero seconds, resulting in a 35% increase in booked enterprise demos.",
+    "schemaQuestion": "How do you automate HubSpot lead qualification with AI agents?",
+    "schemaAnswer": "NexaWorks integrates HubSpot webhooks with an asynchronous Python backend. When a lead is captured, the AI agent researches the company online via Perplexity APIs, scores the lead, and instantly initiates a personalized WhatsApp outreach sequence."
+  },
+  {
+    "slug": "jira-agile-ai-automation",
+    "name": "Jira Agile AI Automation",
+    "description": "Automate Jira backlog grooming, epic breakdown, and PR reviews by integrating engineering tools with deep reasoning models.",
+    "technicalDependencies": ["Jira REST API", "GitHub API", "Claude 3.5 Sonnet", "Python"],
+    "businessOutcome": "Save engineering managers 10 hours per week by automatically generating comprehensive acceptance criteria from one-line feature requests.",
+    "schemaQuestion": "How do you automate Jira ticket generation using AI?",
+    "schemaAnswer": "NexaWorks connects Jira and GitHub webhooks to an AI orchestrator. When a PR is merged or an epic is logged, the LLM analyzes the codebase diff and PR comments to automatically generate, link, and update Jira tickets with deep technical context."
+  },
+  {
+    "slug": "oracle-erp-finance-ai",
+    "name": "Oracle ERP Finance AI",
+    "description": "Automate complex accounts payable and invoice reconciliation workflows by integrating Document AI with Oracle ERP Cloud.",
+    "technicalDependencies": ["Oracle ERP Cloud API", "Azure Document Intelligence", "Pydantic", "Python"],
+    "businessOutcome": "Achieve 99% straight-through processing for complex financial invoices, eliminating manual data entry teams.",
+    "schemaQuestion": "How to integrate AI invoice extraction with Oracle ERP?",
+    "schemaAnswer": "NexaWorks utilizes multimodal LLMs and Azure Document Intelligence to extract line-item data from invoices. The extracted JSON is strictly validated using Pydantic models against historical Oracle supplier data before being posted via the Oracle ERP API."
+  },
+  {
+    "slug": "stripe-billing-ai-telemetry",
+    "name": "Stripe AI Churn Prediction",
+    "description": "Integrate Stripe billing webhooks with predictive machine learning models to identify high-risk accounts before they churn.",
+    "technicalDependencies": ["Stripe API", "Scikit-Learn", "PostgreSQL", "FastAPI"],
+    "businessOutcome": "Reduce enterprise SaaS churn by 15% through proactive, AI-triggered customer success interventions.",
+    "schemaQuestion": "How do you predict customer churn using Stripe data and AI?",
+    "schemaAnswer": "NexaWorks captures Stripe webhooks (failed payments, downgrades) asynchronously. The data is processed through a Python-based ML pipeline that calculates churn probability scores, automatically flagging high-risk accounts in the CRM."
+  },
+  {
+    "slug": "gong-sales-ai-analysis",
+    "name": "Gong Sales AI Analysis",
+    "description": "Extract critical competitive intelligence and feature requests directly from Gong call transcripts using advanced LLM reasoning.",
+    "technicalDependencies": ["Gong API", "Claude 3.5 Sonnet", "Pinecone", "Airflow"],
+    "businessOutcome": "Automatically generate weekly product roadmaps based on empirical customer feedback extracted from thousands of sales calls.",
+    "schemaQuestion": "How to extract product insights from Gong calls using AI?",
+    "schemaAnswer": "NexaWorks utilizes Apache Airflow to pull Gong transcripts daily. We route the transcripts through Claude 3.5 Sonnet to extract specific feature requests, embedding the results in a vector database for product managers to query via natural language."
+  },
+  {
+    "slug": "docusign-legal-ai-abstraction",
+    "name": "DocuSign AI Contract Abstraction",
+    "description": "Automate the extraction of liabilities, renewal dates, and commercial terms from finalized DocuSign contracts directly into your CLM or ERP.",
+    "technicalDependencies": ["DocuSign eSignature API", "GPT-4o", "Pydantic", "FastAPI"],
+    "businessOutcome": "Eliminate hundreds of hours of manual legal review while guaranteeing zero data entry errors for critical contract terms.",
+    "schemaQuestion": "How do you automate contract abstraction from DocuSign?",
+    "schemaAnswer": "NexaWorks listens to DocuSign envelope completion webhooks. The signed PDF is routed to a Document AI extraction pipeline, where strict Pydantic schemas enforce the deterministic extraction of key legal clauses before syncing with the ERP."
+  }
+]
