@@ -70,7 +70,10 @@ export default function GlossaryTermPage({ params }: { params: { term: string } 
 
         <div className="card-elevated" style={{ background: 'white', padding: '48px', marginBottom: '48px' }}>
           <div className="micro-cap" style={{ color: 'var(--color-ink-mute)', marginBottom: '16px' }}>NEXAWORKS DEFINITION</div>
-          <p className="heading-md" style={{ color: 'var(--color-ink)', lineHeight: 1.6 }}>
+          <h2 className="heading-md" style={{ color: 'var(--color-ink)', marginBottom: '12px' }}>
+            What is {item.term}?
+          </h2>
+          <p className="body-lg" style={{ color: 'var(--color-ink)', lineHeight: 1.6 }}>
             {item.definition}
           </p>
         </div>

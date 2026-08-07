@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: { params: Promise<{ competito
   return {
     title: `NexaWorks vs ${comparison.competitorName} | Comparison`,
     description: comparison.verdict,
+    alternates: {
+      canonical: `https://nexaworks.tech/vs/${comparison.slug}`
+    }
   };
 }
 
@@ -46,6 +49,14 @@ export default async function ComparisonPage({ params }: { params: Promise<{ com
 
       <section className="section" style={{ background: 'var(--color-canvas)' }}>
         <div className="container" style={{ maxWidth: '900px' }}>
+          
+          <div className="card-elevated" style={{ padding: '1.5rem', backgroundColor: 'var(--color-surface)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0.5rem', marginBottom: '3rem' }}>
+            <h2 className="heading-sm" style={{ marginBottom: '0.5rem', color: 'var(--color-ink)' }}>Executive Summary</h2>
+            <p className="body-md">
+              <strong>Bottom Line:</strong> When comparing NexaWorks to {comparison.competitorName}, the primary difference is {comparison.keyDifference.toLowerCase()} {comparison.verdict}
+            </p>
+          </div>
+
           <div className="grid-2" style={{ marginBottom: '4rem' }}>
             <div className="card" style={{ background: 'var(--color-surface)', padding: '2rem', borderRadius: '8px' }}>
               <h2 className="heading-3" style={{ marginBottom: '1rem' }}>Their Approach</h2>

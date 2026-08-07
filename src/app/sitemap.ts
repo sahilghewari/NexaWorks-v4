@@ -1,4 +1,11 @@
 import { MetadataRoute } from 'next';
+import { workflows } from '@/data/workflows';
+import { contexts } from '@/data/contexts';
+import { comparisons } from '@/data/comparisons';
+import { glossaryTerms } from '@/data/glossaryTerms';
+import { blogPosts } from '@/data/blogPosts';
+import integrations from '@/data/integrations.json';
+import glossaryJson from '@/data/glossary.json';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nexaworks.tech';
@@ -13,8 +20,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pricing',
     '/research',
     '/research/context-reconstruction-index',
+    '/research/state-of-enterprise-ai-2026',
+    '/research/global-roi-index',
+    '/research/academic-partnerships',
     '/infrastructure-playbooks',
-    '/tools/context-score'
+    '/tools',
+    '/tools/context-score',
+    '/tools/roi-calculator',
+    '/tools/eu-ai-act-assessor',
+    '/tools/mcp-architecture-generator',
+    '/tools/rag-simulator',
+    '/tools/schema-generator',
+    '/benchmarks',
+    '/benchmarks/document-ai',
+    '/benchmarks/error-database',
+    '/benchmarks/llmops-observability-matrix',
+    '/security',
+    '/careers',
+    '/open-source',
+    '/docs',
+    '/docs/methodology',
+    '/docs/mcp-integrations',
+    '/docs/swarm-api',
+    '/blog',
+    '/glossary'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -22,19 +51,53 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }));
 
-  // Workflow Routes
-  const workflowRoutes = [
-    'pre-meeting-research',
-    'customer-onboarding-handoff',
-    'deal-review-preparation',
-    'clinical-patient-handoff',
-    'incident-response-context',
-    'quarterly-business-review'
-  ].map((slug) => ({
-    url: `${baseUrl}/workflows/${slug}`,
+  // Dynamic Routes
+  const workflowRoutes = workflows.map((item) => ({
+    url: `${baseUrl}/workflows/${item.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.8,
+  }));
+
+  const contextRoutes = contexts.map((item) => ({
+    url: `${baseUrl}/context/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  const comparisonRoutes = comparisons.map((item) => ({
+    url: `${baseUrl}/vs/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  const blogRoutes = blogPosts.map((item) => ({
+    url: `${baseUrl}/blog/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  const integrationRoutes = integrations.map((item: any) => ({
+    url: `${baseUrl}/integrations/${item.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
+
+  // Combine glossary sources
+  const glossarySlugs = new Set([
+    ...glossaryTerms.map(t => t.term),
+    ...glossaryJson.map((t: any) => t.slug)
+  ]);
+
+  const glossaryRoutes = Array.from(glossarySlugs).map((slug) => ({
+    url: `${baseUrl}/glossary/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
   }));
 
   // US Architecture Niches
@@ -64,31 +127,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // Comparison Routes
-  const comparisonRoutes = [
-    'enterprise-search',
-    'conversational-ai',
-    'rpa',
-    'custom-langchain'
-  ].map((slug) => ({
-    url: `${baseUrl}/vs/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
-
-  // Context Routes
-  const contextRoutes = [
-    'enterprise-sales-discovery',
-    'clinical-patient-handoff',
-    'sev1-incident-response',
-    'legal-contract-review'
-  ].map((slug) => ({
-    url: `${baseUrl}/context/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
-
-  return [...staticRoutes, ...workflowRoutes, ...usNiches, ...inNiches, ...comparisonRoutes, ...contextRoutes];
+  return [
+    ...staticRoutes, 
+    ...workflowRoutes, 
+    ...contextRoutes, 
+    ...comparisonRoutes, 
+    ...blogRoutes,
+    ...integrationRoutes,
+    ...glossaryRoutes,
+    ...usNiches, 
+    ...inNiches
+  ];
 }

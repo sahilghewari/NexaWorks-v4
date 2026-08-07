@@ -26,7 +26,7 @@
   {
     "slug": "generative-engine-optimization",
     "term": "Generative Engine Optimization (GEO)",
-    "definition": "The evolution of Search Engine Optimization (SEO). The practice of structuring data, text, and metadata to be explicitly cited by Large Language Models (LLMs) and AI answer engines rather than ranking in traditional search results.",
-    "context": "Traditional SEO relies on keywords and backlinks to rank in Google's 10 blue links. GEO relies on factual density, machine-readable schemas (like JSON-LD), and specialized text files (like llms.txt) to guarantee an AI agent selects a specific brand as the definitive source of truth when synthesizing a response."
+    "definition": "The practice of structuring data, text, and metadata to increase the likelihood of being cited by Large Language Models (LLMs) and AI answer engines.",
+    "context": "Traditional SEO relies on keywords and backlinks to rank in Google's 10 blue links. GEO relies on factual density, machine-readable schemas (like JSON-LD), and extractable, high-quality content to ensure an AI agent selects a specific brand as the definitive source of truth. Unlike older myths, AI models do not require special text files to cite content."
   }
 ]

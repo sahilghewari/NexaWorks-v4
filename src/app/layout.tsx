@@ -13,33 +13,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "NexaWorks — AI Automation Agency",
+    default: "NexaWorks — Context Reconstruction Platform",
     template: "%s | NexaWorks",
   },
   description:
-    "NexaWorks is an elite AI automation agency specializing in production-grade agentic workflows, RAG systems, and custom AI solutions for enterprises.",
+    "NexaWorks is an enterprise Context Reconstruction platform that uses deterministic retrieval, MCP, and agentic orchestration to deliver workflow-ready context briefs.",
   keywords: [
-    "AI automation",
-    "agentic workflows",
-    "RAG systems",
-    "LLM integration",
-    "enterprise AI",
+    "Context Reconstruction",
+    "Agentic Orchestration",
+    "Deterministic Retrieval",
+    "Model Context Protocol",
+    "Enterprise AI",
   ],
   alternates: {
     canonical: "https://nexaworks.tech",
-    languages: {
-      "en-US": "https://nexaworks.tech/en-us",
-      "en-GB": "https://nexaworks.tech/en-gb",
-      "en-CA": "https://nexaworks.tech/en-ca",
-      "en-AU": "https://nexaworks.tech/en-au",
-      "en-IN": "https://nexaworks.tech/en-in",
-      "x-default": "https://nexaworks.tech",
-    },
   },
   openGraph: {
     title: "NexaWorks",
     description:
-      "Elite AI automation agency specializing in production-grade agentic workflows, RAG systems, and enterprise AI solutions.",
+      "Enterprise Context Reconstruction platform delivering workflow-ready context briefs.",
     url: "https://nexaworks.tech",
     siteName: "NexaWorks",
     type: "website",

@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ workflow:
   return {
     title: `${workflow.title} - Context Reconstruction | NexaWorks`,
     description: workflow.problem,
+    alternates: {
+      canonical: `https://nexaworks.tech/workflows/${workflow.slug}`
+    }
   };
 }
 
@@ -45,9 +48,16 @@ export default async function WorkflowPage({ params }: { params: Promise<{ workf
               {workflow.category}
             </span>
             <h1 className="display-xl" style={{ marginBottom: '1rem' }}>{workflow.title}</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)' }}>
+            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', marginBottom: '2rem' }}>
               How NexaWorks eliminates context loss for {workflow.title.toLowerCase()}.
             </p>
+            
+            <div className="card-elevated" style={{ padding: '1.5rem', backgroundColor: 'var(--color-surface)', borderLeft: '4px solid var(--color-primary)', borderRadius: '0.5rem', marginBottom: '2rem' }}>
+              <h2 className="heading-sm" style={{ marginBottom: '0.5rem', color: 'var(--color-ink)' }}>Executive Summary</h2>
+              <p className="body-md">
+                <strong>Bottom Line:</strong> The primary challenge in {workflow.title.toLowerCase()} is {workflow.problem.toLowerCase()} By implementing NexaWorks Context Reconstruction, teams can move from manual context gathering to an automated state where {workflow.reconstructedProcess.toLowerCase()} This delivers an immediate impact of {workflow.roi.toLowerCase()}
+              </p>
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
