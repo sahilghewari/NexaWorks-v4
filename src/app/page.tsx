@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="cinematic-page">
       <section className="cinematic-hero">
         <Image 
           src="/cinematic-hero.jpg"
@@ -45,8 +45,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="services-overview">
-        <h2 className="display-xl">Stop wasting hours digging for information</h2>
+      <section className="services-overview cinematic-border-top">
+        <h2 className="display-xl cinematic-heading">Stop wasting hours digging for information</h2>
         <p className="body-lg services-subtitle">
           Your team spends more time searching for answers across scattered tools than actually doing the work.
         </p>
@@ -69,8 +69,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="services-overview" style={{ background: 'var(--color-canvas)' }}>
-        <h2 className="display-xl">How NexaWorks makes it simple</h2>
+      <section className="services-overview">
+        <h2 className="display-xl cinematic-heading">How NexaWorks makes it simple</h2>
         <p className="body-lg services-subtitle">
           We bring everything you need into one clear, easy-to-read summary.
         </p>
@@ -96,7 +96,7 @@ export default function Home() {
       <section className="why-section">
         <div className="why-container">
           <div className="why-content">
-            <h2 className="display-xl">Enterprise security you can trust</h2>
+            <h2 className="display-xl cinematic-heading">Enterprise security you can trust</h2>
             <p className="body-lg">
               We know how important your business data is. That's why NexaWorks is built with strict privacy controls, complete audit logs, and a guarantee that we never use your private data to train our AI models.
             </p>
@@ -124,7 +124,7 @@ export default function Home() {
       </section>
 
       <section className="services-overview">
-        <h2 className="display-xl">Learn how it works</h2>
+        <h2 className="display-xl cinematic-heading">Learn how it works</h2>
         <p className="body-lg services-subtitle">
           Explore our guides to see exactly how NexaWorks can save your team hours every week.
         </p>
@@ -150,8 +150,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="industries-section">
-        <h2 className="display-xl">Built for every fast-moving team</h2>
+      <section className="industries-section cinematic-border-top">
+        <h2 className="display-xl cinematic-heading">Built for every fast-moving team</h2>
         <div className="grid-4">
           <div className="card service-card">
             <div className="service-icon">📈</div>
@@ -178,7 +178,7 @@ export default function Home() {
 
       <section className="cta-section">
         <div className="cta-content">
-          <h2 className="display-xl">Ready to stop searching?</h2>
+          <h2 className="display-xl cinematic-heading">Ready to stop searching?</h2>
           <p className="body-lg">Get started today and give your team the gift of complete clarity.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-on-dark-inverse">Request a Demo</Link>
