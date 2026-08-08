@@ -12,38 +12,37 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <GradientMesh>
-        <section className="hero-split-section">
-          <div className="hero-split-content">
-            <span className="tag" style={{ border: '1px solid var(--color-primary)', background: 'transparent', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' }}>CONTEXT RECONSTRUCTION</span>
-            <h1 className="display-xxl text-gradient" style={{ letterSpacing: '-0.03em', lineHeight: 1.1 }}>
-              Your team spends hours rebuilding context.<br />We end that.
-            </h1>
-            <p className="body-lg" style={{ color: "var(--color-ink-secondary)", marginTop: "32px", fontSize: '20px' }}>
-              NexaWorks automatically reconstructs the context your team needs before every meeting, customer interaction, and decision — so important work starts with clarity, not chaos.
-            </p>
-            <div className="hero-actions-left">
-              <Link href="/product" className="btn-primary btn-lg" style={{ padding: '16px 36px', fontSize: '18px', boxShadow: '0 8px 32px rgba(139, 92, 246, 0.4)' }}>See How It Works</Link>
-              <Link href="/tools/context-score" className="btn-secondary btn-lg" style={{ padding: '16px 36px', fontSize: '18px', background: 'rgba(0,0,0,0.03)', backdropFilter: 'blur(10px)', color: 'var(--color-ink)', border: '1px solid rgba(0,0,0,0.1)' }}>Try Context Score</Link>
-            </div>
+      <section className="cinematic-hero">
+        <Image 
+          src="/cinematic-hero.jpg"
+          alt="Cinematic Boardroom Context"
+          fill
+          style={{ objectFit: 'cover', zIndex: 0, opacity: 0.5 }}
+          priority
+        />
+        <div className="cinematic-overlay"></div>
+        <div className="cinematic-content">
+          <h1 className="cinematic-headline">
+            Practice<br />Made Perfect.
+          </h1>
+          <p className="cinematic-subheadline">
+            Today's top enterprise teams trust NexaWorks to eliminate context loss, navigate complexity, and start important work with clarity.
+          </p>
+          <div style={{ marginTop: '48px' }}>
+            <Link href="/contact" className="cinematic-btn">Request a Demo</Link>
           </div>
-          
-          <div className="hero-split-image animate-fade-in-up">
-            <div className="dashboard-hero-wrapper-side">
-              <Image 
-                src="/dashboard-hero-v2.jpg" 
-                alt="NexaWorks Context Reconstruction Platform UI" 
-                width={1400} 
-                height={787}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-                priority
-              />
-            </div>
+        </div>
+        
+        <div className="cinematic-bottom-bar">
+          <div className="container bottom-bar-inner">
+             <span className="logo-text">CMS</span>
+             <span className="logo-text">CUATRECASAS</span>
+             <span className="logo-text">MERCK</span>
+             <span className="logo-text">HENGELER MUELLER</span>
+             <Link href="/customers" className="customers-link">Our Customers</Link>
           </div>
-        </section>
-      </GradientMesh>
-
-      <TrustSignals />
+        </div>
+      </section>
 
       <section className="services-overview">
         <h2 className="display-xl">The most expensive problem nobody measures</h2>
