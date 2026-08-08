@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import GradientMesh from '@/components/GradientMesh';
+import ProductInteractiveHero from '@/components/ProductInteractiveHero';
 
 export const metadata: Metadata = {
   title: 'How Context Reconstruction Works | NexaWorks',
@@ -10,17 +10,7 @@ export const metadata: Metadata = {
 export default function ProductPage() {
   return (
     <main>
-      <GradientMesh>
-        <section className="section" style={{ paddingTop: '160px', paddingBottom: '120px', textAlign: 'center' }}>
-          <div className="container" style={{ maxWidth: '800px' }}>
-            <span className="tag" style={{ marginBottom: '16px' }}>THE PRODUCT</span>
-            <h1 className="display-xxl" style={{ marginBottom: '24px' }}>Context Reconstruction</h1>
-            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', maxWidth: '700px', margin: '0 auto' }}>
-              Stop losing critical information between systems. We deterministically assemble relevant context across your tools and deliver it exactly when you need it.
-            </p>
-          </div>
-        </section>
-      </GradientMesh>
+      <ProductInteractiveHero />
 
       <section className="section" style={{ background: 'var(--color-canvas)' }}>
         <div className="container" style={{ maxWidth: '1000px' }}>
