@@ -1,0 +1,149 @@
+/* Solutions Page Global Dark Theme */
+.solutions-page {
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Cinematic Hero specifically for Solutions */
+.solutions-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 24px 120px;
+  background: radial-gradient(circle at center 0%, #1a1a1a 0%, #0d0d0d 60%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.solutions-hero-container {
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+.solutions-tag {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #888;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+}
+
+.solutions-headline {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.solutions-subheadline {
+  font-size: 20px;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* Verticals Grid */
+.solutions-section {
+  padding: 140px 24px;
+  background-color: #0d0d0d;
+}
+
+.verticals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vertical-card {
+  background: linear-gradient(180deg, #151515 0%, #0a0a0a 100%);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 48px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vertical-card:hover {
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.6);
+}
+
+.vertical-card:hover::before {
+  opacity: 1;
+}
+
+/* Glow variations based on industry */
+.vertical-card.sales:hover { box-shadow: 0 24px 48px rgba(0, 100, 255, 0.1); }
+.vertical-card.sales::before { background: linear-gradient(90deg, transparent, #0066ff, transparent); }
+
+.vertical-card.clinical:hover { box-shadow: 0 24px 48px rgba(0, 255, 100, 0.1); }
+.vertical-card.clinical::before { background: linear-gradient(90deg, transparent, #00ff66, transparent); }
+
+.vertical-card.finance:hover { box-shadow: 0 24px 48px rgba(255, 200, 0, 0.1); }
+.vertical-card.finance::before { background: linear-gradient(90deg, transparent, #ffcc00, transparent); }
+
+.vertical-card.legal:hover { box-shadow: 0 24px 48px rgba(200, 100, 255, 0.1); }
+.vertical-card.legal::before { background: linear-gradient(90deg, transparent, #cc66ff, transparent); }
+
+.vertical-card.ops:hover { box-shadow: 0 24px 48px rgba(255, 100, 100, 0.1); }
+.vertical-card.ops::before { background: linear-gradient(90deg, transparent, #ff6666, transparent); }
+
+.vertical-card.exec:hover { box-shadow: 0 24px 48px rgba(255, 255, 255, 0.1); }
+.vertical-card.exec::before { background: linear-gradient(90deg, transparent, #ffffff, transparent); }
+
+
+.vertical-icon {
+  font-size: 32px;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.vertical-card h3 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.vertical-card p {
+  color: #999;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .verticals-grid { grid-template-columns: repeat(2, 1fr); }
+  .solutions-headline { font-size: 48px; }
+}
+
+@media (max-width: 768px) {
+  .verticals-grid { grid-template-columns: 1fr; }
+  .solutions-headline { font-size: 40px; }
+  .solutions-hero { padding: 120px 24px 80px; }
+}
