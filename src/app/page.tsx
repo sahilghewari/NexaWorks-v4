@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import GradientMesh from "@/components/GradientMesh";
+import TrustSignals from "@/components/TrustSignals";
 import "./page.css";
 
 export const metadata = {
@@ -9,194 +11,203 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="harvey-page">
-      {/* 1. HERO SECTION (Dark) */}
-      <section className="harvey-hero">
+    <main className="cinematic-page">
+      <section className="cinematic-hero">
         <Image 
           src="/cinematic-hero.jpg"
           alt="Cinematic Boardroom Context"
           fill
-          style={{ objectFit: 'cover', zIndex: 0, opacity: 0.4 }}
+          style={{ objectFit: 'cover', zIndex: 0, opacity: 0.5 }}
           priority
         />
-        <div className="harvey-hero-content">
-          <h1 className="harvey-headline">
+        <div className="cinematic-overlay"></div>
+        <div className="cinematic-content">
+          <h1 className="cinematic-headline">
             Never start a<br />meeting blind.
           </h1>
-          <p className="harvey-subheadline">
+          <p className="cinematic-subheadline">
             NexaWorks automatically gathers the information you need from all your apps, so you can focus on the work—not the search.
           </p>
-          <div style={{ marginTop: '32px' }}>
-            <Link href="/contact" className="harvey-btn-white">Request a Demo</Link>
+          <div style={{ marginTop: '48px' }}>
+            <Link href="/contact" className="cinematic-btn">Request a Demo</Link>
           </div>
         </div>
         
-        <div className="harvey-hero-logos">
-          <div className="harvey-logos-inner">
-            <span className="harvey-logo-label">INTEGRATES WITH:</span>
-            <span>SALESFORCE</span>
-            <span>SLACK</span>
-            <span>JIRA</span>
-            <span>ZENDESK</span>
-            <Link href="/integrations" className="harvey-btn-outline">View All</Link>
+        <div className="cinematic-bottom-bar">
+          <div className="container bottom-bar-inner">
+             <span className="logo-text" style={{ opacity: 0.6, fontSize: '12px' }}>INTEGRATES WITH:</span>
+             <span className="logo-text">SALESFORCE</span>
+             <span className="logo-text">SLACK</span>
+             <span className="logo-text">JIRA</span>
+             <span className="logo-text">ZENDESK</span>
+             <Link href="/integrations" className="customers-link">View All Integrations</Link>
           </div>
         </div>
       </section>
 
-      {/* 2. SCROLLING FOCUS LIST (Light) */}
-      <section className="harvey-focus-section">
-        <div className="harvey-focus-container">
-          <div className="harvey-focus-left">
-            <p>Top teams use<br/>NexaWorks for</p>
-          </div>
-          <div className="harvey-focus-center">
-            <ul className="harvey-focus-list">
-              <li className="faded">Sales Discovery</li>
-              <li className="faded">Patient Handoffs</li>
-              <li className="active">Incident Response</li>
-              <li className="faded">Contract Review</li>
-              <li className="faded">Vendor Diligence</li>
-            </ul>
-          </div>
-          <div className="harvey-focus-right">
-            <Link href="/product" className="harvey-btn-outline-dark">Explore Platform</Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. QUOTE / IMPACT BLOCK (Light Gray) */}
-      <section className="harvey-quote-section">
-        <div className="harvey-quote-container">
-          <div className="harvey-quote-image">
-            <Image 
-              src="/portrait_quote.jpg" 
-              alt="Corporate Executive" 
-              fill 
-              style={{ objectFit: 'cover' }} 
-            />
-          </div>
-          <div className="harvey-quote-content">
-            <blockquote>
-              "What we have seen with NexaWorks is by far the most successful technology adoption story I have ever been a part of. The ability to instantly understand the full context of any situation is game-changing."
-            </blockquote>
-            <div className="harvey-quote-author">
-              <p className="author-name">Rich Robbins</p>
-              <p className="author-title">Director of Applied Artificial Intelligence</p>
-            </div>
-            <div className="harvey-quote-logo">
-              <span style={{ fontFamily: 'serif', fontSize: '24px', fontStyle: 'italic', opacity: 0.8 }}>NexaWorks</span>
+      <section className="editorial-section">
+        <div className="editorial-container">
+          <h2 className="editorial-headline">
+            NexaWorks is AI designed for<br/>complex professional workflows.
+          </h2>
+          <p className="editorial-subheadline">
+            Advance your expertise on a secure platform that<br/>lets you focus on high-value work.
+          </p>
+          <div className="ui-mockup-container">
+            <div className="ui-mockup-sidebar"></div>
+            <div className="ui-mockup-main">
+              <div className="ui-mockup-block" style={{width: '60%'}}></div>
+              <div className="ui-mockup-block" style={{width: '80%'}}></div>
+              <div className="ui-mockup-block" style={{width: '40%'}}></div>
+              
+              <div style={{display: 'flex', gap: '24px', marginTop: '48px'}}>
+                <div className="ui-mockup-box"></div>
+                <div className="ui-mockup-box"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. CINEMATIC CASE STUDIES (Dark) */}
-      <section className="harvey-studies-section">
-        <div className="harvey-studies-header">
-          <h2>Real impact for real clients</h2>
-          <Link href="/customers" className="harvey-btn-outline">See more stories</Link>
+      <section className="fading-text-section">
+        <div className="fading-text-container">
+          <div className="fading-text-left">
+            <span className="tiny-label">The top enterprise teams<br/>use NexaWorks for</span>
+          </div>
+          <div className="fading-text-right">
+            <h3 className="fading-item muted">Context Switching</h3>
+            <h3 className="fading-item muted">Scattered Information</h3>
+            <h3 className="fading-item active">Lost Meeting Context</h3>
+            <h3 className="fading-item muted">Siloed Knowledge</h3>
+            <h3 className="fading-item muted">Data Duplication</h3>
+          </div>
+          <div className="fading-btn-wrapper">
+             <Link href="/product" className="btn-outline-dark">Explore Platform</Link>
+          </div>
         </div>
-        
-        <div className="harvey-studies-grid">
-          <div className="harvey-study-card">
-            <Image src="/case_study_1.jpg" alt="Case Study 1" fill style={{ objectFit: 'cover', opacity: 0.6 }} />
-            <div className="harvey-study-overlay">
-              <h3>Acme Corp uses NexaWorks for greater time savings across their entire sales team.</h3>
-              <div className="harvey-play-btn">▶</div>
+      </section>
+
+      <section className="testimonial-section">
+        <div className="testimonial-container">
+          <div className="testimonial-image">
+             <div className="placeholder-avatar"></div>
+          </div>
+          <div className="testimonial-content">
+            <p className="testimonial-quote">"What we have seen with NexaWorks is by far the most successful firm technology adoption story I have ever been a part of."</p>
+            <div className="testimonial-author">
+              <strong>Rich Robbins</strong><br/>
+              Director of Applied Artificial Intelligence
+            </div>
+            <div className="testimonial-logo">REED SMITH</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="case-studies-section">
+        <div className="case-studies-header">
+          <h2 className="case-studies-title">Real impact for real clients</h2>
+          <Link href="/customers" className="btn-outline-light">See more stories</Link>
+        </div>
+        <div className="case-studies-grid">
+          <div className="case-card">
+            <div className="case-card-overlay"></div>
+            <div className="case-card-content">
+              <h3>Sales teams use NexaWorks for greater deal context across their entire org.</h3>
+              <div className="play-button">▶</div>
             </div>
           </div>
-          <div className="harvey-study-card">
-            <Image src="/case_study_2.jpg" alt="Case Study 2" fill style={{ objectFit: 'cover', opacity: 0.6 }} />
-            <div className="harvey-study-overlay">
-              <h3>Global Health helps doctors focus on creating the most value for patients.</h3>
-              <div className="harvey-play-btn">▶</div>
+          <div className="case-card">
+            <div className="case-card-overlay"></div>
+            <div className="case-card-content">
+              <h3>NexaWorks helps engineering teams focus on creating the most value.</h3>
+              <div className="play-button">▶</div>
             </div>
           </div>
-          <div className="harvey-study-card">
-            <Image src="/case_study_3.jpg" alt="Case Study 3" fill style={{ objectFit: 'cover', opacity: 0.6 }} />
-            <div className="harvey-study-overlay">
-              <h3>The Orion Group uses NexaWorks to free up time for more meaningful work.</h3>
-              <div className="harvey-play-btn">▶</div>
+          <div className="case-card">
+            <div className="case-card-overlay"></div>
+            <div className="case-card-content">
+              <h3>Support groups use NexaWorks to free up time for more meaningful work.</h3>
+              <div className="play-button">▶</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. VERTICAL STATS (Dark) */}
-      <section className="harvey-stats-section">
-        <div className="harvey-stats-header">
-          <h2>Helping teams stay focused<br/>and see measurable results</h2>
-        </div>
-        
-        <div className="harvey-stats-list">
-          <div className="harvey-stat-row">
-            <div className="stat-label">Average hours saved per month</div>
-            <div className="stat-value">15+</div>
+      <section className="metrics-section">
+        <div className="metrics-container">
+          <div className="metrics-header">
+            <div className="metrics-logos">
+              <span>SALESFORCE</span> | <span>SLACK</span> | <span>ZENDESK</span> | <span>JIRA</span>
+            </div>
+            <h2 className="metrics-title">Helping teams stay focused<br/>and see measurable results</h2>
           </div>
-          <div className="harvey-stat-row">
-            <div className="stat-label">Professionals using NexaWorks</div>
-            <div className="stat-value">100,000+</div>
-          </div>
-          <div className="harvey-stat-row">
-            <div className="stat-label">Enterprise teams deployed</div>
-            <div className="stat-value">1,200+</div>
-          </div>
-          <div className="harvey-stat-row">
-            <div className="stat-label">Countries supported</div>
-            <div className="stat-value">45+</div>
+          <div className="metrics-list">
+            <div className="metric-row">
+              <span className="metric-label">Average hours saved per month</span>
+              <span className="metric-number">25+</span>
+            </div>
+            <div className="metric-row">
+              <span className="metric-label">Professionals using NexaWorks</span>
+              <span className="metric-number">200,000+</span>
+            </div>
+            <div className="metric-row">
+              <span className="metric-label">Enterprise teams using NexaWorks</span>
+              <span className="metric-number">2,400+</span>
+            </div>
+            <div className="metric-row">
+              <span className="metric-label">Countries NexaWorks is used in</span>
+              <span className="metric-number">70+</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 6. SECURITY BADGES (Dark) */}
-      <section className="harvey-security-section">
-        <div className="harvey-security-header">
-          <div className="sec-left">
-            <h2>Enterprise-grade<br/>security and controls</h2>
-          </div>
-          <div className="sec-right">
+      <section className="security-badges-section">
+        <div className="security-header-grid">
+          <h2 className="security-title">Enterprise-grade<br/>security and controls</h2>
+          <div className="security-desc">
             <p>NexaWorks meets the highest industry standards for security and compliance. We include all default controls that enterprise teams expect: SAML SSO, audit logs, IP allow-listing, data lifecycle management, and more.</p>
-            <Link href="/security" className="harvey-btn-outline" style={{ display: 'inline-block' }}>More About Security</Link>
+            <div style={{marginTop: '24px'}}>
+               <Link href="/security" className="btn-outline-light-small">More About Security</Link>
+            </div>
           </div>
         </div>
-
-        <div className="harvey-security-grid">
-          <div className="harvey-badge">
+        <div className="security-grid">
+          <div className="security-badge">
             <div className="badge-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
             </div>
             <h4>SOC2 Type II</h4>
-            <Link href="/security" className="badge-link">Details ↗</Link>
+            <Link href="/security">Details ↗</Link>
           </div>
-          <div className="harvey-badge">
+          <div className="security-badge">
             <div className="badge-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             </div>
-            <h4>CCPA Compliant</h4>
-            <Link href="/security" className="badge-link">Details ↗</Link>
+            <h4>CCPA</h4>
+            <Link href="/security">Details ↗</Link>
           </div>
-          <div className="harvey-badge">
+          <div className="security-badge">
             <div className="badge-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             </div>
             <h4>ISO 27001</h4>
-            <Link href="/security" className="badge-link">Details ↗</Link>
+            <Link href="/security">Details ↗</Link>
           </div>
-          <div className="harvey-badge">
+          <div className="security-badge">
             <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 8v4l3 3"></path></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
             </div>
-            <h4>GDPR Ready</h4>
-            <Link href="/security" className="badge-link">Details ↗</Link>
+            <h4>GDPR</h4>
+            <Link href="/security">Details ↗</Link>
           </div>
         </div>
       </section>
 
-      {/* 7. MINIMAL FOOTER CTA (Dark) */}
-      <section className="harvey-cta-section">
-        <div className="harvey-cta-container">
-          <h2>Unlock Complete Context for Your Firm</h2>
-          <Link href="/contact" className="harvey-btn-white">Request a Demo</Link>
+      <section className="footer-cta-section">
+        <div className="footer-cta-container">
+          <h2 className="footer-cta-title">Unlock Professional Class AI for Your Firm</h2>
+          <Link href="/contact" className="btn-solid-white">Request a Demo</Link>
         </div>
       </section>
     </main>

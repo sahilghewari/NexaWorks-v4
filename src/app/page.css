@@ -1,454 +1,629 @@
-/* ==========================================================================
-   HARVEY-INSPIRED AESTHETIC - GLOBAL PAGE CSS
-   ========================================================================== */
-
-.harvey-page {
-  background-color: #0b0c0d;
-  color: #fff;
-  min-height: 100vh;
-  font-family: 'Inter', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Base Typographic Resets */
-.harvey-page h1, .harvey-page h2, .harvey-page h3, .harvey-page h4 {
-  font-family: ui-serif, Georgia, serif;
-  font-weight: 300;
-  line-height: 1.1;
-}
-
-.harvey-page a {
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-/* ==========================================================================
-   1. HERO SECTION
-   ========================================================================== */
-.harvey-hero {
+.cinematic-hero {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   padding: 0 48px;
   background-color: #000;
   overflow: hidden;
 }
 
-.harvey-hero-content {
+.cinematic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+}
+
+.cinematic-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
-.harvey-headline {
+.cinematic-headline {
   color: white;
-  font-size: 80px;
+  font-size: 88px;
+  line-height: 1.05;
   letter-spacing: -0.04em;
-  margin-bottom: 24px;
+  font-weight: 400;
+  font-family: ui-serif, Georgia, serif;
 }
 
-.harvey-subheadline {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
-  max-width: 480px;
-  margin: 0 auto;
-  line-height: 1.6;
+.cinematic-subheadline {
+  color: rgba(255,255,255,0.8);
+  margin-top: 24px;
+  max-width: 500px;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
-.harvey-btn-white {
+.cinematic-btn {
   display: inline-block;
   background: white;
-  color: #000;
-  padding: 10px 24px;
-  font-size: 13px;
+  color: black;
+  padding: 16px 36px;
+  font-size: 16px;
   font-weight: 500;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.harvey-btn-white:hover {
+.cinematic-btn:hover {
   background: rgba(255,255,255,0.9);
+  transform: translateY(-2px);
 }
 
-.harvey-btn-outline {
-  display: inline-block;
-  background: transparent;
-  color: white;
-  padding: 8px 16px;
-  font-size: 12px;
-  font-weight: 500;
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 4px;
-}
-
-.harvey-btn-outline:hover {
-  border-color: white;
-}
-
-.harvey-btn-outline-dark {
-  display: inline-block;
-  background: transparent;
-  color: #000;
-  padding: 8px 16px;
-  font-size: 12px;
-  font-weight: 500;
-  border: 1px solid #000;
-  border-radius: 4px;
-}
-
-.harvey-btn-outline-dark:hover {
-  background: rgba(0,0,0,0.05);
-}
-
-.harvey-hero-logos {
+.cinematic-bottom-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 24px 48px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
   z-index: 2;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.harvey-logos-inner {
+.bottom-bar-inner {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 32px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
-.harvey-logos-inner span {
-  font-size: 12px;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
-
-.harvey-logo-label {
-  opacity: 0.5;
-}
-
-/* ==========================================================================
-   2. FOCUS LIST (Light Background)
-   ========================================================================== */
-.harvey-focus-section {
-  background-color: #f7f7f5;
-  color: #1a1a1a;
-  padding: 160px 48px;
-}
-
-.harvey-focus-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: start;
-}
-
-.harvey-focus-left p {
-  font-size: 12px;
-  line-height: 1.6;
+.logo-text {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: white;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-top: 24px;
 }
 
-.harvey-focus-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.customers-link {
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 8px 16px;
+  border-radius: 99px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
 }
 
-.harvey-focus-list li {
+.customers-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+@media (max-width: 1024px) {
+  .cinematic-headline { font-size: 56px; }
+  .bottom-bar-inner {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+}
+
+@keyframes levitate {
+  0% { transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(0px); }
+  50% { transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(-16px); }
+  100% { transform: perspective(1000px) rotateY(-5deg) rotateX(2deg) translateY(0px); }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #111827 0%, #4338ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Cinematic Global Page Styles */
+.cinematic-page {
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.cinematic-heading {
   font-family: ui-serif, Georgia, serif;
-  font-size: 64px;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  color: #1a1a1a;
+  color: #fff;
 }
 
-.harvey-focus-list li.faded {
-  color: rgba(26, 26, 26, 0.15);
+.cinematic-border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.harvey-focus-right {
-  text-align: right;
-  margin-top: 48px;
+/* Editorial Section */
+.editorial-section {
+  background-color: #f6f6f5; /* Light creamy grey */
+  color: #111;
+  padding: 140px 24px;
+  text-align: center;
 }
 
-/* ==========================================================================
-   3. QUOTE SECTION (Light Gray)
-   ========================================================================== */
-.harvey-quote-section {
-  background-color: #eae9e5;
-  padding: 120px 48px;
-}
-
-.harvey-quote-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.editorial-container {
   max-width: 1000px;
   margin: 0 auto;
-  align-items: center;
-  gap: 80px;
 }
 
-.harvey-quote-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3/4;
+.editorial-headline {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.editorial-subheadline {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 64px;
+}
+
+.ui-mockup-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.1);
+  height: 500px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #eaeaea;
+}
+
+.ui-mockup-sidebar {
+  width: 240px;
+  background: #fafafa;
+  border-right: 1px solid #eaeaea;
+}
+
+.ui-mockup-main {
+  flex: 1;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ui-mockup-block {
+  height: 24px;
+  background: #f0f0f0;
   border-radius: 4px;
+}
+
+.ui-mockup-box {
+  height: 120px;
+  flex: 1;
+  background: #f0f0f0;
+  border-radius: 8px;
+  border: 1px dashed #ddd;
+}
+
+/* Fading Text Section */
+.fading-text-section {
+  background-color: #f6f6f5;
+  padding: 100px 24px 180px;
+}
+
+.fading-text-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.fading-text-left {
+  flex: 1;
+  padding-top: 24px;
+}
+
+.tiny-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+  font-weight: 600;
+}
+
+.fading-text-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fading-item {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.fading-item.muted {
+  color: #dcdcd9;
+}
+
+.fading-item.active {
+  color: #111;
+}
+
+.btn-outline-dark {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 1px solid #111;
+  color: #111;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.btn-outline-dark:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  background-color: #e6e5e3; /* Slightly darker cream */
+  padding: 0;
   overflow: hidden;
 }
 
-.harvey-quote-content {
-  color: #1a1a1a;
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.harvey-quote-content blockquote {
+.testimonial-image {
+  flex: 1;
+  height: 600px;
+  background: #c9c8c5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.placeholder-avatar {
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+  filter: grayscale(100%) contrast(1.2);
+}
+
+.testimonial-content {
+  flex: 1;
+  padding: 96px;
+}
+
+.testimonial-quote {
   font-family: ui-serif, Georgia, serif;
-  font-size: 28px;
-  line-height: 1.4;
-  margin-bottom: 32px;
-}
-
-.harvey-quote-author {
+  font-size: 32px;
+  line-height: 1.3;
+  color: #111;
   margin-bottom: 48px;
 }
 
-.author-name {
+.testimonial-author {
   font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 4px;
+  color: #333;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
 }
 
-.author-title {
-  font-size: 12px;
-  color: rgba(26,26,26,0.6);
+.testimonial-logo {
+  font-family: monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #666;
 }
 
-/* ==========================================================================
-   4. STUDIES SECTION (Dark)
-   ========================================================================== */
-.harvey-studies-section {
-  background-color: #0b0c0d;
-  padding: 120px 48px;
+/* Case Studies (Cinematic Cards) */
+.case-studies-section {
+  background-color: #0f0f0e;
+  padding: 140px 24px;
+  color: #fff;
 }
 
-.harvey-studies-header {
+.case-studies-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   max-width: 1400px;
   margin: 0 auto 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 16px;
 }
 
-.harvey-studies-header h2 {
+.case-studies-title {
   font-size: 24px;
-  letter-spacing: -0.5px;
+  font-weight: 500;
 }
 
-.harvey-studies-grid {
+.btn-outline-light {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: #000;
+}
+
+.case-studies-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.harvey-study-card {
+.case-card {
   position: relative;
-  aspect-ratio: 16/10;
+  height: 400px;
+  background: #1a1a1a;
   border-radius: 4px;
   overflow: hidden;
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.harvey-study-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px;
-  z-index: 2;
-}
-
-.harvey-study-overlay h3 {
-  font-size: 24px;
-  max-width: 90%;
-}
-
-.harvey-play-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  padding: 48px;
+  text-align: center;
+}
+
+/* Fake images for the cards using gradients */
+.case-card:nth-child(1) { background: linear-gradient(to bottom right, #112, #223); }
+.case-card:nth-child(2) { background: linear-gradient(to bottom right, #211, #322); }
+.case-card:nth-child(3) { background: linear-gradient(to bottom right, #122, #233); }
+
+.case-card-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.case-card:hover .case-card-overlay {
+  background: rgba(0,0,0,0.6);
+}
+
+.case-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.case-card-content h3 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.play-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(4px);
+  font-size: 12px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
-.harvey-study-card:hover .harvey-play-btn {
-  background: rgba(255,255,255,0.3);
+.case-card:hover .play-button {
+  border-color: #fff;
+  background: rgba(255,255,255,0.1);
 }
 
-/* ==========================================================================
-   5. VERTICAL STATS (Dark)
-   ========================================================================== */
-.harvey-stats-section {
-  background-color: #0b0c0d;
-  padding: 0 48px 120px;
+/* Metrics List Section */
+.metrics-section {
+  background-color: #0f0f0e;
+  padding: 96px 24px 140px;
+  color: #fff;
+}
+
+.metrics-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.harvey-stats-header h2 {
-  font-size: 24px;
-  margin-bottom: 48px;
-  text-align: right;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+.metrics-header {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-.harvey-stats-list {
+.metrics-logos span {
+  font-size: 10px;
+  color: #666;
+  margin: 0 12px;
+}
+
+.metrics-title {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.metrics-list {
   display: flex;
   flex-direction: column;
 }
 
-.harvey-stat-row {
+.metric-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 32px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.stat-label {
+.metric-label {
   font-size: 12px;
-  color: rgba(255,255,255,0.6);
+  color: #999;
   max-width: 200px;
 }
 
-.stat-value {
+.metric-number {
   font-family: ui-serif, Georgia, serif;
-  font-size: 72px;
+  font-size: 88px;
+  font-weight: 400;
   line-height: 1;
 }
 
-/* ==========================================================================
-   6. SECURITY SECTION (Dark)
-   ========================================================================== */
-.harvey-security-section {
-  background-color: #121315;
-  padding: 120px 48px;
+/* Security Badges Section */
+.security-badges-section {
+  background-color: #151514; /* Slightly different dark */
+  padding: 140px 24px;
+  color: #fff;
 }
 
-.harvey-security-header {
+.security-header-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1000px;
-  margin: 0 auto 80px;
-  gap: 80px;
+  gap: 64px;
+  max-width: 1200px;
+  margin: 0 auto 96px;
 }
 
-.harvey-security-header h2 {
-  font-size: 28px;
+.security-title {
+  font-size: 32px;
+  font-weight: 400;
 }
 
-.harvey-security-header p {
-  font-size: 12px;
+.security-desc p {
+  color: #999;
+  font-size: 14px;
   line-height: 1.6;
-  color: rgba(255,255,255,0.6);
 }
 
-.harvey-security-grid {
+.btn-outline-light-small {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.security-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 64px 32px;
+  gap: 48px;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
 
-.harvey-badge {
+.security-badge {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 16px;
 }
 
 .badge-icon {
-  margin-bottom: 24px;
-  color: rgba(255,255,255,0.15);
-}
-
-.harvey-badge h4 {
-  font-size: 12px;
-  font-family: 'Inter', system-ui, sans-serif;
-  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.1);
   margin-bottom: 8px;
 }
 
-.badge-link {
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
+.badge-icon svg {
+  width: 64px;
+  height: 64px;
+  stroke-width: 0.5px;
 }
 
-.badge-link:hover {
+.security-badge h4 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.security-badge a {
+  font-size: 10px;
+  color: #666;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.security-badge a:hover {
   color: #fff;
 }
 
-/* ==========================================================================
-   7. CTA FOOTER (Dark)
-   ========================================================================== */
-.harvey-cta-section {
-  background-color: #0b0c0d;
-  padding: 64px 48px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+/* Footer CTA */
+.footer-cta-section {
+  background-color: #0f0f0e;
+  padding: 48px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-.harvey-cta-container {
+.footer-cta-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.harvey-cta-container h2 {
+.footer-cta-title {
+  font-family: ui-serif, Georgia, serif;
   font-size: 24px;
+  font-weight: 400;
+  color: #fff;
 }
 
-/* Responsive */
+.btn-solid-white {
+  background: #fff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 @media (max-width: 1024px) {
-  .harvey-focus-container {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .harvey-focus-list li {
-    font-size: 48px;
-  }
-  .harvey-quote-container {
-    grid-template-columns: 1fr;
-  }
-  .harvey-studies-grid {
-    grid-template-columns: 1fr;
-  }
-  .harvey-security-header {
-    grid-template-columns: 1fr;
-  }
-  .harvey-security-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .fading-text-container { flex-direction: column; }
+  .btn-outline-dark { position: static; transform: none; margin-top: 32px; display: inline-block; }
+  .testimonial-container { flex-direction: column; }
+  .testimonial-image { width: 100%; height: 400px; }
+  .case-studies-grid { grid-template-columns: 1fr; }
+  .metrics-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .metrics-title { text-align: left; }
+  .metric-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .security-header-grid { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-cta-container { flex-direction: column; gap: 24px; text-align: center; }
 }
