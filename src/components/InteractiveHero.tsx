@@ -42,19 +42,6 @@ export default function InteractiveHero() {
         
         <div className="hero-ctas">
           <Link href="/contact" className="btn-waitlist">Request a Demo</Link>
-          <button className="btn-video">
-            <span style={{ 
-              display: 'inline-flex', 
-              alignItems: 'center', 
-              justifyContent: 'center',
-              width: '24px', 
-              height: '24px', 
-              borderRadius: '50%', 
-              background: '#fff', 
-              color: '#000',
-              fontSize: '10px'
-            }}>▶</span> Watch Video
-          </button>
         </div>
       </div>
 
