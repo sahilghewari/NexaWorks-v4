@@ -53,18 +53,14 @@ export default function Home() {
           <p className="editorial-subheadline">
             Advance your expertise on a secure platform that<br/>lets you focus on high-value work.
           </p>
-          <div className="ui-mockup-container">
-            <div className="ui-mockup-sidebar"></div>
-            <div className="ui-mockup-main">
-              <div className="ui-mockup-block" style={{width: '60%'}}></div>
-              <div className="ui-mockup-block" style={{width: '80%'}}></div>
-              <div className="ui-mockup-block" style={{width: '40%'}}></div>
-              
-              <div style={{display: 'flex', gap: '24px', marginTop: '48px'}}>
-                <div className="ui-mockup-box"></div>
-                <div className="ui-mockup-box"></div>
-              </div>
-            </div>
+          <div className="ui-mockup-container" style={{ padding: 0, height: 'auto', border: 'none' }}>
+            <Image 
+              src="/workflow-mockup.jpg"
+              alt="NexaWorks Workflow UI"
+              width={1000}
+              height={562}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
           </div>
         </div>
       </section>
