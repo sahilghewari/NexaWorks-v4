@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import InteractiveHero from "@/components/InteractiveHero";
 import FadingTextCarousel from "@/components/FadingTextCarousel";
+import InteractiveResearchCarousel from "@/components/InteractiveResearchCarousel";
 import GradientMesh from "@/components/GradientMesh";
 import TrustSignals from "@/components/TrustSignals";
 import "./page.css";
@@ -91,35 +92,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="case-studies-section">
-        <div className="case-studies-header">
-          <h2 className="case-studies-title">Real impact for real clients</h2>
-          <Link href="/customers" className="btn-outline-light">See more stories</Link>
-        </div>
-        <div className="case-studies-grid">
-          <div className="case-card">
-            <div className="case-card-overlay"></div>
-            <div className="case-card-content">
-              <h3>Sales teams use NexaWorks for greater deal context across their entire org.</h3>
-              <div className="play-button">▶</div>
-            </div>
-          </div>
-          <div className="case-card">
-            <div className="case-card-overlay"></div>
-            <div className="case-card-content">
-              <h3>NexaWorks helps engineering teams focus on creating the most value.</h3>
-              <div className="play-button">▶</div>
-            </div>
-          </div>
-          <div className="case-card">
-            <div className="case-card-overlay"></div>
-            <div className="case-card-content">
-              <h3>Support groups use NexaWorks to free up time for more meaningful work.</h3>
-              <div className="play-button">▶</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <InteractiveResearchCarousel />
 
       <section className="metrics-section">
         <div className="metrics-container">
