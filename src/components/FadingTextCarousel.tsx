@@ -35,8 +35,8 @@ export default function FadingTextCarousel() {
           <div 
             className="fading-text-track"
             style={{
-              transform: `translateY(calc(-${activeIndex} * 80px + 160px))`
-            }}
+              '--active-index': activeIndex
+            } as React.CSSProperties}
           >
             {items.map((item, index) => {
               // Calculate distance from active index to handle wrapping fading
