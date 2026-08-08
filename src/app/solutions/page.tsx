@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import InteractiveSolutionsHero from '@/components/InteractiveSolutionsHero';
 import TrustSignals from '@/components/TrustSignals';
 import './page.css';
 import '../page.css'; // For footer CTA
@@ -13,25 +14,7 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <main className="solutions-page">
-      <section className="solutions-hero">
-        <div className="solutions-hero-bg">
-          <Image 
-            src="/solutions-hero.jpg" 
-            alt="Glowing data nodes connecting across networks"
-            fill
-            priority
-            style={{ objectFit: 'cover' }}
-          />
-          <div className="solutions-hero-overlay"></div>
-        </div>
-        <div className="solutions-hero-container">
-          <span className="solutions-tag">SOLUTIONS</span>
-          <h1 className="solutions-headline">Context Reconstruction for every team</h1>
-          <p className="solutions-subheadline">
-            Transform how your teams work by delivering precisely the right information, at the right time, tailored to their specific workflow.
-          </p>
-        </div>
-      </section>
+      <InteractiveSolutionsHero />
 
       <div style={{ backgroundColor: '#000', padding: '48px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <TrustSignals />
