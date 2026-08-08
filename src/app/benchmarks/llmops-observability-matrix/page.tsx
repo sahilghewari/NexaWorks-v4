@@ -83,7 +83,7 @@ export default function LLMOpsObservabilityMatrix() {
           <p className="body-md" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
             NexaWorks engineers can audit your agentic tracing stack and transition you to a self-hosted, cost-optimized deployment.
           </p>
-          <button className="btn-primary">Book Architecture Review</button>
+          <Link href="/contact" className="btn-primary">Book Architecture Review</Link>
         </div>
 
       </div>

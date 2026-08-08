@@ -27,7 +27,7 @@ export default function MCPGeneratorPage() {
 
         <div style={{ textAlign: 'center', marginTop: '64px' }}>
            <p className="body-md" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>Require a custom MCP server for a proprietary internal database?</p>
-           <button className="btn-primary">Book Architecture Review</button>
+           <Link href="/contact" className="btn-primary">Book Architecture Review</Link>
         </div>
       </div>
     </main>
