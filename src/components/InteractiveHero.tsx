@@ -7,16 +7,15 @@ import Link from 'next/link';
 export default function InteractiveHero() {
   const [isOn, setIsOn] = useState(false);
 
-  // We generate positions for chaotic documents
+  // We generate positions for chaotic documents to form a swooping curve
   const chaoticDocs = [
-    { top: '20%', left: '10%', rot: -15, delay: '0s' },
-    { top: '60%', left: '35%', rot: 25, delay: '0.5s' },
-    { top: '30%', left: '60%', rot: 5, delay: '1s' },
-    { top: '75%', left: '80%', rot: -20, delay: '1.5s' },
-    { top: '15%', left: '40%', rot: 10, delay: '0.2s' },
-    { top: '80%', left: '20%', rot: -5, delay: '0.8s' },
-    { top: '45%', left: '70%', rot: 30, delay: '1.2s' },
-    { top: '55%', left: '15%', rot: -25, delay: '1.8s' },
+    { top: '75%', left: '5%', rot: -15, delay: '0s' },
+    { top: '60%', left: '20%', rot: 25, delay: '0.5s' },
+    { top: '80%', left: '35%', rot: 5, delay: '1s' },
+    { top: '45%', left: '50%', rot: -20, delay: '1.5s' },
+    { top: '65%', left: '65%', rot: 10, delay: '0.2s' },
+    { top: '30%', left: '75%', rot: -5, delay: '0.8s' },
+    { top: '55%', left: '85%', rot: 30, delay: '1.2s' },
   ];
 
   // For the organized conveyor belt
@@ -35,11 +34,10 @@ export default function InteractiveHero() {
         </div>
         
         <h1 className="hero-headline">
-          Faster Reviews.<br />Stronger Outcomes.
+          Context,<br />Reconstructed.
         </h1>
         <p className="hero-subhead">
-          Context Intelligence accelerates routine reviews, sharpens decisions, 
-          and surfaces portfolio-wide insights that drive the business forward.
+          Stop losing critical information between systems. We deterministically assemble relevant context across your tools and deliver it exactly when you need it.
         </p>
         
         <div className="hero-ctas">
