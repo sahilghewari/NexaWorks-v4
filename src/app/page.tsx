@@ -1,223 +1,184 @@
 import Link from "next/link";
+import Image from "next/image";
+import GradientMesh from "@/components/GradientMesh";
 import TrustSignals from "@/components/TrustSignals";
 import "./page.css";
 
 export const metadata = {
-  title: 'NexaWorks — Context Reconstruction Infrastructure',
-  description: 'NexaWorks eliminates the hours your team spends gathering context before every meeting, deal, and decision.',
+  title: 'NexaWorks — Context, Reconstructed',
+  description: 'NexaWorks eliminates the hours your team spends gathering context before every meeting, deal, and decision. Complete context. Before you ask.',
 };
 
 export default function Home() {
   return (
-    <main className="engineered-layout">
-      {/* 1. HERO SECTION - DRAMATIC TYPOGRAPHY & CONTEXT GRAPH */}
-      <section className="hero-editorial">
-        <div className="container">
-          <div className="hero-typography">
-            <h1 className="hero-headline">
-              Your team spends hours<br/>rebuilding context.
-            </h1>
-            <div className="hero-spacer"></div>
-            <h2 className="hero-punchline">
-              We don't.
-            </h2>
-          </div>
-
-          <div className="context-graph-container">
-            <div className="graph-layer">
-              <svg className="graph-lines" viewBox="0 0 1000 400" preserveAspectRatio="none">
-                <path className="graph-flow delay-1" d="M100,50 L400,180" />
-                <path className="graph-flow delay-2" d="M100,150 L400,200" />
-                <path className="graph-flow delay-3" d="M100,250 L400,220" />
-                <path className="graph-flow delay-4" d="M100,350 L400,240" />
-                
-                <path className="graph-flow-out" d="M600,210 L800,150" />
-                <path className="graph-flow-out" d="M600,210 L800,270" />
-              </svg>
-            </div>
-            
-            <div className="graph-nodes">
-              {/* Inputs */}
-              <div className="graph-col inputs">
-                <div className="node input-node">Slack</div>
-                <div className="node input-node">CRM</div>
-                <div className="node input-node">Email</div>
-                <div className="node input-node">Calendar</div>
-              </div>
-
-              {/* Engine */}
-              <div className="graph-col engine">
-                <div className="node engine-node pulse">
-                  Context Graph
-                  <div className="engine-status">Resolving...</div>
-                </div>
-              </div>
-
-              {/* Outputs */}
-              <div className="graph-col outputs">
-                <div className="node output-node">Evidence</div>
-                <div className="node output-node">Executive Brief</div>
-              </div>
-            </div>
+    <main>
+      <GradientMesh>
+        <section className="hero-section" style={{ paddingTop: '160px' }}>
+          <span className="tag" style={{ border: '1px solid var(--color-primary)', background: 'transparent', boxShadow: '0 0 20px rgba(139, 92, 246, 0.3)' }}>CONTEXT RECONSTRUCTION</span>
+          <h1 className="display-xxl text-gradient" style={{ letterSpacing: '-0.03em', lineHeight: 1.1 }}>
+            Your team spends hours rebuilding context.<br />We end that.
+          </h1>
+          <p className="body-lg" style={{ color: "var(--color-ink-secondary)", marginTop: "32px", maxWidth: "700px", margin: "32px auto 0", fontSize: '20px' }}>
+            NexaWorks automatically reconstructs the context your team needs before every meeting, customer interaction, and decision — so important work starts with clarity, not chaos.
+          </p>
+          <div className="hero-actions">
+            <Link href="/product" className="btn-primary btn-lg" style={{ padding: '16px 36px', fontSize: '18px', boxShadow: '0 8px 32px rgba(139, 92, 246, 0.4)' }}>See How It Works</Link>
+            <Link href="/tools/context-score" className="btn-secondary btn-lg" style={{ padding: '16px 36px', fontSize: '18px', background: 'rgba(255,255,255,0.03)', backdropFilter: 'blur(10px)' }}>Try Context Score</Link>
           </div>
           
-          <div className="hero-actions" style={{ justifyContent: 'center', marginTop: '64px' }}>
-            <Link href="/product" className="btn-primary btn-lg">View Infrastructure</Link>
-            <Link href="/contact" className="btn-secondary btn-lg">Book Architecture Review</Link>
+          <div className="dashboard-hero-wrapper animate-fade-in-up">
+            <Image 
+              src="/dashboard-hero-v2.jpg" 
+              alt="NexaWorks Context Reconstruction Platform UI" 
+              width={1400} 
+              height={787}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+              priority
+            />
+          </div>
+        </section>
+      </GradientMesh>
+
+      <TrustSignals />
+
+      <section className="services-overview">
+        <h2 className="display-xl">The most expensive problem nobody measures</h2>
+        <p className="body-lg services-subtitle">
+          Every knowledge worker rebuilds context before important work. It is invisible, unmeasured, and costs enterprises millions.
+        </p>
+        <div className="grid-3">
+          <div className="service-card">
+            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>23 min</div>
+            <h3 className="heading-md">Lost Per Context Switch</h3>
+            <p className="body-md">Average time to regain deep focus after switching between tasks, tools, or conversations.</p>
+          </div>
+          <div className="service-card">
+            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>58%</div>
+            <h3 className="heading-md">Of the Day Spent Gathering</h3>
+            <p className="body-md">Knowledge workers spend more than half their time searching for information — not using it.</p>
+          </div>
+          <div className="service-card">
+            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>$15K+</div>
+            <h3 className="heading-md">Per Employee Per Year</h3>
+            <p className="body-md">The hidden cost of context reconstruction that never appears on any operational dashboard.</p>
           </div>
         </div>
       </section>
 
-      {/* 2. NARROW QUOTE / TRUST (Rhythm Break) */}
-      <section className="quote-section">
-        <div className="container" style={{ maxWidth: '800px' }}>
-          <p className="editorial-quote">
-            "The most expensive problem in the enterprise is invisible. It's the 23 minutes lost every time an employee switches contexts to find a document."
-          </p>
-          <div style={{ marginTop: '64px' }}>
-            <TrustSignals />
+      <section className="services-overview" style={{ background: 'var(--color-canvas)' }}>
+        <h2 className="display-xl">Context, reconstructed.</h2>
+        <p className="body-lg services-subtitle">
+          Three capabilities. One outcome: your team never starts important work blind.
+        </p>
+        <div className="grid-3">
+          <div className="service-card">
+            <div className="service-icon">📡</div>
+            <h3 className="heading-md">Capture</h3>
+            <p className="body-md">We passively capture context across your existing tools — meetings, emails, documents, CRM — without adding bots or changing workflows.</p>
+          </div>
+          <div className="service-card">
+            <div className="service-icon">🧠</div>
+            <h3 className="heading-md">Reconstruct</h3>
+            <p className="body-md">Our AI reconstructs the complete context relevant to your next action — pulling the right information from the right sources at the right time.</p>
+          </div>
+          <div className="service-card">
+            <div className="service-icon">📋</div>
+            <h3 className="heading-md">Deliver</h3>
+            <p className="body-md">Your team receives a complete Context Brief before every meeting, deal review, or decision — so they start with clarity from minute one.</p>
           </div>
         </div>
       </section>
 
-      {/* 3. FULL BLEED BRIEF MOCKUP */}
-      <section className="bleeding-output-section">
-        <div className="output-header container">
-          <h2 className="display-lg">The final output.</h2>
-          <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', maxWidth: '600px', marginTop: '16px' }}>
-            We push synthesized intelligence directly into your workflow at the exact moment you need it. No prompting required.
-          </p>
-        </div>
-        
-        <div className="brief-mockup-bleeding">
-          <div className="brief-header">
-            <span className="mono-badge">GENERATED: -5m</span>
-            <span className="mono-badge">CONFIDENCE: 98%</span>
-            <span className="mono-badge" style={{ marginLeft: 'auto' }}>PIPELINE: SALES_DISCOVERY</span>
+      <section className="why-section">
+        <div className="why-container">
+          <div className="why-content">
+            <h2 className="display-xl">Built on production-grade AI infrastructure</h2>
+            <p className="body-lg">
+              Context Reconstruction is powered by the same deterministic AI architectures trusted by Fortune 500 enterprises. Every retrieval is validated. Every output is auditable. Every system is engineered for 24/7 autonomous operation.
+            </p>
+            <Link href="/contact" className="btn-primary">Book architecture review</Link>
           </div>
-          <div className="brief-body">
-            <div className="brief-grid">
-              <div className="data-point">
-                <div className="data-label">Customer</div>
-                <div className="data-value">Acme Inc.</div>
-              </div>
-              <div className="data-point">
-                <div className="data-label">Event</div>
-                <div className="data-value">Renewal (34 days)</div>
-              </div>
-              <div className="data-point">
-                <div className="data-label">Health Score</div>
-                <div className="data-value" style={{color: 'var(--color-ruby)'}}>78 (At Risk)</div>
-              </div>
-              <div className="data-point">
-                <div className="data-label">Open Risks</div>
-                <div className="data-value">3</div>
-              </div>
+          <div className="why-stats">
+            <div className="stat-card">
+              <div className="display-lg">96%</div>
+              <div className="caption">Context accuracy</div>
             </div>
-            <div className="brief-divider"></div>
-            <div className="brief-timeline">
-              <div className="timeline-item">
-                <div className="timeline-time">Yesterday</div>
-                <div className="timeline-desc">
-                  <strong style={{ display: 'block', marginBottom: '4px' }}>Support Escalation</strong>
-                  Critical bug in API integration reported by Acme CTO. Engineering team flagged as high priority.
-                </div>
-              </div>
-              <div className="timeline-item">
-                <div className="timeline-time">2 Days Ago</div>
-                <div className="timeline-desc">
-                  <strong style={{ display: 'block', marginBottom: '4px' }}>Email Exchange</strong>
-                  Acme CFO requested contract downgrade options from Account Executive.
-                </div>
-              </div>
+            <div className="stat-card">
+              <div className="display-lg">97×</div>
+              <div className="caption">Token cost reduction</div>
             </div>
-            <div className="brief-divider"></div>
-            <div className="brief-action">
-              <div className="data-label">Recommended Talking Points</div>
-              <ul className="action-list">
-                <li>Acknowledge API bug immediately; provide ETA from engineering.</li>
-                <li>Offer 3-month grace period on current contract tier to prevent immediate churn.</li>
-              </ul>
+            <div className="stat-card">
+              <div className="display-lg">&lt;2s</div>
+              <div className="caption">Brief generation time</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. FULL-WIDTH ARCHITECTURE (Dark Section) */}
-      <section className="architecture-dark-section">
-        <div className="container">
-          <div className="architecture-grid">
-            <div className="arch-text">
-              <h2 className="display-lg">Engineered for deterministic retrieval.</h2>
-              <p className="body-md" style={{ marginTop: '16px', marginBottom: '24px', color: 'var(--color-ink-mute-2)' }}>
-                LLMs are probabilistic. Enterprise data is deterministic. Our architecture bridges this gap using Model Context Protocol (MCP) and GraphRAG to guarantee factual accuracy across isolated systems.
-              </p>
-              <Link href="/architecture" className="link-arrow" style={{ color: 'var(--color-on-primary)' }}>Read the Architecture Docs</Link>
-            </div>
-            <div className="arch-diagram">
-              <pre className="diagram-pre">
-{`[Context Engine]
-██████████████████
-
-├── [17 Systems]
-│    ↓
-├── [Graph Node Resolution]
-│    ↓
-├── [Multi-Hop Reasoning]
-│    ↓
-└── [Evidence Citation]
-     ↓
-[Executive Brief]`}
-              </pre>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* 5. INDUSTRIES (Minimalist Icons) */}
-      <section className="industries-minimal-section">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h2 className="heading-lg" style={{ marginBottom: '64px' }}>Context Reconstruction for every workflow</h2>
-          <div className="industries-grid">
-            <div className="industry-item">
-              <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
-              </svg>
-              <h3 className="heading-md">Sales Teams</h3>
-              <p className="body-md" style={{ color: 'var(--color-ink-secondary)' }}>Complete customer history, deal context, and timeline.</p>
-            </div>
-            <div className="industry-item">
-              <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
-              </svg>
-              <h3 className="heading-md">Clinical Teams</h3>
-              <p className="body-md" style={{ color: 'var(--color-ink-secondary)' }}>Patient history and clinical notes for seamless handoffs.</p>
-            </div>
-            <div className="industry-item">
-              <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
-              </svg>
-              <h3 className="heading-md">Finance Teams</h3>
-              <p className="body-md" style={{ color: 'var(--color-ink-secondary)' }}>Invoice context and vendor history for AP research.</p>
-            </div>
-            <div className="industry-item">
-              <svg className="industry-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />
-              </svg>
-              <h3 className="heading-md">Legal Teams</h3>
-              <p className="body-md" style={{ color: 'var(--color-ink-secondary)' }}>Contract history and regulatory context instantly.</p>
+            <div className="stat-card">
+              <div className="display-lg">Zero</div>
+              <div className="caption">Workflow disruption</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. CTA */}
-      <section className="dense-cta">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h2 className="display-md">Ready to deploy?</h2>
-          <div className="cta-actions">
-            <Link href="/contact" className="btn-primary">Book Architecture Review</Link>
-            <Link href="/research" className="btn-secondary">View Benchmarks</Link>
+      <section className="services-overview">
+        <h2 className="display-xl">We don't just build the product. We define the category.</h2>
+        <p className="body-lg services-subtitle">
+          NexaWorks publishes original research on context loss, AI retrieval accuracy, and workflow intelligence.
+        </p>
+        <div className="grid-3">
+          <div className="service-card">
+            <div className="service-icon">📊</div>
+            <h3 className="heading-md">State of Enterprise AI 2026</h3>
+            <p className="body-md">Our annual report on the collapse of traditional search and the rise of Generative Engine Optimization.</p>
+            <Link href="/research/state-of-enterprise-ai-2026" className="link-arrow">Read the report →</Link>
+          </div>
+          <div className="service-card">
+            <div className="service-icon">🔬</div>
+            <h3 className="heading-md">Document AI Benchmarks</h3>
+            <p className="body-md">Head-to-head comparison of Claude 3.5 Sonnet vs GPT-4o on FUNSD extraction datasets.</p>
+            <Link href="/benchmarks/document-ai" className="link-arrow">View benchmarks →</Link>
+          </div>
+          <div className="service-card">
+            <div className="service-icon">🛡️</div>
+            <h3 className="heading-md">Security Trust Center</h3>
+            <p className="body-md">How we mitigate the OWASP Top 10 for LLM Applications with deterministic guardrails.</p>
+            <Link href="/security" className="link-arrow">View security →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="industries-section">
+        <h2 className="display-xl">Context Reconstruction for every workflow</h2>
+        <div className="grid-4">
+          <div className="card service-card">
+            <div className="service-icon">🏦</div>
+            <h3 className="heading-md">Sales Teams</h3>
+            <p className="body-md">Complete customer history, deal context, and relationship timeline — assembled before every call.</p>
+          </div>
+          <div className="card service-card">
+            <div className="service-icon">🏥</div>
+            <h3 className="heading-md">Clinical Teams</h3>
+            <p className="body-md">Patient history, prior interactions, and clinical notes — reconstructed for seamless handoffs.</p>
+          </div>
+          <div className="card service-card">
+            <div className="service-icon">🏢</div>
+            <h3 className="heading-md">Finance Teams</h3>
+            <p className="body-md">Invoice context, vendor history, and approval chains — eliminating manual AP research.</p>
+          </div>
+          <div className="card service-card">
+            <div className="service-icon">⚖️</div>
+            <h3 className="heading-md">Legal Teams</h3>
+            <p className="body-md">Contract history, clause precedents, and regulatory context — reducing review preparation by hours.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="cta-section">
+        <div className="cta-content">
+          <h2 className="display-xl">Ready to eliminate context loss?</h2>
+          <p className="body-lg">Start with a free diagnostic or book an architecture review with our engineering team.</p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link href="/contact" className="btn-on-dark-inverse">Book Architecture Review</Link>
+            <Link href="/research" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>Read the Research</Link>
           </div>
         </div>
       </section>
