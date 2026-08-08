@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import InteractiveHero from "@/components/InteractiveHero";
+import FadingTextCarousel from "@/components/FadingTextCarousel";
 import GradientMesh from "@/components/GradientMesh";
 import TrustSignals from "@/components/TrustSignals";
 import "./page.css";
@@ -65,23 +67,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="fading-text-section">
-        <div className="fading-text-container">
-          <div className="fading-text-left">
-            <span className="tiny-label">The top enterprise teams<br/>use NexaWorks for</span>
-          </div>
-          <div className="fading-text-right">
-            <h3 className="fading-item muted">Context Switching</h3>
-            <h3 className="fading-item muted">Scattered Information</h3>
-            <h3 className="fading-item active">Lost Meeting Context</h3>
-            <h3 className="fading-item muted">Siloed Knowledge</h3>
-            <h3 className="fading-item muted">Data Duplication</h3>
-          </div>
-          <div className="fading-btn-wrapper">
-             <Link href="/product" className="btn-outline-dark">Explore Platform</Link>
-          </div>
-        </div>
-      </section>
+      <FadingTextCarousel />
 
       <section className="testimonial-section">
         <div className="testimonial-container">

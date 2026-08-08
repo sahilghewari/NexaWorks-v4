@@ -204,74 +204,7 @@
   border: 1px dashed #ddd;
 }
 
-/* Fading Text Section */
-.fading-text-section {
-  background-color: #f6f6f5;
-  padding: 100px 24px 180px;
-}
-
-.fading-text-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-}
-
-.fading-text-left {
-  flex: 1;
-  padding-top: 24px;
-}
-
-.tiny-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #666;
-  font-weight: 600;
-}
-
-.fading-text-right {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.fading-item {
-  font-family: ui-serif, Georgia, serif;
-  font-size: 64px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  transition: color 0.3s ease;
-}
-
-.fading-item.muted {
-  color: #dcdcd9;
-}
-
-.fading-item.active {
-  color: #111;
-}
-
-.btn-outline-dark {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 1px solid #111;
-  color: #111;
-  padding: 12px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: all 0.2s;
-}
-
-.btn-outline-dark:hover {
-  background: #111;
-  color: #fff;
-}
+/* Old Fading Text section styles removed */
 
 /* Testimonial Section */
 .testimonial-section {
