@@ -35,11 +35,12 @@ export default function Home() {
         
         <div className="cinematic-bottom-bar">
           <div className="container bottom-bar-inner">
-             <span className="logo-text">CMS</span>
-             <span className="logo-text">CUATRECASAS</span>
-             <span className="logo-text">MERCK</span>
-             <span className="logo-text">HENGELER MUELLER</span>
-             <Link href="/customers" className="customers-link">Our Customers</Link>
+             <span className="logo-text" style={{ opacity: 0.6, fontSize: '12px' }}>INTEGRATES WITH:</span>
+             <span className="logo-text">SALESFORCE</span>
+             <span className="logo-text">SLACK</span>
+             <span className="logo-text">JIRA</span>
+             <span className="logo-text">ZENDESK</span>
+             <Link href="/integrations" className="customers-link">View All Integrations</Link>
           </div>
         </div>
       </section>
