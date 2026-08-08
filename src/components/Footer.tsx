@@ -68,13 +68,13 @@ export default function Footer() {
         <div className="footer-bottom">
           <p className="caption">© 2026 NexaWorks. All rights reserved.</p>
           <div className="footer-socials">
-            <a href="https://github.com/nexaworks" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/nexaworks-technology" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               GitHub
             </a>
-            <a href="https://linkedin.com/company/nexaworks" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/nexaworks-tech" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               LinkedIn
             </a>
-            <a href="https://twitter.com/nexaworks" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <a href="https://x.com/NexaWorksAI" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               Twitter
             </a>
           </div>
