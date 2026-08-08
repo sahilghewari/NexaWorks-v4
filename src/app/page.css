@@ -274,19 +274,19 @@
   background: #fff;
   color: #000;
 }
-/* Metrics List Section */
-.metrics-section {
+/* Comparison Section */
+.comparison-section {
   background-color: #0f0f0e;
   padding: 96px 24px 140px;
   color: #fff;
 }
 
-.metrics-container {
+.comparison-container {
   max-width: 1000px;
   margin: 0 auto;
 }
 
-.metrics-header {
+.comparison-header {
   border-bottom: 1px solid rgba(255,255,255,0.1);
   padding-bottom: 32px;
   margin-bottom: 32px;
@@ -295,43 +295,60 @@
   align-items: flex-end;
 }
 
-.metrics-logos span {
+.comparison-logos span {
   font-size: 10px;
   color: #666;
-  margin: 0 12px;
+  margin: 0 12px 0 0;
+  letter-spacing: 0.1em;
 }
 
-.metrics-title {
+.comparison-title {
   font-size: 20px;
   font-weight: 400;
   text-align: right;
   line-height: 1.4;
 }
 
-.metrics-list {
+.comparison-list {
   display: flex;
   flex-direction: column;
 }
 
-.metric-row {
+.comparison-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 0;
+  padding: 48px 0;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.metric-label {
-  font-size: 12px;
+.comparison-label {
+  font-size: 14px;
   color: #999;
   max-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.metric-number {
+.comparison-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.comparison-value {
   font-family: ui-serif, Georgia, serif;
-  font-size: 88px;
+  font-size: 56px;
   font-weight: 400;
-  line-height: 1;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.comparison-subtext {
+  font-size: 14px;
+  color: #a0a09f;
+  margin-top: 12px;
 }
 
 /* Security Badges Section */
@@ -453,9 +470,13 @@
 @media (max-width: 1024px) {
   .testimonial-container { flex-direction: column; }
   .testimonial-image { width: 100%; height: 400px; }
-  .metrics-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-  .metrics-title { text-align: left; }
-  .metric-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+  
+  .comparison-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .comparison-title { text-align: left; }
+  .comparison-row { flex-direction: column; align-items: flex-start; gap: 16px; padding: 32px 0; }
+  .comparison-content-right { align-items: flex-start; text-align: left; }
+  .comparison-value { font-size: 40px; }
+  
   .security-header-grid { grid-template-columns: 1fr; }
   .security-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-cta-container { flex-direction: column; gap: 24px; text-align: center; }

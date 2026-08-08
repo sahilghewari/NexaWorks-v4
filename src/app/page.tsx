@@ -94,30 +94,42 @@ export default function Home() {
 
       <InteractiveResearchCarousel />
 
-      <section className="metrics-section">
-        <div className="metrics-container">
-          <div className="metrics-header">
-            <div className="metrics-logos">
-              <span>SALESFORCE</span> | <span>SLACK</span> | <span>ZENDESK</span> | <span>JIRA</span>
+      <section className="comparison-section">
+        <div className="comparison-container">
+          <div className="comparison-header">
+            <div className="comparison-logos">
+              <span>VS ENTERPRISE SEARCH</span> | <span>VS LLM CHATBOTS</span> | <span>VS CUSTOM RAG</span>
             </div>
-            <h2 className="metrics-title">Helping teams stay focused<br/>and see measurable results</h2>
+            <h2 className="comparison-title">Why the world's most demanding<br/>teams choose NexaWorks</h2>
           </div>
-          <div className="metrics-list">
-            <div className="metric-row">
-              <span className="metric-label">Average hours saved per month</span>
-              <span className="metric-number">25+</span>
+          <div className="comparison-list">
+            <div className="comparison-row">
+              <span className="comparison-label">Legacy Enterprise Search</span>
+              <div className="comparison-content-right">
+                <span className="comparison-value">10+ blue links.</span>
+                <span className="comparison-subtext">NexaWorks synthesizes a single, deterministic answer.</span>
+              </div>
             </div>
-            <div className="metric-row">
-              <span className="metric-label">Professionals using NexaWorks</span>
-              <span className="metric-number">200,000+</span>
+            <div className="comparison-row">
+              <span className="comparison-label">Generic LLM Chatbots</span>
+              <div className="comparison-content-right">
+                <span className="comparison-value">Probabilistic & hallucinates.</span>
+                <span className="comparison-subtext">NexaWorks routes deterministically with 99.9% accuracy.</span>
+              </div>
             </div>
-            <div className="metric-row">
-              <span className="metric-label">Enterprise teams using NexaWorks</span>
-              <span className="metric-number">2,400+</span>
+            <div className="comparison-row">
+              <span className="comparison-label">Custom LangChain / RAG</span>
+              <div className="comparison-content-right">
+                <span className="comparison-value">Months to build.</span>
+                <span className="comparison-subtext">NexaWorks deploys in days with out-of-the-box integrations.</span>
+              </div>
             </div>
-            <div className="metric-row">
-              <span className="metric-label">Countries NexaWorks is used in</span>
-              <span className="metric-number">70+</span>
+            <div className="comparison-row">
+              <span className="comparison-label">Traditional RPA</span>
+              <div className="comparison-content-right">
+                <span className="comparison-value">Brittle & rules-based.</span>
+                <span className="comparison-subtext">NexaWorks adapts to unstructured data dynamically.</span>
+              </div>
             </div>
           </div>
         </div>
