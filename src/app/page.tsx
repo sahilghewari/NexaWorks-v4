@@ -137,9 +137,9 @@ export default function Home() {
 
       <section className="security-badges-section">
         <div className="security-header-grid">
-          <h2 className="security-title">Enterprise-grade<br/>security and controls</h2>
+          <h2 className="security-title">Enterprise-grade<br/>architecture and controls</h2>
           <div className="security-desc">
-            <p>NexaWorks meets the highest industry standards for security and compliance. We include all default controls that enterprise teams expect: SAML SSO, audit logs, IP allow-listing, data lifecycle management, and more.</p>
+            <p>NexaWorks is engineered from the ground up for the world's most demanding enterprises. Built natively on secure AWS and Google Cloud infrastructure, we provide the foundational controls your security team requires.</p>
             <div style={{marginTop: '24px'}}>
                <Link href="/security" className="btn-outline-light-small">More About Security</Link>
             </div>
@@ -150,29 +150,29 @@ export default function Home() {
             <div className="badge-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
             </div>
-            <h4>SOC2 Type II</h4>
-            <Link href="/security">Details ↗</Link>
+            <h4>Zero Data Retention</h4>
+            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>No Model Training</span>
           </div>
           <div className="security-badge">
             <div className="badge-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
             </div>
-            <h4>CCPA</h4>
-            <Link href="/security">Details ↗</Link>
+            <h4>End-to-End Encryption</h4>
+            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>AES-256 & TLS 1.3</span>
           </div>
           <div className="security-badge">
             <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
             </div>
-            <h4>ISO 27001</h4>
-            <Link href="/security">Details ↗</Link>
+            <h4>SSO & Role-Based Access</h4>
+            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SAML Ready</span>
           </div>
           <div className="security-badge">
             <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
             </div>
-            <h4>GDPR</h4>
-            <Link href="/security">Details ↗</Link>
+            <h4>Cloud-Native Infrastructure</h4>
+            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>AWS & Google Cloud</span>
           </div>
         </div>
       </section>
