@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import ProductInteractiveHero from '@/components/ProductInteractiveHero';
+import InteractiveHero from '@/components/InteractiveHero';
 
 export const metadata: Metadata = {
   title: 'How Context Reconstruction Works | NexaWorks',
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function ProductPage() {
   return (
-    <main>
-      <ProductInteractiveHero />
+    <main style={{ backgroundColor: '#000' }}>
+      <InteractiveHero />
 
       <section className="section" style={{ background: 'var(--color-canvas)' }}>
         <div className="container" style={{ maxWidth: '1000px' }}>
