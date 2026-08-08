@@ -23,10 +23,10 @@ export default function Home() {
         <div className="cinematic-overlay"></div>
         <div className="cinematic-content">
           <h1 className="cinematic-headline">
-            Practice<br />Made Perfect.
+            Never start a<br />meeting blind.
           </h1>
           <p className="cinematic-subheadline">
-            Today's top enterprise teams trust NexaWorks to eliminate context loss, navigate complexity, and start important work with clarity.
+            NexaWorks automatically gathers the information you need from all your apps, so you can focus on the work—not the search.
           </p>
           <div style={{ marginTop: '48px' }}>
             <Link href="/contact" className="cinematic-btn">Request a Demo</Link>
@@ -45,49 +45,49 @@ export default function Home() {
       </section>
 
       <section className="services-overview">
-        <h2 className="display-xl">The most expensive problem nobody measures</h2>
+        <h2 className="display-xl">Stop wasting hours digging for information</h2>
         <p className="body-lg services-subtitle">
-          Every knowledge worker rebuilds context before important work. It is invisible, unmeasured, and costs enterprises millions.
+          Your team spends more time searching for answers across scattered tools than actually doing the work.
         </p>
         <div className="grid-3">
           <div className="service-card">
-            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>23 min</div>
-            <h3 className="heading-md">Lost Per Context Switch</h3>
-            <p className="body-md">Average time to regain deep focus after switching between tasks, tools, or conversations.</p>
+            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>1 hour</div>
+            <h3 className="heading-md">Lost Every Day</h3>
+            <p className="body-md">The average employee wastes at least an hour daily just looking for the right documents and chat messages.</p>
           </div>
           <div className="service-card">
-            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>58%</div>
-            <h3 className="heading-md">Of the Day Spent Gathering</h3>
-            <p className="body-md">Knowledge workers spend more than half their time searching for information — not using it.</p>
+            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>10+ Apps</div>
+            <h3 className="heading-md">Scattered Context</h3>
+            <p className="body-md">Information is siloed across emails, Slack, CRMs, and tickets. Finding the full story is almost impossible.</p>
           </div>
           <div className="service-card">
-            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>$15K+</div>
-            <h3 className="heading-md">Per Employee Per Year</h3>
-            <p className="body-md">The hidden cost of context reconstruction that never appears on any operational dashboard.</p>
+            <div className="service-icon" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--color-primary)' }}>Endless</div>
+            <h3 className="heading-md">Context Switching</h3>
+            <p className="body-md">Jumping between tabs drains focus and energy, causing your best people to burn out faster.</p>
           </div>
         </div>
       </section>
 
       <section className="services-overview" style={{ background: 'var(--color-canvas)' }}>
-        <h2 className="display-xl">Context, reconstructed.</h2>
+        <h2 className="display-xl">How NexaWorks makes it simple</h2>
         <p className="body-lg services-subtitle">
-          Three capabilities. One outcome: your team never starts important work blind.
+          We bring everything you need into one clear, easy-to-read summary.
         </p>
         <div className="grid-3">
           <div className="service-card">
-            <div className="service-icon">📡</div>
-            <h3 className="heading-md">Capture</h3>
-            <p className="body-md">We passively capture context across your existing tools — meetings, emails, documents, CRM — without adding bots or changing workflows.</p>
+            <div className="service-icon">🔗</div>
+            <h3 className="heading-md">1. Connect Your Apps</h3>
+            <p className="body-md">Securely link the tools you already use every day—like Slack, Salesforce, Jira, and Google Workspace.</p>
           </div>
           <div className="service-card">
             <div className="service-icon">🧠</div>
-            <h3 className="heading-md">Reconstruct</h3>
-            <p className="body-md">Our AI reconstructs the complete context relevant to your next action — pulling the right information from the right sources at the right time.</p>
+            <h3 className="heading-md">2. AI Reconstructs the Story</h3>
+            <p className="body-md">Our AI reads through the scattered messages and documents to instantly understand what's going on.</p>
           </div>
           <div className="service-card">
-            <div className="service-icon">📋</div>
-            <h3 className="heading-md">Deliver</h3>
-            <p className="body-md">Your team receives a complete Context Brief before every meeting, deal review, or decision — so they start with clarity from minute one.</p>
+            <div className="service-icon">📄</div>
+            <h3 className="heading-md">3. Get a Context Brief</h3>
+            <p className="body-md">Before your next meeting or task, you receive a single, easy-to-read page with everything you need to know.</p>
           </div>
         </div>
       </section>
@@ -95,93 +95,93 @@ export default function Home() {
       <section className="why-section">
         <div className="why-container">
           <div className="why-content">
-            <h2 className="display-xl">Built on production-grade AI infrastructure</h2>
+            <h2 className="display-xl">Enterprise security you can trust</h2>
             <p className="body-lg">
-              Context Reconstruction is powered by the same deterministic AI architectures trusted by Fortune 500 enterprises. Every retrieval is validated. Every output is auditable. Every system is engineered for 24/7 autonomous operation.
+              We know how important your business data is. That's why NexaWorks is built with strict privacy controls, complete audit logs, and a guarantee that we never use your private data to train our AI models.
             </p>
-            <Link href="/contact" className="btn-primary">Book architecture review</Link>
+            <Link href="/security" className="btn-primary">View Security Center</Link>
           </div>
           <div className="why-stats">
             <div className="stat-card">
-              <div className="display-lg">96%</div>
-              <div className="caption">Context accuracy</div>
-            </div>
-            <div className="stat-card">
-              <div className="display-lg">97×</div>
-              <div className="caption">Token cost reduction</div>
-            </div>
-            <div className="stat-card">
-              <div className="display-lg">&lt;2s</div>
-              <div className="caption">Brief generation time</div>
+              <div className="display-lg">100%</div>
+              <div className="caption">Data privacy</div>
             </div>
             <div className="stat-card">
               <div className="display-lg">Zero</div>
-              <div className="caption">Workflow disruption</div>
+              <div className="caption">Model training on your data</div>
+            </div>
+            <div className="stat-card">
+              <div className="display-lg">SOC2</div>
+              <div className="caption">Compliant infrastructure</div>
+            </div>
+            <div className="stat-card">
+              <div className="display-lg">Strict</div>
+              <div className="caption">Role-based access controls</div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="services-overview">
-        <h2 className="display-xl">We don't just build the product. We define the category.</h2>
+        <h2 className="display-xl">Learn how it works</h2>
         <p className="body-lg services-subtitle">
-          NexaWorks publishes original research on context loss, AI retrieval accuracy, and workflow intelligence.
+          Explore our guides to see exactly how NexaWorks can save your team hours every week.
         </p>
         <div className="grid-3">
           <div className="service-card">
-            <div className="service-icon">📊</div>
-            <h3 className="heading-md">State of Enterprise AI 2026</h3>
-            <p className="body-md">Our annual report on the collapse of traditional search and the rise of Generative Engine Optimization.</p>
-            <Link href="/research/state-of-enterprise-ai-2026" className="link-arrow">Read the report →</Link>
+            <div className="service-icon">🚀</div>
+            <h3 className="heading-md">For Sales Teams</h3>
+            <p className="body-md">See how reps instantly catch up on client history before the big pitch without digging through Salesforce.</p>
+            <Link href="/context/enterprise-sales-discovery" className="link-arrow">Read the guide →</Link>
           </div>
           <div className="service-card">
-            <div className="service-icon">🔬</div>
-            <h3 className="heading-md">Document AI Benchmarks</h3>
-            <p className="body-md">Head-to-head comparison of Claude 3.5 Sonnet vs GPT-4o on FUNSD extraction datasets.</p>
-            <Link href="/benchmarks/document-ai" className="link-arrow">View benchmarks →</Link>
+            <div className="service-icon">🎧</div>
+            <h3 className="heading-md">For Customer Support</h3>
+            <p className="body-md">Learn how agents know exactly what a customer has already tried before they even say hello.</p>
+            <Link href="/context/sev1-incident-response" className="link-arrow">Read the guide →</Link>
           </div>
           <div className="service-card">
-            <div className="service-icon">🛡️</div>
-            <h3 className="heading-md">Security Trust Center</h3>
-            <p className="body-md">How we mitigate the OWASP Top 10 for LLM Applications with deterministic guardrails.</p>
-            <Link href="/security" className="link-arrow">View security →</Link>
+            <div className="service-icon">💻</div>
+            <h3 className="heading-md">For Engineering</h3>
+            <p className="body-md">Discover how we summarize a week of scattered Slack debates into one clear Jira ticket.</p>
+            <Link href="/context/engineering-handoff" className="link-arrow">Read the guide →</Link>
           </div>
         </div>
       </section>
 
       <section className="industries-section">
-        <h2 className="display-xl">Context Reconstruction for every workflow</h2>
+        <h2 className="display-xl">Built for every fast-moving team</h2>
         <div className="grid-4">
           <div className="card service-card">
-            <div className="service-icon">🏦</div>
-            <h3 className="heading-md">Sales Teams</h3>
-            <p className="body-md">Complete customer history, deal context, and relationship timeline — assembled before every call.</p>
+            <div className="service-icon">📈</div>
+            <h3 className="heading-md">Sales</h3>
+            <p className="body-md">Get full account history and relationship timelines assembled for you before every call.</p>
           </div>
           <div className="card service-card">
             <div className="service-icon">🏥</div>
-            <h3 className="heading-md">Clinical Teams</h3>
-            <p className="body-md">Patient history, prior interactions, and clinical notes — reconstructed for seamless handoffs.</p>
+            <h3 className="heading-md">Clinical</h3>
+            <p className="body-md">Patient histories and prior clinical notes brought together for seamless, safe handoffs.</p>
           </div>
           <div className="card service-card">
-            <div className="service-icon">🏢</div>
-            <h3 className="heading-md">Finance Teams</h3>
-            <p className="body-md">Invoice context, vendor history, and approval chains — eliminating manual AP research.</p>
+            <div className="service-icon">💼</div>
+            <h3 className="heading-md">Finance</h3>
+            <p className="body-md">Vendor history, invoice context, and approval chains grouped instantly for quick decisions.</p>
           </div>
           <div className="card service-card">
             <div className="service-icon">⚖️</div>
-            <h3 className="heading-md">Legal Teams</h3>
-            <p className="body-md">Contract history, clause precedents, and regulatory context — reducing review preparation by hours.</p>
+            <h3 className="heading-md">Legal</h3>
+            <p className="body-md">Contract precedents and clause history delivered to you, cutting review preparation by hours.</p>
           </div>
         </div>
       </section>
 
       <section className="cta-section">
         <div className="cta-content">
-          <h2 className="display-xl">Ready to eliminate context loss?</h2>
-          <p className="body-lg">Start with a free diagnostic or book an architecture review with our engineering team.</p>
+          <h2 className="display-xl">Ready to stop searching?</h2>
+          <p className="body-lg">Get started today and give your team the gift of complete clarity.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-on-dark-inverse">Book Architecture Review</Link>
-            <Link href="/research" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>Read the Research</Link>
+            <Link href="/contact" className="btn-on-dark-inverse">Request a Demo</Link>
+            <Link href="/product" className="btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>See How It Works</Link>
           </div>
         </div>
       </section>
