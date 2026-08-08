@@ -548,8 +548,6 @@
 }
 
 @media (max-width: 1024px) {
-  .fading-text-container { flex-direction: column; }
-  .btn-outline-dark { position: static; transform: none; margin-top: 32px; display: inline-block; }
   .testimonial-container { flex-direction: column; }
   .testimonial-image { width: 100%; height: 400px; }
   .case-studies-grid { grid-template-columns: 1fr; }
