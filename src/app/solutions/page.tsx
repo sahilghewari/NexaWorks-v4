@@ -16,8 +16,8 @@ export default function SolutionsPage() {
     <main className="solutions-page">
       <InteractiveSolutionsHero />
 
-      <div style={{ backgroundColor: '#0d0d0d' }}>
-        <TrustSignals theme="dark" />
+      <div style={{ backgroundColor: '#000', padding: '48px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <TrustSignals />
       </div>
 
       <section className="staggered-section">
