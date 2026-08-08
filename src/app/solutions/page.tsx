@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import TrustSignals from '@/components/TrustSignals';
 import './page.css';
 import '../page.css'; // For footer CTA
@@ -13,6 +14,16 @@ export default function SolutionsPage() {
   return (
     <main className="solutions-page">
       <section className="solutions-hero">
+        <div className="solutions-hero-bg">
+          <Image 
+            src="/solutions-hero.jpg" 
+            alt="Glowing data nodes connecting across networks"
+            fill
+            priority
+            style={{ objectFit: 'cover' }}
+          />
+          <div className="solutions-hero-overlay"></div>
+        </div>
         <div className="solutions-hero-container">
           <span className="solutions-tag">SOLUTIONS</span>
           <h1 className="solutions-headline">Context Reconstruction for every team</h1>
