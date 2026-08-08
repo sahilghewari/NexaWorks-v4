@@ -72,15 +72,21 @@ export default function Home() {
       <section className="testimonial-section">
         <div className="testimonial-container">
           <div className="testimonial-image">
-             <div className="placeholder-avatar"></div>
+            <Image 
+              src="/trust-visual.jpg" 
+              alt="NexaWorks Secure Core" 
+              width={800} 
+              height={800} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+            />
           </div>
           <div className="testimonial-content">
-            <p className="testimonial-quote">"What we have seen with NexaWorks is by far the most successful firm technology adoption story I have ever been a part of."</p>
+            <p className="testimonial-quote">"NexaWorks is engineered from the ground up for the world's most demanding enterprises. Security, absolute data privacy, and deterministic routing are not afterthoughts—they are our foundation."</p>
             <div className="testimonial-author">
-              <strong>Rich Robbins</strong><br/>
-              Director of Applied Artificial Intelligence
+              <strong>Enterprise-Grade Security</strong><br/>
+              SOC2 COMPLIANT • END-TO-END ENCRYPTION
             </div>
-            <div className="testimonial-logo">REED SMITH</div>
+            <div className="testimonial-logo">ZERO DATA RETENTION</div>
           </div>
         </div>
       </section>
