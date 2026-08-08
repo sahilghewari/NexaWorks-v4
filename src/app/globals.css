@@ -47,57 +47,58 @@ select {
    ========================================================================== */
 
 :root {
-  /* Colors */
-  --color-primary: #533afd;
-  --color-primary-deep: #4434d4;
-  --color-primary-press: #2e2b8c;
-  --color-primary-soft: #665efd;
-  --color-primary-bg-subdued: #b9b9f9;
+  /* Colors - Stark Monochrome with High Contrast Accents */
+  --color-primary: #000000;
+  --color-primary-deep: #111111;
+  --color-primary-press: #333333;
+  --color-primary-soft: #666666;
+  --color-primary-bg-subdued: #f4f4f5;
   
-  --color-brand-dark: #1c1e54;
-  --color-ink: #0d253d;
-  --color-ink-secondary: #273951;
-  --color-ink-mute: #64748d;
-  --color-ink-mute-2: #61718a;
+  --color-brand-dark: #000000;
+  --color-ink: #000000;
+  --color-ink-secondary: #52525b;
+  --color-ink-mute: #a1a1aa;
+  --color-ink-mute-2: #d4d4d8;
   
   --color-on-primary: #ffffff;
   --color-canvas: #ffffff;
-  --color-canvas-soft: #f6f9fc;
-  --color-canvas-cream: #f5e9d4;
+  --color-canvas-soft: #fafafa;
+  --color-canvas-cream: #f4f4f5; /* changed to a cool grey instead of cream */
   
-  --color-hairline: #e3e8ee;
-  --color-hairline-input: #a8c3de;
+  --color-hairline: #e4e4e7;
+  --color-hairline-input: #d4d4d8;
   
-  --color-ruby: #ea2261;
-  --color-magenta: #f96bee;
-  --color-lemon: #9b6829;
+  /* Status / Data Colors */
+  --color-ruby: #dc2626;
+  --color-magenta: #c026d3;
+  --color-lemon: #ca8a04;
+  --color-success: #16a34a;
   
-  --color-shadow-blue: #003770;
-
   /* Typography */
   --font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
 
-  /* Spacing */
+  /* Spacing - Reduced by ~40% for denser hierarchy */
   --space-xxs: 2px;
   --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 12px;
-  --space-lg: 16px;
-  --space-xl: 24px;
-  --space-xxl: 32px;
-  --space-huge: 64px;
+  --space-sm: 6px;
+  --space-md: 8px;
+  --space-lg: 12px;
+  --space-xl: 16px;
+  --space-xxl: 24px;
+  --space-huge: 40px;
 
-  /* Radius */
-  --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-pill: 9999px;
+  /* Radius - Eliminated rounded aesthetic in favor of sharp/engineered edges */
+  --radius-xs: 0px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 4px;
+  --radius-pill: 2px; /* Replaced pill with slight rounding */
 
-  /* Shadows */
-  --shadow-1: rgba(0, 55, 112, 0.08) 0 1px 3px;
-  --shadow-2: rgba(0, 55, 112, 0.08) 0 8px 24px, rgba(0, 55, 112, 0.04) 0 2px 6px;
+  /* Shadows - Hard, terminal-style shadows instead of soft blooming shadows */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* ==========================================================================
