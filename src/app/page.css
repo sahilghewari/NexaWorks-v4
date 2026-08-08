@@ -259,20 +259,21 @@
   color: #666;
 }
 
-/* Case Studies (Cinematic Cards) */
-.case-studies-section {
-  background-color: #0f0f0e;
-  padding: 140px 24px;
+.btn-outline-light {
+  border: 1px solid rgba(255,255,255,0.3);
   color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: inline-block;
 }
 
-.case-studies-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  max-width: 1400px;
-  margin: 0 auto 48px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+.btn-outline-light:hover {
+  background: #fff;
+  color: #000;
+}
 /* Metrics List Section */
 .metrics-section {
   background-color: #0f0f0e;
