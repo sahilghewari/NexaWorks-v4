@@ -228,3 +228,38 @@
   .is-assembled .sih-node-5 { top: 70%; left: 15%; }
   .is-assembled .sih-node-6 { top: 30%; left: 15%; }
 }
+
+@media (max-width: 768px) {
+  .solutions-interactive-hero {
+    padding: 120px 16px 40px;
+  }
+  .sih-headline {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .sih-subhead {
+    font-size: 16px;
+  }
+  .sih-top-line {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .sih-animation-area {
+    height: 320px;
+  }
+  .sih-center-node {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+  }
+  .sih-node {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  .is-assembled .sih-node-1 { top: 5%; left: 50%; }
+  .is-assembled .sih-node-2 { top: 25%; left: 90%; }
+  .is-assembled .sih-node-3 { top: 75%; left: 90%; }
+  .is-assembled .sih-node-4 { top: 95%; left: 50%; }
+  .is-assembled .sih-node-5 { top: 75%; left: 10%; }
+  .is-assembled .sih-node-6 { top: 25%; left: 10%; }
+}
