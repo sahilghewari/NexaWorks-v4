@@ -298,7 +298,11 @@
 /* Responsive adjustments for mobile and smaller screens */
 @media (max-width: 768px) {
   .interactive-hero {
-    padding: 40px 16px 60px;
+    padding: 120px 16px 80px; /* Large top padding to clear fixed navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero-logo-line {
@@ -333,8 +337,8 @@
 
   /* Move animation upward and make it smaller */
   .animation-area {
-    height: 180px;
-    margin-top: 20px;
+    height: 200px;
+    margin-top: 40px; /* Give it breathing room from the buttons */
   }
 
   .doc {
