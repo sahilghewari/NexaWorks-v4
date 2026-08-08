@@ -179,7 +179,7 @@ export default function Home() {
 
       <section className="footer-cta-section">
         <div className="footer-cta-container">
-          <h2 className="footer-cta-title">Unlock Professional Class AI for Your Firm</h2>
+          <h2 className="footer-cta-title">Give your team the context they need to win.</h2>
           <Link href="/contact" className="btn-solid-white">Request a Demo</Link>
         </div>
       </section>
