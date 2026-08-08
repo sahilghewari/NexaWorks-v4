@@ -30,12 +30,12 @@ export default function InteractiveSolutionsHero() {
           NexaWorks
         </div>
         
-        <div className="sih-node sih-node-1">🏦 Sales</div>
-        <div className="sih-node sih-node-2">🏥 Clinical</div>
-        <div className="sih-node sih-node-3">🏢 Finance</div>
-        <div className="sih-node sih-node-4">⚖️ Legal</div>
-        <div className="sih-node sih-node-5">⚙️ Ops</div>
-        <div className="sih-node sih-node-6">📈 Exec</div>
+        <div className="sih-node sih-node-1">Sales</div>
+        <div className="sih-node sih-node-2">Clinical</div>
+        <div className="sih-node sih-node-3">Finance</div>
+        <div className="sih-node sih-node-4">Legal</div>
+        <div className="sih-node sih-node-5">Operations</div>
+        <div className="sih-node sih-node-6">Executive</div>
       </div>
     </section>
   );
