@@ -5,7 +5,7 @@ import './InteractiveHero.css';
 import Link from 'next/link';
 
 export default function InteractiveHero() {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
 
   // We generate positions for chaotic documents to form a swooping curve
   const chaoticDocs = [
