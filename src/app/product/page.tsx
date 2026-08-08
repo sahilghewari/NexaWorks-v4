@@ -111,11 +111,15 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="cta-section">
-        <div className="cta-content">
-          <h2 className="display-xl">Ready to eliminate context loss?</h2>
-          <p className="body-lg">Book an architecture review with our engineering team.</p>
-          <Link href="/contact" className="btn-on-dark-inverse">Book Architecture Review</Link>
+      <section className="cta-section" style={{ backgroundColor: 'var(--color-ink)', color: 'var(--color-canvas)', padding: '5rem 0', textAlign: 'center' }}>
+        <div className="container">
+          <div className="cta-content" style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <h2 className="display-xl" style={{ marginBottom: '1.5rem', color: 'var(--color-canvas)' }}>Ready to eliminate context loss?</h2>
+            <p className="body-lg" style={{ marginBottom: '2rem', color: 'var(--color-canvas)', opacity: 0.8 }}>Book an architecture review with our engineering team.</p>
+            <Link href="/contact" className="btn-primary btn-on-dark-inverse" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: 'var(--color-canvas)', color: 'var(--color-ink)', fontWeight: 'bold', borderRadius: '0.5rem', textDecoration: 'none' }}>
+              Book Architecture Review
+            </Link>
+          </div>
         </div>
       </section>
     </main>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/data/blogPosts'; // I will create this data file next
 
@@ -18,6 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | NexaWorks Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://nexaworks.tech/blog/${post.slug}`
+    }
   };
 }
 
@@ -29,8 +33,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const techArticleSchema = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": new Date().toISOString().split('T')[0], // Using current date as fallback for static demo
+    "author": {
+      "@type": "Organization",
+      "name": "NexaWorks Research Center"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NexaWorks",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nexaworks.tech/logo.png"
+      }
+    }
+  };
+
   return (
     <main className="section" style={{ paddingTop: '120px', minHeight: '100vh', background: 'var(--color-canvas)' }}>
+      <Script id="tech-article-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
       <div className="container" style={{ maxWidth: '800px' }}>
         
         <div style={{ marginBottom: '48px' }}>
@@ -56,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <div style={{ marginTop: '64px', paddingTop: '32px', borderTop: '1px solid var(--color-hairline)' }}>
           <h3 className="heading-md" style={{ marginBottom: '16px' }}>Ready to deploy this architecture?</h3>
-          <button className="btn-primary" style={{ padding: '16px 32px' }}>Book Engineering Consultation</button>
+          <Link href="/contact" className="btn-primary" style={{ display: 'inline-block', padding: '16px 32px', textDecoration: 'none' }}>Book Engineering Consultation</Link>
         </div>
 
       </div>

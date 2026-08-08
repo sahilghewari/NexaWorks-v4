@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import GradientMesh from "@/components/GradientMesh";
+import TrustSignals from "@/components/TrustSignals";
 import "./page.css";
 
 export const metadata = {
@@ -36,17 +37,7 @@ export default function Home() {
         </section>
       </GradientMesh>
 
-      <section className="trusted-by">
-        <div className="trusted-caption">Trusted by innovative teams</div>
-        <div className="trusted-logos">
-          <span className="heading-sm">Meridian Capital</span>
-          <span className="heading-sm">Axion Health</span>
-          <span className="heading-sm">Prism Analytics</span>
-          <span className="heading-sm">Vertex RE</span>
-          <span className="heading-sm">NovaBridge</span>
-          <span className="heading-sm">DataForge</span>
-        </div>
-      </section>
+      <TrustSignals />
 
       <section className="services-overview">
         <h2 className="display-xl">The most expensive problem nobody measures</h2>

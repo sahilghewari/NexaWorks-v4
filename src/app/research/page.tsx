@@ -8,22 +8,69 @@ export const metadata = {
 };
 
 export default function ResearchLandingPage() {
-  const reports = [
+  const annualReports = [
     {
       title: "State of Enterprise AI 2026",
       slug: "state-of-enterprise-ai-2026",
       description: "Macroeconomic analysis of LLM adoption, deterministic routing, and the transition from heuristic search to AI agent ecosystems.",
-      tag: "ANNUAL REPORT",
       date: "August 2026"
+    }
+  ];
+
+  const benchmarks = [
+    {
+      title: "Document AI Accuracy Index",
+      slug: "document-ai",
+      description: "Comparative accuracy benchmarks of unstructured data extraction across OCR vs Agentic Pipelines.",
+      date: "Q3 2026"
     },
+    {
+      title: "Context Window Degradation",
+      slug: "context-window-degradation",
+      description: "Empirical study on fact-retrieval dropoff when foundational models exceed 128k context limits.",
+      date: "July 2026"
+    }
+  ];
+
+  const datasets = [
     {
       title: "Global AI ROI Index",
       slug: "global-roi-index",
       description: "Sector-by-sector empirical tracking of Return on Investment (ROI) and cost displacement achieved through Enterprise AI automation.",
-      tag: "ECONOMIC INDEX",
+      date: "LIVE DATA"
+    },
+    {
+      title: "LLMOps Observability Matrix",
+      slug: "llmops-observability-matrix",
+      description: "Structured dataset of average MTTR and error rates across RAG production deployments.",
       date: "LIVE DATA"
     }
   ];
+
+  const renderGrid = (items: typeof annualReports, tag: string) => (
+    <div className="grid-2" style={{ gap: '32px', marginBottom: '64px' }}>
+      {items.map((report, idx) => (
+        <Link key={idx} href={`/research/${report.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <div className="card hover-border-primary" style={{ cursor: 'pointer', transition: 'all 0.3s', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', height: '100%' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+              <div className="micro-cap" style={{ color: 'var(--color-primary)' }}>
+                {tag}
+              </div>
+              <div className="micro-cap" style={{ color: 'var(--color-ink-mute)' }}>
+                {report.date}
+              </div>
+            </div>
+            <h3 className="heading-md" style={{ marginBottom: '16px' }}>
+              {report.title}
+            </h3>
+            <p className="body-md" style={{ color: 'var(--color-ink-secondary)' }}>
+              {report.description}
+            </p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <main>
@@ -38,28 +85,14 @@ export default function ResearchLandingPage() {
               Factually dense, statistically rigorous analysis engineered for CTOs, institutional investors, and operations leaders.
             </p>
 
-            <div className="grid-2" style={{ gap: '32px' }}>
-              {reports.map((report, idx) => (
-                <Link key={idx} href={`/research/${report.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <div className="card hover-border-primary" style={{ cursor: 'pointer', transition: 'all 0.3s', background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(10px)', height: '100%' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
-                      <div className="micro-cap" style={{ color: 'var(--color-primary)' }}>
-                        {report.tag}
-                      </div>
-                      <div className="micro-cap" style={{ color: 'var(--color-ink-mute)' }}>
-                        {report.date}
-                      </div>
-                    </div>
-                    <h3 className="heading-md" style={{ marginBottom: '16px' }}>
-                      {report.title}
-                    </h3>
-                    <p className="body-md" style={{ color: 'var(--color-ink-secondary)' }}>
-                      {report.description}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
+            <h2 className="heading-lg" style={{ marginBottom: '32px', borderBottom: '1px solid var(--color-hairline)', paddingBottom: '16px' }}>Annual Reports</h2>
+            {renderGrid(annualReports, "ANNUAL REPORT")}
+
+            <h2 className="heading-lg" style={{ marginBottom: '32px', borderBottom: '1px solid var(--color-hairline)', paddingBottom: '16px' }}>Empirical Benchmarks</h2>
+            {renderGrid(benchmarks, "BENCHMARK")}
+
+            <h2 className="heading-lg" style={{ marginBottom: '32px', borderBottom: '1px solid var(--color-hairline)', paddingBottom: '16px' }}>Live Datasets</h2>
+            {renderGrid(datasets, "DATASET")}
           </div>
         </section>
       </GradientMesh>

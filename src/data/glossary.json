@@ -28,5 +28,131 @@
     "term": "Generative Engine Optimization (GEO)",
     "definition": "The practice of structuring data, text, and metadata to increase the likelihood of being cited by Large Language Models (LLMs) and AI answer engines.",
     "context": "Traditional SEO relies on keywords and backlinks to rank in Google's 10 blue links. GEO relies on factual density, machine-readable schemas (like JSON-LD), and extractable, high-quality content to ensure an AI agent selects a specific brand as the definitive source of truth. Unlike older myths, AI models do not require special text files to cite content."
+  },
+  {
+    "slug": "semantic-similarity",
+    "term": "Semantic Similarity",
+    "definition": "A mathematical metric used to determine how closely two pieces of text resemble each other in meaning, rather than just exact keyword overlap.",
+    "context": "In enterprise search, semantic similarity allows systems to match 'revenue decrease' with 'sales dropped,' enabling far more robust Context Reconstruction than legacy lexical (keyword) search engines."
+  },
+  {
+    "slug": "orchestrator-agents",
+    "term": "Orchestrator Agents",
+    "definition": "A primary LLM agent designated to receive the initial user query, formulate a plan, and delegate sub-tasks to specialized worker agents.",
+    "context": "In multi-agent systems, the Orchestrator prevents the main model from becoming overwhelmed by context. It acts as the 'manager', breaking down complex enterprise workflows into discrete tasks that smaller, cheaper models can execute."
+  },
+  {
+    "slug": "hallucination-mitigation",
+    "term": "Hallucination Mitigation",
+    "definition": "The suite of architectural patterns (like RAG, Chain of Thought, and Pydantic validation) used to prevent LLMs from generating plausible but factually incorrect information.",
+    "context": "For enterprise SaaS applications, a hallucination is a catastrophic failure. Mitigation strategies focus on tightly restricting the model's 'creativity' and forcing it to only cite explicitly provided retrieved context."
+  },
+  {
+    "slug": "retrieval-augmented-evaluation",
+    "term": "Retrieval-Augmented Evaluation (RAE)",
+    "definition": "The use of an LLM-as-a-judge to grade the accuracy of a RAG pipeline by comparing the generated answer against the retrieved source documents.",
+    "context": "To ensure Context Reconstruction is working, NexaWorks utilizes RAE to programmatically grade thousands of test queries during CI/CD, measuring metrics like Context Precision and Context Recall without human intervention."
+  },
+  {
+    "slug": "ai-data-operations",
+    "term": "AI Data Operations (DataOps)",
+    "definition": "The systematic ingestion, cleaning, chunking, and embedding of enterprise data specifically formatted for LLM consumption.",
+    "context": "Without rigorous AI DataOps, garbage data enters the vector database, leading to garbage RAG outputs. Context Reconstruction relies heavily on pristine DataOps pipelines to ensure source data is perfectly structured before it is ever embedded."
+  },
+  {
+    "slug": "embeddings",
+    "term": "Embeddings",
+    "definition": "High-dimensional vector representations of text, images, or audio that capture their semantic meaning in a format mathematically understandable by AI models.",
+    "context": "Embeddings are the foundation of modern search and Context Reconstruction. By converting enterprise documents into numerical vectors, systems can instantly retrieve relevant context based on conceptual alignment rather than rigid keywords."
+  },
+  {
+    "slug": "vector-database",
+    "term": "Vector Database",
+    "definition": "A specialized database designed to store, index, and query high-dimensional embeddings at massive scale.",
+    "context": "Vector databases (like Pinecone or Milvus) allow NexaWorks to execute millisecond similarity searches across millions of enterprise documents, instantly retrieving the correct context to feed into an LLM during inference."
+  },
+  {
+    "slug": "prompt-injection",
+    "term": "Prompt Injection",
+    "definition": "A cybersecurity vulnerability where a malicious user provides input designed to override the LLM's original system instructions, causing it to execute unauthorized actions.",
+    "context": "In enterprise deployments, prompt injection can lead to data exfiltration. NexaWorks mitigates this by strictly separating system instructions from user data and utilizing strict schema validation."
+  },
+  {
+    "slug": "few-shot-prompting",
+    "term": "Few-Shot Prompting",
+    "definition": "The technique of providing an LLM with 2-5 explicit examples of the desired input/output format within the prompt to dramatically improve accuracy.",
+    "context": "Few-shot prompting is a critical component of Context Reconstruction. By showing the model exactly how to format a JSON response or extract a specific entity, error rates drop significantly."
+  },
+  {
+    "slug": "chain-of-thought",
+    "term": "Chain of Thought (CoT)",
+    "definition": "A prompting strategy that forces an LLM to generate step-by-step reasoning before outputting its final answer.",
+    "context": "By requiring the model to 'think out loud,' CoT drastically improves performance on complex logic, math, and multi-step enterprise workflows, allowing human operators to audit the model's reasoning process."
+  },
+  {
+    "slug": "fine-tuning",
+    "term": "Fine-Tuning",
+    "definition": "The process of updating the internal weights of a pre-trained foundational model by training it on a smaller, domain-specific dataset.",
+    "context": "While RAG injects external context at runtime, fine-tuning alters the model's fundamental behavior. NexaWorks often uses fine-tuning to teach a model a specific corporate tone or complex proprietary syntax that is too long for a system prompt."
+  },
+  {
+    "slug": "lora",
+    "term": "Low-Rank Adaptation (LoRA)",
+    "definition": "A highly efficient fine-tuning technique that freezes the pre-trained model weights and injects trainable rank decomposition matrices into the architecture.",
+    "context": "LoRA allows enterprise engineering teams to fine-tune massive models (like Llama 3) on consumer-grade hardware, reducing the compute cost of custom AI solutions by over 90%."
+  },
+  {
+    "slug": "tokenization",
+    "term": "Tokenization",
+    "definition": "The process of breaking down raw text into smaller sub-word units (tokens) that an LLM can process mathematically.",
+    "context": "Understanding tokenization is vital for Context Reconstruction, as all models have strict token limits. A standard rule of thumb is that 1 token equals approximately 0.75 English words."
+  },
+  {
+    "slug": "system-prompt",
+    "term": "System Prompt",
+    "definition": "The foundational set of instructions given to an LLM that dictates its persona, rules, constraints, and output format.",
+    "context": "The system prompt acts as the absolute law for the AI agent. In NexaWorks deployments, system prompts are heavily engineered to restrict hallucination, enforce JSON-only outputs, and mandate strict adherence to retrieved context."
+  },
+  {
+    "slug": "rag",
+    "term": "Retrieval-Augmented Generation (RAG)",
+    "definition": "An AI framework that improves the quality of LLM-generated responses by grounding the model on external sources of knowledge fetched in real-time.",
+    "context": "RAG is the core mechanism of Context Reconstruction. Instead of relying on what the model learned during its initial training, RAG dynamically pulls the company's private, real-time data to answer the user's query accurately."
+  },
+  {
+    "slug": "multi-agent-systems",
+    "term": "Multi-Agent Systems",
+    "definition": "An architecture where multiple autonomous AI agents, each with specific roles and tools, collaborate to solve complex, multi-step problems.",
+    "context": "Rather than using one massive prompt, NexaWorks utilizes multi-agent systems to break down workflows. A 'Researcher' agent gathers context, a 'Writer' agent drafts the response, and a 'Reviewer' agent validates the output."
+  },
+  {
+    "slug": "tool-calling",
+    "term": "Tool Calling (Function Calling)",
+    "definition": "The ability of an LLM to natively output structured JSON arguments designed to execute an external API or software function.",
+    "context": "Tool calling allows AI to take action in the real world. By giving an LLM access to tools, it can query Salesforce, update Jira tickets, or run SQL queries directly during Context Reconstruction."
+  },
+  {
+    "slug": "large-language-model",
+    "term": "Large Language Model (LLM)",
+    "definition": "A massive neural network trained on vast amounts of text data, capable of understanding context, generating human-like text, and executing complex reasoning tasks.",
+    "context": "LLMs serve as the cognitive engine for Context Reconstruction, synthesizing the structured and unstructured enterprise data retrieved by the system."
+  },
+  {
+    "slug": "grounding",
+    "term": "Grounding",
+    "definition": "The process of explicitly tying an AI's output to a verifiable piece of source data.",
+    "context": "Grounding is the antidote to hallucination. A properly grounded NexaWorks agent will always include a citation pointing directly to the specific CRM record, PDF paragraph, or Slack message that informed its answer."
+  },
+  {
+    "slug": "small-language-model",
+    "term": "Small Language Model (SLM)",
+    "definition": "A highly optimized, parameter-efficient language model designed to run extremely fast and cheap for specific, narrow tasks.",
+    "context": "SLMs (like Llama 3 8B or Phi-3) are frequently used in Deterministic Routing. They are deployed to quickly classify intents or extract specific entities, saving the expensive GPT-4 calls for heavy reasoning."
+  },
+  {
+    "slug": "context-window",
+    "term": "Context Window",
+    "definition": "The absolute maximum amount of text (measured in tokens) that an LLM can 'read' and process in a single interaction.",
+    "context": "Modern context windows span from 8,000 tokens to over 2 million. Managing the context window is the primary engineering challenge of Context Reconstruction, ensuring the model gets enough data to answer without becoming overwhelmed and losing focus."
   }
 ]

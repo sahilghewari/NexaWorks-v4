@@ -5,7 +5,7 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container">
+      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         <div className="footer-grid">
           {/* Column 1: Brand */}
           <div className="footer-col brand-col">
@@ -14,7 +14,7 @@ export default function Footer() {
               <span className="logo-text" style={{ fontSize: '20px', fontWeight: '500', color: 'var(--color-ink)', letterSpacing: '-0.02em' }}>NexaWorks</span>
             </Link>
             <p className="caption mt-16" style={{ marginTop: '16px' }}>
-              Production-grade AI automation for the enterprise.
+              Production-grade Context Reconstruction for the enterprise.
             </p>
           </div>
 

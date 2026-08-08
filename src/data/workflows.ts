@@ -69,5 +69,85 @@ export const workflows: Workflow[] = [
     contextLoss: 'QBR prep consumes 15-20 hours of executive and analyst time. Data is often stale by presentation day. Strategic decisions are delayed by information gathering.',
     reconstructedProcess: 'NexaWorks reconstructs QBR context: pipeline trends, revenue metrics, customer health indicators, product milestones, competitive movements, and team KPIs — assembled into a structured executive brief 48 hours before the review.',
     roi: 'Reduces QBR prep from 20 hours to 2 hours. Ensures all data is current and consistent.'
+  },
+  {
+    slug: 'ma-due-diligence',
+    title: 'M&A Due Diligence',
+    category: 'Finance',
+    problem: 'During M&A due diligence, finance and legal teams spend hundreds of hours manually reviewing thousands of documents in a data room to identify risks, liabilities, and structural anomalies.',
+    currentProcess: 'Open secure data room → download hundreds of PDFs → read each contract manually → cross-reference with financial statements → log findings in a master spreadsheet → review with partners.',
+    contextLoss: 'Reviewers suffer from fatigue and miss subtle clauses hidden deep in contracts. Important connections between financial anomalies and legal liabilities are overlooked.',
+    reconstructedProcess: 'NexaWorks deterministically reconstructs the data room context: identifying all non-standard clauses, mapping liabilities to financial disclosures, and building a risk matrix — delivered as an executive diligence brief.',
+    roi: 'Reduces diligence phase by 3 weeks. Improves risk identification accuracy by 85%.'
+  },
+  {
+    slug: 'soc2-audit-prep',
+    title: 'SOC2 Audit Preparation',
+    category: 'Security',
+    problem: 'Security compliance teams spend weeks manually gathering evidence across AWS, GitHub, Jira, and HR systems to prove SOC2 controls are being actively followed before an auditor arrives.',
+    currentProcess: 'Check compliance framework requirements → open AWS console to screenshot IAM roles → open GitHub to verify PR approvals → check Jira for access requests → compile evidence into Vanta/Drata or a massive Google Drive folder.',
+    contextLoss: 'Evidence gathering is fragmented. Minor gaps in control adherence are missed until the auditor flags them as exceptions.',
+    reconstructedProcess: 'NexaWorks continuously reconstructs compliance context: validating IAM configurations, pulling PR approval history, and verifying offboarding workflows — generating ready-to-present evidence briefs tied directly to SOC2 controls.',
+    roi: 'Cuts audit prep time by 75%. Eliminates pre-audit panic and reduces the chance of audit exceptions to near zero.'
+  },
+  {
+    slug: 'it-helpdesk-escalation',
+    title: 'IT Helpdesk Escalation',
+    category: 'Engineering',
+    problem: 'When L1 support escalates a complex IT ticket to L2 or L3 engineering, they rarely provide enough technical context. The senior engineer has to start debugging from scratch.',
+    currentProcess: 'Receive Jira ticket → see vague description ("Database is slow") → ping L1 for more info → wait 2 hours → ask user for reproduction steps → check logs manually → piece together the timeline.',
+    contextLoss: 'L2 engineers waste expensive hours doing L1 triage. Users experience extended downtime. Frustration builds between support tiers.',
+    reconstructedProcess: 'NexaWorks reconstructs the ticket context upon escalation: analyzing the user\'s recent system activity, pulling relevant error logs, checking for similar historical tickets, and summarizing the timeline — attached directly to the Jira escalation.',
+    roi: 'Reduces L2 resolution time by 50%. Deflects 20% of escalations back to L1 with automated diagnostic steps.'
+  },
+  {
+    slug: 'legal-ediscovery-prep',
+    title: 'Legal eDiscovery Preparation',
+    category: 'Legal',
+    problem: 'In response to litigation or subpoenas, paralegals and junior associates spend hundreds of billable hours manually reading through gigabytes of emails and chat logs to find relevant communications.',
+    currentProcess: 'Export data from Google Vault/O365 → load into Relativity → run keyword searches → manually review thousands of false positives → tag relevant documents → build chronological timeline.',
+    contextLoss: 'Keyword searches miss nuances, slang, or indirect references. Reviewers lose the overarching narrative when reading fragmented, out-of-order communications.',
+    reconstructedProcess: 'NexaWorks uses GraphRAG to reconstruct the communication context: identifying narrative threads, mapping relationships between key actors, and surfacing conceptually relevant documents regardless of keyword match — delivered as a chronological case narrative.',
+    roi: 'Reduces eDiscovery review time by 60%. Uncovers critical evidence that standard keyword searches miss.'
+  },
+  {
+    slug: 'enterprise-product-launch',
+    title: 'Enterprise Product Launch',
+    category: 'Marketing',
+    problem: 'Product marketing managers (PMMs) struggle to keep sales, support, and marketing teams aligned during a major product launch, as information is scattered across Google Docs, Jira, and Figma.',
+    currentProcess: 'PMM updates master Google Doc → pings sales enablement on Slack → checks Jira for delayed features → updates the release notes → realizes support team is using an outdated FAQ.',
+    contextLoss: 'Go-to-market teams operate on stale information. Sales reps pitch features that were cut. Support agents are blindsided by customer questions on launch day.',
+    reconstructedProcess: 'NexaWorks reconstructs launch context daily: syncing Jira feature status, summarizing new Figma designs, and updating the master FAQ — delivering a unified, real-time "Launch Brief" to all GTM teams.',
+    roi: 'Ensures 100% GTM alignment. Reduces pre-launch meetings by 12 hours per week.'
+  },
+  {
+    slug: 'vendor-risk-assessment',
+    title: 'Vendor Risk Assessment',
+    category: 'Procurement',
+    problem: 'Procurement teams must manually evaluate lengthy security questionnaires, SOC2 reports, and financial statements to assess the risk of onboarding a new enterprise software vendor.',
+    currentProcess: 'Receive 100-page SOC2 report → read PDF to find exceptions → review 200-question security survey → check external news for breaches → compile a vendor risk summary for approval.',
+    contextLoss: 'Reviewers miss critical exceptions buried in page 84 of the SOC2 report. The context of the vendor\'s data access is disconnected from their security posture.',
+    reconstructedProcess: 'NexaWorks reconstructs the vendor risk context: parsing the SOC2 for exceptions, cross-referencing survey answers with actual documentation, and pulling external breach history — delivered as a concise Vendor Risk Brief.',
+    roi: 'Reduces vendor onboarding time from 3 weeks to 3 days. Improves risk detection accuracy.'
+  },
+  {
+    slug: 'churn-risk-intervention',
+    title: 'Churn Risk Intervention',
+    category: 'Customer Success',
+    problem: 'When a major enterprise account shows signs of churn, Customer Success Leaders scramble to gather context on product usage, recent support tickets, and executive relationship health before an intervention call.',
+    currentProcess: 'Check Amplitude for usage drops → check Zendesk for angry tickets → review Salesforce for contract terms → ping the Account Executive in Slack → try to schedule a save call blind.',
+    contextLoss: 'The CS Leader enters the intervention call without understanding the full timeline of the customer\'s frustration, leading to ineffective "save" attempts.',
+    reconstructedProcess: 'NexaWorks reconstructs the account health context: summarizing the last 6 months of support tickets, highlighting usage drop-offs, identifying key champion departures, and drafting an intervention strategy — delivered before the save call.',
+    roi: 'Increases enterprise churn save rate by 15%. Equips CS Leaders with complete context instantly.'
+  },
+  {
+    slug: 'rfp-response-assembly',
+    title: 'RFP Response Assembly',
+    category: 'Sales Engineering',
+    problem: 'Sales Engineers and Bid Managers spend days manually answering 200+ question RFPs by searching through old proposals, Confluence wikis, and pinging product managers for updated answers.',
+    currentProcess: 'Receive Excel RFP → search past RFPs for similar questions → copy/paste old answers → realize the feature changed → ping PM on Slack → wait for response → format document.',
+    contextLoss: 'The company submits outdated, inaccurate technical answers because the SE relied on a year-old proposal. The narrative of the RFP is disjointed.',
+    reconstructedProcess: 'NexaWorks reconstructs the RFP context: using deterministic retrieval to pull the exact, approved answers from the current product knowledge base and tailoring the tone to the specific prospect — drafting 80% of the RFP instantly.',
+    roi: 'Reduces RFP response time from 40 hours to 4 hours. Ensures 100% technical accuracy.'
   }
 ];

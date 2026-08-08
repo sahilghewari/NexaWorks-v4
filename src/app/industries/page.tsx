@@ -1,9 +1,10 @@
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'AI Automation by Industry | NexaWorks',
-  description: 'Production-grade AI workflows and agentic pipelines tailored for Financial Services, Healthcare, Real Estate, and Logistics.',
+export const metadata: Metadata = {
+  title: 'Context Reconstruction by Industry | NexaWorks',
+  description: 'Industry-specific Context Reconstruction architectures for Financial Services, Healthcare, Real Estate, and Legal.',
 };
 
 export default function IndustriesHubPage() {
@@ -78,9 +79,9 @@ export default function IndustriesHubPage() {
         </div>
 
         <div style={{ marginTop: '96px', textAlign: 'center', background: '#1e1e1e', padding: '64px', borderRadius: '16px', color: 'white' }}>
-          <h2 className="display-md" style={{ marginBottom: '24px' }}>Don't see your sector?</h2>
-          <p className="body-lg" style={{ color: '#d4d4d4', marginBottom: '32px', maxWidth: '600px', margin: '0 auto 32px' }}>
-            Our foundational architectures (RAG, MCP, Browser Automation) are industry-agnostic. We build custom pipelines for any complex enterprise environment.
+          <h2 className="display-lg" style={{ marginBottom: '16px' }}>Don't see your industry?</h2>
+          <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', marginBottom: '32px' }}>
+            Our foundational Context Reconstruction architectures (RAG, MCP) are industry-agnostic. We eliminate context loss for any complex enterprise environment.
           </p>
           <button className="btn-primary" style={{ padding: '16px 32px' }}>Request Custom Architecture</button>
         </div>

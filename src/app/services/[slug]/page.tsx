@@ -15,7 +15,7 @@ const serviceData: Record<string, { subtitle: string, proof: string[], image: st
     image: '/services/ai-agents.jpg'
   },
   'workflow-automation': {
-    subtitle: 'Event-driven, asynchronous enterprise process automation.',
+    subtitle: 'Event-driven, asynchronous enterprise context assembly.',
     proof: [
       'Asynchronous Event Loops: Built on true ASGI frameworks (FastAPI/Uvicorn) to prevent thread starvation during extensive data processing.',
       'Celery & Temporal: Distributed task queues handling long-running background generative tasks without blocking the main event thread.',

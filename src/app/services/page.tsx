@@ -5,19 +5,22 @@ import GradientMesh from "@/components/GradientMesh";
 import "./services.css";
 
 export const metadata: Metadata = {
-  title: "Services | NexaWorks",
-  description: "End-to-end AI automation solutions engineered for production environments.",
+  title: 'Platform Capabilities | NexaWorks',
+  description: "End-to-end Context Reconstruction solutions engineered for production environments.",
 };
 
-export default function Services() {
+export default function ServicesPage() {
   return (
     <main>
       <GradientMesh>
-        <section className="services-hero">
-          <h1 className="display-xxl">AI solutions engineered for production</h1>
-          <p className="body-lg">
-            From agentic workflows to enterprise RAG, we build AI systems that run reliably at scale.
-          </p>
+        <section className="section" style={{ paddingTop: '160px', paddingBottom: '120px', textAlign: 'center' }}>
+          <div className="container" style={{ maxWidth: '800px' }}>
+            <span className="tag" style={{ marginBottom: '16px' }}>CAPABILITIES</span>
+            <h1 className="display-xxl" style={{ marginBottom: '24px' }}>The Architecture of Context</h1>
+            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', maxWidth: '700px', margin: '0 auto' }}>
+              We build the infrastructure that reconstructs context across your enterprise.
+            </p>
+          </div>
         </section>
       </GradientMesh>
 

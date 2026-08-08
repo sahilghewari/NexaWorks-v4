@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
+import TrustSignals from '@/components/TrustSignals';
 
 export const metadata: Metadata = {
   title: 'Solutions | NexaWorks',
@@ -21,6 +22,8 @@ export default function SolutionsPage() {
           </div>
         </section>
       </GradientMesh>
+
+      <TrustSignals />
 
       <section className="section" style={{ background: 'var(--color-canvas)' }}>
         <div className="container" style={{ maxWidth: '1000px' }}>
@@ -71,11 +74,15 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      <section className="cta-section">
-        <div className="cta-content">
-          <h2 className="display-xl">Find your workflow</h2>
-          <p className="body-lg">Tell us which workflows consume the most context-gathering time. We will show you the architecture to eliminate it.</p>
-          <Link href="/contact" className="btn-on-dark-inverse">Book Architecture Review</Link>
+      <section className="cta-section" style={{ backgroundColor: 'var(--color-ink)', color: 'var(--color-canvas)', padding: '5rem 0', textAlign: 'center' }}>
+        <div className="container">
+          <div className="cta-content" style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <h2 className="display-xl" style={{ marginBottom: '1.5rem', color: 'var(--color-canvas)' }}>Find your workflow</h2>
+            <p className="body-lg" style={{ marginBottom: '2rem', color: 'var(--color-canvas)', opacity: 0.8 }}>Tell us which workflows consume the most context-gathering time. We will show you the architecture to eliminate it.</p>
+            <Link href="/contact" className="btn-primary btn-on-dark-inverse" style={{ display: 'inline-block', padding: '0.75rem 1.5rem', backgroundColor: 'var(--color-canvas)', color: 'var(--color-ink)', fontWeight: 'bold', borderRadius: '0.5rem', textDecoration: 'none' }}>
+              Book Architecture Review
+            </Link>
+          </div>
         </div>
       </section>
     </main>

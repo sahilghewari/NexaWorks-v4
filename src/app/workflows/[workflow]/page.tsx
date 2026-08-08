@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { workflows } from '@/data/workflows';
+import ROICalculator from '@/components/Calculators/ROICalculator';
 
 export async function generateStaticParams() {
   return workflows.map((workflow) => ({
@@ -87,6 +88,9 @@ export default async function WorkflowPage({ params }: { params: Promise<{ workf
               <h2 className="heading-md" style={{ marginBottom: '1rem', color: 'var(--color-primary)' }}>Impact</h2>
               <p className="body-md"><strong>{workflow.roi}</strong></p>
             </div>
+            
+            {/* Embedded ROI Calculator for Conversion Optimization */}
+            <ROICalculator />
           </div>
         </div>
       </section>
