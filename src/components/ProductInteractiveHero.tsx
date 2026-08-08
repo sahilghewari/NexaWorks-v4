@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './ProductInteractiveHero.css';
 
 export default function ProductInteractiveHero() {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
