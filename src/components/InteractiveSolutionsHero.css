@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 5%;
+  padding: 140px 5% 80px;
   background-color: #050505;
   overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -231,10 +231,10 @@
 
 @media (max-width: 768px) {
   .solutions-interactive-hero {
-    padding: 120px 16px 40px;
+    padding: 180px 16px 60px;
   }
   .sih-headline {
-    font-size: 36px;
+    font-size: 32px;
     margin-bottom: 16px;
   }
   .sih-subhead {
@@ -243,9 +243,13 @@
   .sih-top-line {
     flex-direction: column;
     gap: 16px;
+    margin-bottom: 32px;
   }
   .sih-animation-area {
-    height: 320px;
+    height: 380px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 350px;
   }
   .sih-center-node {
     width: 100px;
@@ -256,10 +260,10 @@
     padding: 8px 16px;
     font-size: 12px;
   }
-  .is-assembled .sih-node-1 { top: 5%; left: 50%; }
-  .is-assembled .sih-node-2 { top: 25%; left: 90%; }
-  .is-assembled .sih-node-3 { top: 75%; left: 90%; }
-  .is-assembled .sih-node-4 { top: 95%; left: 50%; }
-  .is-assembled .sih-node-5 { top: 75%; left: 10%; }
-  .is-assembled .sih-node-6 { top: 25%; left: 10%; }
+  .is-assembled .sih-node-1 { top: 0%; left: 50%; }
+  .is-assembled .sih-node-2 { top: 20%; left: 95%; }
+  .is-assembled .sih-node-3 { top: 80%; left: 95%; }
+  .is-assembled .sih-node-4 { top: 100%; left: 50%; }
+  .is-assembled .sih-node-5 { top: 80%; left: 5%; }
+  .is-assembled .sih-node-6 { top: 20%; left: 5%; }
 }
