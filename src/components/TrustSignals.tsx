@@ -1,7 +1,7 @@
 import React from 'react';
-import './TrustSignals.css';
 
-export default function TrustSignals() {
+export default function TrustSignals({ theme = "light" }: { theme?: "light" | "dark" }) {
+  const isDark = theme === "dark";
   const logos = [
     { name: "Financial Services", icon: "🏦" },
     { name: "Healthcare Providers", icon: "🏥" },
@@ -11,14 +11,36 @@ export default function TrustSignals() {
   ];
 
   return (
-    <div className="trust-signals-container">
-      <div className="container">
-        <p className="trust-signals-title">
+    <div style={{ 
+      padding: '48px 0', 
+      borderBottom: isDark ? '1px solid rgba(255,255,255,0.05)' : '1px solid var(--color-hairline)', 
+      background: isDark ? 'transparent' : 'var(--color-canvas)' 
+    }}>
+      <div className="container" style={{ textAlign: 'center' }}>
+        <p className="micro-cap" style={{ 
+          color: isDark ? 'rgba(255,255,255,0.6)' : 'var(--color-ink-secondary)', 
+          marginBottom: '32px' 
+        }}>
           ARCHITECTED FOR THE WORLD'S MOST DEMANDING DATA TEAMS
         </p>
-        <div className="trust-signals-grid">
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          gap: '48px', 
+          flexWrap: 'wrap', 
+          alignItems: 'center',
+          opacity: 0.6,
+          filter: 'grayscale(100%)'
+        }}>
           {logos.map((logo, idx) => (
-            <div key={idx} className="trust-signal-item">
+            <div key={idx} style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: '8px', 
+              fontSize: '20px', 
+              fontWeight: 'bold', 
+              color: isDark ? '#fff' : 'var(--color-ink)' 
+            }}>
               <span>{logo.icon}</span>
               <span style={{ letterSpacing: '-0.5px' }}>{logo.name}</span>
             </div>
