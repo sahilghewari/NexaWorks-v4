@@ -19,6 +19,15 @@
   padding: 140px 24px;
 }
 
+.product-section-light {
+  background-color: var(--color-canvas);
+  color: #111;
+}
+
+.product-section-light .product-section-title {
+  color: #111;
+}
+
 /* 1. The Problem Grid */
 .problem-grid {
   display: grid;
@@ -56,6 +65,26 @@
   color: #999;
   font-size: 16px;
   line-height: 1.6;
+}
+
+.product-section-light .problem-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.product-section-light .problem-card:hover {
+  border-color: #ccc;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.product-section-light .problem-card h3 {
+  color: #111;
+}
+
+.product-section-light .problem-card p {
+  color: #555;
 }
 
 /* 2. The Stepper (How It Works) */
@@ -205,6 +234,56 @@
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 32px;
+}
+
+/* Button & CTA Styles */
+.btn-outline-light {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: #000;
+}
+
+.footer-cta-section {
+  background-color: #0f0f0e;
+  padding: 48px 24px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-cta-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.btn-solid-white {
+  background: #fff;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 @media (max-width: 1024px) {

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import InteractiveHero from '@/components/InteractiveHero';
 import './page.css';
 
@@ -13,7 +14,7 @@ export default function ProductPage() {
     <main className="product-page">
       <InteractiveHero />
 
-      <section className="product-section">
+      <section className="product-section product-section-light">
         <h2 className="product-section-title">The Context Gap</h2>
         <div className="problem-grid">
           <div className="problem-card">
@@ -64,18 +65,21 @@ export default function ProductPage() {
         </div>
       </section>
 
-      <section className="product-section">
+      <section className="product-section product-section-light">
         <h2 className="product-section-title">The Technical Engine</h2>
         <div className="bento-grid">
           <div className="bento-card large">
+            <Image src="/bento-retrieval.jpg" alt="Deterministic Retrieval" width={600} height={400} style={{width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', marginBottom: '24px'}} />
             <h3>Deterministic Retrieval</h3>
             <p>Combining Pydantic schemas, vector search, and graph databases for precise, validated extraction. We eliminate hallucinations by strictly anchoring generated context to source truth.</p>
           </div>
           <div className="bento-card small">
+            <Image src="/bento-agentic.jpg" alt="Agentic Orchestration" width={300} height={200} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px', marginBottom: '16px'}} />
             <h3>Agentic Orchestration</h3>
             <p>LangGraph-powered stateful agents that reason through complex, multi-step context gathering autonomously.</p>
           </div>
           <div className="bento-card small">
+            <Image src="/bento-computer.jpg" alt="Computer Use" width={300} height={200} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px', marginBottom: '16px'}} />
             <h3>Computer Use</h3>
             <p>Visual automation capabilities for bridging legacy systems where modern APIs do not exist.</p>
           </div>
