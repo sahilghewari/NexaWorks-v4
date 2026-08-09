@@ -34,7 +34,7 @@ export default function About() {
             </div>
             <div className="about-mission-image">
               <Image 
-                src="/about-mission.jpg" 
+                src="/about-mission-light.jpg" 
                 alt="Abstract representation of context reconstruction" 
                 fill
                 style={{ objectFit: 'cover' }}
