@@ -1,286 +1,243 @@
-/* About Page Dark Cinematic Theme */
-
-.about-main {
+/* About Page Global Dark Theme */
+.about-page {
   background-color: #0d0d0d;
   color: #fff;
   min-height: 100vh;
 }
 
-/* Cinematic Hero (Matching Home Page) */
+/* Hero Section */
 .about-hero {
-  position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: 60vh;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 0 48px;
-  background-color: #000;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.about-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%);
-  z-index: 1;
-}
-
-.about-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.about-hero-headline {
-  color: white;
-  font-size: 88px;
-  line-height: 1.05;
-  letter-spacing: -0.04em;
-  font-weight: 400;
-  font-family: ui-serif, Georgia, serif;
-}
-
-.about-hero-subheadline {
-  color: rgba(255,255,255,0.8);
-  margin-top: 24px;
-  max-width: 600px;
-  font-size: 20px;
-  line-height: 1.5;
-}
-
-/* Mission Manifesto */
-.mission-section {
-  padding: 160px 24px;
   text-align: center;
-  position: relative;
-  background-color: #0d0d0d;
+  padding: 180px 24px 80px;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0d0d0d 70%);
 }
 
-.mission-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.mission-content h2 {
+.about-headline {
   font-family: ui-serif, Georgia, serif;
-  font-size: 56px;
+  font-size: 80px;
   font-weight: 400;
-  margin-bottom: 48px;
-  letter-spacing: -0.02em;
-}
-
-.manifesto-text {
-  font-size: 28px;
-  line-height: 1.6;
-  color: #ccc;
-  margin-bottom: 32px;
-  font-weight: 300;
-}
-
-.manifesto-text.highlight {
+  line-height: 1.1;
   color: #fff;
-  font-weight: 400;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+  max-width: 900px;
 }
 
-/* Philosophy Bento Grid */
-.philosophy-section {
-  padding: 120px 24px;
-  background: #080808;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+.about-subhead {
+  font-size: 24px;
+  color: #a1a1aa;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
-.philosophy-section h2 {
-  font-family: ui-serif, Georgia, serif;
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: 80px;
-  font-weight: 400;
-}
-
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* General Staggered Section (Mission) */
+.about-mission-section {
+  padding: 160px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.philosophy-card {
-  background: #111;
-  padding: 48px 40px;
-  border-radius: 16px;
+.about-staggered-row {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.about-mission-content {
+  flex: 1;
+}
+
+.about-mission-content h2 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: #fff;
+}
+
+.about-mission-content p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #a1a1aa;
+  margin-bottom: 24px;
+}
+
+.about-mission-image {
+  flex: 1;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
   border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 24px 48px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  aspect-ratio: 4/3;
+}
+
+/* Philosophy Section (3 Column Grid) */
+.about-philosophy-section {
+  padding: 160px 24px;
+  background-color: #050505;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.about-philosophy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-philosophy-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.about-philosophy-header h2 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.about-philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.philosophy-glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 48px 32px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.philosophy-glass-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.philosophy-glass-card h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.philosophy-glass-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa;
+}
+
+/* Approach / Tech Section (Bento Grid) */
+.about-approach-section {
+  padding: 160px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 80px;
+}
+
+.bento-card {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 48px;
   position: relative;
   overflow: hidden;
 }
 
-.philosophy-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.15);
-}
-
-.philosophy-card::before {
+.bento-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-  pointer-events: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.philosophy-card h3 {
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-card h3 {
   font-size: 24px;
+  font-weight: 500;
   margin-bottom: 16px;
   color: #fff;
-  font-weight: 500;
 }
 
-.philosophy-card p {
-  color: #888;
-  line-height: 1.6;
+.bento-card p {
   font-size: 16px;
-}
-
-/* Visual Break */
-.about-visual-break {
-  padding: 0 24px 80px;
-  background-color: #0d0d0d;
-  display: flex;
-  justify-content: center;
-}
-
-.visual-break-container {
-  max-width: 1200px;
-  width: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.8);
-}
-
-.about-visual-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Approach Bento Grid */
-.approach-section {
-  padding: 80px 24px 160px;
-  background-color: #0d0d0d;
-}
-
-.approach-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.approach-content h2 {
-  font-family: ui-serif, Georgia, serif;
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: 80px;
-  font-weight: 400;
-}
-
-.approach-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.approach-item {
-  padding: 48px;
-  background: rgba(255,255,255,0.02);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-}
-
-.approach-item h3 {
-  font-size: 28px;
-  margin-bottom: 16px;
-  font-family: ui-serif, Georgia, serif;
-  font-weight: 400;
-}
-
-.approach-item p {
-  font-size: 18px;
-  color: #999;
   line-height: 1.6;
+  color: #a1a1aa;
 }
 
-/* Location Global Visual */
-.location-section {
-  padding: 160px 24px 200px;
+/* Location / Closing */
+.about-location-section {
+  padding: 120px 24px 160px;
   text-align: center;
-  position: relative;
-  background: #050505;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  overflow: hidden;
+  background-color: #0d0d0d;
 }
 
-.location-visual-container {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 64px;
-  position: relative;
-  border-radius: 50%;
-  box-shadow: 0 0 100px rgba(100, 150, 255, 0.15);
-  animation: floatLocation 6s ease-in-out infinite;
-}
-
-@keyframes floatLocation {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.network-globe {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid rgba(255,255,255,0.2);
-}
-
-.location-section h2 {
+.about-location-section h2 {
   font-family: ui-serif, Georgia, serif;
-  font-size: 48px;
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
   margin-bottom: 24px;
-  font-weight: 400;
 }
 
-.location-section p {
-  color: #888;
-  max-width: 600px;
-  margin: 0 auto;
+.about-location-section p {
   font-size: 20px;
-  line-height: 1.6;
+  color: #a1a1aa;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .philosophy-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .about-headline { font-size: 64px; }
+  .about-staggered-row { flex-direction: column; gap: 48px; }
+  .about-philosophy-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .about-hero h1 { font-size: 48px; }
-  .about-hero p { font-size: 20px; }
-  .mission-content h2 { font-size: 40px; }
-  .manifesto-text { font-size: 20px; }
-  .philosophy-grid { grid-template-columns: 1fr; }
-  .approach-grid { grid-template-columns: 1fr; }
-  .location-section h2 { font-size: 36px; }
+  .about-hero { padding: 140px 16px 60px; }
+  .about-headline { font-size: 48px; }
+  .about-subhead { font-size: 18px; }
+  
+  .about-mission-section,
+  .about-philosophy-section,
+  .about-approach-section {
+    padding: 80px 24px;
+  }
+
+  .about-mission-content h2,
+  .about-philosophy-header h2 {
+    font-size: 40px;
+  }
+  
+  .about-philosophy-grid,
+  .about-bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-card {
+    padding: 32px;
+  }
 }
