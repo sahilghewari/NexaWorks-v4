@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import "./about.css";
 
 export const metadata: Metadata = {
@@ -10,6 +11,10 @@ export default function About() {
   return (
     <main className="about-main">
       <section className="about-hero">
+        <div className="about-hero-bg">
+          <Image src="/about-hero.jpg" alt="Context Reconstruction" fill style={{ objectFit: 'cover', opacity: 0.4 }} priority />
+          <div className="about-hero-overlay"></div>
+        </div>
         <h1>We believe context should never be lost.</h1>
         <p>
           Every knowledge worker rebuilds context before important work — pulling up old emails, searching Slack, reviewing CRM notes, re-reading past meeting summaries. NexaWorks exists to end that.
@@ -55,6 +60,12 @@ export default function About() {
         </div>
       </section>
 
+      <section className="about-visual-break">
+        <div className="visual-break-container">
+          <Image src="/about-tech.jpg" alt="Context Pipeline" width={1200} height={675} className="about-visual-image" />
+        </div>
+      </section>
+
       <section className="approach-section">
         <div className="approach-content">
           <h2>The technology behind Context Reconstruction</h2>
@@ -80,7 +91,9 @@ export default function About() {
       </section>
 
       <section className="location-section">
-        <div className="location-visual"></div>
+        <div className="location-visual-container">
+          <Image src="/about-network.jpg" alt="Global Network" width={300} height={300} className="network-globe" />
+        </div>
         <h2>Global Reach, Deep Expertise</h2>
         <p>
           Headquartered in Thane, Maharashtra, India. Engineering world-class Context Reconstruction infrastructure for enterprises across the US, UK, APAC, and domestic markets.
