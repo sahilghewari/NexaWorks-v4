@@ -7,14 +7,17 @@
 
 /* Hero Section */
 .about-hero {
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 180px 24px 80px;
-  background: radial-gradient(circle at center, #1a1a2e 0%, #0d0d0d 70%);
+  background: linear-gradient(to bottom, rgba(13,13,13,0.7), rgba(13,13,13,1)), url('/about-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .about-headline {
@@ -38,6 +41,11 @@
 /* General Staggered Section (Mission) */
 .about-mission-section {
   padding: 160px 24px;
+  background-color: #f6f6f5; /* Light creamy beige theme */
+  color: #111;
+}
+
+.about-mission-container {
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -57,13 +65,13 @@
   font-size: 56px;
   font-weight: 400;
   margin-bottom: 32px;
-  color: #fff;
+  color: #111;
 }
 
 .about-mission-content p {
   font-size: 18px;
   line-height: 1.7;
-  color: #a1a1aa;
+  color: #444;
   margin-bottom: 24px;
 }
 
@@ -72,8 +80,8 @@
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.1);
   aspect-ratio: 4/3;
 }
 

@@ -18,26 +18,28 @@ export default function About() {
       </section>
 
       <section className="about-mission-section">
-        <div className="about-staggered-row">
-          <div className="about-mission-content">
-            <h2>Our mission</h2>
-            <p>
-              Every knowledge worker should begin important work with complete context — not spend hours rebuilding it.
-            </p>
-            <p>
-              We founded NexaWorks because we watched brilliant teams waste their most productive hours on the most unproductive task imaginable: manually gathering information that already existed somewhere in their systems. The problem is invisible, unmeasured, and costs enterprises millions annually.
-            </p>
-            <p>
-              We are building the infrastructure to solve it.
-            </p>
-          </div>
-          <div className="about-mission-image">
-            <Image 
-              src="/about-mission.jpg" 
-              alt="Abstract representation of context reconstruction" 
-              fill
-              style={{ objectFit: 'cover' }}
-            />
+        <div className="about-mission-container">
+          <div className="about-staggered-row">
+            <div className="about-mission-content">
+              <h2>Our mission</h2>
+              <p>
+                Every knowledge worker should begin important work with complete context — not spend hours rebuilding it.
+              </p>
+              <p>
+                We founded NexaWorks because we watched brilliant teams waste their most productive hours on the most unproductive task imaginable: manually gathering information that already existed somewhere in their systems. The problem is invisible, unmeasured, and costs enterprises millions annually.
+              </p>
+              <p>
+                We are building the infrastructure to solve it.
+              </p>
+            </div>
+            <div className="about-mission-image">
+              <Image 
+                src="/about-mission.jpg" 
+                alt="Abstract representation of context reconstruction" 
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
           </div>
         </div>
       </section>
