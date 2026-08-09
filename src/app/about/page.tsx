@@ -11,14 +11,22 @@ export default function About() {
   return (
     <main className="about-main">
       <section className="about-hero">
-        <div className="about-hero-bg">
-          <Image src="/about-hero.jpg" alt="Context Reconstruction" fill style={{ objectFit: 'cover', opacity: 0.4 }} priority />
-          <div className="about-hero-overlay"></div>
+        <Image 
+          src="/about-hero.jpg"
+          alt="Context Reconstruction"
+          fill
+          style={{ objectFit: 'cover', zIndex: 0, opacity: 0.5 }}
+          priority
+        />
+        <div className="about-hero-overlay"></div>
+        <div className="about-hero-content">
+          <h1 className="about-hero-headline">
+            We believe context<br />should never be lost.
+          </h1>
+          <p className="about-hero-subheadline">
+            Every knowledge worker rebuilds context before important work — pulling up old emails, searching Slack, reviewing CRM notes, re-reading past meeting summaries. NexaWorks exists to end that.
+          </p>
         </div>
-        <h1>We believe context should never be lost.</h1>
-        <p>
-          Every knowledge worker rebuilds context before important work — pulling up old emails, searching Slack, reviewing CRM notes, re-reading past meeting summaries. NexaWorks exists to end that.
-        </p>
       </section>
 
       <section className="mission-section">
