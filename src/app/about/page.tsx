@@ -77,31 +77,36 @@ export default function About() {
           <h2>The technology behind Context Reconstruction</h2>
         </div>
         <div className="about-bento-grid">
-          <div className="bento-card">
+          
+          <div className="bento-card bento-retrieval">
+            <div className="bento-visual-orb"></div>
             <h3>Deterministic Retrieval</h3>
             <p>Hybrid vector + graph retrieval with Pydantic validation — ensuring the right context is always accurate and hallucinations are mathematically minimized.</p>
           </div>
-          <div className="bento-card">
+
+          <div className="bento-card bento-mcp">
+            <div className="bento-visual-grid"></div>
             <h3>Model Context Protocol</h3>
-            <p>Secure, standardized connections to your existing tools without exposing credentials or requiring massive infrastructure changes.</p>
+            <p>Secure, standardized connections to your existing tools without exposing credentials.</p>
           </div>
-          <div className="bento-card" style={{ position: 'relative', minHeight: '300px' }}>
-            <div style={{ position: 'relative', zIndex: 2 }}>
-              <h3>Enterprise Infrastructure</h3>
-              <p>We deploy directly into your cloud (AWS/GCP/Azure) to ensure your data never leaves your perimeter.</p>
-            </div>
+
+          <div className="bento-card bento-infra">
             <Image 
               src="/about-philosophy.jpg" 
               alt="Enterprise Server Infrastructure"
               fill
-              style={{ objectFit: 'cover', opacity: 0.3, zIndex: 0 }}
+              style={{ objectFit: 'cover', zIndex: 0, opacity: 0.6 }}
             />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, #111, transparent)', zIndex: 1 }} />
+            <h3 style={{ zIndex: 2 }}>Enterprise Infrastructure</h3>
+            <p style={{ zIndex: 2 }}>We deploy directly into your cloud (AWS/GCP/Azure) to ensure your data never leaves your perimeter.</p>
           </div>
-          <div className="bento-card">
+
+          <div className="bento-card bento-agents">
+            <div className="bento-visual-orb" style={{ background: 'radial-gradient(circle, rgba(200,100,255,0.15) 0%, transparent 70%)', top: 'auto', bottom: '-50px', left: '-50px' }}></div>
             <h3>Agentic Orchestration</h3>
             <p>LangGraph-powered stateful agents that navigate complex, multi-step context gathering autonomously, complete with memory and tool use.</p>
           </div>
+
         </div>
       </section>
 
