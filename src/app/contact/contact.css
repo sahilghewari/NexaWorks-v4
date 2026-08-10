@@ -1,158 +1,448 @@
-/* Contact Page - Split Screen Dark Theme */
-.contact-page {
-  background-color: #0d0d0d;
-  color: #fff;
+/* ==========================================================================
+   NexaWorks Editorial Contact Page (Harvey.ai Inspired Split-Screen)
+   ========================================================================== */
+
+.contact-page-harvey {
   min-height: 100vh;
   display: flex;
+  background-color: #0c0c0e;
+  color: #09090b;
 }
 
-/* Left: Sticky Hero */
-.contact-hero-split {
-  flex: 1;
-  position: sticky;
-  top: 0;
-  height: 100vh;
+/* --------------------------------------------------------------------------
+   Left Panel: Editorial Authority Canvas
+   -------------------------------------------------------------------------- */
+.contact-left-panel {
+  flex: 1.1;
+  background-color: #ffffff;
+  padding: 80px 72px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 80px;
-  background: linear-gradient(to right, rgba(13,13,13,1) 0%, rgba(13,13,13,0.4) 100%), url('/contact-hero-bg.webp');
-  background-size: cover;
-  background-position: center;
-  border-right: 1px solid rgba(255,255,255,0.1);
+  justify-content: space-between;
+  border-right: 1px solid #e4e4e7;
+  position: relative;
 }
 
-.contact-tag {
-  font-size: 12px;
+.contact-brand-header {
+  margin-bottom: 48px;
+}
+
+.contact-brand-logo {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  color: #09090b;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-editorial-content {
+  max-width: 580px;
+  margin: auto 0;
+}
+
+.contact-editorial-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #a1a1aa;
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 6px 16px;
-  border-radius: 100px;
-  margin-bottom: 32px;
-  align-self: flex-start;
-}
-
-.contact-headline {
-  font-family: ui-serif, Georgia, serif;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 1.1;
-  color: #fff;
+  color: #533afd;
+  background: rgba(83, 58, 253, 0.08);
+  border: 1px solid rgba(83, 58, 253, 0.2);
+  padding: 5px 12px;
+  border-radius: 20px;
   margin-bottom: 24px;
-  letter-spacing: -0.02em;
 }
 
-.contact-subhead {
-  font-size: 20px;
-  color: #a1a1aa;
+.contact-editorial-headline {
+  font-family: ui-serif, Georgia, Cambria, 'Times New Roman', serif;
+  font-size: 56px;
+  line-height: 1.06;
+  font-weight: 400;
+  color: #09090b;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+
+.contact-editorial-subhead {
+  font-size: 18px;
   line-height: 1.6;
-}
-
-/* Right: Scrolling Content */
-.contact-content-split {
-  flex: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px;
-  background: #0d0d0d;
-}
-
-/* Filter Card - Redesigned to fit Right Pane */
-.contact-filter-wrapper {
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.contact-filter-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 24px;
-  padding: 48px;
-  width: 100%;
-}
-
-/* Same styles for filter internals */
-.contact-filter-title {
-  font-family: ui-serif, Georgia, serif;
-  font-size: 32px;
+  color: #52525b;
+  margin-bottom: 40px;
   font-weight: 400;
-  color: #fff;
-  margin-bottom: 24px;
 }
 
-.contact-label {
-  display: block;
-  font-size: 12px;
+/* Client Logos Bar */
+.contact-proof-section {
+  padding-top: 32px;
+  border-top: 1px solid #f4f4f5;
+}
+
+.contact-proof-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: #a1a1aa;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.contact-proof-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.proof-logo-item {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #71717a;
+  text-transform: uppercase;
+}
+
+.contact-left-footer {
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #71717a;
+}
+
+.contact-back-link {
+  color: #09090b;
+  text-decoration: none;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
 }
 
-.contact-select {
+.contact-back-link:hover {
+  color: #533afd;
+}
+
+/* --------------------------------------------------------------------------
+   Right Panel: Deep Dark Texture with Elevated Form Card
+   -------------------------------------------------------------------------- */
+.contact-right-panel {
+  flex: 1.15;
+  background: radial-gradient(circle at top right, rgba(83, 58, 253, 0.12) 0%, transparent 60%), #0c0c0e;
+  padding: 80px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form-wrapper {
+  max-width: 580px;
   width: 100%;
-  padding: 16px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 8px;
-  color: #fff;
-  font-size: 16px;
-  appearance: none;
-  margin-bottom: 24px;
+}
+
+/* Form Card */
+.harvey-form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.harvey-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 16px;
+}
+
+.harvey-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.harvey-field-full {
+  grid-column: 1 / -1;
+}
+
+.harvey-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #18181b;
+  margin-bottom: 6px;
+}
+
+.harvey-req {
+  color: #ea2261;
+}
+
+.harvey-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #09090b;
+  background: #ffffff;
+  border: 1px solid #d4d4d8;
+  border-radius: 6px;
   outline: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.contact-select:focus {
-  border-color: rgba(255,255,255,0.3);
+.harvey-input::placeholder {
+  color: #a1a1aa;
 }
 
-.contact-select option {
-  background-color: #111;
-  color: #fff;
+.harvey-input:focus {
+  border-color: #533afd;
+  box-shadow: 0 0 0 3px rgba(83, 58, 253, 0.12);
 }
 
-.contact-disqualified {
-  padding: 24px;
-  background: rgba(255, 50, 50, 0.1);
-  border: 1px solid rgba(255, 50, 50, 0.2);
-  border-radius: 12px;
+.harvey-select-wrapper {
+  position: relative;
+}
+
+.harvey-select {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #09090b;
+  background: #ffffff;
+  border: 1px solid #d4d4d8;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.harvey-select:focus {
+  border-color: #533afd;
+  box-shadow: 0 0 0 3px rgba(83, 58, 253, 0.12);
+}
+
+/* Consent Checkbox */
+.harvey-consent-row {
+  margin-top: 4px;
+}
+
+.harvey-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.harvey-checkbox {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: #533afd;
+  cursor: pointer;
+}
+
+.harvey-checkbox-text {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #52525b;
+}
+
+/* Submit Button */
+.harvey-submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #09090b;
+  border: 1px solid #09090b;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 8px;
+}
+
+.harvey-submit-btn:hover {
+  background: #18181b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.harvey-submit-btn:active {
+  transform: translateY(0);
+}
+
+.harvey-privacy-note {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #71717a;
   text-align: center;
+  margin-top: 8px;
 }
 
-.contact-disqualified p {
-  color: #fff;
-  font-size: 16px;
+.harvey-privacy-link {
+  color: #09090b;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Success State Card
+   -------------------------------------------------------------------------- */
+.harvey-success-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.harvey-success-icon {
+  width: 56px;
+  height: 56px;
+  background: #ecfdf5;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.harvey-success-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 28px;
+  color: #09090b;
+  margin-bottom: 12px;
+}
+
+.harvey-success-desc {
+  font-size: 15px;
   line-height: 1.6;
-  margin-bottom: 24px;
+  color: #52525b;
+  margin-bottom: 32px;
 }
 
-/* Responsive */
+.harvey-success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #f4f4f5;
+}
+
+.harvey-fast-track-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #71717a;
+}
+
+.harvey-fast-track-grid {
+  display: flex;
+  gap: 12px;
+}
+
+.harvey-btn-calendly {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #09090b;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.harvey-btn-calendly:hover {
+  background: #18181b;
+}
+
+.harvey-btn-whatsapp {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.harvey-btn-whatsapp:hover {
+  opacity: 0.9;
+}
+
+.harvey-btn-reset {
+  background: none;
+  border: none;
+  color: #71717a;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 8px;
+  margin-top: 8px;
+}
+
+.harvey-btn-reset:hover {
+  color: #09090b;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
-  .contact-page {
+  .contact-page-harvey {
     flex-direction: column;
   }
-  
-  .contact-hero-split {
-    position: relative;
-    height: auto;
-    min-height: 60vh;
+
+  .contact-left-panel {
+    padding: 64px 28px 48px;
     border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding: 120px 24px 60px;
+    border-bottom: 1px solid #e4e4e7;
+  }
+
+  .contact-editorial-headline {
+    font-size: 42px;
+  }
+
+  .contact-right-panel {
+    padding: 48px 20px 80px;
+  }
+
+  .harvey-form-card {
+    padding: 32px 20px;
+  }
+
+  .harvey-fast-track-grid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .harvey-form-grid {
+    grid-template-columns: 1fr;
   }
   
-  .contact-content-split {
-    padding: 60px 24px;
-    justify-content: flex-start;
+  .contact-editorial-headline {
+    font-size: 34px;
   }
-  
-  .contact-headline { font-size: 48px; }
-  .contact-filter-card { padding: 32px 24px; }
 }
