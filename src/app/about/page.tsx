@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./about.css";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function About() {
 
       <section className="about-mission-section">
         <div className="about-mission-container">
-          <div className="about-staggered-row">
+          <ScrollReveal className="about-staggered-row">
             <div className="about-mission-content">
               <h2>Our mission</h2>
               <p>
@@ -40,7 +41,7 @@ export default function About() {
                 style={{ objectFit: 'cover' }}
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -50,24 +51,24 @@ export default function About() {
             <h2>How we build</h2>
           </div>
           <div className="about-philosophy-grid">
-            <div className="philosophy-glass-card">
+            <ScrollReveal delay={0.1} className="philosophy-glass-card">
               <h3>Production-First</h3>
               <p>
                 We don't build demos. Every system is designed from day one for 24/7 autonomous operation with full observability, structured logging, and robust error recovery.
               </p>
-            </div>
-            <div className="philosophy-glass-card">
+            </ScrollReveal>
+            <ScrollReveal delay={0.2} className="philosophy-glass-card">
               <h3>Security-Native</h3>
               <p>
                 OWASP Top 10 for LLM Applications compliance built in. Pydantic validation, PII redaction middleware, and Human-in-the-Loop gateways are architectural defaults, not afterthoughts.
               </p>
-            </div>
-            <div className="philosophy-glass-card">
+            </ScrollReveal>
+            <ScrollReveal delay={0.3} className="philosophy-glass-card">
               <h3>Outcome-Priced</h3>
               <p>
                 We price on operational outcomes, not headcount or hours. Our revenue aligns directly with the business value and efficiency we create for your enterprise.
               </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -78,19 +79,19 @@ export default function About() {
         </div>
         <div className="about-bento-grid">
           
-          <div className="bento-card bento-retrieval">
+          <ScrollReveal delay={0.1} className="bento-card bento-retrieval">
             <div className="bento-visual-orb"></div>
             <h3>Deterministic Retrieval</h3>
             <p>Hybrid vector + graph retrieval with Pydantic validation — ensuring the right context is always accurate and hallucinations are mathematically minimized.</p>
-          </div>
+          </ScrollReveal>
 
-          <div className="bento-card bento-mcp">
+          <ScrollReveal delay={0.2} className="bento-card bento-mcp">
             <div className="bento-visual-grid"></div>
             <h3>Model Context Protocol</h3>
             <p>Secure, standardized connections to your existing tools without exposing credentials.</p>
-          </div>
+          </ScrollReveal>
 
-          <div className="bento-card bento-infra">
+          <ScrollReveal delay={0.3} className="bento-card bento-infra">
             <Image 
               src="/about-philosophy.jpg" 
               alt="Enterprise Server Infrastructure"
@@ -99,23 +100,25 @@ export default function About() {
             />
             <h3 style={{ zIndex: 2 }}>Enterprise Infrastructure</h3>
             <p style={{ zIndex: 2 }}>We deploy directly into your cloud (AWS/GCP/Azure) to ensure your data never leaves your perimeter.</p>
-          </div>
+          </ScrollReveal>
 
-          <div className="bento-card bento-agents">
+          <ScrollReveal delay={0.4} className="bento-card bento-agents">
             <div className="bento-visual-orb" style={{ background: 'radial-gradient(circle, rgba(200,100,255,0.15) 0%, transparent 70%)', top: 'auto', bottom: '-50px', left: '-50px' }}></div>
             <h3>Agentic Orchestration</h3>
             <p>LangGraph-powered stateful agents that navigate complex, multi-step context gathering autonomously, complete with memory and tool use.</p>
-          </div>
+          </ScrollReveal>
 
         </div>
       </section>
 
-      <section className="about-location-section">
-        <h2>Global Reach, Deep Expertise</h2>
-        <p>
-          Headquartered in Thane, Maharashtra, India. Engineering world-class Context Reconstruction infrastructure for enterprises across the US, UK, APAC, and domestic markets.
-        </p>
-      </section>
+      <ScrollReveal>
+        <section className="about-location-section">
+          <h2>Global Reach, Deep Expertise</h2>
+          <p>
+            Headquartered in Thane, Maharashtra, India. Engineering world-class Context Reconstruction infrastructure for enterprises across the US, UK, APAC, and domestic markets.
+          </p>
+        </section>
+      </ScrollReveal>
     </main>
   );
 }
