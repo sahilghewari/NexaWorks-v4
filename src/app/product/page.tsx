@@ -44,12 +44,15 @@ export default function ProductPage() {
       }) }} />
       <InteractiveHero />
 
-      <section className="product-section" style={{ paddingBottom: '0' }}>
-        <AEOAnswerBlock 
-          question="What is Context Reconstruction?" 
-          answer="Context Reconstruction is the automated process of assembling scattered enterprise data across multiple platforms into a single, workflow-ready brief using deterministic retrieval and Model Context Protocol integrations." 
-        />
-      </section>
+      <div style={{ padding: '48px 0 24px 0' }}>
+        <ScrollReveal delay={0.1}>
+          <AEOAnswerBlock 
+            tag="Platform Architecture Brief"
+            question="What is Context Reconstruction?" 
+            answer="Context Reconstruction is the automated process of assembling scattered enterprise data across multiple platforms into a single, workflow-ready brief using deterministic retrieval and Model Context Protocol integrations." 
+          />
+        </ScrollReveal>
+      </div>
 
       <ScrollReveal delay={0.2}>
         <section className="product-section product-section-light">

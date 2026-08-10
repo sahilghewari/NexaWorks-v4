@@ -39,12 +39,15 @@ export default function SolutionsPage() {
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions' }]} />
       <InteractiveSolutionsHero />
 
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px 0 24px' }}>
-        <AEOAnswerBlock 
-          question="How does NexaWorks solve context switching?" 
-          answer="NexaWorks eliminates context switching by proactively delivering unified data summaries to sales, clinical, finance, and legal teams precisely when they need it, reducing manual research time by up to 90%." 
-        />
-      </section>
+      <div style={{ padding: '48px 0 24px 0' }}>
+        <ScrollReveal delay={0.1}>
+          <AEOAnswerBlock 
+            tag="Solutions Architecture Brief"
+            question="How does NexaWorks solve context switching?" 
+            answer="NexaWorks eliminates context switching by proactively delivering unified data summaries to sales, clinical, finance, and legal teams precisely when they need it, reducing manual research time by up to 90%." 
+          />
+        </ScrollReveal>
+      </div>
 
       <div style={{ backgroundColor: '#000', padding: '48px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <TrustSignals />

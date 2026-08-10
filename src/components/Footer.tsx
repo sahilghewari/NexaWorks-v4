@@ -5,22 +5,22 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <div className="container" style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px' }}>
         <div className="footer-grid">
           {/* Column 1: Brand */}
           <div className="footer-col brand-col">
-            <Link href="/" className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-              <Image src="/logo.webp" alt="NexaWorks" width={28} height={28} className="logo-image" style={{ borderRadius: '50%' }} />
-              <span className="logo-text" style={{ fontSize: '20px', fontWeight: '500', color: 'var(--color-ink)', letterSpacing: '-0.02em' }}>NexaWorks</span>
+            <Link href="/" className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none', marginBottom: '16px' }}>
+              <Image src="/logo.webp" alt="NexaWorks" width={28} height={28} className="logo-image" />
+              <span className="logo-text" style={{ fontSize: '20px', fontWeight: '500', color: '#ffffff', letterSpacing: '-0.02em' }}>NexaWorks</span>
             </Link>
-            <p className="caption mt-16" style={{ marginTop: '16px' }}>
-              Production-grade Context Reconstruction for the enterprise.
+            <p className="footer-tagline">
+              Production-grade Context Reconstruction platform for enterprise intelligence & deterministic retrieval.
             </p>
           </div>
 
           {/* Column 2: Platform */}
           <div className="footer-col">
-            <h3 className="heading-sm footer-heading">Platform</h3>
+            <h3 className="footer-heading">Platform</h3>
             <ul className="footer-links">
               <li><Link href="/product">AI Agents</Link></li>
               <li><Link href="/product">Workflow Automation</Link></li>
@@ -33,7 +33,7 @@ export default function Footer() {
 
           {/* Column 3: Solutions */}
           <div className="footer-col">
-            <h3 className="heading-sm footer-heading">Solutions</h3>
+            <h3 className="footer-heading">Solutions</h3>
             <ul className="footer-links">
               <li><Link href="/solutions">Financial Services</Link></li>
               <li><Link href="/solutions">Healthcare</Link></li>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Column 4: Resources */}
           <div className="footer-col">
-            <h3 className="heading-sm footer-heading">Resources</h3>
+            <h3 className="footer-heading">Resources</h3>
             <ul className="footer-links">
               <li><Link href="/docs">Documentation</Link></li>
               <li><Link href="/playbooks">Playbooks</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Column 5: Company */}
           <div className="footer-col">
-            <h3 className="heading-sm footer-heading">Company</h3>
+            <h3 className="footer-heading">Company</h3>
             <ul className="footer-links">
               <li><Link href="/about">About</Link></li>
               <li><Link href="/contact">Contact</Link></li>
@@ -69,7 +69,7 @@ export default function Footer() {
 
         {/* Bottom Legal Row */}
         <div className="footer-bottom">
-          <p className="caption">© 2026 NexaWorks. All rights reserved.</p>
+          <p>© 2026 NexaWorks Technology. All rights reserved.</p>
           <div className="footer-socials">
             <a href="https://github.com/nexaworks-technology" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               GitHub

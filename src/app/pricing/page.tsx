@@ -79,12 +79,15 @@ export default function PricingPage() {
         </p>
       </section>
 
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px 48px 24px' }}>
-        <AEOAnswerBlock 
-          question="How is NexaWorks priced?" 
-          answer="NexaWorks uses an outcome-based pricing model that aligns costs directly with the operational value and hours saved for your organization, rather than charging by arbitrary user seat counts." 
-        />
-      </section>
+      <div style={{ padding: '32px 0 48px 0' }}>
+        <ScrollReveal delay={0.1}>
+          <AEOAnswerBlock 
+            tag="Commercial Model Brief"
+            question="How is NexaWorks priced?" 
+            answer="NexaWorks uses an outcome-based pricing model that aligns costs directly with the operational value and hours saved for your organization, rather than charging by arbitrary user seat counts." 
+          />
+        </ScrollReveal>
+      </div>
 
       <section className="pricing-grid-section">
         <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>Choose Your Plan</h2>
