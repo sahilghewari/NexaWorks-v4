@@ -60,7 +60,7 @@ export default function DocumentationLandingPage() {
       title: "Architecture",
       description: "How stateful LangGraph agents orchestrate context assembly.",
       links: [
-        { label: "Stateful Agents", url: "/docs/agentic-rag" },
+        { label: "Stateful Agents", url: "/docs/swarm-api" },
         { label: "Context Assembly", url: "/docs/methodology" }
       ]
     }
@@ -78,26 +78,26 @@ export default function DocumentationLandingPage() {
             <div className="docs-nav-group-title">Getting Started</div>
             <ul className="docs-nav-list">
               <li><Link href="/docs" className="docs-nav-link active">Introduction</Link></li>
-              <li><Link href="/docs/quickstart" className="docs-nav-link">Quickstart</Link></li>
-              <li><Link href="/docs/requirements" className="docs-nav-link">System Requirements</Link></li>
+              <li><Link href="/docs/methodology" className="docs-nav-link">Methodology Guide</Link></li>
+              <li><Link href="/docs/mcp-integrations" className="docs-nav-link">MCP Integrations</Link></li>
             </ul>
           </div>
 
           <div className="docs-nav-group">
-            <div className="docs-nav-group-title">Core Concepts</div>
+            <div className="docs-nav-group-title">Architecture & APIs</div>
             <ul className="docs-nav-list">
-              <li><Link href="/docs/agentic-rag" className="docs-nav-link">Agentic RAG</Link></li>
-              <li><Link href="/docs/deterministic-routing" className="docs-nav-link">Deterministic Routing</Link></li>
-              <li><Link href="/docs/hitl" className="docs-nav-link">Human-in-the-loop</Link></li>
+              <li><Link href="/docs/swarm-api" className="docs-nav-link">Swarm API</Link></li>
+              <li><Link href="/security" className="docs-nav-link">Security & Trust</Link></li>
+              <li><Link href="/integrations" className="docs-nav-link">Integrations Stack</Link></li>
             </ul>
           </div>
           
           <div className="docs-nav-group">
-            <div className="docs-nav-group-title">API Reference</div>
+            <div className="docs-nav-group-title">Interactive Tools</div>
             <ul className="docs-nav-list">
-              <li><Link href="/docs/authentication" className="docs-nav-link">Authentication</Link></li>
-              <li><Link href="/docs/rest-api" className="docs-nav-link">REST Endpoints</Link></li>
-              <li><Link href="/docs/graphql" className="docs-nav-link">GraphQL API</Link></li>
+              <li><Link href="/tools/mcp-architecture-generator" className="docs-nav-link">MCP Generator</Link></li>
+              <li><Link href="/tools/eu-ai-act-assessor" className="docs-nav-link">EU AI Act Assessor</Link></li>
+              <li><Link href="/tools/roi-calculator" className="docs-nav-link">ROI Calculator</Link></li>
             </ul>
           </div>
         </nav>

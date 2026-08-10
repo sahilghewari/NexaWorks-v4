@@ -34,25 +34,25 @@ export default function ArchitectureLibrary() {
       title: "Agentic Retrieval-Augmented Generation (RAG)",
       description: "How we deploy Stateful LangGraph agents connected to pgvector databases for high-fidelity context reconstruction.",
       tags: ["LangGraph", "pgvector", "FastAPI"],
-      link: "/architecture/agentic-rag"
+      link: "/us-architecture/sales-engineering-rag"
     },
     {
       title: "On-Premise LLM Deployment",
       description: "Hardware requirements and vLLM serving configuration for air-gapped deployments of Llama 3 405B.",
       tags: ["vLLM", "CUDA", "Llama-3"],
-      link: "/contact"
+      link: "/us-architecture/async-llm-refactoring"
     },
     {
       title: "Zero-Trust Security Gateway",
       description: "Edge-based token redaction and semantic firewalling for strict multi-tenant isolation.",
       tags: ["Istio", "Regex", "OAuth2"],
-      link: "/contact"
+      link: "/in-automation/dpdp-act-pii-redaction"
     },
     {
-      title: "High-Throughput Vector Ingestion",
-      description: "Our pipeline for chunking, embedding, and indexing 100M+ documents per day using distributed worker queues.",
-      tags: ["Kafka", "Celery", "ONNX"],
-      link: "/contact"
+      title: "Browser Automation & Legacy Mainframes",
+      description: "Our pipeline for bridging legacy mainframes and air-gapped platforms using computer use and distributed worker queues.",
+      tags: ["Computer Use", "Playwright", "FastAPI"],
+      link: "/architecture/browser-automation"
     }
   ];
 

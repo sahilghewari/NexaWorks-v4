@@ -30,45 +30,45 @@ export const metadata = {
 
 export default function BlogLandingPage() {
   const latestPost = {
-    title: "GraphRAG vs Vector Databases: A Quantitative Benchmark",
-    description: "We open-source our internal benchmarks comparing latency, token consumption, and recall accuracy between flat vector databases (Pinecone) and property graphs (Neo4j).",
-    category: "Engineering",
-    date: "Aug 10, 2026",
-    link: "/blog/graphrag-benchmark"
+    title: "The Death of Legacy OCR: Why Agentic Pipelines Won in 2026",
+    description: "Traditional template-based OCR systems have entirely collapsed under the weight of unstructured enterprise data. Here is how visual-language models (VLMs) replaced them.",
+    category: "Architecture",
+    date: "Aug 12, 2026",
+    link: "/blog/death-of-legacy-ocr-agentic-pipelines"
   };
 
   const olderPosts = [
     {
-      title: "The Death of Prompt Engineering",
-      description: "Why structured schemas (Pydantic) and constrained decoding have rendered traditional prompt engineering obsolete.",
-      category: "Methodology",
-      date: "Jul 22, 2026",
+      title: "Understanding the Model Context Protocol (MCP)",
+      description: "Anthropic's MCP standard has fundamentally changed how agents connect to data. Stop writing custom API wrappers and start building MCP servers.",
+      category: "Engineering",
+      date: "Aug 5, 2026",
       large: true,
-      link: "/blog/prompt-engineering"
+      link: "/blog/understanding-model-context-protocol-mcp"
     },
     {
-      title: "Building Deterministic Agents",
-      description: "How to constrain LLM routing using explicit state machines in LangGraph.",
-      category: "Tutorial",
-      date: "Jul 15, 2026",
+      title: "Enterprise RAG & Deterministic Routing",
+      description: "How to constrain LLM routing using explicit state machines, Pydantic validation, and LangGraph architectures.",
+      category: "Methodology",
+      date: "Jul 28, 2026",
       large: false,
-      link: "/blog/deterministic-agents"
+      link: "/blog/enterprise-rag-deterministic-routing"
     },
     {
-      title: "Deploying Llama 3 405B on Bare Metal",
-      description: "Hardware requirements for offline processing.",
+      title: "Browser Automation Agents on Legacy Mainframes",
+      description: "Visual automation and computer use capabilities for bridging legacy ERP and mainframe systems where APIs do not exist.",
       category: "Infrastructure",
-      date: "Jun 30, 2026",
+      date: "Jul 18, 2026",
       large: false,
-      link: "/blog/llama-deployment"
+      link: "/blog/browser-automation-agents-legacy-mainframes"
     },
     {
-      title: "SOC 2 Compliance with AI Agents",
-      description: "Implementing HITL (Human-in-the-Loop) to satisfy strict auditor requirements.",
-      category: "Security",
-      date: "Jun 12, 2026",
+      title: "The Hidden Cost of Context Switching",
+      description: "Quantifying how fragmented enterprise knowledge across CRMs, Slack, and email degrades employee velocity and decision quality.",
+      category: "Research",
+      date: "Jul 10, 2026",
       large: false,
-      link: "/blog/soc2-compliance"
+      link: "/blog/hidden-cost-of-context-switching"
     }
   ];
 

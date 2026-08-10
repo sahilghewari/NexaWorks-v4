@@ -36,31 +36,31 @@ export default function PlaybooksLandingPage() {
       category: "Strategy",
       author: "Dr. Sarah Chen",
       role: "Chief Architect",
-      link: "/playbooks/cio-guide"
+      link: "/research/state-of-enterprise-ai-2026"
     },
     {
-      title: "Cost Optimization in LLM Serving",
-      description: "A framework for calculating total cost of ownership (TCO) across managed APIs vs. bare-metal self-hosting.",
-      category: "Operations",
+      title: "EU AI Act Compliance & Governance",
+      description: "A framework for classifying AI risk tiers, implementing human-in-the-loop audit logs, and meeting EU deadlines.",
+      category: "Governance",
       author: "Marcus Reynolds",
       role: "VP Engineering",
-      link: "/playbooks/cost-optimization"
+      link: "/playbooks/eu-ai-act-compliance"
     },
     {
-      title: "Migrating to GraphRAG",
-      description: "Step-by-step technical guide for moving from naive chunking to entity-relationship knowledge graphs.",
-      category: "Implementation",
+      title: "Enterprise Infrastructure & Latency Optimization",
+      description: "Step-by-step technical playbook for deploying private models, GPU scheduling, and sub-100ms context caching.",
+      category: "Infrastructure",
       author: "Elena Rostova",
       role: "Lead ML Engineer",
-      link: "/playbooks/graphrag-migration"
+      link: "/infrastructure-playbooks"
     },
     {
-      title: "Defending Against Prompt Injection",
-      description: "A comprehensive analysis of red-teaming techniques and how deterministic guardrails neutralize them.",
-      category: "Security",
+      title: "Context Window Degradation & Benchmark Report",
+      description: "Comprehensive benchmark comparing GraphRAG vs flat vector databases across 1M+ token enterprise contexts.",
+      category: "Research",
       author: "David Kim",
       role: "Head of MLSecOps",
-      link: "/playbooks/prompt-injection-defense"
+      link: "/benchmarks/context-window-degradation"
     }
   ];
 
