@@ -5,6 +5,7 @@ import FadingTextCarousel from "@/components/FadingTextCarousel";
 import InteractiveResearchCarousel from "@/components/InteractiveResearchCarousel";
 import GradientMesh from "@/components/GradientMesh";
 import TrustSignals from "@/components/TrustSignals";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./page.css";
 
 export const metadata = {
@@ -48,141 +49,167 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="editorial-section">
-        <div className="editorial-container">
-          <h2 className="editorial-headline">
-            NexaWorks is AI designed for<br/>complex professional workflows.
-          </h2>
-          <p className="editorial-subheadline">
-            Advance your expertise on a secure platform that<br/>lets you focus on high-value work.
-          </p>
-          <div className="ui-mockup-container" style={{ padding: 0, height: 'auto', border: 'none' }}>
-            <Image 
-              src="/workflow-mockup.jpg"
-              alt="NexaWorks Workflow UI"
-              width={1000}
-              height={562}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
+      <ScrollReveal delay={0.2}>
+        <section className="editorial-section">
+          <div className="editorial-container">
+            <h2 className="editorial-headline">
+              NexaWorks is AI designed for<br/>complex professional workflows.
+            </h2>
+            <p className="editorial-subheadline">
+              Advance your expertise on a secure platform that<br/>lets you focus on high-value work.
+            </p>
+            <div className="ui-mockup-container" style={{ padding: 0, height: 'auto', border: 'none' }}>
+              <Image 
+                src="/workflow-mockup.jpg"
+                alt="NexaWorks Workflow UI"
+                width={1000}
+                height={562}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       <FadingTextCarousel />
 
-      <section className="testimonial-section">
-        <div className="testimonial-container">
-          <div className="testimonial-image">
-            <Image 
-              src="/trust-visual.jpg" 
-              alt="NexaWorks Secure Core" 
-              width={800} 
-              height={800} 
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-            />
-          </div>
-          <div className="testimonial-content">
-            <p className="testimonial-quote">"NexaWorks is engineered from the ground up for the world's most demanding enterprises. Security, absolute data privacy, and deterministic routing are not afterthoughts—they are our foundation."</p>
-            <div className="testimonial-author">
-              <strong>Enterprise-Grade Security</strong><br/>
-              SOC2 COMPLIANT • END-TO-END ENCRYPTION
+      <ScrollReveal>
+        <section className="testimonial-section">
+          <div className="testimonial-container">
+            <div className="testimonial-image">
+              <Image 
+                src="/trust-visual.jpg" 
+                alt="NexaWorks Secure Core" 
+                width={800} 
+                height={800} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+              />
             </div>
-            <div className="testimonial-logo">ZERO DATA RETENTION</div>
+            <div className="testimonial-content">
+              <p className="testimonial-quote">"NexaWorks is engineered from the ground up for the world's most demanding enterprises. Security, absolute data privacy, and deterministic routing are not afterthoughts—they are our foundation."</p>
+              <div className="testimonial-author">
+                <strong>Enterprise-Grade Security</strong><br/>
+                SOC2 COMPLIANT • END-TO-END ENCRYPTION
+              </div>
+              <div className="testimonial-logo">ZERO DATA RETENTION</div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
       <InteractiveResearchCarousel />
 
-      <section className="comparison-section">
-        <div className="comparison-container">
-          <div className="comparison-header">
-            <div className="comparison-logos">
-              <span>VS ENTERPRISE SEARCH</span> | <span>VS LLM CHATBOTS</span> | <span>VS CUSTOM RAG</span>
+      <ScrollReveal>
+        <section className="comparison-section">
+          <div className="comparison-container">
+            <div className="comparison-header">
+              <div className="comparison-logos">
+                <span>VS ENTERPRISE SEARCH</span> | <span>VS LLM CHATBOTS</span> | <span>VS CUSTOM RAG</span>
+              </div>
+              <h2 className="comparison-title">Why the world's most demanding<br/>teams choose NexaWorks</h2>
             </div>
-            <h2 className="comparison-title">Why the world's most demanding<br/>teams choose NexaWorks</h2>
+            <div className="comparison-list">
+              <ScrollReveal delay={0.1} animation="fade-up">
+                <div className="comparison-row">
+                  <span className="comparison-label">Legacy Enterprise Search</span>
+                  <div className="comparison-content-right">
+                    <span className="comparison-value">10+ blue links.</span>
+                    <span className="comparison-subtext">NexaWorks synthesizes a single, deterministic answer.</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2} animation="fade-up">
+                <div className="comparison-row">
+                  <span className="comparison-label">Generic LLM Chatbots</span>
+                  <div className="comparison-content-right">
+                    <span className="comparison-value">Probabilistic & hallucinates.</span>
+                    <span className="comparison-subtext">NexaWorks routes deterministically with 99.9% accuracy.</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.3} animation="fade-up">
+                <div className="comparison-row">
+                  <span className="comparison-label">Custom LangChain / RAG</span>
+                  <div className="comparison-content-right">
+                    <span className="comparison-value">Months to build.</span>
+                    <span className="comparison-subtext">NexaWorks deploys in days with out-of-the-box integrations.</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+              <ScrollReveal delay={0.4} animation="fade-up">
+                <div className="comparison-row">
+                  <span className="comparison-label">Traditional RPA</span>
+                  <div className="comparison-content-right">
+                    <span className="comparison-value">Brittle & rules-based.</span>
+                    <span className="comparison-subtext">NexaWorks adapts to unstructured data dynamically.</span>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
-          <div className="comparison-list">
-            <div className="comparison-row">
-              <span className="comparison-label">Legacy Enterprise Search</span>
-              <div className="comparison-content-right">
-                <span className="comparison-value">10+ blue links.</span>
-                <span className="comparison-subtext">NexaWorks synthesizes a single, deterministic answer.</span>
-              </div>
-            </div>
-            <div className="comparison-row">
-              <span className="comparison-label">Generic LLM Chatbots</span>
-              <div className="comparison-content-right">
-                <span className="comparison-value">Probabilistic & hallucinates.</span>
-                <span className="comparison-subtext">NexaWorks routes deterministically with 99.9% accuracy.</span>
-              </div>
-            </div>
-            <div className="comparison-row">
-              <span className="comparison-label">Custom LangChain / RAG</span>
-              <div className="comparison-content-right">
-                <span className="comparison-value">Months to build.</span>
-                <span className="comparison-subtext">NexaWorks deploys in days with out-of-the-box integrations.</span>
-              </div>
-            </div>
-            <div className="comparison-row">
-              <span className="comparison-label">Traditional RPA</span>
-              <div className="comparison-content-right">
-                <span className="comparison-value">Brittle & rules-based.</span>
-                <span className="comparison-subtext">NexaWorks adapts to unstructured data dynamically.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      <section className="security-badges-section">
-        <div className="security-header-grid">
-          <h2 className="security-title">Enterprise-grade<br/>architecture and controls</h2>
-          <div className="security-desc">
-            <p>NexaWorks is engineered from the ground up for the world's most demanding enterprises. Built natively on secure AWS and Google Cloud infrastructure, we provide the foundational controls your security team requires.</p>
-            <div style={{marginTop: '24px'}}>
-               <Link href="/security" className="btn-outline-light-small">More About Security</Link>
+      <ScrollReveal>
+        <section className="security-badges-section">
+          <div className="security-header-grid">
+            <h2 className="security-title">Enterprise-grade<br/>architecture and controls</h2>
+            <div className="security-desc">
+              <p>NexaWorks is engineered from the ground up for the world's most demanding enterprises. Built natively on secure AWS and Google Cloud infrastructure, we provide the foundational controls your security team requires.</p>
+              <div style={{marginTop: '24px'}}>
+                 <Link href="/security" className="btn-outline-light-small">More About Security</Link>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="security-grid">
-          <div className="security-badge">
-            <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-            </div>
-            <h4>Zero Data Retention</h4>
-            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>No Model Training</span>
+          <div className="security-grid">
+            <ScrollReveal delay={0.1}>
+              <div className="security-badge">
+                <div className="badge-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                </div>
+                <h4>Zero Data Retention</h4>
+                <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>No Model Training</span>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div className="security-badge">
+                <div className="badge-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h4>End-to-End Encryption</h4>
+                <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>AES-256 & TLS 1.3</span>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <div className="security-badge">
+                <div className="badge-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
+                </div>
+                <h4>SSO & Role-Based Access</h4>
+                <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SAML Ready</span>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <div className="security-badge">
+                <div className="badge-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                </div>
+                <h4>Cloud-Native Infrastructure</h4>
+                <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>AWS & Google Cloud</span>
+              </div>
+            </ScrollReveal>
           </div>
-          <div className="security-badge">
-            <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-            </div>
-            <h4>End-to-End Encryption</h4>
-            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>AES-256 & TLS 1.3</span>
-          </div>
-          <div className="security-badge">
-            <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="7" r="4"></circle><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path></svg>
-            </div>
-            <h4>SSO & Role-Based Access</h4>
-            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>SAML Ready</span>
-          </div>
-          <div className="security-badge">
-            <div className="badge-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
-            </div>
-            <h4>Cloud-Native Infrastructure</h4>
-            <span style={{ fontSize: '10px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.1em' }}>AWS & Google Cloud</span>
-          </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      <section className="footer-cta-section">
-        <div className="footer-cta-container">
-          <h2 className="footer-cta-title">Give your team the context they need to win.</h2>
-          <Link href="/contact" className="btn-solid-white">Request a Demo</Link>
-        </div>
-      </section>
+      <ScrollReveal animation="fade-in" duration={1}>
+        <section className="footer-cta-section">
+          <div className="footer-cta-container">
+            <h2 className="footer-cta-title">Give your team the context they need to win.</h2>
+            <Link href="/contact" className="btn-solid-white">Request a Demo</Link>
+          </div>
+        </section>
+      </ScrollReveal>
     </main>
   );
 }
