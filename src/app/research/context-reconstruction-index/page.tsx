@@ -150,7 +150,7 @@ export default function ContextReconstructionIndexPage() {
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link 
-              href="#" 
+              href="/contact" 
               style={{ 
                 padding: '16px 32px', 
                 backgroundColor: 'var(--color-primary)', 

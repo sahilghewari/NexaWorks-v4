@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="navbar-container">
           {/* Left: Logo */}
           <Link href="/" className="logo-link" onClick={closeMobileMenu}>
-            <Image src="/logo.jpg" alt="NexaWorks" width={36} height={36} className="logo-image" style={{ borderRadius: '50%' }} />
+            <Image src="/logo.webp" alt="NexaWorks" width={36} height={36} className="logo-image" style={{ borderRadius: '50%' }} />
             <span className="logo-text">NexaWorks</span>
           </Link>
 
@@ -47,7 +47,7 @@ export default function Navbar() {
           {/* Right: Desktop CTA */}
           <div className="navbar-right">
             <Link href="/contact" className="navbar-contact body-md">Contact</Link>
-            <Link href="/get-started" className="btn-primary">Get Started</Link>
+            <Link href="/contact" className="btn-primary">Get Started</Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -61,7 +61,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="navbar-mobile-overlay">
+        <div className="navbar-mobile-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
           <div className="navbar-mobile-header">
             <Link href="/" className="navbar-logo display-md" onClick={closeMobileMenu}>
               NexaWorks
@@ -78,7 +78,7 @@ export default function Navbar() {
             <Link href="/about" className="navbar-mobile-link body-md" onClick={closeMobileMenu}>About</Link>
             <Link href="/research" className="navbar-mobile-link body-md" onClick={closeMobileMenu}>Research</Link>
             <Link href="/contact" className="navbar-mobile-link body-md" onClick={closeMobileMenu}>Contact</Link>
-            <Link href="/get-started" className="btn-primary navbar-mobile-cta" onClick={closeMobileMenu}>Get Started</Link>
+            <Link href="/contact" className="btn-primary navbar-mobile-cta" onClick={closeMobileMenu}>Get Started</Link>
           </nav>
         </div>
       )}

@@ -1,4 +1,3 @@
-import Script from 'next/script';
 
 export default function SchemaMarkup() {
   const organizationSchema = {
@@ -57,16 +56,16 @@ export default function SchemaMarkup() {
     "url": "https://nexaworks.tech",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://nexaworks.tech/search?q={search_term_string}",
+      "target": "https://nexaworks.tech/docs?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
 
   return (
     <>
-      <Script id="org-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <Script id="local-business-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <Script id="website-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
     </>
   );
 }

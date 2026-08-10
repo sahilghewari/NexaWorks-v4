@@ -11,6 +11,25 @@ import "./page.css";
 export const metadata = {
   title: 'NexaWorks — Context, Reconstructed',
   description: 'NexaWorks eliminates the hours your team spends gathering context before every meeting, deal, and decision. Complete context. Before you ask.',
+  keywords: ['Context Reconstruction', 'Enterprise AI', 'Knowledge Management', 'RAG', 'Agentic Workflows', 'AI Automation'],
+  alternates: { canonical: 'https://nexaworks.tech/' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'NexaWorks — Context, Reconstructed',
+    description: 'NexaWorks eliminates the hours your team spends gathering context before every meeting, deal, and decision. Complete context. Before you ask.',
+    url: 'https://nexaworks.tech/',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'NexaWorks Home Page' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: 'NexaWorks — Context, Reconstructed',
+    description: 'NexaWorks eliminates the hours your team spends gathering context before every meeting, deal, and decision. Complete context. Before you ask.',
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
 export default function Home() {
@@ -18,7 +37,7 @@ export default function Home() {
     <main className="cinematic-page">
       <section className="cinematic-hero">
         <Image 
-          src="/cinematic-hero.jpg"
+          src="/cinematic-hero.webp"
           alt="Cinematic Boardroom Context"
           fill
           style={{ objectFit: 'cover', zIndex: 0, opacity: 0.5 }}
@@ -60,7 +79,7 @@ export default function Home() {
             </p>
             <div className="ui-mockup-container" style={{ padding: 0, height: 'auto', border: 'none' }}>
               <Image 
-                src="/workflow-mockup.jpg"
+                src="/workflow-mockup.webp"
                 alt="NexaWorks Workflow UI"
                 width={1000}
                 height={562}
@@ -78,7 +97,7 @@ export default function Home() {
           <div className="testimonial-container">
             <div className="testimonial-image">
               <Image 
-                src="/trust-visual.jpg" 
+                src="/trust-visual.webp" 
                 alt="NexaWorks Secure Core" 
                 width={800} 
                 height={800} 

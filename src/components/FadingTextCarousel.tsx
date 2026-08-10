@@ -26,7 +26,7 @@ export default function FadingTextCarousel() {
 
   return (
     <section className="fading-text-section">
-      <div className="fading-text-container">
+      <div className="fading-text-container" role="region" aria-roledescription="carousel" aria-label="Common challenges">
         <div className="fading-text-left">
           <span className="tiny-label">The top enterprise teams<br/>use NexaWorks to prevent</span>
         </div>
@@ -53,7 +53,7 @@ export default function FadingTextCarousel() {
               else className += " hidden";
 
               return (
-                <h3 key={index} className={className}>
+                <h3 key={index} className={className} aria-live="polite">
                   {item}
                 </h3>
               );

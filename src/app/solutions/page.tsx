@@ -6,16 +6,45 @@ import TrustSignals from '@/components/TrustSignals';
 import ScrollReveal from '@/components/ScrollReveal';
 import './page.css';
 import '../page.css'; // For footer CTA
+import Breadcrumbs from '@/components/Breadcrumbs';
+import AEOAnswerBlock from '@/components/AEOAnswerBlock';
 
 export const metadata: Metadata = {
   title: 'Solutions | NexaWorks',
   description: 'Context Reconstruction for every team. Eliminate context switching in sales, clinical, finance, legal, operations, and executive workflows.',
+  keywords: ['Enterprise AI Solutions', 'Sales AI', 'Clinical Workflow', 'Legal AI', 'Finance Context', 'Operations Automation'],
+  alternates: { canonical: 'https://nexaworks.tech/solutions' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Solutions | NexaWorks',
+    description: 'Context Reconstruction for every team. Eliminate context switching in sales, clinical, finance, legal, operations, and executive workflows.',
+    url: 'https://nexaworks.tech/solutions',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'NexaWorks Solutions' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: 'Solutions | NexaWorks',
+    description: 'Context Reconstruction for every team. Eliminate context switching in sales, clinical, finance, legal, operations, and executive workflows.',
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
 export default function SolutionsPage() {
   return (
     <main className="solutions-page">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Solutions', href: '/solutions' }]} />
       <InteractiveSolutionsHero />
+
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '48px 24px 0 24px' }}>
+        <AEOAnswerBlock 
+          question="How does NexaWorks solve context switching?" 
+          answer="NexaWorks eliminates context switching by proactively delivering unified data summaries to sales, clinical, finance, and legal teams precisely when they need it, reducing manual research time by up to 90%." 
+        />
+      </section>
 
       <div style={{ backgroundColor: '#000', padding: '48px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <TrustSignals />
@@ -31,7 +60,7 @@ export default function SolutionsPage() {
 
           <ScrollReveal className="staggered-row">
             <div className="staggered-image-container">
-              <Image src="/ui-sales.jpg" alt="Sales Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <Image src="/ui-sales.webp" alt="Sales Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div className="staggered-content">
               <h3>Sales Teams</h3>
@@ -42,7 +71,7 @@ export default function SolutionsPage() {
 
           <ScrollReveal className="staggered-row">
             <div className="staggered-image-container">
-              <Image src="/ui-clinical.jpg" alt="Clinical Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <Image src="/ui-clinical.webp" alt="Clinical Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div className="staggered-content">
               <h3>Clinical Teams</h3>
@@ -53,7 +82,7 @@ export default function SolutionsPage() {
 
           <ScrollReveal className="staggered-row">
             <div className="staggered-image-container">
-              <Image src="/ui-sales.jpg" alt="Finance Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <Image src="/ui-sales.webp" alt="Finance Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div className="staggered-content">
               <h3>Finance Teams</h3>
@@ -64,7 +93,7 @@ export default function SolutionsPage() {
 
           <ScrollReveal className="staggered-row">
             <div className="staggered-image-container">
-              <Image src="/ui-legal.jpg" alt="Legal Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <Image src="/ui-legal.webp" alt="Legal Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div className="staggered-content">
               <h3>Legal Teams</h3>
@@ -75,7 +104,7 @@ export default function SolutionsPage() {
 
           <ScrollReveal className="staggered-row">
             <div className="staggered-image-container">
-              <Image src="/ui-clinical.jpg" alt="Operations Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <Image src="/ui-clinical.webp" alt="Operations Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div className="staggered-content">
               <h3>Operations Teams</h3>
@@ -86,7 +115,7 @@ export default function SolutionsPage() {
 
           <ScrollReveal className="staggered-row">
             <div className="staggered-image-container">
-              <Image src="/ui-legal.jpg" alt="Executive Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <Image src="/ui-legal.webp" alt="Executive Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div className="staggered-content">
               <h3>Executive Teams</h3>

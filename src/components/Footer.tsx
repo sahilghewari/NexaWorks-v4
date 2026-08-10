@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="footer-col brand-col">
             <Link href="/" className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-              <Image src="/logo.jpg" alt="NexaWorks" width={28} height={28} className="logo-image" style={{ borderRadius: '50%' }} />
+              <Image src="/logo.webp" alt="NexaWorks" width={28} height={28} className="logo-image" style={{ borderRadius: '50%' }} />
               <span className="logo-text" style={{ fontSize: '20px', fontWeight: '500', color: 'var(--color-ink)', letterSpacing: '-0.02em' }}>NexaWorks</span>
             </Link>
             <p className="caption mt-16" style={{ marginTop: '16px' }}>
@@ -18,26 +18,27 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Services */}
+          {/* Column 2: Platform */}
           <div className="footer-col">
-            <h3 className="heading-sm footer-heading">Services</h3>
+            <h3 className="heading-sm footer-heading">Platform</h3>
             <ul className="footer-links">
-              <li><Link href="/services/ai-agents">AI Agents</Link></li>
-              <li><Link href="/services/workflow-automation">Workflow Automation</Link></li>
-              <li><Link href="/services/internal-tools">Internal Tools</Link></li>
-              <li><Link href="/services/llm-integration">LLM Integration</Link></li>
-              <li><Link href="/services/rag-systems">RAG Systems</Link></li>
+              <li><Link href="/product">AI Agents</Link></li>
+              <li><Link href="/product">Workflow Automation</Link></li>
+              <li><Link href="/product">Internal Tools</Link></li>
+              <li><Link href="/product">LLM Integration</Link></li>
+              <li><Link href="/product">RAG Systems</Link></li>
+              <li><Link href="/pricing">Pricing</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Industries */}
+          {/* Column 3: Solutions */}
           <div className="footer-col">
-            <h3 className="heading-sm footer-heading">Industries</h3>
+            <h3 className="heading-sm footer-heading">Solutions</h3>
             <ul className="footer-links">
-              <li><Link href="/industries/financial-services">Financial Services</Link></li>
-              <li><Link href="/industries/healthcare">Healthcare</Link></li>
-              <li><Link href="/industries/real-estate">Real Estate</Link></li>
-              <li><Link href="/industries/legal">Legal</Link></li>
+              <li><Link href="/solutions">Financial Services</Link></li>
+              <li><Link href="/solutions">Healthcare</Link></li>
+              <li><Link href="/solutions">Real Estate</Link></li>
+              <li><Link href="/solutions">Legal</Link></li>
             </ul>
           </div>
 
@@ -48,7 +49,9 @@ export default function Footer() {
               <li><Link href="/docs">Documentation</Link></li>
               <li><Link href="/playbooks">Playbooks</Link></li>
               <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/open-source">Open Source</Link></li>
+              <li><Link href="/blog">Open Source</Link></li>
+              <li><Link href="/research">Research</Link></li>
+              <li><Link href="/architecture">Architecture</Link></li>
             </ul>
           </div>
 

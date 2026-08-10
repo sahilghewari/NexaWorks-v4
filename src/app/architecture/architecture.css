@@ -1,0 +1,185 @@
+/* Architecture Page - Flow Stack Dark Theme */
+.architecture-page {
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.architecture-hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 180px 24px 80px;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.7), #0d0d0d), url('/architecture-hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.architecture-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #00ffcc;
+  border: 1px solid rgba(0, 255, 204, 0.4);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.architecture-headline {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+
+.architecture-subhead {
+  font-size: 24px;
+  color: #a1a1aa;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Blueprint Flow Section */
+.architecture-content-section {
+  padding: 120px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Center Circuit Line */
+.architecture-content-section::before {
+  content: '';
+  position: absolute;
+  top: 120px;
+  bottom: 120px;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(0,255,204,0), rgba(0,255,204,0.5), rgba(0,255,204,0));
+  transform: translateX(-50%);
+}
+
+.flow-stack-container {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+.flow-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.flow-card-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #0d0d0d;
+  border: 4px solid #00ffcc;
+  z-index: 10;
+}
+
+.flow-card {
+  width: 45%;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 48px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.flow-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.flow-card-wrapper.right .flow-card {
+  margin-left: auto;
+}
+
+.flow-card-wrapper.left .flow-card {
+  margin-right: auto;
+}
+
+.architecture-card-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.architecture-card-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 32px;
+}
+
+.architecture-tag-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.arch-tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.05);
+  padding: 4px 12px;
+  border-radius: 4px;
+  color: #a1a1aa;
+}
+
+.architecture-card-link {
+  color: #00ffcc;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .architecture-content-section::before {
+    left: 24px;
+  }
+  .flow-card-wrapper::after {
+    left: 24px;
+  }
+  .flow-card {
+    width: calc(100% - 64px);
+    margin-left: 64px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .architecture-hero { padding: 140px 16px 60px; min-height: 50vh; }
+  .architecture-headline { font-size: 48px; }
+  .architecture-subhead { font-size: 18px; }
+  .architecture-content-section { padding: 80px 24px; }
+}

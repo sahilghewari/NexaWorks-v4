@@ -1,0 +1,235 @@
+/* Docs Page - Console Dashboard Dark Theme */
+.docs-page {
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar */
+.docs-sidebar {
+  width: 300px;
+  background: rgba(13, 13, 13, 0.95);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 100px 24px 40px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 50;
+  backdrop-filter: blur(20px);
+}
+
+.docs-sidebar-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.docs-nav-group {
+  margin-bottom: 32px;
+}
+
+.docs-nav-group-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a1a1aa;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.docs-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docs-nav-list li {
+  margin-bottom: 12px;
+}
+
+.docs-nav-link {
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.docs-nav-link:hover, .docs-nav-link.active {
+  color: #fff;
+}
+
+/* Main Content Area */
+.docs-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.docs-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 120px 40px;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.8), rgba(13,13,13,1)), url('/docs-hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.docs-headline {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 40px;
+  letter-spacing: -0.02em;
+}
+
+/* Copilot Hero Terminal */
+.docs-copilot-terminal {
+  width: 100%;
+  max-width: 800px;
+  background: #000;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  text-align: left;
+}
+
+.terminal-header {
+  background: #1a1a1a;
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #333;
+}
+
+.terminal-dot.red { background: #ff5f56; }
+.terminal-dot.yellow { background: #ffbd2e; }
+.terminal-dot.green { background: #27c93f; }
+
+.terminal-body {
+  padding: 32px;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #a1a1aa;
+}
+
+.terminal-body .command {
+  color: #fff;
+}
+
+.terminal-body .comment {
+  color: #666;
+}
+
+.terminal-body .highlight {
+  color: #c864ff;
+}
+
+/* Docs Grid */
+.docs-content-section {
+  padding: 80px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.docs-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.docs-glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+  height: 100%;
+}
+
+.docs-glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.docs-card-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.docs-card-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa;
+  margin-bottom: 32px;
+}
+
+.docs-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docs-link-list li {
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+}
+
+.docs-link-list li:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.docs-link {
+  color: #c864ff;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.docs-link:hover {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .docs-page { flex-direction: column; }
+  .docs-sidebar { width: 100%; height: auto; position: relative; padding: 100px 24px 24px; }
+  .docs-bento-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .docs-hero { padding: 80px 24px; }
+  .docs-headline { font-size: 48px; }
+  .terminal-body { font-size: 12px; padding: 16px; }
+  .docs-content-section { padding: 40px 24px; }
+}

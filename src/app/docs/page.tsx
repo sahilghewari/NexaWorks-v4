@@ -1,10 +1,31 @@
 import React from 'react';
 import Link from 'next/link';
-import GradientMesh from '@/components/GradientMesh';
+import ScrollReveal from '@/components/ScrollReveal';
+import './docs.css';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: 'Context Reconstruction Documentation | NexaWorks',
   description: 'Learn how NexaWorks uses Deterministic RAG, GraphRAG, and stateful agents to reconstruct context.',
+  keywords: ['NexaWorks Documentation', 'Deterministic RAG Docs', 'Agentic Workflows Docs', 'Developer Hub', 'AI System Integration'],
+  alternates: { canonical: 'https://nexaworks.tech/docs' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Context Reconstruction Documentation | NexaWorks',
+    description: 'Learn how NexaWorks uses Deterministic RAG, GraphRAG, and stateful agents to reconstruct context.',
+    url: 'https://nexaworks.tech/docs',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'NexaWorks Documentation' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: 'Context Reconstruction Documentation | NexaWorks',
+    description: 'Learn how NexaWorks uses Deterministic RAG, GraphRAG, and stateful agents to reconstruct context.',
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
 export default function DocumentationLandingPage() {
@@ -30,69 +51,106 @@ export default function DocumentationLandingPage() {
       title: "Security & Compliance",
       description: "Data residency, SOC2, EU AI Act, and DPDP Act compliance.",
       links: [
-        { label: "SOC2 Report", url: "#" },
-        { label: "EU AI Act", url: "#" },
-        { label: "DPDP Act", url: "#" }
+        { label: "SOC2 Report", url: "/security" },
+        { label: "EU AI Act", url: "/security" },
+        { label: "DPDP Act", url: "/security" }
       ]
     },
     {
       title: "Architecture",
       description: "How stateful LangGraph agents orchestrate context assembly.",
       links: [
-        { label: "Stateful Agents", url: "#" },
-        { label: "Context Assembly", url: "#" }
+        { label: "Stateful Agents", url: "/docs/agentic-rag" },
+        { label: "Context Assembly", url: "/docs/methodology" }
       ]
     }
   ];
 
   return (
-    <main>
-      <GradientMesh>
-        <section className="section" style={{ paddingTop: '160px', paddingBottom: '120px', minHeight: '100vh' }}>
-          <div className="container" style={{ maxWidth: '1000px' }}>
-            <span className="tag" style={{ marginBottom: '16px' }}>DOCUMENTATION SYSTEM</span>
-            <h1 className="display-xl" style={{ marginBottom: '24px' }}>
-              Developer Hub
-            </h1>
-            <p className="heading-md" style={{ color: 'var(--color-ink-secondary)', marginBottom: '32px' }}>
-              Built for speed. Designed for Zero Time-To-First-Value (TTFV).
-            </p>
-            
-            <div className="card" style={{ background: 'var(--color-canvas)', border: '1px solid var(--color-hairline)', marginBottom: '64px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <span style={{ fontSize: '24px' }}>🤖</span>
-                <div>
-                  <div className="body-md" style={{ fontWeight: 600 }}>Using an AI Copilot?</div>
-                  <div className="body-sm" style={{ color: 'var(--color-ink-mute)' }}>
-                    Point Cursor, Copilot, or ChatGPT directly to <code style={{ color: 'var(--color-primary)' }}>https://nexaworks.tech/llms-full.txt</code> for instant context ingestion of our entire API surface.
-                  </div>
-                </div>
+    <main className="docs-page">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Documentation', href: '/docs' }]} />
+      {/* Left Sidebar */}
+      <aside className="docs-sidebar">
+        <h3 className="docs-sidebar-title">Documentation</h3>
+        
+        <nav aria-label="Documentation">
+          <div className="docs-nav-group">
+            <div className="docs-nav-group-title">Getting Started</div>
+            <ul className="docs-nav-list">
+              <li><Link href="/docs" className="docs-nav-link active">Introduction</Link></li>
+              <li><Link href="/docs/quickstart" className="docs-nav-link">Quickstart</Link></li>
+              <li><Link href="/docs/requirements" className="docs-nav-link">System Requirements</Link></li>
+            </ul>
+          </div>
+
+          <div className="docs-nav-group">
+            <div className="docs-nav-group-title">Core Concepts</div>
+            <ul className="docs-nav-list">
+              <li><Link href="/docs/agentic-rag" className="docs-nav-link">Agentic RAG</Link></li>
+              <li><Link href="/docs/deterministic-routing" className="docs-nav-link">Deterministic Routing</Link></li>
+              <li><Link href="/docs/hitl" className="docs-nav-link">Human-in-the-loop</Link></li>
+            </ul>
+          </div>
+          
+          <div className="docs-nav-group">
+            <div className="docs-nav-group-title">API Reference</div>
+            <ul className="docs-nav-list">
+              <li><Link href="/docs/authentication" className="docs-nav-link">Authentication</Link></li>
+              <li><Link href="/docs/rest-api" className="docs-nav-link">REST Endpoints</Link></li>
+              <li><Link href="/docs/graphql" className="docs-nav-link">GraphQL API</Link></li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <div className="docs-main-content">
+        <section className="docs-hero">
+          <ScrollReveal delay={0.1}>
+            <h1 className="docs-headline">Developer Hub</h1>
+          </ScrollReveal>
+          
+          <ScrollReveal delay={0.2} style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <div className="docs-copilot-terminal">
+              <div className="terminal-header">
+                <span className="terminal-dot red"></span>
+                <span className="terminal-dot yellow"></span>
+                <span className="terminal-dot green"></span>
+              </div>
+              <div className="terminal-body">
+                <span className="comment"># Using an AI Copilot? Point Cursor, Copilot, or ChatGPT</span><br/>
+                <span className="comment"># directly to our LLM context file for instant ingestion:</span><br/><br/>
+                <span className="command">$ curl https://nexaworks.tech/llms-full.txt &gt; nexa-context.txt</span><br/><br/>
+                <span className="highlight">✓ 24,051 lines of API surface ingested successfully.</span><br/>
+                <span className="command">Ready for deterministic code generation.</span>
               </div>
             </div>
+          </ScrollReveal>
+        </section>
 
-            <div className="grid-3" style={{ gap: '32px' }}>
-              {docCategories.map((cat, idx) => (
-                <div key={idx} className="card-elevated" style={{ background: 'white' }}>
-                  <h3 className="heading-sm" style={{ marginBottom: '12px' }}>{cat.title}</h3>
-                  <p className="body-sm" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px', minHeight: '40px' }}>
-                    {cat.description}
-                  </p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+        <section className="docs-content-section">
+          <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>Documentation Categories</h2>
+          <div className="docs-bento-grid">
+            {docCategories.map((cat, idx) => (
+              <ScrollReveal key={idx} delay={0.1} className="h-full">
+                <article className="docs-glass-card">
+                  <h3 className="docs-card-title">{cat.title}</h3>
+                  <p className="docs-card-desc">{cat.description}</p>
+                  <ul className="docs-link-list">
                     {cat.links.map((link, linkIdx) => (
-                      <li key={linkIdx} style={{ marginBottom: '12px', borderBottom: '1px solid var(--color-hairline)', paddingBottom: '12px' }}>
-                        <Link href={link.url} className="link-arrow" style={{ fontSize: '14px', fontWeight: 500 }}>
-                          {link.label}
+                      <li key={linkIdx}>
+                        <Link href={link.url} className="docs-link">
+                          {link.label} &rarr;
                         </Link>
                       </li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-            
+                </article>
+              </ScrollReveal>
+            ))}
           </div>
         </section>
-      </GradientMesh>
+      </div>
     </main>
   );
 }

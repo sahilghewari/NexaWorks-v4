@@ -40,7 +40,7 @@ export default function ServicesPage() {
             <Link href="/contact" className="btn-primary">Discuss Your Use Case</Link>
           </div>
           <div className="service-visual shadow-1" style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
-            <Image src="/services/ai-agents.jpg" alt="AI Agents Architecture" fill sizes="(max-width: 768px) 100vw, 50vw" priority style={{ objectFit: 'cover' }} />
+            <Image src="/services/ai-agents.webp" alt="AI Agents Architecture" fill sizes="(max-width: 768px) 100vw, 50vw" priority style={{ objectFit: 'cover' }} />
           </div>
         </article>
 
@@ -58,7 +58,7 @@ export default function ServicesPage() {
             <Link href="/contact" className="btn-primary">Discuss Your Use Case</Link>
           </div>
           <div className="service-visual shadow-1" style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
-            <Image src="/services/workflow-automation.jpg" alt="Workflow Automation Pipelines" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+            <Image src="/services/workflow-automation.webp" alt="Workflow Automation Pipelines" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
           </div>
         </article>
 
@@ -76,7 +76,7 @@ export default function ServicesPage() {
             <Link href="/contact" className="btn-primary">Discuss Your Use Case</Link>
           </div>
           <div className="service-visual shadow-1" style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
-            <Image src="/services/internal-tools.jpg" alt="Custom Internal Tools Dashboard" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+            <Image src="/services/internal-tools.webp" alt="Custom Internal Tools Dashboard" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
           </div>
         </article>
 
@@ -94,7 +94,7 @@ export default function ServicesPage() {
             <Link href="/contact" className="btn-primary">Discuss Your Use Case</Link>
           </div>
           <div className="service-visual shadow-1" style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
-            <Image src="/services/llm-integrations.jpg" alt="LLM Integration Pipeline" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+            <Image src="/services/llm-integrations.webp" alt="LLM Integration Pipeline" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
           </div>
         </article>
 
@@ -112,7 +112,7 @@ export default function ServicesPage() {
             <Link href="/contact" className="btn-primary">Discuss Your Use Case</Link>
           </div>
           <div className="service-visual shadow-1" style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px' }}>
-            <Image src="/services/rag-systems.jpg" alt="RAG System Architecture" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+            <Image src="/services/rag-systems.webp" alt="RAG System Architecture" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
           </div>
         </article>
 

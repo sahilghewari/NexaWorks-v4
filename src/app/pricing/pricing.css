@@ -1,0 +1,225 @@
+/* Pricing Page Global Dark Theme */
+.pricing-page {
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.pricing-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 180px 24px 80px;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.7), rgba(13,13,13,1)), url('/about-hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.pricing-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #a1a1aa;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.pricing-headline {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 80px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+
+.pricing-subhead {
+  font-size: 24px;
+  color: #a1a1aa;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Glassmorphic Grid (Pricing Cards) */
+.pricing-grid-section {
+  padding: 120px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.pricing-glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+
+.pricing-glass-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.pricing-glass-card.enterprise {
+  background: radial-gradient(circle at top right, rgba(40,40,60,0.8), rgba(255,255,255,0.02) 60%);
+  border-color: rgba(200, 100, 255, 0.3);
+}
+
+.pricing-glass-card.enterprise:hover {
+  border-color: rgba(200, 100, 255, 0.6);
+}
+
+.pricing-card-header {
+  margin-bottom: 32px;
+}
+
+.pricing-tier-name {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.pricing-tier-desc {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #a1a1aa;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px 0;
+  flex: 1;
+}
+
+.pricing-features li {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: #a1a1aa;
+}
+
+.pricing-glass-card.enterprise .pricing-features li::before {
+  color: #c864ff;
+}
+
+.btn-glass {
+  display: inline-block;
+  padding: 16px 32px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 99px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-accent {
+  display: inline-block;
+  padding: 16px 32px;
+  background: #c864ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 99px;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(200, 100, 255, 0.5);
+  box-shadow: 0 4px 14px rgba(200, 100, 255, 0.3);
+}
+
+.btn-accent:hover {
+  background: #d884ff;
+  box-shadow: 0 6px 20px rgba(200, 100, 255, 0.5);
+}
+
+/* FAQ Section (Beige) */
+.pricing-faq-section {
+  padding: 120px 24px;
+  background-color: #f6f6f5; /* Creamy beige */
+  color: #111;
+}
+
+.pricing-faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricing-faq-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pricing-faq-header h2 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: #111;
+}
+
+.pricing-faq-item {
+  margin-bottom: 48px;
+}
+
+.pricing-faq-item h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+.pricing-faq-item p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricing-headline { font-size: 64px; }
+  .pricing-bento-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .pricing-hero { padding: 140px 16px 60px; min-height: 60vh; }
+  .pricing-headline { font-size: 48px; }
+  .pricing-subhead { font-size: 18px; }
+  .pricing-grid-section, .pricing-faq-section { padding: 80px 24px; }
+  .pricing-faq-header h2 { font-size: 40px; }
+  .pricing-glass-card { padding: 32px; }
+}

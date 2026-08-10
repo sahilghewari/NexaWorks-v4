@@ -21,7 +21,7 @@ export default function ComplianceAssessor() {
       {step < 6 && (
         <div style={{ marginBottom: '32px' }}>
           <span className="micro-cap" style={{ color: 'var(--color-primary)' }}>STEP {step} OF 5</span>
-          <div style={{ height: '4px', background: 'var(--color-hairline)', marginTop: '8px', borderRadius: '2px' }}>
+          <div style={{ height: '4px', background: 'var(--color-hairline)', marginTop: '8px', borderRadius: '2px' }} role="progressbar" aria-valuenow={step} aria-valuemin={0} aria-valuemax={100}>
             <div style={{ height: '100%', background: 'var(--color-primary)', width: `${(step / 5) * 100}%`, transition: 'width 0.3s ease' }}></div>
           </div>
         </div>

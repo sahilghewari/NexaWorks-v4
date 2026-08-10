@@ -1,0 +1,174 @@
+/* Careers Page - Sticky Stacking Cards Theme */
+.careers-page {
+  background-color: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.careers-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 180px 24px 80px;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.7), #0d0d0d), url('/careers-hero-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+}
+
+.careers-tag {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #c864ff;
+  border: 1px solid rgba(200, 100, 255, 0.4);
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+
+.careers-headline {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+}
+
+.careers-subhead {
+  font-size: 24px;
+  color: #a1a1aa;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Culture Section - Normal Scroll */
+.careers-culture-section {
+  padding: 120px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.careers-section-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.culture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.culture-card {
+  padding: 40px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 24px;
+  text-align: center;
+}
+
+.culture-icon {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.culture-title {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.culture-desc {
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+/* Roles Section - Sticky Stacking */
+.careers-roles-section {
+  padding: 120px 24px 240px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.roles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.role-card {
+  position: sticky;
+  top: 120px;
+  background: #111;
+  border: 1px solid rgba(200, 100, 255, 0.3);
+  border-radius: 32px;
+  padding: 64px;
+  box-shadow: 0 -20px 40px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Incrementing top offsets for stacking effect */
+.role-card:nth-child(1) { top: 120px; background: #111; z-index: 1; }
+.role-card:nth-child(2) { top: 140px; background: #1a1a24; z-index: 2; }
+.role-card:nth-child(3) { top: 160px; background: #221c2e; z-index: 3; }
+.role-card:nth-child(4) { top: 180px; background: #2a1b38; z-index: 4; }
+
+.role-info h3 {
+  font-family: ui-serif, Georgia, serif;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.role-info p {
+  color: #a1a1aa;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.role-meta {
+  display: flex;
+  gap: 16px;
+}
+
+.role-meta-tag {
+  background: rgba(255,255,255,0.05);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+
+.role-action .btn-glass {
+  padding: 20px 40px;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .culture-grid { grid-template-columns: 1fr; }
+  .role-card { flex-direction: column; align-items: flex-start; gap: 32px; padding: 40px; }
+  .role-action, .role-action .btn-glass { width: 100%; text-align: center; justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .careers-hero { padding: 140px 16px 60px; min-height: 50vh; }
+  .careers-headline { font-size: 48px; }
+}

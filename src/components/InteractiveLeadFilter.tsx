@@ -9,18 +9,18 @@ export default function InteractiveLeadFilter() {
   const isDisqualified = companySize === '250+';
 
   return (
-    <div className="card-elevated" style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'left', background: 'var(--color-canvas)', border: '1px solid var(--color-hairline)' }}>
-      <h3 className="heading-lg" style={{ marginBottom: '24px' }}>Let's audit your architecture</h3>
+    <div className="contact-filter-card">
+      <h2 className="contact-filter-title">Let's audit your architecture</h2>
       
       <div style={{ marginBottom: '24px' }}>
-        <label className="body-md" style={{ display: 'block', marginBottom: '8px', color: 'var(--color-ink)', fontWeight: 500 }}>
+        <label className="contact-label" htmlFor="company-size-select">
           Company Size
         </label>
         <select 
+          id="company-size-select"
           value={companySize}
           onChange={(e) => setCompanySize(e.target.value)}
-          className="input select"
-          style={{ padding: '12px 16px' }}
+          className="contact-select"
         >
           <option value="">Select company size...</option>
           <option value="1-49">1 - 49 Employees (Agile)</option>
@@ -31,10 +31,10 @@ export default function InteractiveLeadFilter() {
       </div>
 
       <div style={{ marginBottom: '40px' }}>
-        <label className="body-md" style={{ display: 'block', marginBottom: '8px', color: 'var(--color-ink)', fontWeight: 500 }}>
+        <label className="contact-label" htmlFor="engineering-challenge-select">
           Primary Engineering Challenge
         </label>
-        <select className="input select" style={{ padding: '12px 16px' }}>
+        <select id="engineering-challenge-select" className="contact-select">
           <option value="">Select challenge...</option>
           <option value="llm-timeouts">LLM API Timeouts / Async Blocking</option>
           <option value="data-extraction">Unstructured Data Extraction (RAG)</option>
@@ -44,25 +44,25 @@ export default function InteractiveLeadFilter() {
         </select>
       </div>
 
-      <div style={{ paddingTop: '32px', borderTop: '1px solid var(--color-hairline)' }}>
+      <div style={{ paddingTop: '32px', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         {isDisqualified ? (
-          <div style={{ padding: '24px', background: 'var(--color-canvas-soft)', borderRadius: 'var(--radius-lg)', border: '1px solid var(--color-ruby)', textAlign: 'center' }}>
-            <p className="body-md" style={{ color: 'var(--color-ink)', marginBottom: '24px' }}>
+          <div className="contact-disqualified">
+            <p>
               Due to our rapid-deployment architectural model and 10-day sprint cycles, we currently exclusively partner with agile teams under 250 employees.
             </p>
             <a 
               href="https://calendly.com/nexaworkss/waitlist"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ display: 'inline-block', textDecoration: 'none' }}
+              className="btn-glass"
+              style={{ display: 'inline-flex', width: 'auto' }}
             >
               Join Enterprise Waitlist
             </a>
           </div>
         ) : (
           <div>
-            <p className="caption" style={{ color: 'var(--color-ink-mute)', marginBottom: '16px', textAlign: 'center' }}>Choose your region to start:</p>
+            <p style={{ color: '#a1a1aa', fontSize: '14px', marginBottom: '16px', textAlign: 'center', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Choose your region to start:</p>
             <div style={{ display: 'flex', gap: '16px', width: '100%', flexDirection: 'column' }}>
               <RegionalCTA region="US" />
               <RegionalCTA region="IN" />

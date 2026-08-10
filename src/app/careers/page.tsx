@@ -1,67 +1,142 @@
 import React from 'react';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ScrollReveal';
+import './careers.css';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: 'Careers | NexaWorks',
-  description: 'Join the engineering team building the foundational architecture for the enterprise AI automation boom.',
+  description: 'Join NexaWorks and help us build deterministic enterprise AI systems.',
+  keywords: ['NexaWorks Careers', 'AI Engineering Jobs', 'Enterprise AI Hiring', 'ML Engineer Roles', 'Work at NexaWorks'],
+  alternates: { canonical: 'https://nexaworks.tech/careers' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Careers | NexaWorks',
+    description: 'Join NexaWorks and help us build deterministic enterprise AI systems.',
+    url: 'https://nexaworks.tech/careers',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'NexaWorks Careers' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: 'Careers | NexaWorks',
+    description: 'Join NexaWorks and help us build deterministic enterprise AI systems.',
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
 export default function CareersPage() {
+  const roles = [
+    { title: "Senior AI Architect", department: "Engineering", location: "Remote (US)", type: "Full-time" },
+    { title: "Distributed Systems Engineer", department: "Infrastructure", location: "San Francisco, CA", type: "Full-time" },
+    { title: "MLSecOps Lead", department: "Security", location: "Remote (Global)", type: "Full-time" },
+    { title: "Enterprise Account Executive", department: "Sales", location: "New York, NY", type: "Full-time" }
+  ];
+
   return (
-    <main className="section" style={{ paddingTop: '120px', minHeight: '100vh', background: 'var(--color-canvas)' }}>
-      <div className="container" style={{ maxWidth: '800px' }}>
+    <main className="careers-page">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Careers', href: '/careers' }]} />
+      {roles.map((role, idx) => (
+        <script
+          key={`schema-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "JobPosting",
+              "title": role.title,
+              "description": `Join NexaWorks as a ${role.title} in our ${role.department} team.`,
+              "employmentType": "FULL_TIME",
+              "hiringOrganization": {
+                "@type": "Organization",
+                "name": "NexaWorks",
+                "url": "https://nexaworks.tech"
+              },
+              "jobLocation": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": role.location
+                }
+              }
+            })
+          }}
+        />
+      ))}
+      <section className="careers-hero">
+        <ScrollReveal delay={0.1}>
+          <span className="careers-tag">JOIN THE TEAM</span>
+        </ScrollReveal>
         
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <h1 className="display-xl" style={{ marginBottom: '24px' }}>Join NexaWorks</h1>
-          <p className="heading-md" style={{ color: 'var(--color-ink-secondary)', margin: '0 auto' }}>
-            We don't build demos. We build deterministic, production-grade AI infrastructure for the Fortune 500. We are hiring relentless engineers.
+        <ScrollReveal delay={0.2}>
+          <h1 className="careers-headline">Engineer the Future of Enterprise AI</h1>
+        </ScrollReveal>
+        
+        <ScrollReveal delay={0.3}>
+          <p className="careers-subhead">
+            We are looking for uncompromising engineers, researchers, and strategists to help us build deterministic, secure Agentic systems for the Fortune 500.
           </p>
-        </div>
+        </ScrollReveal>
+      </section>
 
-        <div className="card-elevated" style={{ background: 'white', padding: '48px', marginBottom: '48px' }}>
-          <h2 className="heading-lg" style={{ marginBottom: '24px' }}>Our Engineering Culture</h2>
-          <ul style={{ paddingLeft: '20px', color: 'var(--color-ink)', lineHeight: 1.8, fontSize: '18px', marginBottom: '0' }}>
-            <li style={{ marginBottom: '16px' }}><strong>Systems over Prompts:</strong> We believe prompt engineering is a transitional phase. We focus on stateful orchestrators (LangGraph), vector infrastructure (Pinecone/pgvector), and protocol standardization (MCP).</li>
-            <li style={{ marginBottom: '16px' }}><strong>Extreme Ownership:</strong> You own the pipeline from ingestion to deployment. If the agent hallucinates in production, you debug the trace.</li>
-            <li><strong>No Theoretical Fluff:</strong> If it cannot pass a SOC2 audit or comply with the EU AI Act, it does not ship.</li>
-          </ul>
-        </div>
-
-        <h2 className="display-md" style={{ marginBottom: '32px' }}>Open Roles</h2>
-
-        <div className="grid-1" style={{ gap: '24px' }}>
+      <section className="careers-culture-section">
+        <ScrollReveal delay={0.1}>
+          <h2 className="careers-section-title">Our Engineering Philosophy</h2>
+        </ScrollReveal>
+        
+        <div className="culture-grid">
+          <ScrollReveal delay={0.1} className="h-full">
+            <div className="culture-card h-full">
+              <div className="culture-icon">🛡️</div>
+              <h3 className="culture-title">Zero-Trust by Default</h3>
+              <p className="culture-desc">We assume every LLM is a potential attack vector. Security is not an afterthought; it is the foundation of our entire architecture.</p>
+            </div>
+          </ScrollReveal>
           
-          <div className="card-elevated" style={{ background: 'white' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-              <div>
-                <h3 className="heading-lg" style={{ marginBottom: '8px' }}>AI Systems Architect (RAG & Agentic)</h3>
-                <span className="micro-cap" style={{ color: 'var(--color-ink-secondary)' }}>REMOTE (US / INDIA) &bull; FULL-TIME</span>
-              </div>
-              <button className="btn-primary" style={{ padding: '8px 16px', fontSize: '14px' }}>Apply Now</button>
+          <ScrollReveal delay={0.2} className="h-full">
+            <div className="culture-card h-full">
+              <div className="culture-icon">⚡</div>
+              <h3 className="culture-title">Ruthless Pragmatism</h3>
+              <p className="culture-desc">We don't build demos. We build highly concurrent, fault-tolerant pipelines that deploy to production and generate immediate ROI.</p>
             </div>
-            <p className="body-md" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              You will lead the architectural design of multi-agent systems for our enterprise clients. You must have deep, bleeding-edge experience moving beyond basic semantic search into deterministic routing, GraphRAG, and Model Context Protocol (MCP) server deployment.
-            </p>
-            <div className="micro-cap" style={{ color: 'var(--color-primary)' }}>REQUIRED: PYTHON, LANGGRAPH, PINECONE, FASTAPI, DOCKER</div>
-          </div>
+          </ScrollReveal>
 
-          <div className="card-elevated" style={{ background: 'white' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-              <div>
-                <h3 className="heading-lg" style={{ marginBottom: '8px' }}>Founding Full-Stack Engineer</h3>
-                <span className="micro-cap" style={{ color: 'var(--color-ink-secondary)' }}>REMOTE (US / INDIA) &bull; FULL-TIME</span>
-              </div>
-              <button className="btn-primary" style={{ padding: '8px 16px', fontSize: '14px' }}>Apply Now</button>
+          <ScrollReveal delay={0.3} className="h-full">
+            <div className="culture-card h-full">
+              <div className="culture-icon">🌐</div>
+              <h3 className="culture-title">Remote-First Autonomy</h3>
+              <p className="culture-desc">We hire the best globally and trust them to execute. No micromanagement, just transparent communication and high-quality pull requests.</p>
             </div>
-            <p className="body-md" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              You will own the front-end visualization of our AI pipelines. Building Human-in-the-Loop (HITL) dashboards, real-time agent observability UIs, and interactive Pydantic schema generators. You must be obsessed with Next.js performance and Turbopack.
-            </p>
-            <div className="micro-cap" style={{ color: 'var(--color-primary)' }}>REQUIRED: TYPESCRIPT, NEXT.JS 16, TAILWIND, FRAMER MOTION, VERCEL</div>
-          </div>
-
+          </ScrollReveal>
         </div>
+      </section>
 
-      </div>
+      <section className="careers-roles-section">
+        <ScrollReveal delay={0.1}>
+          <h2 className="careers-section-title">Open Positions</h2>
+        </ScrollReveal>
+
+        <div className="roles-container">
+          {roles.map((role, idx) => (
+            <div key={idx} className="role-card">
+              <div className="role-info">
+                <h3>{role.title}</h3>
+                <p>{role.department}</p>
+                <div className="role-meta">
+                  <span className="role-meta-tag">{role.location}</span>
+                  <span className="role-meta-tag">{role.type}</span>
+                </div>
+              </div>
+              <div className="role-action">
+                <Link href="/contact" className="btn-glass">Apply Now &rarr;</Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

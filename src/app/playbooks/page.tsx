@@ -1,56 +1,115 @@
 import React from 'react';
 import Link from 'next/link';
+import ScrollReveal from '@/components/ScrollReveal';
+import './playbooks.css';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata = {
   title: 'Executive Playbooks | NexaWorks',
-  description: 'Actionable engineering and compliance playbooks for C-Suite executives deploying enterprise AI systems.',
+  description: 'Actionable engineering and strategy guides for technical leaders.',
+  keywords: ['Executive AI Playbooks', 'CIO Strategy', 'AI Architecture Guide', 'LLM Cost Optimization', 'AI Operations'],
+  alternates: { canonical: 'https://nexaworks.tech/playbooks' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'Executive Playbooks | NexaWorks',
+    description: 'Actionable engineering and strategy guides for technical leaders.',
+    url: 'https://nexaworks.tech/playbooks',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'NexaWorks Playbooks' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: 'Executive Playbooks | NexaWorks',
+    description: 'Actionable engineering and strategy guides for technical leaders.',
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
-export default function PlaybooksHubPage() {
+export default function PlaybooksLandingPage() {
+  const playbooks = [
+    {
+      title: "The CIO's Guide to Agentic Architecture",
+      description: "How to transition from static LLM wrappers to dynamic, tool-using agents without compromising security.",
+      category: "Strategy",
+      author: "Dr. Sarah Chen",
+      role: "Chief Architect",
+      link: "/playbooks/cio-guide"
+    },
+    {
+      title: "Cost Optimization in LLM Serving",
+      description: "A framework for calculating total cost of ownership (TCO) across managed APIs vs. bare-metal self-hosting.",
+      category: "Operations",
+      author: "Marcus Reynolds",
+      role: "VP Engineering",
+      link: "/playbooks/cost-optimization"
+    },
+    {
+      title: "Migrating to GraphRAG",
+      description: "Step-by-step technical guide for moving from naive chunking to entity-relationship knowledge graphs.",
+      category: "Implementation",
+      author: "Elena Rostova",
+      role: "Lead ML Engineer",
+      link: "/playbooks/graphrag-migration"
+    },
+    {
+      title: "Defending Against Prompt Injection",
+      description: "A comprehensive analysis of red-teaming techniques and how deterministic guardrails neutralize them.",
+      category: "Security",
+      author: "David Kim",
+      role: "Head of MLSecOps",
+      link: "/playbooks/prompt-injection-defense"
+    }
+  ];
+
   return (
-    <main className="section" style={{ paddingTop: '120px', minHeight: '100vh', background: 'var(--color-canvas)' }}>
-      <div className="container" style={{ maxWidth: '1000px' }}>
+    <main className="playbooks-page">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Playbooks', href: '/playbooks' }]} />
+      <section className="playbooks-hero">
+        <ScrollReveal delay={0.1}>
+          <span className="playbooks-tag">EXECUTIVE RESOURCES</span>
+        </ScrollReveal>
         
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-          <h1 className="display-xl" style={{ marginBottom: '24px' }}>Executive Playbooks</h1>
-          <p className="heading-md" style={{ color: 'var(--color-ink-secondary)', maxWidth: '800px', margin: '0 auto' }}>
-            We bypass vague thought leadership. These are hard, actionable engineering checklists and deployment strategies for enterprise leaders.
+        <ScrollReveal delay={0.2}>
+          <h1 className="playbooks-headline">Strategic Playbooks</h1>
+        </ScrollReveal>
+        
+        <ScrollReveal delay={0.3}>
+          <p className="playbooks-subhead">
+            Actionable guides for engineering leaders navigating the transition to autonomous AI systems.
           </p>
+        </ScrollReveal>
+      </section>
+
+      <section className="playbooks-slider-section">
+        <div className="slider-header">
+          <ScrollReveal delay={0.1}>
+            <h2 className="slider-title">Latest Publications</h2>
+          </ScrollReveal>
         </div>
 
-        <div className="grid-1" style={{ gap: '32px' }}>
-          
-          <Link href="/playbooks/eu-ai-act-compliance" className="card-elevated" style={{ display: 'block', background: 'white', textDecoration: 'none', color: 'inherit', border: '1px solid var(--color-primary)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-              <span className="tag" style={{ background: 'var(--color-ruby)', color: 'white', border: 'none' }}>REGULATORY COMPLIANCE</span>
-              <span className="micro-cap" style={{ color: 'var(--color-ink-secondary)' }}>AUGUST 2026</span>
-            </div>
-            <h2 className="display-md" style={{ marginBottom: '16px' }}>The EU AI Act Engineering Checklist</h2>
-            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              Legal advice won't prevent server shutdowns. This playbook translates Article 12 (WORM Logging) and Article 14 (HITL Authorization) into hard engineering requirements for your technical teams.
-            </p>
-            <div style={{ color: 'var(--color-primary)', fontWeight: 600 }}>Read Playbook &rarr;</div>
-          </Link>
-
-          <div className="card-elevated" style={{ background: 'var(--color-surface)', opacity: 0.7 }}>
-            <span className="tag" style={{ background: '#1e1e1e', color: 'white', border: 'none', marginBottom: '16px', display: 'inline-block' }}>LLMOps & FINOPS</span>
-            <h2 className="display-md" style={{ marginBottom: '16px' }}>The LLMOps Cost Reduction Playbook</h2>
-            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              A technical guide on migrating from trace-billing providers (LangSmith) to flat-rate proxy gateways (Helicone) to reduce inference overhead by 40%. (Coming Soon)
-            </p>
-          </div>
-
-          <div className="card-elevated" style={{ background: 'var(--color-surface)', opacity: 0.7 }}>
-            <span className="tag" style={{ background: '#1e1e1e', color: 'white', border: 'none', marginBottom: '16px', display: 'inline-block' }}>INFRASTRUCTURE</span>
-            <h2 className="display-md" style={{ marginBottom: '16px' }}>Deploying Air-Gapped Llama 3.1 405B</h2>
-            <p className="body-lg" style={{ color: 'var(--color-ink-secondary)', marginBottom: '24px' }}>
-              Hardware requirements, quantization strategies, and vLLM configuration for running Meta's frontier model entirely offline for classified legal data. (Coming Soon)
-            </p>
-          </div>
-
+        <div className="horizontal-scroll-container">
+          {playbooks.map((playbook, idx) => (
+            <Link href={playbook.link} key={idx} className="playbook-card">
+              <article className="h-full" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <span className="playbook-category">{playbook.category}</span>
+                <h3 className="playbook-title">{playbook.title}</h3>
+                <p className="playbook-desc">{playbook.description}</p>
+                
+                <div className="playbook-author" style={{ marginTop: 'auto' }}>
+                  <div className="author-avatar"></div>
+                  <div className="author-info">
+                    <h4>{playbook.author}</h4>
+                    <p>{playbook.role}</p>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          ))}
         </div>
-
-      </div>
+      </section>
     </main>
   );
 }

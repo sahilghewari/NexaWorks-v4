@@ -16,6 +16,7 @@ export default function GradientMesh({ children }: GradientMeshProps) {
           viewBox="0 0 100 100"
           preserveAspectRatio="none"
           className="gradient-mesh-svg"
+          aria-hidden="true"
         >
           <defs>
             <radialGradient id="mesh-cream" cx="20%" cy="30%" r="50%">

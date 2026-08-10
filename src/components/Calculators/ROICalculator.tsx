@@ -39,6 +39,7 @@ export default function ROICalculator() {
               value={monthlyVolume}
               onChange={(e) => setMonthlyVolume(Number(e.target.value))}
               style={{ width: '100%' }}
+              aria-label="Monthly Invoice Volume"
             />
           </div>
 
@@ -53,6 +54,7 @@ export default function ROICalculator() {
               value={teamSize}
               onChange={(e) => setTeamSize(Number(e.target.value))}
               style={{ width: '100%' }}
+              aria-label="Current AP Team Size"
             />
           </div>
         </div>

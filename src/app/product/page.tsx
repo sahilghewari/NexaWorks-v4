@@ -4,16 +4,52 @@ import Image from 'next/image';
 import InteractiveHero from '@/components/InteractiveHero';
 import ScrollReveal from '@/components/ScrollReveal';
 import './page.css';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import AEOAnswerBlock from '@/components/AEOAnswerBlock';
 
 export const metadata: Metadata = {
   title: 'How Context Reconstruction Works | NexaWorks',
   description: 'Eliminate context loss with deterministic RAG, Model Context Protocol integrations, and agentic orchestration.',
+  keywords: ['Context Reconstruction', 'Deterministic RAG', 'Model Context Protocol', 'Agentic Orchestration', 'Enterprise Search Alternative', 'MCP'],
+  alternates: { canonical: 'https://nexaworks.tech/product' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'How Context Reconstruction Works | NexaWorks',
+    description: 'Eliminate context loss with deterministic RAG, Model Context Protocol integrations, and agentic orchestration.',
+    url: 'https://nexaworks.tech/product',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'NexaWorks Product Features' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: 'How Context Reconstruction Works | NexaWorks',
+    description: 'Eliminate context loss with deterministic RAG, Model Context Protocol integrations, and agentic orchestration.',
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
 export default function ProductPage() {
   return (
     <main className="product-page">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Product', href: '/product' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "NexaWorks",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web"
+      }) }} />
       <InteractiveHero />
+
+      <section className="product-section" style={{ paddingBottom: '0' }}>
+        <AEOAnswerBlock 
+          question="What is Context Reconstruction?" 
+          answer="Context Reconstruction is the automated process of assembling scattered enterprise data across multiple platforms into a single, workflow-ready brief using deterministic retrieval and Model Context Protocol integrations." 
+        />
+      </section>
 
       <ScrollReveal delay={0.2}>
         <section className="product-section product-section-light">
@@ -86,17 +122,17 @@ export default function ProductPage() {
           <h2 className="product-section-title">The Technical Engine</h2>
           <div className="bento-grid">
             <ScrollReveal delay={0.1} animation="fade-up" className="bento-card large">
-              <Image src="/bento-retrieval.jpg" alt="Deterministic Retrieval" width={600} height={400} style={{width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', marginBottom: '24px'}} />
+              <Image src="/bento-retrieval.webp" alt="Deterministic Retrieval" width={600} height={400} style={{width: '100%', height: '280px', objectFit: 'cover', borderRadius: '8px', marginBottom: '24px'}} />
               <h3>Deterministic Retrieval</h3>
               <p>Combining Pydantic schemas, vector search, and graph databases for precise, validated extraction. We eliminate hallucinations by strictly anchoring generated context to source truth.</p>
             </ScrollReveal>
             <ScrollReveal delay={0.2} animation="fade-up" className="bento-card small">
-              <Image src="/bento-agentic.jpg" alt="Agentic Orchestration" width={300} height={200} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px', marginBottom: '16px'}} />
+              <Image src="/bento-agentic.webp" alt="Agentic Orchestration" width={300} height={200} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px', marginBottom: '16px'}} />
               <h3>Agentic Orchestration</h3>
               <p>LangGraph-powered stateful agents that reason through complex, multi-step context gathering autonomously.</p>
             </ScrollReveal>
             <ScrollReveal delay={0.3} animation="fade-up" className="bento-card small">
-              <Image src="/bento-computer.jpg" alt="Computer Use" width={300} height={200} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px', marginBottom: '16px'}} />
+              <Image src="/bento-computer.webp" alt="Computer Use" width={300} height={200} style={{width: '100%', height: '140px', objectFit: 'cover', borderRadius: '8px', marginBottom: '16px'}} />
               <h3>Computer Use</h3>
               <p>Visual automation capabilities for bridging legacy systems where modern APIs do not exist.</p>
             </ScrollReveal>

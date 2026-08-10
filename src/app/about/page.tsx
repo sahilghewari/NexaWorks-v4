@@ -1,16 +1,38 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import "./about.css";
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: "About NexaWorks — The Context Reconstruction Company",
   description: "We believe every knowledge worker should begin important work with complete context. NexaWorks is building the infrastructure to make that possible.",
+  keywords: ['About NexaWorks', 'Context Reconstruction', 'Enterprise Infrastructure', 'AI Company', 'Knowledge Workers'],
+  alternates: { canonical: 'https://nexaworks.tech/about' },
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "About NexaWorks — The Context Reconstruction Company",
+    description: "We believe every knowledge worker should begin important work with complete context. NexaWorks is building the infrastructure to make that possible.",
+    url: 'https://nexaworks.tech/about',
+    siteName: 'NexaWorks',
+    type: 'website',
+    images: [{ url: 'https://nexaworks.tech/og-image.jpg', width: 1200, height: 630, alt: 'About NexaWorks' }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@NexaWorksAI',
+    creator: '@NexaWorksAI',
+    title: "About NexaWorks — The Context Reconstruction Company",
+    description: "We believe every knowledge worker should begin important work with complete context. NexaWorks is building the infrastructure to make that possible.",
+    images: ['https://nexaworks.tech/og-image.jpg']
+  }
 };
 
 export default function About() {
   return (
     <main className="about-page">
+      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }]} />
       <section className="about-hero">
         <h1 className="about-headline">We believe context should never be lost.</h1>
         <p className="about-subhead">
@@ -35,7 +57,7 @@ export default function About() {
             </div>
             <div className="about-mission-image">
               <Image 
-                src="/about-mission-light.jpg" 
+                src="/about-mission-light.webp" 
                 alt="Abstract representation of context reconstruction" 
                 fill
                 style={{ objectFit: 'cover' }}
@@ -93,7 +115,7 @@ export default function About() {
 
           <ScrollReveal delay={0.3} className="bento-card bento-infra">
             <Image 
-              src="/about-philosophy.jpg" 
+              src="/about-philosophy.webp" 
               alt="Enterprise Server Infrastructure"
               fill
               style={{ objectFit: 'cover', zIndex: 0, opacity: 0.6 }}
@@ -117,6 +139,18 @@ export default function About() {
           <p>
             Headquartered in Thane, Maharashtra, India. Engineering world-class Context Reconstruction infrastructure for enterprises across the US, UK, APAC, and domestic markets.
           </p>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="about-cta-section" style={{ textAlign: 'center', padding: '80px 24px', display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>
+          <h2>Ready to rebuild context?</h2>
+          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <Link href="/product" className="btn-glass">Explore Our Platform</Link>
+            <Link href="/contact" className="btn-glass">Get in Touch</Link>
+            <Link href="/research" className="btn-glass">Read Our Research</Link>
+            <Link href="/careers" className="btn-glass">Join Our Team</Link>
+          </div>
         </section>
       </ScrollReveal>
     </main>

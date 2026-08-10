@@ -16,6 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--color-canvas);
@@ -220,7 +225,7 @@ select {
   padding: 8px 16px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -240,7 +245,7 @@ select {
   border-radius: var(--radius-pill);
   padding: 8px 16px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-secondary:hover {
@@ -257,7 +262,7 @@ select {
   padding: 8px 16px;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-lg {

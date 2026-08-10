@@ -26,7 +26,7 @@ export default function InteractiveHero() {
       <div className="hero-title-container">
         <div className="hero-logo-line">
           <span className="hero-brand"><span className="brand-bold">NexaWorks</span> Context Intelligence</span>
-          <div className={`hero-toggle ${isOn ? 'on' : 'off'}`} onClick={() => setIsOn(!isOn)}>
+          <div className={`hero-toggle ${isOn ? 'on' : 'off'}`} onClick={() => setIsOn(!isOn)} role="button" tabIndex={0} aria-label="Toggle context reconstruction demo" onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setIsOn(!isOn); } }}>
             <div className="hero-toggle-thumb"></div>
             <div className={`hero-toggle-btn ${!isOn ? 'active' : ''}`}>OFF</div>
             <div className={`hero-toggle-btn ${isOn ? 'active' : ''}`}>ON</div>
