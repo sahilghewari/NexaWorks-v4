@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ScrollReveal from '@/components/ScrollReveal';
 import './research.css';
 
 export const metadata = {
@@ -67,24 +68,26 @@ export default function ResearchLandingPage() {
       <section className="research-featured-section">
         <div className="research-featured-container">
           <h2 className="research-section-title">Featured Annual Report</h2>
-          <Link href={annualReports[0].href} className="research-featured-card">
-            <div className="research-featured-content">
-              <div className="research-meta">
-                <span>ANNUAL REPORT</span>
-                <span>{annualReports[0].date}</span>
+          <ScrollReveal>
+            <Link href={annualReports[0].href} className="research-featured-card">
+              <div className="research-featured-content">
+                <div className="research-meta">
+                  <span>ANNUAL REPORT</span>
+                  <span>{annualReports[0].date}</span>
+                </div>
+                <h3>{annualReports[0].title}</h3>
+                <p>{annualReports[0].description}</p>
               </div>
-              <h3>{annualReports[0].title}</h3>
-              <p>{annualReports[0].description}</p>
-            </div>
-            <div className="research-featured-image">
-              <Image 
-                src={annualReports[0].image} 
-                alt={annualReports[0].title} 
-                fill
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </Link>
+              <div className="research-featured-image">
+                <Image 
+                  src={annualReports[0].image} 
+                  alt={annualReports[0].title} 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -93,24 +96,26 @@ export default function ResearchLandingPage() {
         <h2 className="research-section-title dark">Empirical Benchmarks</h2>
         <div className="research-bento-grid">
           {benchmarks.map((report, idx) => (
-            <Link key={idx} href={report.href} className="research-bento-card">
-              <div className="research-card-image">
-                <Image 
-                  src={report.image} 
-                  alt={report.title} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="research-card-content">
-                <div className="research-card-meta">
-                  <span>BENCHMARK</span>
-                  <span>{report.date}</span>
+            <ScrollReveal key={idx} delay={idx * 0.1} style={{ display: 'flex', flexDirection: 'column' }}>
+              <Link href={report.href} className="research-bento-card" style={{ flex: 1 }}>
+                <div className="research-card-image">
+                  <Image 
+                    src={report.image} 
+                    alt={report.title} 
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
-                <h3>{report.title}</h3>
-                <p>{report.description}</p>
-              </div>
-            </Link>
+                <div className="research-card-content">
+                  <div className="research-card-meta">
+                    <span>BENCHMARK</span>
+                    <span>{report.date}</span>
+                  </div>
+                  <h3>{report.title}</h3>
+                  <p>{report.description}</p>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -120,24 +125,26 @@ export default function ResearchLandingPage() {
         <h2 className="research-section-title dark">Live Datasets</h2>
         <div className="research-bento-grid">
           {datasets.map((report, idx) => (
-            <Link key={idx} href={report.href} className="research-bento-card">
-              <div className="research-card-image">
-                <Image 
-                  src={report.image} 
-                  alt={report.title} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <div className="research-card-content">
-                <div className="research-card-meta">
-                  <span>DATASET</span>
-                  <span>{report.date}</span>
+            <ScrollReveal key={idx} delay={idx * 0.1} style={{ display: 'flex', flexDirection: 'column' }}>
+              <Link href={report.href} className="research-bento-card" style={{ flex: 1 }}>
+                <div className="research-card-image">
+                  <Image 
+                    src={report.image} 
+                    alt={report.title} 
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
-                <h3>{report.title}</h3>
-                <p>{report.description}</p>
-              </div>
-            </Link>
+                <div className="research-card-content">
+                  <div className="research-card-meta">
+                    <span>DATASET</span>
+                    <span>{report.date}</span>
+                  </div>
+                  <h3>{report.title}</h3>
+                  <p>{report.description}</p>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </section>

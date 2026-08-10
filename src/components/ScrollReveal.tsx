@@ -8,6 +8,7 @@ interface ScrollRevealProps {
   delay?: number;
   duration?: number;
   className?: string;
+  style?: React.CSSProperties;
 }
 
 export default function ScrollReveal({
@@ -16,6 +17,7 @@ export default function ScrollReveal({
   delay = 0,
   duration = 0.6,
   className = "",
+  style = {},
 }: ScrollRevealProps) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -61,7 +63,7 @@ export default function ScrollReveal({
     <div
       ref={ref}
       className={className}
-      style={isVisible ? { ...baseStyle, ...visibleStyle } : baseStyle}
+      style={isVisible ? { ...style, ...baseStyle, ...visibleStyle } : { ...style, ...baseStyle }}
     >
       {children}
     </div>
