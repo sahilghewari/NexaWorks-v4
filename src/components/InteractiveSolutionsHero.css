@@ -1,13 +1,20 @@
 .solutions-interactive-hero {
   position: relative;
   min-height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 140px 5% 80px;
   background-color: #050505;
   overflow: hidden;
   border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: center;
+}
+
+.sih-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .sih-content {
@@ -206,8 +213,10 @@
 
 @media (max-width: 1024px) {
   .solutions-interactive-hero {
-    flex-direction: column;
     padding: 120px 24px 60px;
+  }
+  .sih-container {
+    flex-direction: column;
   }
   .sih-content {
     text-align: center;
