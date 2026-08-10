@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/benchmarks/llmops-observability-matrix" },
   title: 'LLMOps Observability Matrix: LangSmith vs Helicone vs Langfuse',
   description: 'A technical benchmark comparing trace-billing vs score-billing economics for Enterprise AI Agent observability.',
 };

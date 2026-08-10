@@ -3,6 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/infrastructure-playbooks" },
   title: "Infrastructure Playbooks",
   description: "Technical whitepapers, Pydantic code samples, and OpenAPI schema definitions for enterprise AI architectures.",
 };

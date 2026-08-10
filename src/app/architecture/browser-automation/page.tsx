@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/architecture/browser-automation" },
   title: 'Browser Automation & Computer Use Architecture | NexaWorks',
   description: 'System design reference for deploying AI agents utilizing the Computer Use API to automate legacy web portals and internal SaaS.',
 };

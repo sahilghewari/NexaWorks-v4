@@ -23,12 +23,16 @@ export async function generateMetadata({ params }: ContextPageProps): Promise<Me
   if (!contextData) {
     return {
       title: 'Context Not Found - NexaWorks',
+      description: 'The requested context could not be found.',
     };
   }
 
   return {
     title: `${contextData.title} | NexaWorks Context Reconstruction`,
     description: `How NexaWorks reconstructs context for ${contextData.useCase} to drive impact.`,
+    alternates: {
+      canonical: `https://nexaworks.tech/context/${resolvedParams['use-case']}`
+    }
   };
 }
 

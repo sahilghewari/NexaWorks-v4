@@ -5,6 +5,8 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 import './page.css';
 
+
+
 export default function TallyAutomationPage() {
   const [hours, setHours] = useState(40);
   

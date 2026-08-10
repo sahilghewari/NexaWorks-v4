@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://nexaworks.tech/industries" },
   title: 'Context Reconstruction by Industry | NexaWorks',
   description: 'Industry-specific Context Reconstruction architectures for Financial Services, Healthcare, Real Estate, and Legal.',
 };

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import MCPGenerator from '@/components/Calculators/MCPGenerator';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/tools/mcp-architecture-generator" },
   title: 'MCP Agent Architecture Generator | NexaWorks',
   description: 'Interactive Model Context Protocol (MCP) tool. Generate deployable JSON configurations for Anthropic and OpenAI agentic swarms.',
 };

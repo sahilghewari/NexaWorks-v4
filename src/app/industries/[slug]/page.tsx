@@ -1,6 +1,11 @@
 import GradientMesh from "@/components/GradientMesh";
 import Link from "next/link";
 
+export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/industries/[slug]" }
+};
+
+
 export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const formatTitle = (slug: string) => slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');

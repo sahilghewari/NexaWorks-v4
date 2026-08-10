@@ -4,6 +4,7 @@ import GradientMesh from '@/components/GradientMesh';
 import glossaryData from '@/data/glossary.json';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/glossary" },
   title: 'Enterprise AI Dictionary & Glossary | NexaWorks',
   description: 'The definitive architectural dictionary for Enterprise AI. Definitions for GraphRAG, Semantic Routing, and Generative Engine Optimization.',
 };

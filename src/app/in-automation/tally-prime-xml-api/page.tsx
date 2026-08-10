@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/in-automation/tally-prime-xml-api" },
   title: 'TallyPrime 7.0 API Integration | Automate GSTR-2B & Invoice Sync',
   description: 'Technical guide for integrating AI agents with TallyPrime 7.0 via XML over HTTP. Learn how to bypass ODBC read limits and fully automate GSTR-2B reconciliation and invoice entry.',
 };

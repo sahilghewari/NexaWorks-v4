@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/docs/swarm-api" },
   title: 'AI Agent Swarm API (MCP) | NexaWorks Docs',
   description: 'Documentation for the NexaWorks Swarm API. Authenticate external autonomous agents via the Model Context Protocol (MCP) to interact with our infrastructure.',
 };

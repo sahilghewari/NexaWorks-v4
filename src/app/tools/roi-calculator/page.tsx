@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ROICalculator from '@/components/Calculators/ROICalculator';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/tools/roi-calculator" },
   title: 'Automation ROI Calculator | NexaWorks',
   description: 'Calculate the long-term compounding savings and risk exposure of deploying enterprise automation workflows.',
 };

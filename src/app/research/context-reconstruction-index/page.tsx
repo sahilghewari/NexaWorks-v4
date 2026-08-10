@@ -2,6 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
+export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/research/context-reconstruction-index" }
+};
+
+
 export default function ContextReconstructionIndexPage() {
   return (
     <div className="page-wrapper" style={{ backgroundColor: 'var(--color-surface)', minHeight: '100vh' }}>

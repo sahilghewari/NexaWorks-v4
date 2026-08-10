@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+
+
 export default function ContextScoreCalculator() {
   const [teamSize, setTeamSize] = useState(25);
   const [meetings, setMeetings] = useState(15);

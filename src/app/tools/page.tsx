@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/tools" },
   title: 'Enterprise AI Developer Tools',
   description: 'High-utility developer tools, calculators, and simulators for AI engineering, RAG architecture, and Generative Engine Optimization.',
 };

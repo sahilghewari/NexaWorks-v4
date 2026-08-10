@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/resources" },
   title: 'Resources & PLG Tools | NexaWorks',
   description: 'Access our suite of interactive enterprise AI tools, including the EU AI Act Assessor, MCP Generator, and ROI Calculator.',
 };

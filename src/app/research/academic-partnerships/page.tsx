@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/research/academic-partnerships" },
   title: 'Academic Data Sharing & Research Partnerships | NexaWorks',
   description: 'NexaWorks partners with leading academic institutions (MIT CSAIL, Stanford HAI) to provide anonymized enterprise AI telemetry for foundational research.',
 };

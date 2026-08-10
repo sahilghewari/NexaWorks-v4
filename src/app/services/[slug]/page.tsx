@@ -3,6 +3,11 @@ import Link from "next/link";
 import RegionalCTA from "@/components/RegionalCTA";
 import Image from "next/image";
 
+export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/services/[slug]" }
+};
+
+
 // Map slugs to explicit technical/architectural proof required by the Market Intelligence Research
 const serviceData: Record<string, { subtitle: string, proof: string[], image: string }> = {
   'ai-agents': {

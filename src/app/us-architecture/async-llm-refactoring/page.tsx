@@ -3,6 +3,7 @@ import Link from 'next/link';
 import './page.css';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/us-architecture/async-llm-refactoring" },
   title: 'Async LLM API Production Rescue — FastAPI & Uvicorn',
   description: 'NexaWorks rescues failing FastAPI LLM pipelines by replacing blocking WSGI patterns with async ASGI architecture using Uvicorn, Celery, and Redis.'
 };

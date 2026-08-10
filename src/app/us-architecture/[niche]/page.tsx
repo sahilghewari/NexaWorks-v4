@@ -97,9 +97,20 @@ export default function USArchitecturePage({ params }: { params: { niche: string
     "@type": "TechArticle",
     "headline": data.title,
     "description": data.technicalProof,
+    "image": [
+      "https://nexaworks.tech/images/architecture-og.png"
+    ],
     "author": {
       "@type": "Organization",
       "name": "NexaWorks"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "NexaWorks",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nexaworks.tech/logo.png"
+      }
     },
     "datePublished": "2026-01-15T00:00:00Z",
     "dateModified": lastUpdatedISO,

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/benchmarks" },
   title: 'AI Benchmarks & Empirical Testing',
   description: 'Rigorous, empirical benchmarks comparing foundation models on enterprise unstructured data tasks.',
 };

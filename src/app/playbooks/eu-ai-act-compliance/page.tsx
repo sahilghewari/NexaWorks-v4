@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/playbooks/eu-ai-act-compliance" },
   title: 'EU AI Act Compliance Checklist for Engineering Teams | NexaWorks',
   description: 'An actionable engineering checklist for deploying high-risk AI agents compliantly under the August 2026 EU AI Act enforcement mandate.',
 };

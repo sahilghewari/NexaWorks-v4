@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/docs/methodology" },
   title: 'Methodology | NexaWorks Documentation',
   description: 'NexaWorks methodology for context reconstruction using Deterministic RAG and GraphRAG.',
 };

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/docs/mcp-integrations" },
   title: 'MCP Integrations | NexaWorks Documentation',
   description: 'How NexaWorks uses the Model Context Protocol (MCP) for secure tool connections.',
 };

@@ -5,6 +5,7 @@ import GradientMesh from "@/components/GradientMesh";
 import "./services.css";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://nexaworks.tech/services" },
   title: 'Platform Capabilities | NexaWorks',
   description: "End-to-end Context Reconstruction solutions engineered for production environments.",
 };

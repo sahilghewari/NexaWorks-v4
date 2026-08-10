@@ -1,5 +1,5 @@
 export const metadata = {
-  alternates: { canonical: "https://nexaworks.tech/in-automation/tally-erp-bi-pipelines" }
+  alternates: { canonical: "https://nexaworks.tech/tools/rag-simulator" }
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

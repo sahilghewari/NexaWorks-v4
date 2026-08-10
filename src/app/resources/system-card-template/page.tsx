@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/resources/system-card-template" },
   title: 'SYSTEM_CARD.md Annex IV Template | NexaWorks Resources',
   description: 'Download the markdown template required to satisfy the EU AI Act Annex IV technical documentation mandate.',
 };

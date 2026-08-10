@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ComplianceAssessor from '@/components/Calculators/ComplianceAssessor';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/tools/eu-ai-act-assessor" },
   title: 'EU AI Act Risk Assessor Tool | NexaWorks',
   description: 'Interactive compliance tool. Determine your AI agent\'s regulatory risk tier (Minimal, Limited, High, Prohibited) and generate a mitigation engineering checklist.',
 };

@@ -35,8 +35,9 @@ export const metadata: Metadata = {
     "LLM Integration",
     "Enterprise Knowledge Management",
   ],
+  metadataBase: new URL("https://nexaworks.tech"),
   alternates: {
-    canonical: "https://nexaworks.tech",
+    canonical: "/",
   },
   robots: {
     index: true,

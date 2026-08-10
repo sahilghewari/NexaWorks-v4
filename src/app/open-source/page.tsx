@@ -3,6 +3,7 @@ import Link from 'next/link';
 import GradientMesh from '@/components/GradientMesh';
 
 export const metadata = {
+  alternates: { canonical: "https://nexaworks.tech/open-source" },
   title: 'Open Source AI Infrastructure | NexaWorks',
   description: 'Production-ready boilerplate repositories, SDKs, and middleware for Enterprise AI automation.',
 };

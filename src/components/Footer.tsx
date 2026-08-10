@@ -67,6 +67,32 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* SEO Internal Linking Block */}
+        <div style={{ marginTop: '48px', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '24px' }}>
+          <h4 style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '16px' }}>Popular Resources</h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', fontSize: '12px' }}>
+            <Link href="/benchmarks/llmops-observability-matrix" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>LLMOps Observability</Link>
+            <Link href="/docs/methodology" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Context Methodology</Link>
+            <Link href="/tools/rag-simulator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>RAG Simulator</Link>
+            <Link href="/blog/death-of-legacy-ocr-agentic-pipelines" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Legacy OCR Alternatives</Link>
+            <Link href="/blog/enterprise-rag-deterministic-routing" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Deterministic RAG</Link>
+            <Link href="/architecture/browser-automation" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Browser Automation</Link>
+            <Link href="/benchmarks/error-database" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>AI Error Database</Link>
+            <Link href="/blog/browser-automation-agents-legacy-mainframes" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Mainframe Agents</Link>
+            <Link href="/blog/understanding-model-context-protocol-mcp" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Understanding MCP</Link>
+            <Link href="/playbooks/eu-ai-act-compliance" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>EU AI Act Compliance</Link>
+            <Link href="/infrastructure-playbooks" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Infrastructure Playbooks</Link>
+            <Link href="/tools/schema-generator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Schema Generator</Link>
+            <Link href="/tools/eu-ai-act-assessor" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>AI Act Assessor</Link>
+            <Link href="/blog/hidden-cost-of-context-switching" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Context Switching Costs</Link>
+            <Link href="/docs/mcp-integrations" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>MCP Integrations</Link>
+            <Link href="/resources/system-card-template" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>System Card Template</Link>
+            <Link href="/docs/swarm-api" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Swarm API Docs</Link>
+            <Link href="/tools/mcp-architecture-generator" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Architecture Generator</Link>
+            <Link href="/us-architecture/async-llm-refactoring" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Async LLM Refactoring</Link>
+          </div>
+        </div>
+
         {/* Bottom Legal Row */}
         <div className="footer-bottom">
           <p>© 2026 NexaWorks Technology. All rights reserved.</p>
