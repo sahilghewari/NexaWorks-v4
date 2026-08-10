@@ -20,15 +20,41 @@ export default function HarveyContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate brief network submission
-    setTimeout(() => {
+    try {
+      const formPayload = new FormData();
+      formPayload.append("access_key", "b4647adc-fc0a-4fb4-9f49-15943b0c6f03");
+      formPayload.append("First Name", formData.firstName);
+      formPayload.append("Last Name", formData.lastName);
+      formPayload.append("Email", formData.email);
+      formPayload.append("Company", formData.company);
+      formPayload.append("Job Title", formData.jobTitle);
+      formPayload.append("Phone", formData.phone || "Not provided");
+      formPayload.append("Organization Size", formData.orgSize);
+      formPayload.append("Primary Architectural Focus", formData.workflow);
+      formPayload.append("Consent to Communications", formData.consent ? "Yes" : "No");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formPayload
+      });
+
+      const data = await response.json();
+      
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        alert("There was an issue submitting your request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("There was a network error. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 600);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
