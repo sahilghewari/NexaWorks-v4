@@ -17,19 +17,19 @@ export default function SolutionsPage() {
     <main className="solutions-page">
       <InteractiveSolutionsHero />
 
-      <ScrollReveal delay={0.2} animation="fade-in">
-        <div style={{ backgroundColor: '#000', padding: '48px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-          <TrustSignals />
-        </div>
-      </ScrollReveal>
+      <div style={{ backgroundColor: '#000', padding: '48px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+        <TrustSignals />
+      </div>
 
       <section className="staggered-section">
         <div className="staggered-container">
-          <div className="staggered-header">
-            <h2>One platform engineered to elevate your entire team. <span>Navigate every challenge with purpose-built context.</span></h2>
-          </div>
+          <ScrollReveal>
+            <div className="staggered-header">
+              <h2>One platform engineered to elevate your entire team. <span>Navigate every challenge with purpose-built context.</span></h2>
+            </div>
+          </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal>
             <div className="staggered-row">
               <div className="staggered-image-container">
                 <Image src="/ui-sales.jpg" alt="Sales Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
@@ -42,7 +42,7 @@ export default function SolutionsPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal>
             <div className="staggered-row">
               <div className="staggered-image-container">
                 <Image src="/ui-clinical.jpg" alt="Clinical Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
@@ -55,7 +55,7 @@ export default function SolutionsPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal>
             <div className="staggered-row">
               <div className="staggered-image-container">
                 <Image src="/ui-sales.jpg" alt="Finance Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
@@ -68,7 +68,7 @@ export default function SolutionsPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal>
             <div className="staggered-row">
               <div className="staggered-image-container">
                 <Image src="/ui-legal.jpg" alt="Legal Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
@@ -81,7 +81,7 @@ export default function SolutionsPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal>
             <div className="staggered-row">
               <div className="staggered-image-container">
                 <Image src="/ui-clinical.jpg" alt="Operations Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
@@ -94,7 +94,7 @@ export default function SolutionsPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.1}>
+          <ScrollReveal>
             <div className="staggered-row">
               <div className="staggered-image-container">
                 <Image src="/ui-legal.jpg" alt="Executive Platform UI Mockup" width={800} height={600} style={{ width: '100%', height: 'auto', display: 'block' }} />
