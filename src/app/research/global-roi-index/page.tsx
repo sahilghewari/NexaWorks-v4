@@ -23,6 +23,7 @@ export default function GlobalROIIndexPage() {
       "name": "NexaWorks Research"
     },
     "dateModified": lastUpdatedISO,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
     "variableMeasured": ["Average Cost Displacement (%)", "Months to Payback", "Primary Automation Vector"]
   };
 
