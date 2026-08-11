@@ -131,7 +131,7 @@ export default function BlogLandingPage() {
         <h2 style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', borderWidth: 0 }}>Latest Articles</h2>
         <div className="blog-masonry">
           {olderPosts.map((post, idx) => (
-            <ScrollReveal key={idx} delay={0.1 + (idx * 0.1)} className={post.large ? "masonry-card large h-full" : "h-full"}>
+            <ScrollReveal key={idx} delay={0.1 + (idx * 0.1)} className="h-full">
               <Link href={post.link} className={post.large ? "masonry-card large h-full" : "masonry-card h-full"}>
                 <div className="post-meta">
                   <span className="post-category">{post.category}</span>

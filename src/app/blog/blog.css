@@ -211,4 +211,5 @@
   .blog-headline { font-size: 48px; }
   .blog-masonry { grid-template-columns: 1fr; }
   .featured-content { padding: 32px; }
+  .masonry-card.large .masonry-title { font-size: 32px; }
 }
