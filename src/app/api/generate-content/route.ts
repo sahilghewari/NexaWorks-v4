@@ -8,22 +8,11 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'dummy'
 );
 
-const topics = [
-  "How AI is Transforming Healthcare Compliance",
-  "Automating Financial Audits with LLMs",
-  "The Future of Deterministic RAG in Enterprise",
-  "Reducing Customer Churn with Predictive AI Models",
-  "Why Legacy RPA is Failing in 2026",
-  "Secure Multi-Agent Swarms for Legal Contract Review",
-  "Data Privacy in the Era of Generative AI"
-];
-
 function generateSlug(title: string) {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
 export async function GET(request: Request) {
-  // Initialize Groq inside the handler to prevent build-time evaluation errors
   const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
   // 1. Verify Cron Secret for security
@@ -33,54 +22,72 @@ export async function GET(request: Request) {
   }
 
   try {
-    // 2. Select a random topic
-    const topic = topics[Math.floor(Math.random() * topics.length)];
+    // 2. Generate Highly Specific Topic & MDX Content in one mega-prompt
+    const systemPrompt = `You are the lead AI Architect at NexaWorks, an elite enterprise automation agency. 
+Your task is to write a highly technical, engaging, and authoritative blog post about a cutting-edge AI or automation topic (e.g., Deterministic RAG, legacy ERP integration, agents replacing RPA, compliance, etc.).
 
-    // 3. Generate Content using Groq
+REQUIREMENTS:
+1. Brainstorm a completely novel, highly specific topic that enterprise CTOs would care about.
+2. Write the output in MDX format (Markdown with JSX).
+3. Do NOT wrap the response in a markdown code block (\`\`\`md).
+4. The first line of your response MUST be the title starting with "# ".
+5. The second line MUST be a short 1-sentence excerpt starting with "> ".
+6. The rest is the article content.
+7. You MUST include at least one <AEOAnswerBlock question="The question" answer="The precise answer" tag="Executive Briefing" /> component in the content to provide an interactive summary.
+8. Naturally weave in mentions to NexaWorks architecture or services.
+9. Keep it around 600-900 words, highly structured with H2 and H3 headers, lists, and code snippets if applicable.`;
+
     const completion = await groq.chat.completions.create({
       model: "openai/gpt-oss-120b",
       messages: [
-        {
-          role: "system",
-          content: "You are an expert technical marketing writer for NexaWorks, an enterprise AI automation agency. Write a highly engaging, SEO-optimized blog article about the given topic. The output must be valid HTML format (using <p>, <h2>, <ul> tags) and should not include Markdown code blocks or the ```html wrapper. Omit the main <h1> title from the content body as it will be rendered separately. Keep it between 500-800 words."
-        },
-        {
-          role: "user",
-          content: `Write an article about: ${topic}`
-        }
+        { role: "system", content: systemPrompt },
+        { role: "user", content: "Generate today's high-quality technical MDX article." }
       ],
-      temperature: 0.7,
-      max_tokens: 2048,
+      temperature: 0.8,
+      max_tokens: 3000,
     });
 
-    const generatedHtml = completion.choices[0]?.message?.content || "";
+    const rawOutput = completion.choices[0]?.message?.content?.trim() || "";
     
-    // 4. Generate Excerpt
-    const excerpt = generatedHtml.replace(/<[^>]*>?/gm, '').substring(0, 150) + "...";
+    // 3. Parse the output
+    const lines = rawOutput.split('\n');
+    let title = "Generated NexaWorks Article";
+    let excerpt = "Technical insights from the NexaWorks engineering team.";
     
-    // 5. Generate Slug & Date
-    const slug = generateSlug(topic);
+    // Extract Title from first line
+    if (lines[0].startsWith('# ')) {
+      title = lines[0].replace('# ', '').trim();
+      lines.shift();
+    }
+    
+    // Extract Excerpt from next available line
+    while (lines.length > 0 && lines[0].trim() === '') lines.shift();
+    if (lines.length > 0 && lines[0].startsWith('> ')) {
+      excerpt = lines[0].replace('> ', '').trim();
+      lines.shift();
+    }
+
+    const content = lines.join('\n').trim();
+    const slug = generateSlug(title);
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
-    // 6. Save to Supabase
+    // 4. Save to Supabase
     const { error } = await supabase.from('articles').insert({
       slug: slug,
-      title: topic,
+      title: title,
       excerpt: excerpt,
-      content: generatedHtml,
-      category: 'AI Strategy',
+      content: content,
+      category: 'Architecture',
       date: date,
       large: false
     });
 
     if (error) {
-      if (error.code === '23505') { // Unique violation (slug already exists)
-        return NextResponse.json({ message: 'Topic already generated today.' }, { status: 200 });
-      }
+      if (error.code === '23505') return NextResponse.json({ message: 'Topic already generated.' }, { status: 200 });
       throw error;
     }
 
-    return NextResponse.json({ success: true, topic, slug }, { status: 200 });
+    return NextResponse.json({ success: true, topic: title, slug }, { status: 200 });
   } catch (error: any) {
     console.error("Content generation error:", error);
     return NextResponse.json({ error: error.message }, { status: 500 });

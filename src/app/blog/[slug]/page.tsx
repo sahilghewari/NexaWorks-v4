@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/utils/supabase/server';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import AEOAnswerBlock from '@/components/AEOAnswerBlock';
 import '../blog.css';
 import '../article.css';
 
@@ -24,6 +26,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     }
   };
 }
+
+// Map custom MDX components
+const components = {
+  AEOAnswerBlock
+};
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -77,10 +84,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </p>
         </header>
 
-        <article 
-          className="article-content" 
-          dangerouslySetInnerHTML={{ __html: post.content }} 
-        />
+        <article className="article-content">
+          <MDXRemote source={post.content} components={components} />
+        </article>
 
         <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)', margin: '64px 0' }} />
 
