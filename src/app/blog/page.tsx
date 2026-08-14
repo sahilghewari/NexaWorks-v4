@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ScrollReveal from '@/components/ScrollReveal';
 import './blog.css';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { createClient } from '@/utils/supabase/server';
 
 export const metadata = {
   title: 'Blog & Resources | NexaWorks',
@@ -28,49 +29,43 @@ export const metadata = {
   }
 };
 
-export default function BlogLandingPage() {
+export const revalidate = 0; // Disable caching to fetch live articles, or use ISR like `export const revalidate = 3600;`
+// We will use standard dynamic rendering for now since it updates via cron.
+
+export default async function BlogLandingPage() {
+  const supabase = await createClient();
+  const { data: articles, error } = await supabase
+    .from('articles')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error || !articles || articles.length === 0) {
+    return (
+      <main className="blog-page">
+        <section className="blog-hero">
+          <h1 className="blog-headline">No Articles Found</h1>
+        </section>
+      </main>
+    );
+  }
+
+  // Format posts for the UI
   const latestPost = {
-    title: "The Death of Legacy OCR: Why Agentic Pipelines Won in 2026",
-    description: "Traditional template-based OCR systems have entirely collapsed under the weight of unstructured enterprise data. Here is how visual-language models (VLMs) replaced them.",
-    category: "Architecture",
-    date: "Aug 12, 2026",
-    link: "/blog/death-of-legacy-ocr-agentic-pipelines"
+    title: articles[0].title,
+    description: articles[0].excerpt,
+    category: articles[0].category || "Article",
+    date: articles[0].date || new Date(articles[0].created_at).toLocaleDateString(),
+    link: `/blog/${articles[0].slug}`
   };
 
-  const olderPosts = [
-    {
-      title: "Understanding the Model Context Protocol (MCP)",
-      description: "Anthropic's MCP standard has fundamentally changed how agents connect to data. Stop writing custom API wrappers and start building MCP servers.",
-      category: "Engineering",
-      date: "Aug 5, 2026",
-      large: true,
-      link: "/blog/understanding-model-context-protocol-mcp"
-    },
-    {
-      title: "Enterprise RAG & Deterministic Routing",
-      description: "How to constrain LLM routing using explicit state machines, Pydantic validation, and LangGraph architectures.",
-      category: "Methodology",
-      date: "Jul 28, 2026",
-      large: false,
-      link: "/blog/enterprise-rag-deterministic-routing"
-    },
-    {
-      title: "Browser Automation Agents on Legacy Mainframes",
-      description: "Visual automation and computer use capabilities for bridging legacy ERP and mainframe systems where APIs do not exist.",
-      category: "Infrastructure",
-      date: "Jul 18, 2026",
-      large: false,
-      link: "/blog/browser-automation-agents-legacy-mainframes"
-    },
-    {
-      title: "The Hidden Cost of Context Switching",
-      description: "Quantifying how fragmented enterprise knowledge across CRMs, Slack, and email degrades employee velocity and decision quality.",
-      category: "Research",
-      date: "Jul 10, 2026",
-      large: false,
-      link: "/blog/hidden-cost-of-context-switching"
-    }
-  ];
+  const olderPosts = articles.slice(1).map((a: any) => ({
+    title: a.title,
+    description: a.excerpt,
+    category: a.category || "Article",
+    date: a.date || new Date(a.created_at).toLocaleDateString(),
+    large: a.large || false,
+    link: `/blog/${a.slug}`
+  }));
 
   return (
     <main className="blog-page">
