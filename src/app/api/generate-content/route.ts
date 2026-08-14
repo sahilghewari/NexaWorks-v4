@@ -35,7 +35,11 @@ REQUIREMENTS:
 6. The rest is the article content.
 7. You MUST include at least one <AEOAnswerBlock question="The question" answer="The precise answer" tag="Executive Briefing" /> component in the content to provide an interactive summary.
 8. Naturally weave in mentions to NexaWorks architecture or services.
-9. Keep it around 600-900 words, highly structured with H2 and H3 headers, lists, and code snippets if applicable.`;
+9. Keep it around 600-900 words, highly structured with H2 and H3 headers, lists, and code snippets if applicable.
+10. CRITICAL: Because this is MDX, you MUST escape any mathematical less-than or greater-than symbols as &lt; and &gt;. NEVER use raw < or > unless it is for the <AEOAnswerBlock> JSX tag.
+11. AUTHOR ATTRIBUTION: At the very top of your content (below the excerpt), you MUST include a bold author byline picking ONE of these exact names randomly: **By James D'Souza**, **By Setu Balan**, **By Pawan Babar**, or **By Mangala Sawant**.
+12. NO HALLUCINATIONS: Do not claim any fake stories or fictional case studies. Only reference real, verified researched articles, papers, or architectural theories.
+13. NO MERMAID: Do not use Mermaid.js diagram syntax. Use standard markdown tables (which are fully supported) or ASCII art instead if you need to show structure.`;
 
     const completion = await groq.chat.completions.create({
       model: "openai/gpt-oss-120b",

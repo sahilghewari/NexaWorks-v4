@@ -27,9 +27,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+import remarkGfm from 'remark-gfm';
+
 // Map custom MDX components
 const components = {
   AEOAnswerBlock
+};
+
+const mdxOptions = {
+  mdxOptions: {
+    remarkPlugins: [remarkGfm],
+  }
 };
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -85,7 +93,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </header>
 
         <article className="article-content">
-          <MDXRemote source={post.content} components={components} />
+          <MDXRemote source={post.content} components={components} options={mdxOptions} />
         </article>
 
         <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)', margin: '64px 0' }} />
