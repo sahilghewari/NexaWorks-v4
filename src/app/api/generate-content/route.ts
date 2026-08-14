@@ -95,10 +95,9 @@ REQUIREMENTS:
     try {
       const socialPrompt = `You are the lead Social Media Manager for NexaWorks.
 Your task is to take the following technical article and generate:
-1. A highly engaging 3-part Twitter thread summarizing the key points. Prefix each tweet with [TWEET 1], [TWEET 2], etc.
-2. A professional, authoritative LinkedIn post. Prefix with [LINKEDIN].
+1. A professional, authoritative LinkedIn post. Prefix with [LINKEDIN].
 
-Include relevant hashtags. The article url will be: https://nexaworks.tech/blog/${slug}
+Include relevant hashtags. The article url will be: https://nexaworks.tech/blog/\${slug}
 
 ARTICLE:
 ${title}
@@ -114,26 +113,6 @@ ${content}`;
 
       const socialOutput = socialCompletion.choices[0]?.message?.content || "";
       
-      // If Twitter keys exist, post to Twitter
-      if (process.env.TWITTER_API_KEY && process.env.TWITTER_ACCESS_TOKEN) {
-        const { TwitterApi } = require('twitter-api-v2');
-        const twitterClient = new TwitterApi({
-          appKey: process.env.TWITTER_API_KEY,
-          appSecret: process.env.TWITTER_API_SECRET!,
-          accessToken: process.env.TWITTER_ACCESS_TOKEN,
-          accessSecret: process.env.TWITTER_ACCESS_SECRET!,
-        });
-
-        // Very basic extraction of the first tweet to post
-        const tweetMatch = socialOutput.match(/\[TWEET 1\]([\s\S]*?)(?:\[TWEET 2\]|$)/);
-        if (tweetMatch && tweetMatch[1]) {
-          await twitterClient.v2.tweet(tweetMatch[1].trim());
-          console.log("Successfully posted to Twitter.");
-        }
-      } else {
-        console.log("Twitter keys missing, skipping syndication. Generated text:", socialOutput.substring(0, 50) + "...");
-      }
-
       // If LinkedIn token exists, post to LinkedIn
       if (process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) {
         const linkedinMatch = socialOutput.match(/\[LINKEDIN\]([\s\S]*)$/);
