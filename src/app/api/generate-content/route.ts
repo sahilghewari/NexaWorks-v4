@@ -95,9 +95,9 @@ REQUIREMENTS:
     try {
       const socialPrompt = `You are the lead Social Media Manager for NexaWorks.
 Your task is to take the following technical article and generate:
-1. A professional, authoritative LinkedIn post. Prefix with [LINKEDIN].
+1. A professional, authoritative LinkedIn post. Prefix with [LINKEDIN]. Do NOT use any Markdown formatting (no **bolding**, no *italics*, no # headers). Write it as clean, plain text with emojis.
 
-Include relevant hashtags. The article url will be: https://nexaworks.tech/blog/\${slug}
+Include relevant hashtags. The article url will be: https://nexaworks.tech/blog/${slug}
 
 ARTICLE:
 ${title}
