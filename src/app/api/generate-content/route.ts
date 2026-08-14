@@ -2,12 +2,10 @@ import { NextResponse } from 'next/server';
 import Groq from 'groq-sdk';
 import { createClient } from '@supabase/supabase-js';
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
 // We use the standard supabase-js client for server-side admin operations
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://localhost',
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY || 'dummy'
 );
 
 const topics = [
@@ -25,6 +23,9 @@ function generateSlug(title: string) {
 }
 
 export async function GET(request: Request) {
+  // Initialize Groq inside the handler to prevent build-time evaluation errors
+  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
+
   // 1. Verify Cron Secret for security
   const authHeader = request.headers.get('authorization');
   if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
