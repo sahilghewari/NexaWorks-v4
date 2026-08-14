@@ -37,7 +37,7 @@ export async function GET(request: Request) {
 
     // 3. Generate Content using Groq
     const completion = await groq.chat.completions.create({
-      model: "llama3-8b-8192", // Using a valid Groq model since openai/gpt-oss-120b is not a standard Groq model. If strictly required, we can change to user's exact string.
+      model: "openai/gpt-oss-120b",
       messages: [
         {
           role: "system",
