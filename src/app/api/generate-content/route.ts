@@ -135,7 +135,7 @@ ${content}`;
       }
 
       // If LinkedIn token exists, post to LinkedIn
-      if (process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_PERSON_URN) {
+      if (process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_AUTHOR_URN) {
         const linkedinMatch = socialOutput.match(/\[LINKEDIN\]([\s\S]*)$/);
         if (linkedinMatch && linkedinMatch[1]) {
           await fetch('https://api.linkedin.com/v2/ugcPosts', {
@@ -146,7 +146,7 @@ ${content}`;
               'X-Restli-Protocol-Version': '2.0.0'
             },
             body: JSON.stringify({
-              author: `urn:li:person:${process.env.LINKEDIN_PERSON_URN}`,
+              author: process.env.LINKEDIN_AUTHOR_URN,
               lifecycleState: 'PUBLISHED',
               specificContent: {
                 'com.linkedin.ugc.ShareContent': {
