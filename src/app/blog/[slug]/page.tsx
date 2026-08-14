@@ -18,7 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) {
     return { title: 'Post Not Found | NexaWorks' };
   }
-  const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(post.title + ", high quality professional corporate tech marketing photography, sleek, modern")}?width=1200&height=630&nologo=true`;
+
+  const imgMatch = post.content.match(/!\[.*?\]\((.*?)\)/);
+  const imageUrl = imgMatch ? imgMatch[1] : 'https://nexaworks.tech/logo.png';
 
   return {
     title: `${post.title} | NexaWorks Blog`,
@@ -53,7 +55,8 @@ import remarkGfm from 'remark-gfm';
 
 // Map custom MDX components
 const components = {
-  AEOAnswerBlock
+  AEOAnswerBlock,
+  img: (props: any) => <img {...props} style={{ width: '100%', borderRadius: '16px', marginBottom: '40px', border: '1px solid rgba(255,255,255,0.05)' }} />
 };
 
 const mdxOptions = {
@@ -113,12 +116,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.excerpt}
           </p>
         </header>
-
-        <img 
-          src={`https://image.pollinations.ai/prompt/${encodeURIComponent(post.title + ", high quality professional corporate tech marketing photography, sleek, modern")}?width=1200&height=630&nologo=true`} 
-          alt={post.title} 
-          style={{ width: '100%', borderRadius: '16px', marginBottom: '40px', border: '1px solid rgba(255,255,255,0.05)' }} 
-        />
 
         <article className="article-content">
           <MDXRemote source={post.content} components={components} options={mdxOptions} />
