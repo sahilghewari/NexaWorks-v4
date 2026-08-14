@@ -4,6 +4,7 @@ import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { createClient } from '@/utils/supabase/server';
 import '../blog.css';
+import '../article.css';
 
 export const revalidate = 0; // Disable caching so dynamic content shows immediately
 
@@ -54,7 +55,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   };
 
   return (
-    <main className="section" style={{ paddingTop: '120px', minHeight: '100vh', background: 'var(--color-canvas)' }}>
+    <main className="blog-page" style={{ paddingTop: '120px' }}>
       <Script id="tech-article-schema" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }} />
       <div className="container" style={{ maxWidth: '800px' }}>
         
