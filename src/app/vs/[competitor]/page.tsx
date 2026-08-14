@@ -82,6 +82,18 @@ export default async function ComparisonPage({ params }: { params: Promise<{ com
           <article className="article-content">
             <MDXRemote source={dbPage.content} components={mdxComponents} options={mdxOptions} />
           </article>
+          
+          <hr style={{ border: 'none', borderTop: '1px solid rgba(255,255,255,0.1)', margin: '64px 0' }} />
+
+          <div style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%)', border: '1px solid rgba(255,255,255,0.1)', padding: '48px', borderRadius: '24px', textAlign: 'center', marginBottom: '64px' }}>
+            <h3 style={{ fontSize: '32px', marginBottom: '16px', fontFamily: 'ui-serif, Georgia, serif' }}>Tired of {dbPage.competitor_name}'s limitations?</h3>
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '18px', marginBottom: '32px', maxWidth: '600px', margin: '0 auto 32px' }}>
+              Stop overpaying for rigid legacy systems. See how NexaWorks can rebuild your automation pipelines to be faster, cheaper, and 100% deterministic.
+            </p>
+            <Link href="/contact" style={{ display: 'inline-block', background: '#fff', color: '#000', padding: '16px 32px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '16px', transition: 'transform 0.2s ease' }}>
+              Get a Free Architectural Audit
+            </Link>
+          </div>
         </div>
       </main>
     );

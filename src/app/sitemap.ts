@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { createClient } from '@/utils/supabase/server';
 import { workflows } from '@/data/workflows';
 import { contexts } from '@/data/contexts';
 import { comparisons } from '@/data/comparisons';
@@ -7,8 +8,9 @@ import { blogPosts } from '@/data/blogPosts';
 import integrations from '@/data/integrations.json';
 import glossaryJson from '@/data/glossary.json';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://nexaworks.tech';
+  const supabase = await createClient();
 
   // Static core routes
   const staticRoutes = [
@@ -136,6 +138,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // Dynamic pSEO Competitor Routes from Supabase
+  const { data: pseoPages } = await supabase.from('competitor_pages').select('slug, created_at');
+  const dynamicPseoRoutes = (pseoPages || []).map((page: any) => ({
+    url: `${baseUrl}/vs/${page.slug}`,
+    lastModified: new Date(page.created_at || new Date()),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
   return [
     ...staticRoutes, 
     ...workflowRoutes, 
@@ -145,6 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...integrationRoutes,
     ...glossaryRoutes,
     ...usNiches, 
-    ...inNiches
+    ...inNiches,
+    ...dynamicPseoRoutes
   ];
 }
