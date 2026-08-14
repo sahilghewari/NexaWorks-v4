@@ -18,11 +18,33 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) {
     return { title: 'Post Not Found | NexaWorks' };
   }
+  const imageUrl = `https://image.pollinations.ai/prompt/${encodeURIComponent(post.title + ", high quality professional corporate tech marketing photography, sleek, modern")}?width=1200&height=630&nologo=true`;
+
   return {
     title: `${post.title} | NexaWorks Blog`,
     description: post.excerpt,
     alternates: {
       canonical: `https://nexaworks.tech/blog/${post.slug}`
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://nexaworks.tech/blog/${post.slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        }
+      ],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [imageUrl],
     }
   };
 }
@@ -91,6 +113,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.excerpt}
           </p>
         </header>
+
+        <img 
+          src={`https://image.pollinations.ai/prompt/${encodeURIComponent(post.title + ", high quality professional corporate tech marketing photography, sleek, modern")}?width=1200&height=630&nologo=true`} 
+          alt={post.title} 
+          style={{ width: '100%', borderRadius: '16px', marginBottom: '40px', border: '1px solid rgba(255,255,255,0.05)' }} 
+        />
 
         <article className="article-content">
           <MDXRemote source={post.content} components={components} options={mdxOptions} />

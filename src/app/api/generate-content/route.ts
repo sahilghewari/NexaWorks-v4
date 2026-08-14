@@ -130,7 +130,15 @@ ${content}`;
               specificContent: {
                 'com.linkedin.ugc.ShareContent': {
                   shareCommentary: { text: linkedinMatch[1].trim() },
-                  shareMediaCategory: 'NONE'
+                  shareMediaCategory: 'ARTICLE',
+                  media: [
+                    {
+                      status: 'READY',
+                      description: { text: excerpt },
+                      originalUrl: `https://nexaworks.tech/blog/${slug}`,
+                      title: { text: title }
+                    }
+                  ]
                 }
               },
               visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
