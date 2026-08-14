@@ -21,7 +21,8 @@
     "pg": "^8.23.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "twitter-api-v2": "^1.29.1"
   },
   "devDependencies": {
     "@types/node": "^20",

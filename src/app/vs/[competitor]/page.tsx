@@ -2,22 +2,49 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import GradientMesh from '@/components/GradientMesh';
 import { comparisons } from '@/data/comparisons';
+import { createClient } from '@/utils/supabase/server';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import AEOAnswerBlock from '@/components/AEOAnswerBlock';
+import remarkGfm from 'remark-gfm';
+import '../../blog/blog.css';
+import '../../blog/article.css';
 
-export async function generateStaticParams() {
-  return comparisons.map((comparison) => ({
-    competitor: comparison.slug,
-  }));
-}
+const mdxComponents = {
+  AEOAnswerBlock
+};
+
+const mdxOptions = {
+  mdxOptions: {
+    remarkPlugins: [remarkGfm],
+  }
+};
+
+export const revalidate = 0; // Ensures fresh data from DB
 
 export async function generateMetadata({ params }: { params: Promise<{ competitor: string }> }) {
   const resolvedParams = await params;
-  const comparison = comparisons.find((c) => c.slug === resolvedParams.competitor);
+  const supabase = await createClient();
+  
+  // Check Supabase first (pSEO engine)
+  const { data: dbPage } = await supabase
+    .from('competitor_pages')
+    .select('*')
+    .eq('slug', resolvedParams.competitor)
+    .single();
 
-  if (!comparison) {
+  if (dbPage) {
     return {
-      title: 'Comparison Not Found',
+      title: `${dbPage.title} | NexaWorks Comparison`,
+      description: dbPage.excerpt,
+      alternates: {
+        canonical: `https://nexaworks.tech/vs/${dbPage.slug}`
+      }
     };
   }
+
+  // Fallback to static
+  const comparison = comparisons.find((c) => c.slug === resolvedParams.competitor);
+  if (!comparison) return { title: 'Comparison Not Found' };
 
   return {
     title: `NexaWorks vs ${comparison.competitorName} | Comparison`,
@@ -30,8 +57,38 @@ export async function generateMetadata({ params }: { params: Promise<{ competito
 
 export default async function ComparisonPage({ params }: { params: Promise<{ competitor: string }> }) {
   const resolvedParams = await params;
-  const comparison = comparisons.find((c) => c.slug === resolvedParams.competitor);
+  const supabase = await createClient();
+  
+  // 1. Try to fetch from the pSEO Engine
+  const { data: dbPage } = await supabase
+    .from('competitor_pages')
+    .select('*')
+    .eq('slug', resolvedParams.competitor)
+    .single();
 
+  if (dbPage) {
+    return (
+      <main className="blog-page" style={{ paddingTop: '120px' }}>
+        <div className="container" style={{ maxWidth: '800px' }}>
+          <header style={{ marginBottom: '64px' }}>
+            <span style={{ color: 'var(--color-accent)', textTransform: 'uppercase', fontSize: '14px', letterSpacing: '0.05em' }}>COMPETITIVE ANALYSIS</span>
+            <h1 style={{ fontSize: '48px', fontFamily: 'ui-serif, Georgia, serif', lineHeight: 1.1, margin: '24px 0' }}>
+              {dbPage.title}
+            </h1>
+            <p style={{ fontSize: '20px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>
+              {dbPage.excerpt}
+            </p>
+          </header>
+          <article className="article-content">
+            <MDXRemote source={dbPage.content} components={mdxComponents} options={mdxOptions} />
+          </article>
+        </div>
+      </main>
+    );
+  }
+
+  // 2. Fallback to static legacy code
+  const comparison = comparisons.find((c) => c.slug === resolvedParams.competitor);
   if (!comparison) {
     notFound();
   }

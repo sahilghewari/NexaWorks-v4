@@ -91,6 +91,81 @@ REQUIREMENTS:
       throw error;
     }
 
+    // 5. Autonomous Social Syndication
+    try {
+      const socialPrompt = `You are the lead Social Media Manager for NexaWorks.
+Your task is to take the following technical article and generate:
+1. A highly engaging 3-part Twitter thread summarizing the key points. Prefix each tweet with [TWEET 1], [TWEET 2], etc.
+2. A professional, authoritative LinkedIn post. Prefix with [LINKEDIN].
+
+Include relevant hashtags. The article url will be: https://nexaworks.tech/blog/${slug}
+
+ARTICLE:
+${title}
+${excerpt}
+${content}`;
+
+      const socialCompletion = await groq.chat.completions.create({
+        model: "openai/gpt-oss-120b",
+        messages: [{ role: "user", content: socialPrompt }],
+        temperature: 0.7,
+        max_tokens: 1500,
+      });
+
+      const socialOutput = socialCompletion.choices[0]?.message?.content || "";
+      
+      // If Twitter keys exist, post to Twitter
+      if (process.env.TWITTER_API_KEY && process.env.TWITTER_ACCESS_TOKEN) {
+        const { TwitterApi } = require('twitter-api-v2');
+        const twitterClient = new TwitterApi({
+          appKey: process.env.TWITTER_API_KEY,
+          appSecret: process.env.TWITTER_API_SECRET!,
+          accessToken: process.env.TWITTER_ACCESS_TOKEN,
+          accessSecret: process.env.TWITTER_ACCESS_SECRET!,
+        });
+
+        // Very basic extraction of the first tweet to post
+        const tweetMatch = socialOutput.match(/\[TWEET 1\]([\s\S]*?)(?:\[TWEET 2\]|$)/);
+        if (tweetMatch && tweetMatch[1]) {
+          await twitterClient.v2.tweet(tweetMatch[1].trim());
+          console.log("Successfully posted to Twitter.");
+        }
+      } else {
+        console.log("Twitter keys missing, skipping syndication. Generated text:", socialOutput.substring(0, 50) + "...");
+      }
+
+      // If LinkedIn token exists, post to LinkedIn
+      if (process.env.LINKEDIN_ACCESS_TOKEN && process.env.LINKEDIN_PERSON_URN) {
+        const linkedinMatch = socialOutput.match(/\[LINKEDIN\]([\s\S]*)$/);
+        if (linkedinMatch && linkedinMatch[1]) {
+          await fetch('https://api.linkedin.com/v2/ugcPosts', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${process.env.LINKEDIN_ACCESS_TOKEN}`,
+              'Content-Type': 'application/json',
+              'X-Restli-Protocol-Version': '2.0.0'
+            },
+            body: JSON.stringify({
+              author: `urn:li:person:${process.env.LINKEDIN_PERSON_URN}`,
+              lifecycleState: 'PUBLISHED',
+              specificContent: {
+                'com.linkedin.ugc.ShareContent': {
+                  shareCommentary: { text: linkedinMatch[1].trim() },
+                  shareMediaCategory: 'NONE'
+                }
+              },
+              visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
+            })
+          });
+          console.log("Successfully posted to LinkedIn.");
+        }
+      } else {
+        console.log("LinkedIn keys missing, skipping syndication.");
+      }
+    } catch (socialError) {
+      console.error("Social syndication failed (non-fatal):", socialError);
+    }
+
     return NextResponse.json({ success: true, topic: title, slug }, { status: 200 });
   } catch (error: any) {
     console.error("Content generation error:", error);
