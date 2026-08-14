@@ -75,54 +75,12 @@ REQUIREMENTS:
     const slug = generateSlug(title);
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
-    // 3.5 Generate High-Quality AI Image using Hugging Face (FLUX.1) and ImgBB for permanent storage
-    let imageUrl = '';
-    if (process.env.HF_TOKEN && process.env.IMGBB_API_KEY) {
-      console.log("Generating AI image via Hugging Face...");
-      try {
-        const hfRes = await fetch('https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${process.env.HF_TOKEN}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ inputs: `${title}, highly professional corporate tech marketing photography, sleek, modern, photorealistic` })
-        });
-        
-        if (hfRes.ok) {
-          const imageBuffer = await hfRes.arrayBuffer();
-          const base64Image = Buffer.from(imageBuffer).toString('base64');
-          
-          const formData = new FormData();
-          formData.append('image', base64Image);
-          
-          console.log("Uploading image to ImgBB...");
-          const imgbbRes = await fetch(`https://api.imgbb.com/1/upload?key=${process.env.IMGBB_API_KEY}`, {
-            method: 'POST',
-            body: formData
-          });
-          
-          const imgbbData = await imgbbRes.json();
-          if (imgbbData.data && imgbbData.data.url) {
-            imageUrl = imgbbData.data.url;
-            console.log("Successfully uploaded image:", imageUrl);
-          }
-        } else {
-          console.error("Hugging Face API Error:", await hfRes.text());
-        }
-      } catch (err) {
-        console.error("Image generation pipeline failed:", err);
-      }
-    }
-
-    const finalContent = imageUrl ? `![Header Image](${imageUrl})\n\n` + content : content;
-
     // 4. Save to Supabase
     const { error } = await supabase.from('articles').insert({
       slug: slug,
       title: title,
       excerpt: excerpt,
-      content: finalContent,
+      content: content,
       category: 'Architecture',
       date: date,
       large: false

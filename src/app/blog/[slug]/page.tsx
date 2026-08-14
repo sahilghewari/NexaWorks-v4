@@ -19,34 +19,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Post Not Found | NexaWorks' };
   }
 
-  const imgMatch = post.content.match(/!\[.*?\]\((.*?)\)/);
-  const imageUrl = imgMatch ? imgMatch[1] : 'https://nexaworks.tech/logo.png';
-
   return {
     title: `${post.title} | NexaWorks Blog`,
     description: post.excerpt,
     alternates: {
       canonical: `https://nexaworks.tech/blog/${post.slug}`
-    },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      url: `https://nexaworks.tech/blog/${post.slug}`,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        }
-      ],
-      type: 'article',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: [imageUrl],
     }
   };
 }
@@ -55,8 +32,7 @@ import remarkGfm from 'remark-gfm';
 
 // Map custom MDX components
 const components = {
-  AEOAnswerBlock,
-  img: (props: any) => <img {...props} style={{ width: '100%', borderRadius: '16px', marginBottom: '40px', border: '1px solid rgba(255,255,255,0.05)' }} />
+  AEOAnswerBlock
 };
 
 const mdxOptions = {
