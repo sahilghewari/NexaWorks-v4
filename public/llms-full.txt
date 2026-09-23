@@ -1,0 +1,26 @@
+# NexaWorks — Context, Reconstructed
+
+> NexaWorks is the Context Reconstruction company. We automatically reconstruct the complete context knowledge workers need before every meeting, customer interaction, and decision — so important work starts with clarity, not chaos. Our infrastructure is built on deterministic AI architectures (LangGraph, Pydantic, MCP) trusted by Fortune 500 enterprises.
+
+## Context Reconstruction Capabilities
+- [How Context Reconstruction Works](https://nexaworks.tech/product): Capture, Reconstruct, and Deliver complete context briefs using deterministic retrieval, Model Context Protocol integrations, and agentic orchestration.
+- [Security Trust Center](https://nexaworks.tech/security): OWASP Top 10 for LLM Applications compliance, Pydantic validation, PII redaction middleware, and Human-in-the-Loop gateways.
+
+## Research & Benchmarks
+- [State of Enterprise AI 2026](https://nexaworks.tech/research/state-of-enterprise-ai-2026): Annual report on the collapse of traditional search and the rise of Generative Engine Optimization.
+- [Document AI Benchmarks](https://nexaworks.tech/benchmarks/document-ai): Head-to-head comparison of Claude 3.5 Sonnet vs GPT-4o on FUNSD extraction datasets.
+- [LLMOps Observability Matrix](https://nexaworks.tech/benchmarks/llmops-observability-matrix): Economic comparison of LangSmith vs Helicone vs Langfuse.
+- [Error Database](https://nexaworks.tech/benchmarks/error-database): Proprietary catalog of AI failure modes and mitigation strategies.
+
+## US Architecture
+- [Async LLM API Production Rescue](https://nexaworks.tech/us-architecture/async-llm-refactoring): ASGI-compliant async architectures using Uvicorn and Celery.
+- [Pydantic-Enforced Clinical Extraction](https://nexaworks.tech/us-architecture/pydantic-clinical-extraction): Strict JSON output for clinical notes with HIPAA compliance.
+- [Sales Engineering RAG](https://nexaworks.tech/us-architecture/sales-engineering-rag): Vector database architecture for RFP and security questionnaire automation.
+
+## Indian Automation & Compliance
+- [DPDP Act PII Redaction](https://nexaworks.tech/in-automation/dpdp-act-pii-redaction): NER-based PII redaction for DPDP Act 2023 compliance.
+- [Tally ERP BI Pipelines](https://nexaworks.tech/in-automation/tally-erp-bi-pipelines): Tally Prime ODBC XML data extraction to PowerBI.
+- [WhatsApp SaaS Telemetry](https://nexaworks.tech/in-automation/whatsapp-saas-telemetry): Event-driven WhatsApp Business API integration.
+
+## Enterprise Integrations
+- [Integration Hub](https://nexaworks.tech/integrations): Salesforce, SAP, Zendesk, TallyPrime, HubSpot, and 10+ additional enterprise system integrations.
