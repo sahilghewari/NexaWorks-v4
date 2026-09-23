@@ -86,21 +86,24 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         
+        </head>
+      <body className="min-h-screen flex flex-col">
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ESGQWS77L4"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag("js", new Date());
-            gtag("config", "G-ESGQWS77L4");
-          `}
-        </Script>
-      </head>
-      <body className="min-h-screen flex flex-col">
+            gtag('js', new Date());
+            gtag('config', 'G-ESGQWS77L4', {
+              page_path: window.location.pathname,
+            });
+          `
+        }} />
+
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
