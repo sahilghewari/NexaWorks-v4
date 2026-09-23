@@ -1,51 +1,34 @@
-@import "tailwindcss";
-
-@theme {
-  --color-canvas: #FAFAF8;
-  --color-ink: #1C1917;
-  --color-accent: #0E9F8A;
-  --color-accent-hover: #0B6E5F;
-  --color-accent-glow: #2DD4A8;
-  --color-dark: #131110;
-  --color-dark-mid: #1A1714;
-  --color-amber: #D97706;
-  --color-warm-100: #F5F5F0;
-  --color-warm-200: #E8E6E1;
-  --color-warm-300: #D4D0C8;
-  --color-warm-400: #A8A29E;
-  
-  --font-display: Georgia, "Times New Roman", serif;
-  --font-body: system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, monospace;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
-    --nw-canvas: var(--color-canvas);
-    --nw-ink: var(--color-ink);
+    --nw-canvas: #FAFAF8;
+    --nw-ink: #1C1917;
     --nw-ink-soft: #57534E;
-    --nw-accent: var(--color-accent);
-    --nw-accent-hover: var(--color-accent-hover);
-    --nw-accent-glow: var(--color-accent-glow);
-    --nw-dark: var(--color-dark);
-    --nw-dark-mid: var(--color-dark-mid);
+    --nw-accent: #0E9F8A;
+    --nw-accent-hover: #0B6E5F;
+    --nw-accent-glow: #2DD4A8;
+    --nw-dark: #131110;
+    --nw-dark-mid: #1A1714;
     --nw-dark-soft: #A8A29E;
-    --nw-amber: var(--color-amber);
+    --nw-amber: #D97706;
     --nw-line-light: #E8E6E1;
     --nw-line-dark: #292524;
-    --nw-warm-100: var(--color-warm-100);
-    --nw-warm-200: var(--color-warm-200);
-    --nw-warm-300: var(--color-warm-300);
-    --nw-warm-400: var(--color-warm-400);
+    --nw-warm-100: #F5F5F0;
+    --nw-warm-200: #E8E6E1;
+    --nw-warm-300: #D4D0C8;
+    --nw-warm-400: #A8A29E;
   }
   body {
-    background-color: var(--color-canvas);
-    color: var(--color-ink);
-    font-family: var(--font-body);
+    background-color: var(--nw-canvas);
+    color: var(--nw-ink);
+    font-family: system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: Georgia, "Times New Roman", serif;
     font-weight: 400;
     line-height: 1.1;
     letter-spacing: -0.02em;
@@ -74,14 +57,14 @@
     }
   }
   .eyebrow {
-    font-family: var(--font-mono);
+    font-family: ui-monospace, SFMono-Regular, monospace;
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 500;
   }
   .section-dark {
-    background-color: var(--color-dark);
+    background-color: var(--nw-dark);
     color: white;
   }
   .sp-section {
