@@ -17,6 +17,7 @@ export default function SampleBriefForm() {
           name: "Sample brief request",
           email,
           source: "Homepage sample brief",
+          asset: "brief",
         }),
       });
       if (!res.ok) throw new Error("Failed to submit");
