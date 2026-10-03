@@ -179,7 +179,7 @@ export default function Home() {
       <section className="section-dark sp-section" id="pricing">
         <div className="container-nw">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>Pricing</p>
-          <h2 className="text-white mb-4">Fixed scope. Fixed price.</h2>
+          <h2 className="text-white mb-4">Honest pricing.</h2>
           <p className="text-lg mb-10 max-w-xl" style={{ color: "var(--nw-dark-soft)" }}>
             No open-ended retainers. Scope and pricing are set together, around your workflows.
           </p>
@@ -194,6 +194,19 @@ export default function Home() {
               style={{ border: "1px solid var(--nw-accent)" }}
             >
               Get the Snapshot
+            </Link>
+          </div>
+
+          <div className="rounded-xl p-6 md:p-8 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
+            <p className="text-lg" style={{ color: "var(--nw-warm-400)" }}>
+              Smaller budget? Start with a Signal Stack Audit — $1,500, delivered in 3 business days. A written report on the signals you&apos;re already capturing, the ones you&apos;re blind to, and the three highest-leverage fixes.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex h-11 flex-shrink-0 items-center justify-center rounded-full px-6 text-sm font-medium text-white transition-colors"
+              style={{ border: "1px solid var(--nw-accent)" }}
+            >
+              Get the Audit
             </Link>
           </div>
 
@@ -228,8 +241,9 @@ export default function Home() {
               </span>
               <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>4–6 Weeks · Founding-Client Pricing</p>
               <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Intelligence Pilot</h3>
-              <p className="text-4xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$15,000</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-dark-soft)", fontSize: "11px" }}>In exchange for feedback & permission to publish a case study</p>
+              <p className="text-4xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$9,500 – $18,000</p>
+              <p className="text-sm mb-1" style={{ color: "var(--nw-warm-400)" }}>Most pilots land around $15,000.</p>
+              <p className="eyebrow mb-8" style={{ color: "var(--nw-dark-soft)", fontSize: "11px" }}>Final price set on a scoping call — depends on your data sources, accounts in scope & integrations. Founding-client pricing in exchange for feedback & a case study.</p>
               <ul className="space-y-3 mb-10 flex-1">
                 {["One-click meeting briefs", "Chronological account timelines", "Evidence-backed risk & opportunity signals", "Weekly portfolio action lists (Slack/Email)", "Pilot-results report with production proposal"].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
@@ -274,6 +288,9 @@ export default function Home() {
           <p className="text-sm mt-8 max-w-xl" style={{ color: "var(--nw-warm-400)" }}>
             Follow-on: Renewal Risk & Expansion Intelligence ($30K–$75K) · Deal-to-Delivery Assurance ($40K–$100K+) · Managed Improvement ($3K–$15K/mo).{" "}
             <Link href="/contact" className="underline" style={{ color: "var(--nw-accent-glow)" }}>Inquire</Link>
+          </p>
+          <p className="text-sm mt-4 max-w-xl" style={{ color: "var(--nw-warm-400)" }}>
+            Based in India? We price in ₹ for Indian companies — just mention it when you reach out.
           </p>
         </div>
       </section>
