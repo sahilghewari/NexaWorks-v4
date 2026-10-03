@@ -181,13 +181,26 @@ export default function Home() {
         <div className="container-nw">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>Pricing</p>
           <h2 className="text-white mb-4">Fixed scope. Fixed price.</h2>
-          <p className="text-lg mb-16 max-w-xl" style={{ color: "var(--nw-dark-soft)" }}>
-            No open-ended retainers. Founding-client pricing for the first teams who work with us.
+          <p className="text-lg mb-10 max-w-xl" style={{ color: "var(--nw-dark-soft)" }}>
+            No open-ended retainers. Scope and pricing are set together, around your workflows.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            {/* Blueprint — narrower */}
-            <div className="md:col-span-5 rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
+          <div className="rounded-xl p-6 md:p-8 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
+            <p className="text-lg" style={{ color: "var(--nw-warm-400)" }}>
+              Not ready for a paid engagement? Start with a free Account Risk Snapshot — your 20 riskiest accounts, ranked, in 5 business days.
+            </p>
+            <Link
+              href="/account-risk-snapshot"
+              className="inline-flex h-11 flex-shrink-0 items-center justify-center rounded-full px-6 text-sm font-medium text-white transition-colors"
+              style={{ border: "1px solid var(--nw-accent)" }}
+            >
+              Get the Snapshot
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Blueprint */}
+            <div className="rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
               <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>10 Business Days</p>
               <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Intelligence Blueprint</h3>
               <p className="text-3xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$3,500</p>
@@ -209,8 +222,8 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Pilot — wider, accent border */}
-            <div className="md:col-span-7 rounded-xl p-8 md:p-10 flex flex-col relative" style={{ backgroundColor: "var(--nw-dark-mid)", border: "2px solid var(--nw-accent)" }}>
+            {/* Pilot — accent border */}
+            <div className="rounded-xl p-8 md:p-10 flex flex-col relative" style={{ backgroundColor: "var(--nw-dark-mid)", border: "2px solid var(--nw-accent)" }}>
               <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full text-white eyebrow" style={{ backgroundColor: "var(--nw-accent)", fontSize: "10px" }}>
                 MOST COMMON
               </span>
@@ -232,6 +245,29 @@ export default function Home() {
                 style={{ backgroundColor: "var(--nw-accent)" }}
               >
                 View Pilot Details
+              </Link>
+            </div>
+
+            {/* Custom Build */}
+            <div className="rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
+              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>Scoped with you</p>
+              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Custom Build</h3>
+              <p className="text-3xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>Custom</p>
+              <p className="eyebrow mb-8" style={{ color: "var(--nw-accent-glow)", fontSize: "11px" }}>Priced around your workflows & systems</p>
+              <ul className="space-y-3 mb-10 flex-1">
+                {["Scoped around your workflows and data", "Custom integrations with your stack", "Direct access to the people doing the work", "Pricing set together after discovery"].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
+                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/contact"
+                className="flex h-11 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
+                style={{ border: "1px solid var(--nw-line-dark)" }}
+              >
+                Talk to us
               </Link>
             </div>
           </div>
