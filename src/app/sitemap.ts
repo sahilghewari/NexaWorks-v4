@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: 'https://nexaworks.tech/account-risk-snapshot',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://nexaworks.tech/customer-intelligence-blueprint',
       lastModified: new Date(),
       changeFrequency: 'monthly',
