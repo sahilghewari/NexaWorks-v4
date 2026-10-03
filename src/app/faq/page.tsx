@@ -27,11 +27,11 @@ export default function FAQPage() {
     },
     {
       q: "What does the pilot cost?",
-      a: "The Customer Intelligence Pilot is currently offered at a fixed founding-client price of $15,000 in exchange for your feedback and permission to publish a measured case study. Once we have 3-5 measurable client outcomes, standard pricing will begin at $25,000+."
+      a: "The Customer Intelligence Pilot is currently offered at founding-client pricing of $9,500–$18,000 — most pilots land around $15,000 — in exchange for your feedback and permission to publish a measured case study. Final pricing is set on a scoping call based on your data sources, accounts in scope, and integrations. Once we have 3-5 measurable client outcomes, standard pricing will begin at $25,000+."
     },
     {
       q: "How does the Blueprint credit work?",
-      a: "If you start with the $3,500 Customer Revenue Intelligence Blueprint, that entire fee is fully credited toward the $15,000 Pilot if you decide to proceed with implementation. You carry no financial risk to evaluate the architecture."
+      a: "If you start with the $3,500 Customer Revenue Intelligence Blueprint, that entire fee is fully credited toward your Pilot if you decide to proceed with implementation. You carry no financial risk to evaluate the architecture."
     },
     {
       q: "Who owns the work — do you need our engineers?",

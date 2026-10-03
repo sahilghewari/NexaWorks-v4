@@ -13,7 +13,7 @@ export default function PilotPage() {
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-4xl pt-16">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-            Flagship • 4-6 Weeks • $15,000 Fixed
+            Flagship • 4-6 Weeks • $9,500–$18,000
           </p>
           <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>Customer Intelligence Pilot</h1>
           
@@ -21,7 +21,7 @@ export default function PilotPage() {
             One workflow. 20–50 strategic accounts. 3–5 source systems. We build and run a human-reviewed intelligence pipeline on your data to prove value before you scale.
           </p>
           <p className="text-sm italic mb-16" style={{ color: "var(--nw-ink-soft)" }}>
-            Offered at $15,000 for founding clients in exchange for feedback and permission to publish a measured case study.
+            Offered at $9,500–$18,000 for founding clients — most land around $15,000 — in exchange for feedback and permission to publish a measured case study. Final price set on a scoping call.
           </p>
 
           <div className="p-10 mb-16 relative overflow-hidden" style={{ backgroundColor: "var(--nw-dark)", color: "white" }}>

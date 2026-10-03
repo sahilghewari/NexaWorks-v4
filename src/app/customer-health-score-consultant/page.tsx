@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     q: "How long does it take?",
-    a: "The audit is the Intelligence Blueprint: 10 business days, $3,500, fully credited toward the Pilot. The full build and rollout happens in the Intelligence Pilot: 4–6 weeks at a fixed $15,000.",
+    a: "The audit is the Intelligence Blueprint: 10 business days, $3,500, fully credited toward the Pilot. The full build and rollout happens in the Intelligence Pilot: 4–6 weeks, $9,500–$18,000 (most land around $15,000).",
   },
   {
     q: "What data do you need from us?",
@@ -288,7 +288,7 @@ export default function HealthScoreConsultantPage() {
                   <Link href="/customer-intelligence-pilot" className="underline">
                     Intelligence Pilot
                   </Link>
-                  : design, back-test, and rollout — $15,000 fixed, 4–6 weeks
+                  : design, back-test, and rollout — $9,500–$18,000, 4–6 weeks
                 </li>
               </ul>
             </div>
