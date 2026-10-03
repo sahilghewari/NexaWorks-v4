@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 export const metadata = {
   title: "Customer Intelligence Pilot",
   description: "A 4-6 week flagship engagement to build and run a human-reviewed intelligence pipeline on your data.",
+  alternates: { canonical: "/customer-intelligence-pilot" },
 };
 
 export default function PilotPage() {

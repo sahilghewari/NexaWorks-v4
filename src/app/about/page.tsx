@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata = {
   title: "About the Founder | NexaWorks",
   description: "Learn about the founder behind NexaWorks and our philosophy on customer intelligence.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

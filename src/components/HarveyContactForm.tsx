@@ -14,6 +14,7 @@ export default function HarveyContactForm() {
     orgSize: '',
     workflow: '',
     notes: '',
+    source: '',
     consent: true
   });
 
@@ -35,6 +36,7 @@ export default function HarveyContactForm() {
       formPayload.append("Phone", formData.phone || "Not provided");
       formPayload.append("Organization Size", formData.orgSize);
       formPayload.append("Primary Architectural Focus", formData.workflow);
+      formPayload.append("How Did You Hear About Us", formData.source || "Not provided");
       formPayload.append("Consent to Communications", formData.consent ? "Yes" : "No");
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -271,7 +273,23 @@ export default function HarveyContactForm() {
           </div>
         </div>
 
-        {/* Row 6: Consent Checkbox */}
+        {/* Row 6: Attribution */}
+        <div className="harvey-field harvey-field-full">
+          <label htmlFor="source" className="harvey-label">
+            How Did You Hear About Us?
+          </label>
+          <input
+            type="text"
+            id="source"
+            name="source"
+            value={formData.source}
+            onChange={handleChange}
+            placeholder="e.g. LinkedIn, Google search, ChatGPT, referral..."
+            className="harvey-input"
+          />
+        </div>
+
+        {/* Row 7: Consent Checkbox */}
         <div className="harvey-consent-row harvey-field-full">
           <label className="harvey-checkbox-label">
             <input

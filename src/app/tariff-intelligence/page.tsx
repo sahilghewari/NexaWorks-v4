@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata = {
   title: "Tariff Intelligence for US Importers | NexaWorks",
   description: "Specialized intelligence services for US importers navigating tariff complexities.",
+  alternates: { canonical: "/tariff-intelligence" },
 };
 
 export default function TariffIntelligencePage() {

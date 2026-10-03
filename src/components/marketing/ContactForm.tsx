@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [source, setSource] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -14,12 +15,13 @@ export default function ContactForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email })
+        body: JSON.stringify({ name, email, source })
       });
       if (!res.ok) throw new Error("Failed to submit");
       setStatus("success");
       setEmail("");
       setName("");
+      setSource("");
     } catch (error) {
       setStatus("error");
     }
@@ -53,6 +55,22 @@ export default function ContactForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="name@company.com"
+          className="w-full px-4 py-3 rounded-md border focus:outline-none focus:ring-2"
+          style={{ 
+            backgroundColor: "white", 
+            borderColor: "var(--nw-line-light)",
+            color: "var(--nw-ink)"
+          }}
+        />
+      </div>
+      <div>
+        <label htmlFor="source" className="sr-only">How did you hear about us?</label>
+        <input
+          type="text"
+          id="source"
+          value={source}
+          onChange={(e) => setSource(e.target.value)}
+          placeholder="How did you hear about us? (optional)"
           className="w-full px-4 py-3 rounded-md border focus:outline-none focus:ring-2"
           style={{ 
             backgroundColor: "white", 

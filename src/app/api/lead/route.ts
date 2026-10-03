@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { name, email } = await req.json();
+    const { name, email, source } = await req.json();
 
     if (!name || !email) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
@@ -40,6 +40,7 @@ export async function POST(req: Request) {
         <h2>New Lead Registration</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>How they heard about us:</strong> ${source || "Not provided"}</p>
         <p><strong>Time:</strong> ${new Date().toISOString()}</p>
       `,
     });

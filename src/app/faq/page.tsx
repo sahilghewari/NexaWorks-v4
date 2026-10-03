@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata = {
   title: "FAQ | NexaWorks Customer Intelligence",
   description: "Frequently asked questions about NexaWorks customer intelligence consulting, pricing, and process.",
+  alternates: { canonical: "/faq" },
 };
 
 export default function FAQPage() {

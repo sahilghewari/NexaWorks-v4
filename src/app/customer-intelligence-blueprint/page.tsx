@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 export const metadata = {
   title: "Customer Revenue Intelligence Blueprint",
   description: "A 10-day diagnostic engagement to map your CS workflows, assess data, and build a pilot architecture.",
+  alternates: { canonical: "/customer-intelligence-blueprint" },
 };
 
 export default function BlueprintPage() {
