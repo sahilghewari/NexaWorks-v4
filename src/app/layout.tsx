@@ -25,7 +25,6 @@ export const metadata: Metadata = {
     "churn analysis consulting",
   ],
   metadataBase: new URL("https://nexaworks.tech"),
-  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "NexaWorks — Customer Intelligence for B2B SaaS",
@@ -35,12 +34,21 @@ export const metadata: Metadata = {
     siteName: "NexaWorks",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1024,
+        height: 1024,
+        alt: "NexaWorks — Customer Intelligence for B2B SaaS",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "NexaWorks — Customer Intelligence for B2B SaaS",
     description:
       "Fixed-price intelligence pilots for B2B SaaS CS teams.",
+    images: ["/og-image.webp"],
   },
 };
 

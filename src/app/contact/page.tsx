@@ -4,6 +4,7 @@ import ContactForm from "@/components/marketing/ContactForm";
 export const metadata = {
   title: "Contact Us & Discovery Call",
   description: "Schedule a discovery call with the founder or get our Customer Intelligence architecture guide.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

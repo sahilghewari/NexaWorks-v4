@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ArrowDown, Check, X } from "lucide-react";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 export default function Home() {
   return (
     <>
