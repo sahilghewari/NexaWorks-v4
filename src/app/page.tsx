@@ -13,18 +13,16 @@ export default function Home() {
         <div className="container-nw pt-24 pb-20 md:pt-40 md:pb-32">
           {/* Eyebrow */}
           <p className="eyebrow mb-8" style={{ color: "var(--nw-accent)" }}>
-            Customer Intelligence — For B2B SaaS Executives
+            Customer Signals — For B2B SaaS Teams
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
             <div className="lg:col-span-8">
               <h1 style={{ color: "var(--nw-ink)" }} className="mb-8">
-                We know why<br className="hidden md:block" /> customers leave.
+                We find the churn, renewal, and expansion signals hiding across your CRM, calls, tickets, and product data.
               </h1>
               <p className="text-lg md:text-xl mb-10 leading-relaxed max-w-xl" style={{ color: "var(--nw-ink-soft)" }}>
-                Scoped, fixed-price intelligence pilots that connect your CRM,
-                calls, support, and product signals — so your CS team sees the
-                risk before it costs you the renewal.
+                NexaWorks turns them into action — working alongside the CS platform you already own.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Link
