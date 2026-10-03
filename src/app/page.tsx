@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowDown, Check, X } from "lucide-react";
+import SampleBriefForm from "@/components/marketing/SampleBriefForm";
 
 export const metadata = {
   alternates: { canonical: "/" },
@@ -338,26 +339,7 @@ export default function Home() {
           <p className="mb-10 mx-auto" style={{ color: "var(--nw-dark-soft)" }}>
             Curious what the output looks like? Drop your email and we'll send an illustrative sample of a Customer Intelligence Pilot meeting brief.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Work email"
-              required
-              className="flex-1 rounded-full px-5 py-3 text-sm text-white focus:outline-none focus:ring-1"
-              style={{
-                backgroundColor: "var(--nw-dark-mid)",
-                border: "1px solid var(--nw-line-dark)",
-                color: "white",
-              }}
-            />
-            <button
-              type="submit"
-              className="rounded-full px-6 py-3 text-sm font-medium text-white transition-colors"
-              style={{ backgroundColor: "var(--nw-accent)" }}
-            >
-              Send sample
-            </button>
-          </form>
+          <SampleBriefForm />
         </div>
       </section>
 
