@@ -15,7 +15,7 @@ export default function ContactForm() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, source })
+        body: JSON.stringify({ name, email, source, asset: "guide" })
       });
       if (!res.ok) throw new Error("Failed to submit");
       setStatus("success");
@@ -89,6 +89,11 @@ export default function ContactForm() {
       </button>
       {status === "error" && (
         <p className="text-red-500 text-sm text-center mt-2">Something went wrong. Please try again.</p>
+      )}
+      {status === "success" && (
+        <p className="text-sm text-center mt-2" style={{ color: "var(--nw-ink)" }}>
+          Sent — the guide is on its way to your inbox.
+        </p>
       )}
     </form>
   );
