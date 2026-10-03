@@ -32,6 +32,7 @@ export default function Footer() {
           <div>
             <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Services</p>
             <ul className="space-y-3 text-sm">
+              <li><Link href="/account-risk-snapshot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Account Risk Snapshot</Link></li>
               <li><Link href="/customer-intelligence-blueprint" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Blueprint</Link></li>
               <li><Link href="/customer-intelligence-pilot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Pilot</Link></li>
               <li><Link href="/tariff-intelligence" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Tariff Intelligence</Link></li>
