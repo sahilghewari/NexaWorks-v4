@@ -38,6 +38,7 @@ export default function Footer() {
               <li><Link href="/customer-intelligence-blueprint" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Blueprint</Link></li>
               <li><Link href="/customer-intelligence-pilot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Pilot</Link></li>
               <li><Link href="/signals" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Signal Library</Link></li>
+              <li><Link href="/customer-success-ai" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Customer Success AI</Link></li>
             </ul>
           </div>
           <div>
