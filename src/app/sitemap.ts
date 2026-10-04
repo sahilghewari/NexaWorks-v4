@@ -27,6 +27,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://nexaworks.tech/customer-success-ai/churn-renewal-risk',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://nexaworks.tech/customer-success-ai/health-score',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://nexaworks.tech/customer-success-ai/meeting-prep',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://nexaworks.tech/tools/health-score-back-tester',
       lastModified: new Date(),
       changeFrequency: 'monthly',
