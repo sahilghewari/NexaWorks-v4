@@ -164,6 +164,26 @@ export default function SignalsHubPage() {
               );
             })}
           </div>
+          <Link
+            href="/signals/salesforce"
+            className="mt-6 p-8 rounded-2xl transition-transform hover:-translate-y-1 block"
+            style={{ backgroundColor: "var(--nw-dark)", border: "1px solid var(--nw-line-dark)" }}
+          >
+            <p className="eyebrow mb-4" style={{ color: "var(--nw-accent-glow)" }}>
+              Deep dive
+            </p>
+            <h3 className="text-2xl mb-3 text-white">
+              Churn signals hiding in Salesforce
+            </h3>
+            <p className="mb-6" style={{ color: "var(--nw-warm-400)" }}>
+              Five queries that surface renewal risk from the system you already
+              own — close-date pushes, champion quiet periods, stakeholder
+              changes — with honest notes on where Salesforce data lies.
+            </p>
+            <span className="inline-flex items-center text-sm font-medium text-white">
+              Read the deep dive <ArrowRight size={16} className="ml-2" />
+            </span>
+          </Link>
         </div>
       </section>
 
