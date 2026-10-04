@@ -57,10 +57,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://nexaworks.tech/tariff-intelligence',
+      url: 'https://nexaworks.tech/signals',
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.6,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://nexaworks.tech/signals/crm',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://nexaworks.tech/signals/call-transcripts',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://nexaworks.tech/signals/support-tickets',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://nexaworks.tech/signals/product-usage',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://nexaworks.tech/signals/billing-payments',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://nexaworks.tech/signals/email-slack',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
   ]
 }
