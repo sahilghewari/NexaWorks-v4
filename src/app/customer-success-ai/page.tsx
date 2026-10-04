@@ -192,6 +192,22 @@ export default function CustomerSuccessAIPage() {
             commercially, what evidence supports it, and what the team should do next.
             If an output can&apos;t answer all four, it doesn&apos;t ship.
           </p>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href: "/customer-success-ai/churn-renewal-risk", label: "Churn & renewal risk detection" },
+              { href: "/customer-success-ai/health-score", label: "Health scores your CSMs trust" },
+              { href: "/customer-success-ai/meeting-prep", label: "Automated meeting prep & QBRs" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="rounded-xl p-5 text-sm font-medium transition-colors"
+                style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)", backgroundColor: "white" }}
+              >
+                {l.label} <ArrowRight size={16} className="inline ml-1" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
