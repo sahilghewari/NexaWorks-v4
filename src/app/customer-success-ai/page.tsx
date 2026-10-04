@@ -208,6 +208,22 @@ export default function CustomerSuccessAIPage() {
               </Link>
             ))}
           </div>
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { href: "/compare/build-vs-buy-cs-platform", label: "Build vs buy: CS platform or signal layer?" },
+              { href: "/compare/signal-layer-vs-cs-platform", label: "Get value from your CS platform in 30 days" },
+              { href: "/platforms/gainsight", label: "NexaWorks for Gainsight customers" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="rounded-xl p-5 text-sm font-medium transition-colors"
+                style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)", backgroundColor: "white" }}
+              >
+                {l.label} <ArrowRight size={16} className="inline ml-1" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

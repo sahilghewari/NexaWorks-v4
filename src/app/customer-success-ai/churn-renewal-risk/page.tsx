@@ -145,7 +145,7 @@ export default function ChurnRenewalRiskPage() {
               </div>
             ))}
           </div>
-          <div className="mt-12">
+          <div className="mt-12 flex flex-col sm:flex-row gap-6">
             <Link
               href="/account-risk-snapshot"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
@@ -153,6 +153,21 @@ export default function ChurnRenewalRiskPage() {
             >
               Get the free Snapshot <ArrowRight size={18} className="ml-2" />
             </Link>
+          </div>
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { href: "/guides/renewal-risk", label: "Guide: Renewal risk at 90, 60, and 30 days" },
+              { href: "/guides/green-then-gone", label: "Guide: Why “healthy” accounts churn" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="rounded-xl p-5 text-sm font-medium transition-colors"
+                style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)", backgroundColor: "white" }}
+              >
+                {l.label} <ArrowRight size={16} className="inline ml-1" />
+              </Link>
+            ))}
           </div>
         </div>
       </section>
