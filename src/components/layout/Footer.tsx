@@ -35,6 +35,7 @@ export default function Footer() {
               <li><Link href="/account-risk-snapshot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Account Risk Snapshot</Link></li>
               <li><Link href="/customer-health-score-consultant" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Health Score Consultant</Link></li>
               <li><Link href="/tools/health-score-back-tester" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Health Score Back-tester</Link></li>
+              <li><Link href="/tools/signal-stack-audit" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Signal Stack Audit</Link></li>
               <li><Link href="/customer-intelligence-blueprint" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Blueprint</Link></li>
               <li><Link href="/customer-intelligence-pilot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Pilot</Link></li>
               <li><Link href="/signals" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Signal Library</Link></li>

@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://nexaworks.tech/tools/signal-stack-audit',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: 'https://nexaworks.tech/customer-intelligence-blueprint',
       lastModified: new Date(),
       changeFrequency: 'monthly',
