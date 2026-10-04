@@ -201,6 +201,15 @@ export default function HealthScorePage() {
               Get the free Snapshot
             </Link>
           </div>
+          <div className="mt-10">
+            <Link
+              href="/guides/customer-health-score"
+              className="rounded-xl p-5 text-sm font-medium transition-colors block"
+              style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)", backgroundColor: "white" }}
+            >
+              Guide: Customer health scores that predict churn — and how to test yours <ArrowRight size={16} className="inline ml-1" />
+            </Link>
+          </div>
         </div>
       </section>
     </>
