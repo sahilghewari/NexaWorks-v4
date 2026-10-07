@@ -27,7 +27,7 @@ const ASSETS: Record<string, { filename: string; content: string; title: string;
 
 export async function POST(req: Request) {
   try {
-    const { name, email, source, asset } = await req.json();
+    const { name, email, source, asset, company, website, competitors, role } = await req.json();
 
     if (!name || !email) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
@@ -56,20 +56,52 @@ export async function POST(req: Request) {
     });
 
     // 1. Notify the founder
+    const isSnapshot = source === "ai-visibility-snapshot";
     await transporter.sendMail({
       from: `"NexaWorks Leads" <${smtpUser}>`,
       to: "sahil@nexaworks.tech", // send the notification here
       replyTo: email, // clicking reply will reply to the visitor
-      subject: `New Lead: ${name}`,
+      subject: isSnapshot ? `New Snapshot Lead: ${name} — ${company || "no company"}` : `New Lead: ${name}`,
       html: `
-        <h2>New Lead Registration</h2>
+        <h2>New Lead Registration${isSnapshot ? " (AI Visibility Snapshot)" : ""}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
+        ${website ? `<p><strong>Website:</strong> ${website}</p>` : ""}
+        ${competitors ? `<p><strong>Competitors:</strong> ${competitors}</p>` : ""}
+        ${role ? `<p><strong>Role:</strong> ${role}</p>` : ""}
         <p><strong>How they heard about us:</strong> ${source || "Not provided"}</p>
         <p><strong>Asset requested:</strong> ${asset && ASSETS[asset] ? ASSETS[asset].title : "None"}</p>
         <p><strong>Time:</strong> ${new Date().toISOString()}</p>
       `,
     });
+
+    // 1b. Confirm the snapshot request to the lead (a confirmation failure must
+    // not break lead capture — the founder notification above already landed).
+    if (isSnapshot) {
+      try {
+        await transporter.sendMail({
+          from: `"NexaWorks" <${smtpUser}>`,
+          to: email,
+          replyTo: "hello@nexaworks.tech",
+          subject: "Your free AI Visibility Snapshot is being prepared",
+          html: `
+            <p>Hi ${name},</p>
+            <p>We got your request — your free AI Visibility Snapshot for <strong>${company || "your company"}</strong> is being prepared.</p>
+            <p>Here's what happens next:</p>
+            <ol>
+              <li>We run buyer-style prompts across ChatGPT, Perplexity, Gemini and Claude.</li>
+              <li>We score your visibility and map who shows up instead of you.</li>
+              <li>Your snapshot lands in this inbox within <strong>3 business days</strong> — with 3 concrete gaps.</li>
+            </ol>
+            <p>Nothing else to do. If you don't see it, reply to this email.</p>
+            <p>— Sahil, Founder @ NexaWorks</p>
+          `,
+        });
+      } catch (confirmError) {
+        console.error("Snapshot confirmation email failed (lead notification already sent):", confirmError);
+      }
+    }
 
     // 2. Fulfill the lead magnet automatically (a fulfillment failure must not break lead capture)
     if (asset && ASSETS[asset]) {
