@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import MarketingChrome from "@/components/layout/MarketingChrome";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -112,9 +111,7 @@ export default function RootLayout({
           `
         }} />
 
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <MarketingChrome>{children}</MarketingChrome>
       </body>
     </html>
   );
