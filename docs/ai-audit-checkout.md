@@ -14,7 +14,7 @@ Razorpay Dashboard automatic capture should be configured. Connect the planned e
 
 ## Validation
 
-Run `node --test tests/ai-payment.test.mjs`, `npx tsc --noEmit`, and `npm run build`. Visit `/ai` and check each plan's intake dialog and Razorpay amount using test credentials. Test a full sandbox payment, cancellation, and failure before launch. Navigate to another marketing route and back to `/ai` to confirm checkout listeners are attached once.
+Run `node --test tests/ai-payment.test.mjs`, `npx tsc --noEmit`, and `npx next build --webpack`. The default Turbopack build currently rejects an existing calendar CSS rule (`--cell-size: var(--spacing(8))`); Webpack builds successfully. Visit `/ai` and check each plan's intake dialog and Razorpay amount using test credentials. Test a full sandbox payment, cancellation, and failure before launch. Navigate to another marketing route and back to `/ai` to confirm checkout listeners are attached once.
 
 ## Logo provenance
 

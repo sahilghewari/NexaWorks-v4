@@ -115,6 +115,44 @@ test("rejects cross-origin requests", async () =>
     ).status,
     403,
   ));
+test("uses the browser host when Next.js uses an internal request hostname", async () => {
+  const r = await paymentRoute(
+    new Request("http://localhost:4180/api/create-order", {
+      method: "POST",
+      headers: {
+        host: "127.0.0.1:4180",
+        origin: "http://127.0.0.1:4180",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ plan: "audit", customer }),
+    }),
+    env,
+    async () =>
+      Response.json({
+        id: "order_test123",
+        amount: 499900,
+        currency: "INR",
+      }),
+  );
+  assert.equal(r.status, 200);
+});
+test("rejects another origin even when forwarded host claims it is allowed", async () => {
+  const r = await paymentRoute(
+    new Request("https://internal.example/api/create-order", {
+      method: "POST",
+      headers: {
+        host: "site.example",
+        origin: "https://other.example",
+        "x-forwarded-host": "other.example",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ plan: "audit", customer }),
+    }),
+    env,
+    () => assert.fail("must not call Razorpay"),
+  );
+  assert.equal(r.status, 403);
+});
 test("auth failure returns 401 without upstream credentials or response", async () => {
   const r = await paymentRoute(
     request("/api/create-order", { plan: "audit", customer }),

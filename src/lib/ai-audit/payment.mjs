@@ -179,7 +179,10 @@ export async function paymentRoute(request, env, fetcher = fetch) {
     if (request.method !== "POST")
       throw new HttpError(405, "Use POST for this endpoint.");
     const origin = request.headers.get("origin");
-    if (origin !== url.origin)
+    // Next.js may construct request.url using its internal listen hostname.
+    // Host preserves the address used by the browser, including the port.
+    const expectedOrigin = `${url.protocol}//${request.headers.get("host") || url.host}`;
+    if (origin !== expectedOrigin)
       throw new HttpError(403, "Request origin is not allowed.");
     if (!env.RAZORPAY_KEY_ID || !env.RAZORPAY_KEY_SECRET)
       throw new HttpError(
