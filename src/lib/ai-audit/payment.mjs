@@ -304,6 +304,16 @@ export async function paymentRoute(request, env, fetcher = fetch) {
         order_id: session.order_id,
         title: plan.title,
         days: plan.days,
+        amount: plan.amount,
+        currency: plan.currency,
+        customer: {
+          name: order.notes?.name ?? "",
+          email: order.notes?.email ?? "",
+          company: order.notes?.company ?? "",
+          website: order.notes?.website ?? "",
+          category: order.notes?.category ?? "",
+          competitors: order.notes?.competitors ?? "",
+        },
         test_mode: env.RAZORPAY_KEY_ID.startsWith("rzp_test_"),
       });
     }
