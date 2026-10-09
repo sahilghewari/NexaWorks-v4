@@ -1152,24 +1152,73 @@
 .ai-audit .hero-copy .actions, .ai-audit .hero-copy .micro { justify-content: center; }
 .ai-audit .hero-copy .intro, .ai-audit .hero-copy .hero-detail { max-width: 610px; margin-left: auto; margin-right: auto; }
 .ai-audit .rotating-engine { display: block; min-height: 1.2em; }
-.ai-audit .engine-name { display: inline-block; animation: engine-appear 350ms ease-out; }
+.ai-audit .engine-name { display: inline-flex; align-items: center; justify-content: center; gap: 18px; animation: engine-appear 350ms ease-out; }
+.ai-audit .engine-name img { width: .76em; height: .76em; object-fit: contain; }
 @keyframes engine-appear {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.ai-audit .rotation-toggle { background: transparent; color: var(--muted); font-size: 11px; padding: 8px 12px; text-decoration: underline; text-underline-offset: 3px; }
-.ai-audit .report-scene { width: min(100%, 640px); justify-self: center; }
+.ai-audit .report-scene { width: min(100%, 900px); justify-self: center; }
 .ai-audit .client-proof { margin-top: 38px; }
-.ai-audit .client-proof p { margin: 0 0 15px; color: var(--muted); font-size: 12px; }
+.ai-audit .client-proof p { margin: 0 0 22px; color: var(--muted); font-size: 12px; }
 .ai-audit .client-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 36px; }
-.ai-audit .client-logo { display: flex; align-items: center; gap: 12px; font-size: 19px; font-weight: 600; }
+.ai-audit .client-logo { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-width: 106px; min-height: 100px; font-size: 15px; font-weight: 600; }
 .ai-audit .client-logo img { object-fit: contain; display: block; }
+.ai-audit .client-wordmark img { width: 124px; height: 98px; }
+.ai-audit .testimonial-section { overflow: hidden; }
+.ai-audit .testimonial-carousel { position: relative; overflow: hidden; padding: 8px 0 20px; }
+.ai-audit .testimonial-carousel::before, .ai-audit .testimonial-carousel::after { content: ""; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 1; pointer-events: none; backdrop-filter: blur(3px); }
+.ai-audit .testimonial-carousel::before { left: 0; background: linear-gradient(to right, var(--bg, #faf9f6), transparent); mask-image: linear-gradient(to right, black, transparent); }
+.ai-audit .testimonial-carousel::after { right: 0; background: linear-gradient(to left, var(--bg, #faf9f6), transparent); mask-image: linear-gradient(to left, black, transparent); }
+.ai-audit .testimonial-track { display: flex; width: max-content; animation: testimonial-scroll 65s linear infinite; }
+.ai-audit .testimonial-group { display: flex; gap: 20px; padding-right: 20px; }
+@keyframes testimonial-scroll { to { transform: translateX(-50%); } }
+.ai-audit .testimonial-carousel:hover .testimonial-track, .ai-audit .testimonial-carousel:focus-within .testimonial-track { animation-play-state: paused; }
+.ai-audit .testimonial-carousel:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.ai-audit .testimonial-card { width: 360px; flex: 0 0 360px; padding: 28px; background: white; border: 1px solid var(--line); border-radius: 16px; display: flex; flex-direction: column; }
+.ai-audit .testimonial-label { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .04em; }
+.ai-audit .testimonial-copy { font-family: Georgia, serif; font-size: 21px; line-height: 1.55; margin: 24px 0 28px; flex: 1; }
+.ai-audit .testimonial-person { display: flex; align-items: center; gap: 12px; }
+.ai-audit .testimonial-avatar { display: grid; place-items: center; width: 48px; height: 48px; flex-shrink: 0; background: var(--warm); border: 1px solid var(--line); border-radius: 50%; color: var(--muted); font-size: 18px; }
+.ai-audit img.testimonial-avatar { object-fit: cover; }
+.ai-audit img.portrait-pavan { object-position: 50% 28%; }
+.ai-audit .testimonial-person strong { display: block; font-size: 13px; }
+.ai-audit .testimonial-person div > span { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); }
+.ai-audit .testimonial-company { object-fit: contain; margin-left: auto; }
 @media (max-width: 720px) {
   .ai-audit h1 { font-size: clamp(32px, 8.5vw, 46px); letter-spacing: -1.5px; }
   .ai-audit .actions { flex-wrap: wrap; }
   .ai-audit .report-scene { width: calc(100% - 30px); }
+  .ai-audit .client-logos { gap: 20px; }
+  .ai-audit .client-logo { min-width: 84px; font-size: 13px; }
+  .ai-audit .testimonial-card { width: 300px; flex-basis: 300px; padding: 24px; }
+  .ai-audit .testimonial-carousel::before, .ai-audit .testimonial-carousel::after { width: 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .ai-audit .engine-name { animation: none; }
-  .ai-audit .rotation-toggle { display: none; }
+  .ai-audit .engine-name, .ai-audit .testimonial-track { animation: none; }
+  .ai-audit .testimonial-carousel { overflow-x: auto; }
+  .ai-audit .testimonial-group[aria-hidden="true"] { display: none; }
+}
+
+/* Hero, report, then client proof. */
+.ai-audit .audit-preview { padding-bottom: 50px; }
+.ai-audit .audit-preview .report-scene { margin-left: auto; margin-right: auto; }
+.ai-audit .audit-preview .client-proof { text-align: center; margin-top: 54px; }
+.ai-audit .audit-footer { padding: 66px 0 26px; background: var(--warm); border-top: 1px solid var(--line); }
+.ai-audit .audit-footer .footer-top { align-items: flex-start; padding: 0 0 42px; gap: 40px; }
+.ai-audit .footer-identity p { display: block; margin: 18px 0 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+.ai-audit .footer-contact { display: flex; flex-direction: column; gap: 14px; }
+.ai-audit .footer-contact .eyebrow { margin: 0; font-size: 11px; }
+.ai-audit .footer-email { font-family: Georgia, serif; font-size: 26px; letter-spacing: -.5px; }
+.ai-audit .footer-email span { margin-left: 14px; color: var(--accent); }
+.ai-audit .footer-phone { font-size: 14px; color: var(--muted); }
+.ai-audit .footer-socials { display: flex; gap: 22px; margin-top: 8px; font-size: 12px; }
+.ai-audit .audit-footer .footer-bottom { border-top: 1px solid var(--line); padding-top: 22px; }
+.ai-audit .footer-bottom nav { display: flex; flex-wrap: wrap; gap: 24px; }
+@media (max-width: 720px) {
+ .ai-audit .audit-preview { padding-bottom: 20px; }
+ .ai-audit .audit-preview .client-proof { margin-top: 36px; }
+ .ai-audit .audit-footer { padding-top: 40px; }
+ .ai-audit .audit-footer .footer-top { flex-direction: column; gap: 30px; }
+ .ai-audit .footer-email { font-size: 23px; }
 }

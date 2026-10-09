@@ -4,8 +4,15 @@ import Script from "next/script";
 import mountCheckout from "./checkout";
 
 const engines = ["ChatGPT", "Perplexity", "Gemini", "Claude"];
+const clients = [
+  { name: "Hive", person: "Pavan", role: "Founder", photo: "pavan.jpeg", logo: "hive.svg", sample: "The report made it easier to understand how AI describes our business and where the information needs attention." },
+  { name: "YourCase", person: "Om", role: "CMO", photo: "", logo: "yourcase.png", sample: "Seeing the answers alongside competitor mentions gave us a clearer view of the questions we need to address." },
+  { name: "FieldGuard", person: "Rahul", role: "CEO", photo: "", logo: "fieldguard.png", sample: "We could see the gaps in our AI visibility without getting lost in technical jargon." },
+  { name: "Korvex Network", person: "Pravin", role: "Founder", photo: "pravin.jpeg", logo: "korvex.png", sample: "The evidence behind each finding gave our team a practical starting point." },
+  { name: "Sapvyra", person: "Samuel", role: "Founder & CEO", photo: "samuel.png", logo: "sapvyra.png", sample: "The audit helped us understand which parts of our online presence needed closer attention." },
+];
 
-export default function AuditLanding({ testMode }: { testMode: boolean }) {
+export default function AuditLanding({ testMode, showTestimonialDrafts = false }: { testMode: boolean; showTestimonialDrafts?: boolean }) {
   const root = useRef<HTMLDivElement>(null);
   const [engine, setEngine] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -15,7 +22,7 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
     function update() {
       clearInterval(timer);
       if (!paused && !preference.matches)
-        timer = setInterval(() => setEngine((value) => (value + 1) % engines.length), 3000);
+        timer = setInterval(() => setEngine((value) => (value + 1) % engines.length), 2200);
     }
     update();
     preference.addEventListener("change", update);
@@ -57,21 +64,16 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
       </header>
       <main id="main">
         <section className="hero wrap">
-          <div className="hero-copy">
+          <div className="hero-copy" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setPaused(false); }}>
             <h1 aria-label="See what ChatGPT, Perplexity, Gemini and Claude say about your business.">
               See what
               <span className="rotating-engine" aria-hidden="true">
-                <span className="engine-name" key={engine}>{engines[engine]}</span>
+                <span className="engine-name" key={engine}><img src={`/ai-audit/assets/${engines[engine].toLowerCase()}.svg`} alt="" width={48} height={48} />{engines[engine]}</span>
               </span>
               says about your business.
             </h1>
             <p className="intro">
               An evidence-backed audit, delivered in 3–5 business days.
-            </p>
-            <p className="hero-detail">
-              Two one-time audits. Four AI engines. Understand your visibility,
-              see who gets recommended instead, and discover the gaps behind the
-              answers.
             </p>
             <div className="actions">
               <a className="button" href="#pricing">
@@ -85,36 +87,17 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
               <span>✓ One-time payment</span>
               <span>✓ Reports in 3–5 business days</span>
             </p>
-            <button className="rotation-toggle" type="button" onClick={() => setPaused(!paused)} aria-pressed={paused}>
-              {paused ? "Resume" : "Pause"} text animation
-            </button>
-            <div className="client-proof" aria-label="Companies we have audited">
-              <p>AI visibility audits completed for</p>
-              <div className="client-logos">
-                <div className="client-logo">
-                  <img src="/ai-audit/clients/hive.svg" alt="" width={52} height={56} />
-                  <span>Hive</span>
-                </div>
-                <div className="client-logo">
-                  <img src="/ai-audit/clients/yourcase.png" alt="" width={56} height={56} />
-                  <span>YourCase</span>
-                </div>
-              </div>
-            </div>
           </div>
+        </section>
+        <section className="wrap audit-preview" aria-label="Inside your AI visibility audit">
           <div className="report-scene" id="report">
             <div className="report">
               <div className="report-top">
                 <span className="report-logo">
                   <span className="tiny-mark">n</span> AI visibility audit
                 </span>
-                <span className="sample">SAMPLE</span>
               </div>
               <div className="report-body">
-                <div className="report-meta">
-                  <span>YOUR BRAND IN AI SEARCH</span>
-                  <span>01 / OVERVIEW</span>
-                </div>
                 <div className="score-row">
                   <div>
                     <h2>
@@ -206,16 +189,56 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
                   </div>
                 </div>
               </div>
-              <div className="report-foot">
-                <span>Evidence you can check. Actions you can take.</span>
-                <span>↗</span>
-              </div>
             </div>
             <p className="sample-note">
-              Illustrative report preview · Not actual client results
+              Illustrative report · Example data
             </p>
           </div>
+            <div className="client-proof" aria-label="Companies we have audited">
+              <p>AI visibility audits completed for</p>
+              <div className="client-logos">
+                {clients.map((client) => (
+                  <div className={`client-logo ${client.name === "FieldGuard" ? "client-wordmark" : ""}`} key={client.name}>
+                    <img src={`/ai-audit/clients/${client.logo}`} alt={client.name === "FieldGuard" ? "FieldGuard" : ""} width={56} height={56} />
+                    {client.name !== "FieldGuard" && <span>{client.name}</span>}
+                  </div>
+                ))}
+              </div>
+            </div>
         </section>
+        {showTestimonialDrafts && (
+          <section className="section testimonial-section" id="testimonials" aria-labelledby="testimonial-heading">
+            <div className="wrap section-heading">
+              <div>
+                <p className="eyebrow">CLIENT PERSPECTIVES</p>
+                <h2 id="testimonial-heading">Clarity that moves teams forward.</h2>
+              </div>
+            </div>
+            <div className="testimonial-carousel" tabIndex={0} role="region" aria-label="Client perspectives. Hover or focus to stop scrolling.">
+              <div className="testimonial-track">
+                {[0, 1].map((group) => (
+                  <div className="testimonial-group" key={group} aria-hidden={group === 1 ? true : undefined}>
+                    {clients.map((client) => (
+                      <article className="testimonial-card" key={client.name}>
+                        <span className="testimonial-label">Sample quote</span>
+                        <p className="testimonial-copy">“{client.sample}”</p>
+                        <div className="testimonial-person">
+                          {client.photo ? (
+                            <img className={`testimonial-avatar portrait-${client.person.toLowerCase()}`} src={`/ai-audit/clients/${client.photo}`} alt={client.person} width={48} height={48} />
+                          ) : (
+                            <span className="testimonial-avatar" aria-label={`${client.person}: photo pending`}>{client.person[0]}</span>
+                          )}
+                          <div><strong>{client.person}</strong><span>{client.role}, {client.name}</span></div>
+                          <img className="testimonial-company" src={`/ai-audit/clients/${client.logo}`} alt="" width={36} height={36} />
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
         <section className="platform-strip">
           <div className="wrap platforms">
             <p>
@@ -330,16 +353,17 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
             <div>
               <p>
                 People use AI to discover options, compare providers, and build
-                a shortlist. Generative Engine Optimization — GEO — helps your
-                brand become easier for these engines to understand and surface.
+                a shortlist. Our AI visibility reports show how these engines
+                describe your business, who they recommend instead, and the
+                evidence behind each finding.
               </p>
               <p>
-                Start with a diagnosis, or choose the detailed audit for a full
-                prioritized fix list. Implementation is a separate service,
-                scoped around your findings.
+                Choose a visibility diagnosis or a detailed report with a full
+                prioritized fix list. Get clear findings and recommendations
+                to share with your team.
               </p>
               <a className="text-link" href="/contact">
-                Talk about GEO <span>↗</span>
+                Ask about your report <span>↗</span>
               </a>
             </div>
           </div>
@@ -460,15 +484,6 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
             Both audits cover ChatGPT, Perplexity, Gemini and Claude. AI answers
             vary by prompt, engine and date. No one can guarantee placement.
           </p>
-          <details className="method-note">
-            <summary>What does the technical AI-readiness check cover?</summary>
-            <p>
-              We review robots.txt access for GPTBot, PerplexityBot, ClaudeBot
-              and Google-Extended; structured data/schema; llms.txt; and whether
-              key pages are readable without JavaScript. These checks describe
-              your setup; they do not guarantee citations or rankings.
-            </p>
-          </details>
         </section>
         <section className="wrap section" id="process">
           <div className="section-heading">
@@ -564,7 +579,7 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
             </details>
             <details>
               <summary>
-                Does GEO guarantee an AI recommendation?<span>+</span>
+                Does an audit guarantee an AI recommendation?<span>+</span>
               </summary>
               <p>
                 No. AI answers vary by prompt, engine, and date. No one can
@@ -605,27 +620,34 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
           </small>
         </section>
       </main>
-      <footer className="wrap">
-        <div className="footer-top">
-          <a className="brand" href="/" aria-label="NexaWorks home">
-            <span className="mark">
-              <img src="/logo.png" alt="" width={26} height={26} />
-            </span>
-            nexaworks
-          </a>
-          <p>
-            Make your brand easier to find.
-            <br />
-            And easier to understand.
-          </p>
-          <a href="mailto:hello@nexaworks.tech">hello@nexaworks.tech ↗</a>
-        </div>
-        <div className="footer-bottom">
-          <span>© 2026 NexaWorks. All rights reserved.</span>
-          <div>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-            <a href="tel:+918356954152">+91 83569 54152</a>
+      <footer className="audit-footer">
+        <div className="wrap">
+          <div className="footer-top">
+            <div className="footer-identity">
+              <a className="brand" href="/" aria-label="NexaWorks home">
+                <span className="mark"><img src="/logo.png" alt="" width={26} height={26} /></span>
+                nexaworks
+              </a>
+              <p>Understand how AI sees your business.<br />Move forward with clear evidence.</p>
+            </div>
+            <div className="footer-contact">
+              <span className="eyebrow">LET’S TALK</span>
+              <a className="footer-email" href="mailto:hello@nexaworks.tech">hello@nexaworks.tech <span>↗</span></a>
+              <a className="footer-phone" href="tel:+918356954152">+91 83569 54152</a>
+              <div className="footer-socials" aria-label="Social profiles">
+                <a href="https://www.linkedin.com/company/nexaworks" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <span>© 2026 NexaWorks. All rights reserved.</span>
+            <nav aria-label="Footer navigation">
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
+              <a href="/privacy">Privacy</a>
+              <a href="/terms">Terms</a>
+              <a href="/refund-policy">Refund policy</a>
+            </nav>
           </div>
         </div>
       </footer>
