@@ -71,27 +71,28 @@
 .ai-audit .brand {
   display: flex;
   align-items: center;
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
   font-family: Georgia, "Times New Roman", serif;
-}
-.ai-audit .brand-dot {
-  color: var(--accent);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 .ai-audit .mark {
-  width: 31px;
-  height: 31px;
+  width: 32px;
+  height: 32px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
-  background: var(--accent);
-  color: white;
-  margin-right: 9px;
-  font-size: 24px;
-  font-weight: 400;
-  font-style: italic;
-  font-family: Georgia, serif;
+  border-radius: 8px;
+  background: #0a0a0c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+.ai-audit .mark img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
 }
 .ai-audit .nav nav {
   display: flex;
@@ -108,7 +109,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: var(--accent);
+  background: var(--ink);
   color: #fff;
   padding: 16px 28px;
   border-radius: 999px;
@@ -120,7 +121,7 @@
   font-family: inherit;
 }
 .ai-audit .button:hover {
-  background: var(--accent-hover);
+  background: var(--accent);
 }
 .ai-audit .button span {
   font-size: 18px;
@@ -727,6 +728,12 @@
   width: 100%;
   justify-content: space-between;
 }
+.ai-audit .price-card.detailed .button.purchase {
+  background: var(--accent);
+}
+.ai-audit .price-card.detailed .button.purchase:hover {
+  background: var(--accent-hover);
+}
 .ai-audit .delivery {
   font-size: 11px;
   color: var(--accent);
@@ -968,7 +975,7 @@
     display: none;
   }
   .ai-audit .brand {
-    font-size: 21px;
+    font-size: 18px;
   }
   .ai-audit .button.small {
     font-size: 11px;
