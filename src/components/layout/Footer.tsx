@@ -28,7 +28,7 @@ export default function Footer() {
 
       {/* Sitemap */}
       <div className="container-nw py-12" style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-12">
           <div>
             <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Services</p>
             <ul className="space-y-3 text-sm">
@@ -48,6 +48,15 @@ export default function Footer() {
               <li><Link href="/about" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>About</Link></li>
               <li><Link href="/faq" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>FAQ</Link></li>
               <li><Link href="/contact" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Contact</Link></li>
+            </ul>
+          </div>
+          <div>
+            <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Legal</p>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/terms" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Terms of Service</Link></li>
+              <li><Link href="/privacy" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Privacy Policy</Link></li>
+              <li><Link href="/refund-policy" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Refund Policy</Link></li>
+              <li><Link href="/cancellation-policy" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Cancellation Policy</Link></li>
             </ul>
           </div>
           <div>
