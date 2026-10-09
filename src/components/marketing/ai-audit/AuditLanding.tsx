@@ -58,9 +58,6 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
       <main id="main">
         <section className="hero wrap">
           <div className="hero-copy">
-            <div className="eyebrow">
-              <span className="dot"></span> GENERATIVE ENGINE OPTIMIZATION
-            </div>
             <h1 aria-label="See what ChatGPT, Perplexity, Gemini and Claude say about your business.">
               See what
               <span className="rotating-engine" aria-hidden="true">
@@ -91,6 +88,19 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
             <button className="rotation-toggle" type="button" onClick={() => setPaused(!paused)} aria-pressed={paused}>
               {paused ? "Resume" : "Pause"} text animation
             </button>
+            <div className="client-proof" aria-label="Companies we have audited">
+              <p>AI visibility audits completed for</p>
+              <div className="client-logos">
+                <div className="client-logo">
+                  <img src="/ai-audit/clients/hive.svg" alt="" width={52} height={56} />
+                  <span>Hive</span>
+                </div>
+                <div className="client-logo">
+                  <img src="/ai-audit/clients/yourcase.png" alt="" width={56} height={56} />
+                  <span>YourCase</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="report-scene" id="report">
             <div className="report">
