@@ -12,7 +12,7 @@ const clients = [
   { name: "Sapvyra", person: "Samuel", role: "Founder & CEO", photo: "samuel.png", logo: "sapvyra.png", sample: "The audit helped us understand which parts of our online presence needed closer attention." },
 ];
 
-export default function AuditLanding({ testMode, showTestimonialDrafts = false }: { testMode: boolean; showTestimonialDrafts?: boolean }) {
+export default function AuditLanding({ testMode }: { testMode: boolean }) {
   const root = useRef<HTMLDivElement>(null);
   const [engine, setEngine] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -206,7 +206,6 @@ export default function AuditLanding({ testMode, showTestimonialDrafts = false }
               </div>
             </div>
         </section>
-        {showTestimonialDrafts && (
           <section className="section testimonial-section" id="testimonials" aria-labelledby="testimonial-heading">
             <div className="wrap section-heading">
               <div>
@@ -238,7 +237,6 @@ export default function AuditLanding({ testMode, showTestimonialDrafts = false }
               </div>
             </div>
           </section>
-        )}
         <section className="platform-strip">
           <div className="wrap platforms">
             <p>
