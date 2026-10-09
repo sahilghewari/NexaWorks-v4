@@ -94,7 +94,7 @@ export default function mountCheckout(root) {
         ? "Test payment verified."
         : "Payment confirmed.";
       showStatus(
-        `${result.test_mode ? "This was a test payment; no real audit order is fulfilled." : "Thank you. Your " + result.title + " will be prepared in about " + result.days + " business days."} Payment reference: ${result.payment_id}. Keep this reference for your records.`,
+        `${result.test_mode ? "This was a test payment; no real audit order is fulfilled." : "Thank you for purchasing the order. Our team will reach out to you shortly regarding the service."} Payment reference: ${result.payment_id}. Keep this reference for your records.`,
       );
     } catch (error) {
       if (lifecycle.signal.aborted) return;
