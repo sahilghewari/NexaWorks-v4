@@ -233,6 +233,7 @@ export async function paymentRoute(request, env, fetcher = fetch) {
           currency: plan.currency,
           key_id: env.RAZORPAY_KEY_ID,
           title: plan.title,
+          customer: details,
           test_mode: env.RAZORPAY_KEY_ID.startsWith("rzp_test_"),
         },
         200,
