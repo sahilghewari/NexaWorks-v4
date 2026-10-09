@@ -19,9 +19,11 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
       </a>
       <header>
         <div className="wrap nav">
-          <a className="brand" href="#" aria-label="NexaWorks home">
-            <span className="mark">n</span>nexaworks
-            <span className="brand-dot">.</span>
+          <a className="brand" href="/" aria-label="NexaWorks home">
+            <span className="mark">
+              <img src="/logo.png" alt="" width={26} height={26} />
+            </span>
+            nexaworks
           </a>
           <nav aria-label="Main navigation">
             <a href="#audit">The audit</a>
@@ -574,9 +576,11 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
       </main>
       <footer className="wrap">
         <div className="footer-top">
-          <a className="brand" href="#">
-            <span className="mark">n</span>nexaworks
-            <span className="brand-dot">.</span>
+          <a className="brand" href="/" aria-label="NexaWorks home">
+            <span className="mark">
+              <img src="/logo.png" alt="" width={26} height={26} />
+            </span>
+            nexaworks
           </a>
           <p>
             Make your brand easier to find.
