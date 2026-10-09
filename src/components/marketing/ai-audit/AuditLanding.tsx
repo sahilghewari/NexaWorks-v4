@@ -1,10 +1,29 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Script from "next/script";
 import mountCheckout from "./checkout";
 
+const engines = ["ChatGPT", "Perplexity", "Gemini", "Claude"];
+
 export default function AuditLanding({ testMode }: { testMode: boolean }) {
   const root = useRef<HTMLDivElement>(null);
+  const [engine, setEngine] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: ReturnType<typeof setInterval> | undefined;
+    function update() {
+      clearInterval(timer);
+      if (!paused && !preference.matches)
+        timer = setInterval(() => setEngine((value) => (value + 1) % engines.length), 3000);
+    }
+    update();
+    preference.addEventListener("change", update);
+    return () => {
+      clearInterval(timer);
+      preference.removeEventListener("change", update);
+    };
+  }, [paused]);
   useEffect(() => {
     if (root.current) return mountCheckout(root.current);
   }, []);
@@ -42,16 +61,15 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
             <div className="eyebrow">
               <span className="dot"></span> GENERATIVE ENGINE OPTIMIZATION
             </div>
-            <h1>
-              Your next customer
-              <br />
-              is asking AI.
-              <br />
-              <span>Will it name you?</span>
+            <h1 aria-label="See what ChatGPT, Perplexity, Gemini and Claude say about your business.">
+              See what
+              <span className="rotating-engine" aria-hidden="true">
+                <span className="engine-name" key={engine}>{engines[engine]}</span>
+              </span>
+              says about your business.
             </h1>
             <p className="intro">
-              Find out where your brand stands in AI answers — and what’s
-              keeping you off the shortlist.
+              An evidence-backed audit, delivered in 3–5 business days.
             </p>
             <p className="hero-detail">
               Two one-time audits. Four AI engines. Understand your visibility,
@@ -60,7 +78,7 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
             </p>
             <div className="actions">
               <a className="button" href="#pricing">
-                Choose your audit <span>↗</span>
+                View audit plans <span>↗</span>
               </a>
               <a className="text-link" href="#report">
                 See what’s inside <span>↓</span>
@@ -70,6 +88,9 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
               <span>✓ One-time payment</span>
               <span>✓ Reports in 3–5 business days</span>
             </p>
+            <button className="rotation-toggle" type="button" onClick={() => setPaused(!paused)} aria-pressed={paused}>
+              {paused ? "Resume" : "Pause"} text animation
+            </button>
           </div>
           <div className="report-scene" id="report">
             <div className="report">
@@ -334,7 +355,7 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
               <p className="eyebrow">THE DIAGNOSIS</p>
               <h3>AI Visibility Audit</h3>
               <p className="plan-intro">
-                See the problem clearly before deciding what to fix.
+                Understand where you stand.
               </p>
               <div className="price">
                 $49 <span>/ one time</span>
@@ -378,7 +399,7 @@ export default function AuditLanding({ testMode }: { testMode: boolean }) {
               <p className="eyebrow">THE COMPLETE PICTURE</p>
               <h3>Detailed AI Visibility Audit</h3>
               <p className="plan-intro">
-                Understand what to change, and in what order.
+                Know what to fix, in what order.
               </p>
               <div className="price">
                 $99 <span>/ one time</span>
