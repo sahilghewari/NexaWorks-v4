@@ -13,9 +13,23 @@ export default function MarketingChrome({
   if (pathname === "/ai") return <>{children}</>;
   return (
     <>
-      <Navbar />
-      <main className="flex-1">{children}</main>
-      <Footer />
+      <div className="nw-designed-site contents">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] bg-white px-4 py-3"
+        >
+          Skip to content
+        </a>
+        <Navbar enterprise={pathname === "/"} />
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className={`flex-1 ${pathname === "/" ? "" : "nw-inner"}`}
+        >
+          {children}
+        </main>
+        <Footer enterprise={pathname === "/"} />
+      </div>
     </>
   );
 }

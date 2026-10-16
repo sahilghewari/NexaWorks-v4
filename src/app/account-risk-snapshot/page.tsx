@@ -3,7 +3,7 @@ import { ArrowRight, Check, Search, Layers, PhoneCall } from "lucide-react";
 import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 
 export const metadata = {
-  title: "Account Risk Snapshot | NexaWorks",
+  title: "Account Risk Snapshot",
   description:
     "A free 5-day diagnostic for B2B SaaS: we connect your CRM, call, ticket, and product data, rank your 20 riskiest accounts, and show you the churn signals your health score missed. No contract, no platform to buy.",
   alternates: { canonical: "/account-risk-snapshot" },
@@ -74,7 +74,7 @@ export default function AccountRiskSnapshotPage() {
     <>
       {/* Hero */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Free diagnostic • 5 business days • No contract
           </p>
@@ -90,7 +90,8 @@ export default function AccountRiskSnapshotPage() {
             In five business days, we hand you your 20 riskiest accounts, ranked, with the
             exact signals behind each one. Free. Before you sign anything.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 pb-20">
+          <p className="text-sm mb-6" style={{ color: "var(--nw-ink-soft)" }}>For B2B SaaS teams with 100+ employees and at least two relevant data sources. Four Snapshots per month.</p>
+          <div className="flex flex-col sm:flex-row gap-6">
             <Link
               href="#request"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
@@ -98,30 +99,6 @@ export default function AccountRiskSnapshotPage() {
             >
               Request your Snapshot <ArrowRight size={18} className="ml-2" />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Buyer voice */}
-      <section className="sp-section" style={{ backgroundColor: "var(--nw-dark)" }}>
-        <div className="container-nw max-w-4xl">
-          <h2 className="text-3xl mb-4 text-white">Sound familiar?</h2>
-          <p className="text-lg mb-12" style={{ color: "var(--nw-dark-soft)" }}>
-            This is how CS leaders and CSMs describe the problem, in their own words.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 pb-4">
-            {buyerQuotes.map((item) => (
-              <div
-                key={item.quote}
-                className="p-8 rounded-2xl"
-                style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
-              >
-                <p className="text-xl leading-relaxed mb-4 text-white">“{item.quote}”</p>
-                <p className="text-sm" style={{ color: "var(--nw-dark-soft)" }}>
-                  {item.context}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -156,9 +133,9 @@ export default function AccountRiskSnapshotPage() {
                   <Check size={28} strokeWidth={3} />
                 </div>
                 <div>
-                  <h4 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
+                  <h3 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
                     {item.title}
-                  </h4>
+                  </h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
                     {item.text}
                   </p>
@@ -169,7 +146,7 @@ export default function AccountRiskSnapshotPage() {
 
           {/* Sample account card */}
           <div
-            className="p-10 mb-4 relative overflow-hidden rounded-2xl"
+            className="p-6 md:p-10 mb-4 relative overflow-hidden rounded-2xl"
             style={{ backgroundColor: "var(--nw-dark)", color: "white" }}
           >
             <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
@@ -184,14 +161,14 @@ export default function AccountRiskSnapshotPage() {
                 </p>
               </div>
             </div>
-            <h4 className="text-xl mb-4 text-white">Signals behind the rank</h4>
+            <h3 className="text-xl mb-4 text-white">Signals behind the rank</h3>
             <ul className="space-y-3 mb-8 text-lg" style={{ color: "var(--nw-dark-soft)" }}>
               <li>• Champion stopped attending calls 47 days ago (was weekly)</li>
               <li>• Support sentiment turned negative across the last 6 tickets</li>
               <li>• Two power users removed seats last month</li>
               <li>• No executive sponsor on record</li>
             </ul>
-            <h4 className="text-xl mb-3 text-white">Recommended CSM action</h4>
+            <h3 className="text-xl mb-3 text-white">Recommended CSM action</h3>
             <p className="text-lg leading-relaxed" style={{ color: "var(--nw-dark-soft)" }}>
               Re-engage the champion this week with a value review tied to their original
               buying goals. Confirm who owns the renewal before the next QBR — do not let
@@ -220,9 +197,9 @@ export default function AccountRiskSnapshotPage() {
                   <p className="text-sm mb-1" style={{ color: "var(--nw-accent)" }}>
                     Step {i + 1}
                   </p>
-                  <h4 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
+                  <h3 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
                     {step.title}
-                  </h4>
+                  </h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
                     {step.text}
                   </p>
@@ -239,7 +216,7 @@ export default function AccountRiskSnapshotPage() {
           <h2 className="text-3xl mb-12 text-white">Free vs. paid, stated plainly</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-2xl" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              <h4 className="text-2xl mb-4 text-white">Free</h4>
+              <h3 className="text-2xl mb-4 text-white">Free</h3>
               <ul className="space-y-3 text-lg" style={{ color: "var(--nw-dark-soft)" }}>
                 <li>• The full Snapshot and ranked list</li>
                 <li>• 3–5 signals per account, in plain language</li>
@@ -247,7 +224,7 @@ export default function AccountRiskSnapshotPage() {
               </ul>
             </div>
             <div className="p-8 rounded-2xl" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              <h4 className="text-2xl mb-4 text-white">Paid — only if you want it</h4>
+              <h3 className="text-2xl mb-4 text-white">Paid — only if you want it</h3>
               <ul className="space-y-3 text-lg" style={{ color: "var(--nw-dark-soft)" }}>
                 <li>
                   • Everything after: wiring the signals into a live weekly workflow is the{" "}
@@ -266,6 +243,30 @@ export default function AccountRiskSnapshotPage() {
         </div>
       </section>
 
+      {/* Buyer voice */}
+      <section className="sp-section" style={{ backgroundColor: "var(--nw-dark)" }}>
+        <div className="container-nw max-w-4xl">
+          <h2 className="text-3xl mb-4 text-white">Sound familiar?</h2>
+          <p className="text-lg mb-12" style={{ color: "var(--nw-dark-soft)" }}>
+            Market research from public CS discussions. These quotations describe the problem; they are not NexaWorks customer testimonials.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 pb-4">
+            {buyerQuotes.map((item) => (
+              <div
+                key={item.quote}
+                className="p-8 rounded-2xl"
+                style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
+              >
+                <p className="text-xl leading-relaxed mb-4 text-white">“{item.quote}”</p>
+                <p className="text-sm" style={{ color: "var(--nw-dark-soft)" }}>
+                  {item.context}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-4xl">
@@ -275,9 +276,9 @@ export default function AccountRiskSnapshotPage() {
           <div className="space-y-10 mb-16">
             {faqs.map((faq) => (
               <div key={faq.q}>
-                <h4 className="text-xl mb-3" style={{ color: "var(--nw-ink)" }}>
+                <h3 className="text-xl mb-3" style={{ color: "var(--nw-ink)" }}>
                   {faq.q}
-                </h4>
+                </h3>
                 <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
                   {faq.a}
                 </p>

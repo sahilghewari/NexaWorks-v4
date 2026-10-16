@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "From Dashboards to Attention Lists | NexaWorks",
+  title: "From Dashboards to Attention Lists",
   description:
     "Your CS team does not need another dashboard. It needs to know which customer needs attention today. A practical guide to building an account attention list from signals you already have.",
   alternates: { canonical: "/guides/attention-list" },
@@ -69,11 +69,11 @@ export default function AttentionListPage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Guide · Prioritization framework
           </p>
-          <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>
+          <h1 className="article-title mb-6" style={{ color: "var(--nw-ink)" }}>
             From dashboards to attention lists.
           </h1>
           <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>

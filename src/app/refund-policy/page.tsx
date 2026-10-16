@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Refund Policy | NexaWorks",
+  title: "Refund Policy",
   description:
     "NexaWorks refund policy: all payments for our audits and consulting engagements are final and non-refundable.",
   alternates: { canonical: "/refund-policy" },

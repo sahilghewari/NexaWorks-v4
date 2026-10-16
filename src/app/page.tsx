@@ -1,84 +1,307 @@
 import Link from "next/link";
-import { ArrowDown, Check, X } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  CornerDownRight,
+  Database,
+  FileText,
+  Fingerprint,
+  Headphones,
+  Layers3,
+  LockKeyhole,
+  MessageSquareText,
+  Network,
+  ShieldCheck,
+} from "lucide-react";
 import SampleBriefForm from "@/components/marketing/SampleBriefForm";
+import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
+import EditorialExperience from "@/components/marketing/EditorialExperience";
+import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
+import IntelligenceEnvironment from "@/components/marketing/IntelligenceEnvironment";
+import "./editorial-home.css";
+import "./cinematic-home.css";
 
-export const metadata = {
-  alternates: { canonical: "/" },
-};
+export const metadata = { alternates: { canonical: "/" } };
+
+const offers = [
+  {
+    label: "01 / DIAGNOSE",
+    name: "Intelligence Blueprint",
+    price: "$3,500",
+    timing: "10 business days",
+    description: "A clear plan before you commit to a build.",
+    items: [
+      "Data & workflow map",
+      "5–15 strategic account review",
+      "Prioritized use cases",
+      "Pilot architecture & ROI hypothesis",
+    ],
+    href: "/customer-intelligence-blueprint",
+    cta: "Explore the Blueprint",
+    note: "Fully credited toward the Pilot",
+  },
+  {
+    label: "02 / PROVE",
+    name: "Intelligence Pilot",
+    price: "$9,500–$18,000",
+    timing: "4–6 weeks",
+    description: "One workflow. Your data. Evidence your team can use.",
+    items: [
+      "One-click meeting briefs",
+      "Chronological account timelines",
+      "Evidence-backed risk & opportunity signals",
+      "Weekly portfolio action lists in Slack or email",
+      "Pilot-results report & production proposal",
+    ],
+    href: "/customer-intelligence-pilot",
+    cta: "Explore the Pilot",
+    note: "Most pilots land around $15,000",
+    featured: true,
+  },
+  {
+    label: "03 / SCALE",
+    name: "Custom Build",
+    price: "Scoped with you",
+    timing: "Your workflows & systems",
+    description: "Extend what works into your everyday operations.",
+    items: [
+      "Custom integrations with your stack",
+      "Scope built around your workflows and data",
+      "Direct access to the people doing the work",
+      "Pricing agreed after discovery",
+    ],
+    href: "/contact",
+    cta: "Discuss your workflow",
+    note: "Fixed scope, agreed together",
+  },
+];
 
 export default function Home() {
   return (
-    <>
-      {/* ————— HERO — Asymmetric, never centered ————— */}
-      <section style={{ backgroundColor: "var(--nw-canvas)" }} className="relative overflow-hidden">
-        <div className="container-nw pt-24 pb-20 md:pt-40 md:pb-32">
-          {/* Eyebrow */}
-          <p className="eyebrow mb-8" style={{ color: "var(--nw-accent)" }}>
-            Customer Signals — For B2B SaaS Teams
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-            <div className="lg:col-span-8">
-              <h1 style={{ color: "var(--nw-ink)" }} className="mb-8">
-                We find the churn, renewal, and expansion signals hiding across your CRM, calls, tickets, and product data.
-              </h1>
-              <p className="text-lg md:text-xl mb-10 leading-relaxed max-w-xl" style={{ color: "var(--nw-ink-soft)" }}>
-                NexaWorks turns them into action — working alongside the CS platform you already own.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
-                  style={{ backgroundColor: "var(--nw-ink)" }}
-                >
-                  Book a discovery call
-                </Link>
-                <Link
-                  href="#method"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-8 text-sm font-medium transition-colors"
-                  style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)" }}
-                >
-                  See the method <ArrowDown size={14} />
-                </Link>
-              </div>
-              <p className="eyebrow flex items-center gap-4" style={{ color: "var(--nw-ink-soft)", fontSize: "11px", letterSpacing: "0.1em" }}>
-                <span>Founder-led</span>
-                <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--nw-accent)" }} />
-                <span>Fixed scope & price</span>
-                <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--nw-accent)" }} />
-                <span>No rip-and-replace</span>
+    <EditorialExperience>
+      <section className="ed-hero" aria-labelledby="ed-hero-title">
+        <IntelligenceEnvironment />
+        <div className="ed-wrap ed-hero-layout">
+          <div className="ed-hero-copy">
+            <p className="ed-eyebrow">
+              <span /> CUSTOMER INTELLIGENCE, WITH PERSPECTIVE.
+            </p>
+            <h1 id="ed-hero-title">
+              See what
+              <br />
+              the numbers
+              <br />
+              <em>aren’t saying.</em>
+            </h1>
+            <p className="ed-hero-description">
+              Behind every renewal is a relationship. We connect the people
+              signals with the product signals, so your next conversation starts
+              with the whole story.
+            </p>
+            <div className="ed-actions">
+              <Link
+                href="/account-risk-snapshot"
+                className="ed-button ed-button-primary"
+              >
+                Get your free Snapshot <ArrowUpRight size={17} />
+              </Link>
+              <Link href="#intelligence-demo" className="ed-inline-link">
+                Explore the example <ArrowRight size={15} />
+              </Link>
+            </div>
+            <p className="ed-hero-note">
+              FOUNDER-LED. HUMAN-REVIEWED. EVIDENCE-ATTACHED.
+            </p>
+            <div className="ed-hero-margin">
+              <span />
+              <p>
+                A clearer view of your accounts.
+                <br />
+                Built on the tools you already own.
               </p>
             </div>
+          </div>
+          <div className="nw-spatial-interface">
+            <div className="nw-interface-coordinate" aria-hidden="true">
+              NEXAWORKS / INTELLIGENCE LAYER <span>01 — ACCOUNT VIEW</span>
+            </div>
+            <EditorialSnapshot />
+          </div>
+        </div>
+      </section>
+      <section
+        className="nw-snapshot-transition"
+        aria-label="Free Account Risk Snapshot"
+      >
+        <div className="ed-wrap">
+          <div className="ed-snapshot-strip">
+            <div>
+              <span className="ed-micro">THE FREE ACCOUNT RISK SNAPSHOT</span>
+              <h2>
+                Perspective first.
+                <br />
+                <em>Then the next move.</em>
+              </h2>
+            </div>
+            <div>
+              <strong>20 accounts.</strong>
+              <span>
+                Evidence-backed priorities, with the signals behind each.
+              </span>
+            </div>
+            <div>
+              <strong>5 business days.</strong>
+              <span>From your data to a clear readout.</span>
+            </div>
+            <Link
+              href="/account-risk-snapshot"
+              aria-label="Explore the free Account Risk Snapshot"
+            >
+              <ArrowUpRight size={28} strokeWidth={1} />
+            </Link>
+          </div>
+        </div>
+      </section>
+      <section
+        className="ed-sources-strip"
+        aria-label="Examples of source systems"
+      >
+        <div className="ed-wrap">
+          <p>
+            CONTEXT FROM THE TOOLS
+            <br />
+            YOU ALREADY OWN
+          </p>
+          <div>
+            {[
+              "Salesforce",
+              "HubSpot",
+              "Gong",
+              "Zendesk",
+              "Slack",
+              "Product data",
+            ].map((name) => (
+              <span key={name}>{name}</span>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Deliverable artifact mockup */}
-            <div className="lg:col-span-4 relative hidden lg:flex items-start justify-end">
-              <div
-                className="w-[320px] rounded-lg bg-white p-6 shadow-2xl"
-                style={{ border: "1px solid var(--nw-line-light)", transform: "rotate(2deg) translateY(20px)" }}
-              >
-                <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>
-                  Meeting Brief · Illustrative Sample
-                </p>
-                <div className="space-y-3">
+      <section className="ed-section ed-perspective" id="method">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">01 / THE MISSING CONTEXT</p>
+            <span className="ed-micro">LOOK BETWEEN THE METRICS.</span>
+          </div>
+          <div className="ed-perspective-intro">
+            <h2>
+              A healthy score.
+              <br />
+              An incomplete <em>story.</em>
+            </h2>
+            <div>
+              <p>
+                The score is green. But the champion stopped showing up,
+                adoption is falling, and a critical issue is still open.
+              </p>
+              <p>
+                Each system holds a piece. We bring the pieces together so your
+                team can see what needs attention—and why.
+              </p>
+              <Link href="/guides/green-then-gone" className="ed-inline-link">
+                Read: green, then gone <ArrowUpRight size={16} />
+              </Link>
+            </div>
+          </div>
+          <div className="ed-story-board">
+            <div className="ed-story-score">
+              <div className="ed-story-card-label">
+                <span>THE DASHBOARD VIEW</span>
+                <span>ILLUSTRATIVE</span>
+              </div>
+              <div className="ed-score-ring">
+                <svg viewBox="0 0 170 170" aria-hidden="true">
+                  <circle
+                    cx="85"
+                    cy="85"
+                    r="72"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeOpacity=".12"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="85"
+                    cy="85"
+                    r="72"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeDasharray="371 452"
+                    transform="rotate(-90 85 85)"
+                  />
+                </svg>
+                <div>
+                  <strong>
+                    82<span>/100</span>
+                  </strong>
+                  <span>
+                    <i />
+                    Healthy
+                  </span>
+                </div>
+              </div>
+              <p>
+                Activity looks good.
+                <br />
+                The relationship needs a closer look.
+              </p>
+              <span className="ed-micro">ONE SCORE ≠ THE WHOLE ACCOUNT</span>
+            </div>
+            <div className="ed-story-timeline">
+              <div className="ed-story-card-label">
+                <span>THE STORY BETWEEN THE SYSTEMS</span>
+                <MessageSquareText size={16} />
+              </div>
+              {[
+                {
+                  day: "−47",
+                  source: "CALLS",
+                  title: "The champion goes quiet.",
+                  text: "A familiar voice disappears from the conversation.",
+                },
+                {
+                  day: "−21",
+                  source: "PRODUCT",
+                  title: "Adoption begins to fall.",
+                  text: "Fewer people are getting value from the product.",
+                },
+                {
+                  day: "−04",
+                  source: "SUPPORT",
+                  title: "A critical issue stays open.",
+                  text: "An unresolved blocker becomes a commercial concern.",
+                },
+              ].map((item) => (
+                <div className="ed-timeline-event" key={item.day}>
+                  <span className="ed-timeline-day">
+                    {item.day}
+                    <small>DAYS</small>
+                  </span>
                   <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>ACCOUNT</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink)" }}>████████ Corp</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>RISK SIGNAL</p>
-                    <p className="text-sm" style={{ color: "var(--nw-amber)" }}>Champion departed · Usage −22% · Open P1 ticket</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>EVIDENCE</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink-soft)" }}>Gong call 09/12, Zendesk #4891, SFDC opp stage unchanged 42d</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-accent)", fontSize: "11px" }}>RECOMMENDED ACTION</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink)" }}>Escalate to VP CS. Schedule exec alignment before renewal window.</p>
+                    <small>{item.source}</small>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
                   </div>
                 </div>
-                <p className="eyebrow mt-4" style={{ color: "var(--nw-ink-soft)", fontSize: "9px" }}>
-                  ILLUSTRATIVE SAMPLE — NOT A SHIPPED PRODUCT
+              ))}
+              <div className="ed-story-insight">
+                <CornerDownRight size={19} />
+                <p>
+                  The risk is in the pattern.
+                  <br />
+                  <strong>The next step is a conversation.</strong>
                 </p>
               </div>
             </div>
@@ -86,293 +309,401 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ————— PROBLEM — Dark register with stats ————— */}
-      <section className="section-dark sp-section">
-        <div className="container-nw">
-          <p className="eyebrow mb-12" style={{ color: "var(--nw-accent-glow)" }}>The Problem</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
-            <div className="md:col-span-7">
-              <h2 className="text-white mb-8">
-                Your team sees the facts. Nobody sees the pattern.
-              </h2>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--nw-dark-soft)" }}>
-                The renewal is 60 days out. Usage is down. Your champion went
-                quiet two weeks ago. A severity-1 support ticket just opened.
-                Implementation is behind. The signals are sitting in Salesforce,
-                Zendesk, and Gong — but because they don't live in one place,
-                nobody connects the dots until the post-mortem.
-              </p>
-            </div>
-            <div className="md:col-span-5 md:col-start-8 flex flex-col justify-center gap-8">
+      <section className="ed-section ed-approach">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">02 / HOW WE WORK</p>
+            <span className="ed-micro">YOUR STACK. A CLEARER PICTURE.</span>
+          </div>
+          <div className="ed-approach-heading">
+            <h2>
+              Connect the context.
+              <br />
+              <em>Keep your stack.</em>
+            </h2>
+            <p>
+              A scoped intelligence service alongside your CS platform. Evidence
+              comes together. Your people stay in control.
+            </p>
+          </div>
+          <div className="ed-method-board">
+            <div className="ed-method-sources">
+              <span className="ed-micro">01 / YOUR EXISTING SOURCES</span>
               {[
-                { number: "60", unit: "days", label: "Renewal approaching" },
-                { number: "−22%", unit: "", label: "Product usage decline" },
-                { number: "0", unit: "replies", label: "From your champion this month" },
-              ].map((stat) => (
-                <div key={stat.label} className="pb-8" style={{ borderBottom: "1px solid var(--nw-line-dark)" }}>
-                  <p className="text-white text-4xl md:text-5xl tracking-tight mb-1" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
-                    {stat.number}
-                    <span className="text-lg ml-1" style={{ color: "var(--nw-dark-soft)" }}>{stat.unit}</span>
-                  </p>
-                  <p className="text-sm" style={{ color: "var(--nw-dark-soft)" }}>{stat.label}</p>
+                {
+                  icon: Database,
+                  title: "CRM & product",
+                  detail: "Accounts, renewals, adoption",
+                },
+                {
+                  icon: MessageSquareText,
+                  title: "Calls & conversations",
+                  detail: "Champions, goals, sentiment",
+                },
+                {
+                  icon: Headphones,
+                  title: "Support & tickets",
+                  detail: "Blockers, friction, escalations",
+                },
+              ].map((source) => (
+                <div key={source.title}>
+                  <source.icon size={20} strokeWidth={1.3} />
+                  <div>
+                    <h3>{source.title}</h3>
+                    <p>{source.detail}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ————— METHOD — Branded diagram ————— */}
-      <section className="sp-section" id="method" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>The Method</p>
-          <h2 className="mb-4 max-w-3xl" style={{ color: "var(--nw-ink)" }}>
-            How we build your intelligence workflow
-          </h2>
-          <p className="text-lg max-w-xl mb-16" style={{ color: "var(--nw-ink-soft)" }}>
-            We don't sell software. We sell scoped pilots that prove value on
-            your actual data, without a multi-year lock-in.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px" style={{ backgroundColor: "var(--nw-line-light)" }} />
-
-            {[
-              { num: "01", name: "Diagnose", timeline: "Days 1–2", desc: "Map your current CS workflows. Identify which systems hold the missing context." },
-              { num: "02", name: "Connect", timeline: "Days 3–5", desc: "Establish read-only access to 3–5 source systems. Salesforce, Gong, Zendesk — safely." },
-              { num: "03", name: "Extract", timeline: "Weeks 2–5", desc: "Weekly intelligence briefs and automated risk signals delivered to Slack or your inbox." },
-              { num: "04", name: "Review", timeline: "Week 6", desc: "Pilot results, ROI hypothesis, and a production architecture proposal — delivered." },
-            ].map((step, i) => (
-              <div
-                key={step.num}
-                className="relative p-6 md:p-8"
-                style={{
-                  borderRight: i < 3 ? "1px solid var(--nw-line-light)" : "none",
-                  borderBottom: "1px solid var(--nw-line-light)",
-                }}
-              >
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-6 relative z-10 eyebrow"
-                  style={{
-                    backgroundColor: "var(--nw-canvas)",
-                    border: "1px solid var(--nw-line-light)",
-                    fontSize: "13px",
-                    color: "var(--nw-accent)",
-                  }}
-                >
-                  {step.num}
-                </div>
-                <h3 style={{ color: "var(--nw-ink)" }} className="mb-1">{step.name}</h3>
-                <p className="eyebrow mb-3" style={{ color: "var(--nw-accent)", fontSize: "11px", letterSpacing: "0.15em" }}>
-                  {step.timeline}
-                </p>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>{step.desc}</p>
+            <div className="ed-method-center">
+              <span className="ed-method-line" aria-hidden="true" />
+              <div className="ed-method-mark">
+                <Network size={43} strokeWidth={1} />
               </div>
-            ))}
+              <span className="ed-micro">02 / CONNECT & REVIEW</span>
+              <p>
+                Extract the signals.
+                <br />
+                Attach the evidence.
+                <br />
+                Review with a human.
+              </p>
+            </div>
+            <div className="ed-method-output">
+              <span className="ed-micro">03 / A CLEAR NEXT STEP</span>
+              <FileText size={28} strokeWidth={1} />
+              <h3>
+                Ready for the
+                <br />
+                next conversation.
+              </h3>
+              <p>
+                Account briefs. Weekly priorities. Renewal and expansion
+                signals.
+              </p>
+              <span className="ed-method-destination">
+                Slack / Email / Your workflow
+              </span>
+            </div>
           </div>
+          <div className="ed-method-assurance">
+            <span>
+              <LockKeyhole size={16} /> Read-only access or exports
+            </span>
+            <span>
+              <Fingerprint size={16} /> Source-backed context
+            </span>
+            <span>
+              <ShieldCheck size={16} /> Your team reviews and acts
+            </span>
+          </div>
+          <Link href="/customer-success-ai" className="ed-inline-link">
+            Inside the approach <ArrowUpRight size={17} />
+          </Link>
         </div>
       </section>
 
-      {/* ————— PRICING — Asymmetric cards ————— */}
-      <section className="section-dark sp-section" id="pricing">
-        <div className="container-nw">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>Pricing</p>
-          <h2 className="text-white mb-4">Honest pricing.</h2>
-          <p className="text-lg mb-10 max-w-xl" style={{ color: "var(--nw-dark-soft)" }}>
-            No open-ended retainers. Scope and pricing are set together, around your workflows.
-          </p>
-
-          <div className="rounded-xl p-6 md:p-8 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-            <p className="text-lg" style={{ color: "var(--nw-warm-400)" }}>
-              Not ready for a paid engagement? Start with a free Account Risk Snapshot — your 20 riskiest accounts, ranked, in 5 business days.
+      <section className="ed-section ed-offer" id="services">
+        <div className="ed-wrap ed-offer-layout">
+          <div>
+            <p className="ed-eyebrow">03 / A CLEARER PLACE TO BEGIN</p>
+            <h2>
+              Start with the
+              <br />
+              accounts you
+              <br />
+              <em>can’t afford to miss.</em>
+            </h2>
+            <p className="ed-section-description">
+              Your free Account Risk Snapshot: the 20 accounts that need
+              attention, the evidence behind each, and a readout to decide what
+              happens next.
             </p>
             <Link
               href="/account-risk-snapshot"
-              className="inline-flex h-11 flex-shrink-0 items-center justify-center rounded-full px-6 text-sm font-medium text-white transition-colors"
-              style={{ border: "1px solid var(--nw-accent)" }}
+              className="ed-button ed-button-primary"
             >
-              Get the Snapshot
+              Request your free Snapshot <ArrowUpRight size={17} />
             </Link>
-          </div>
-
-          <div className="rounded-xl p-6 md:p-8 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-            <p className="text-lg" style={{ color: "var(--nw-warm-400)" }}>
-              Smaller budget? Start with a Signal Stack Audit — $1,500, delivered in 3 business days. A written report on the signals you&apos;re already capturing, the ones you&apos;re blind to, and the three highest-leverage fixes.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-11 flex-shrink-0 items-center justify-center rounded-full px-6 text-sm font-medium text-white transition-colors"
-              style={{ border: "1px solid var(--nw-accent)" }}
-            >
-              Get the Audit
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Blueprint */}
-            <div className="rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>10 Business Days</p>
-              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Intelligence Blueprint</h3>
-              <p className="text-3xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$3,500</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-accent-glow)", fontSize: "11px" }}>Fully credited toward the Pilot</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {["Data & workflow map", "5–15 strategic account review", "Prioritized use cases", "Pilot architecture & ROI hypothesis"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/customer-intelligence-blueprint"
-                className="flex h-11 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
-                style={{ border: "1px solid var(--nw-line-dark)" }}
-              >
-                View Blueprint
-              </Link>
-            </div>
-
-            {/* Pilot — accent border */}
-            <div className="rounded-xl p-8 md:p-10 flex flex-col relative" style={{ backgroundColor: "var(--nw-dark-mid)", border: "2px solid var(--nw-accent)" }}>
-              <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full text-white eyebrow" style={{ backgroundColor: "var(--nw-accent)", fontSize: "10px" }}>
-                MOST COMMON
-              </span>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>4–6 Weeks · Founding-Client Pricing</p>
-              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Intelligence Pilot</h3>
-              <p className="text-4xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$9,500 – $18,000</p>
-              <p className="text-sm mb-1" style={{ color: "var(--nw-warm-400)" }}>Most pilots land around $15,000.</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-dark-soft)", fontSize: "11px" }}>Final price set on a scoping call — depends on your data sources, accounts in scope & integrations. Founding-client pricing in exchange for feedback & a case study.</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {["One-click meeting briefs", "Chronological account timelines", "Evidence-backed risk & opportunity signals", "Weekly portfolio action lists (Slack/Email)", "Pilot-results report with production proposal"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/customer-intelligence-pilot"
-                className="flex h-12 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
-                style={{ backgroundColor: "var(--nw-accent)" }}
-              >
-                View Pilot Details
-              </Link>
-            </div>
-
-            {/* Custom Build */}
-            <div className="rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>Scoped with you</p>
-              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Custom Build</h3>
-              <p className="text-3xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>Custom</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-accent-glow)", fontSize: "11px" }}>Priced around your workflows & systems</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {["Scoped around your workflows and data", "Custom integrations with your stack", "Direct access to the people doing the work", "Pricing set together after discovery"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="flex h-11 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
-                style={{ border: "1px solid var(--nw-line-dark)" }}
-              >
-                Talk to us
-              </Link>
-            </div>
-          </div>
-
-          <p className="text-sm mt-8 max-w-xl" style={{ color: "var(--nw-warm-400)" }}>
-            Follow-on: Renewal Risk & Expansion Intelligence ($30K–$75K) · Deal-to-Delivery Assurance ($40K–$100K+) · Managed Improvement ($3K–$15K/mo).{" "}
-            <Link href="/contact" className="underline" style={{ color: "var(--nw-accent-glow)" }}>Inquire</Link>
-          </p>
-          <p className="text-sm mt-4 max-w-xl" style={{ color: "var(--nw-warm-400)" }}>
-            Based in India? We price in ₹ for Indian companies — just mention it when you reach out.
-          </p>
-        </div>
-      </section>
-
-      {/* ————— INTELLIGENCE STANDARD ————— */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: "var(--nw-canvas)", borderTop: "1px solid var(--nw-line-light)", borderBottom: "1px solid var(--nw-line-light)" }}>
-        <div className="container-nw">
-          <p className="eyebrow mb-8 text-center" style={{ color: "var(--nw-accent)" }}>
-            Every output answers four questions
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { num: "01", q: "What changed?" },
-              { num: "02", q: "Why does it matter commercially?" },
-              { num: "03", q: "What evidence supports it?" },
-              { num: "04", q: "What should the team do next?" },
-            ].map((item) => (
-              <div key={item.num} className="text-center md:text-left">
-                <p className="eyebrow mb-2" style={{ color: "var(--nw-accent)", fontSize: "12px" }}>{item.num}</p>
-                <p className="font-medium" style={{ color: "var(--nw-ink)" }}>{item.q}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ————— HONEST LIMITATIONS ————— */}
-      <section className="sp-section" id="services" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>Honesty As Policy</p>
-            <h2 className="mb-6" style={{ color: "var(--nw-ink)" }}>What this isn't.</h2>
-            <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
-              We tell every prospect exactly what we don't do. It's not modesty — it's how we build trust with VPs who are tired of vendor overpromises.
+            <p className="ed-offer-fit">
+              For B2B SaaS · 100+ employees · At least two data sources
             </p>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-6">
+          <div className="ed-offer-paper">
+            <div className="ed-paper-fold" aria-hidden="true" />
+            <div className="ed-story-card-label">
+              <Layers3 size={20} />
+              <span>YOUR SNAPSHOT / AT A GLANCE</span>
+            </div>
+            <h3>
+              A point of view.
+              <br />
+              <em>Backed by evidence.</em>
+            </h3>
             {[
-              { title: "Not a Gainsight / Vitally replacement", desc: "We augment your CS platform with unstructured context it can't extract on its own." },
-              { title: "No autonomous agents sending emails", desc: "Human-in-the-loop always. We surface the risk; your leaders review and act." },
-              { title: "No generic company-wide search", desc: "We build scoped pipelines for specific commercial questions, not a chatbot." },
-              { title: "No legal interpretation of contracts", desc: "We read structured and unstructured data — not legal documents." },
-            ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4 pb-6" style={{ borderBottom: "1px solid var(--nw-line-light)" }}>
-                <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "rgba(217, 119, 6, 0.1)" }}>
-                  <X size={12} strokeWidth={2} style={{ color: "var(--nw-amber)" }} />
-                </div>
+              {
+                title: "A ranked attention list",
+                text: "Your 20 riskiest accounts, with 3–5 signals behind each.",
+              },
+              {
+                title: "The context that matters",
+                text: "People and product signals across up to three sources.",
+              },
+              {
+                title: "A conversation about action",
+                text: "A 45-minute readout, five business days after data access.",
+              },
+            ].map((item, i) => (
+              <div className="ed-deliverable-row" key={item.title}>
+                <span>0{i + 1}</span>
                 <div>
-                  <p className="font-semibold text-sm mb-1" style={{ color: "var(--nw-ink)" }}>{item.title}</p>
-                  <p className="text-sm" style={{ color: "var(--nw-ink-soft)" }}>{item.desc}</p>
+                  <strong>{item.title}</strong>
+                  <p>{item.text}</p>
                 </div>
+                <Check size={17} />
               </div>
             ))}
+            <div className="ed-paper-bottom">
+              <span>No contract. No platform to buy.</span>
+              <span>Four Snapshots / month</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ————— LEAD MAGNET ————— */}
-      <section className="section-dark sp-section" id="sample-brief">
-        <div className="container-nw text-center max-w-2xl mx-auto">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>See What We Deliver</p>
-          <h2 className="text-white mb-6">See a sample<br />meeting brief.</h2>
-          <p className="mb-10 mx-auto" style={{ color: "var(--nw-dark-soft)" }}>
-            Curious what the output looks like? Drop your email and we'll send an illustrative sample of a Customer Intelligence Pilot meeting brief.
-          </p>
-          <SampleBriefForm />
+      <section className="ed-intake-section">
+        <div className="ed-wrap">
+          <details className="ed-intake">
+            <summary>
+              <span>Ready for a clearer picture?</span>
+              <span>
+                Request your Snapshot here <ArrowUpRight size={19} />
+              </span>
+            </summary>
+            <div className="ed-intake-layout">
+              <div>
+                <p className="ed-eyebrow">YOUR FIRST STEP</p>
+                <h2>
+                  Tell us where
+                  <br />
+                  to begin.
+                </h2>
+                <p>
+                  Share your contact details and available data sources. We’ll
+                  discuss read-only access or exports with you after your
+                  request.
+                </p>
+                <p>No data access is granted by this form.</p>
+              </div>
+              <SnapshotIntakeForm />
+            </div>
+          </details>
         </div>
       </section>
 
-      {/* ————— MOBILE STICKY CTA ————— */}
-      <div
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-3 backdrop-blur-md"
-        style={{ backgroundColor: "rgba(250, 250, 248, 0.9)", borderTop: "1px solid var(--nw-line-light)" }}
-      >
-        <Link
-          href="/contact"
-          className="flex h-12 w-full items-center justify-center rounded-full text-sm font-medium text-white"
-          style={{ backgroundColor: "var(--nw-ink)" }}
-        >
-          Book a discovery call
-        </Link>
-      </div>
-    </>
+      <section className="ed-section ed-engagements" id="pricing">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">04 / THE ENGAGEMENTS</p>
+            <span className="ed-micro">
+              FIXED SCOPE. A SHARED DEFINITION OF SUCCESS.
+            </span>
+          </div>
+          <div className="ed-engagements-heading">
+            <h2>
+              Start small.
+              <br />
+              <em>Build on the evidence.</em>
+            </h2>
+            <p>
+              Work directly with the founder. Agree the question, the scope and
+              the price before the work begins.
+            </p>
+          </div>
+          <div className="ed-price-grid">
+            {offers.map((offer) => (
+              <article
+                key={offer.name}
+                className={`ed-price-card ${offer.featured ? "is-featured" : ""}`}
+              >
+                <div className="ed-price-top">
+                  <span className="ed-micro">{offer.label}</span>
+                  {offer.featured && (
+                    <span className="ed-price-badge">PROVE THE WORKFLOW</span>
+                  )}
+                </div>
+                <h3>{offer.name}</h3>
+                <p>{offer.description}</p>
+                <div className="ed-price-value">{offer.price}</div>
+                <span className="ed-price-timing">{offer.timing}</span>
+                <ul>
+                  {offer.items.map((item) => (
+                    <li key={item}>
+                      <Check size={14} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <small className="ed-price-note">{offer.note}</small>
+                <Link href={offer.href} className="ed-button ed-button-outline">
+                  {offer.cta}
+                  <ArrowUpRight size={16} />
+                </Link>
+              </article>
+            ))}
+          </div>
+          <p className="ed-pricing-fine">
+            Pilot founding-client pricing is offered in exchange for feedback
+            and permission for a measured case study. Final price depends on
+            sources, accounts and integrations.
+          </p>
+          <div className="ed-audit-row">
+            <div>
+              <span className="ed-micro">ANOTHER WAY TO START</span>
+              <p>
+                Signal Stack Audit <span>· $1,500 · 3 business days</span>
+              </p>
+            </div>
+            <Link href="/contact" className="ed-inline-link">
+              Discuss an audit <ArrowUpRight size={17} />
+            </Link>
+          </div>
+          <details className="ed-follow-on">
+            <summary>Follow-on engagements & regional pricing</summary>
+            <p>
+              Renewal Risk & Expansion Intelligence ($30K–$75K) ·
+              Deal-to-Delivery Assurance ($40K–$100K+) · Managed Improvement
+              ($3K–$15K/mo).
+            </p>
+            <p>
+              Based in India? We price in ₹ for Indian companies. Mention it
+              when you <Link href="/contact">reach out</Link>.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section className="ed-section ed-reading">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">05 / THE READING ROOM</p>
+            <Link href="/signals" className="ed-inline-link">
+              Browse the Signal Library <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <h2>
+            A little more
+            <br />
+            <em>perspective.</em>
+          </h2>
+          <div className="ed-reading-grid">
+            <Link href="/guides/green-then-gone" className="ed-reading-card">
+              <div
+                className="ed-reading-art ed-reading-score"
+                aria-hidden="true"
+              >
+                <span>THE HEALTH SCORE PARADOX</span>
+                <div>
+                  <strong>82</strong>
+                  <i>healthy?</i>
+                </div>
+                <small>GREEN, THEN GONE.</small>
+              </div>
+              <span className="ed-micro">FIELD NOTES / RENEWAL RISK</span>
+              <h3>When green accounts churn.</h3>
+              <p>What the dashboard sees—and what it can miss.</p>
+              <ArrowUpRight size={22} className="ed-reading-arrow" />
+            </Link>
+            <Link
+              href="/tools/health-score-back-tester"
+              className="ed-reading-card"
+            >
+              <div
+                className="ed-reading-art ed-reading-test"
+                aria-hidden="true"
+              >
+                <span>A SCORE IS A HYPOTHESIS.</span>
+                <div>
+                  {[40, 67, 48, 82, 61, 94, 72, 100, 85].map((height, i) => (
+                    <i key={i} style={{ height: `${height}%` }} />
+                  ))}
+                </div>
+                <small>TEST IT AGAINST THE OUTCOME.</small>
+              </div>
+              <span className="ed-micro">FREE TOOL / BACK-TESTER</span>
+              <h3>Put your score to the test.</h3>
+              <p>
+                Check catch rates and false alarms. Your data stays in your
+                browser.
+              </p>
+              <ArrowUpRight size={22} className="ed-reading-arrow" />
+            </Link>
+            <Link
+              href="/compare/signal-layer-vs-cs-platform"
+              className="ed-reading-card"
+            >
+              <div
+                className="ed-reading-art ed-reading-context"
+                aria-hidden="true"
+              >
+                <span>THE SPACE BETWEEN THE TOOLS.</span>
+                <div>
+                  <Database size={29} strokeWidth={1} />
+                  <i />
+                  <Network size={43} strokeWidth={1} />
+                  <i />
+                  <FileText size={29} strokeWidth={1} />
+                </div>
+                <small>CONTEXT, CONNECTED.</small>
+              </div>
+              <span className="ed-micro">
+                PERSPECTIVE / YOUR EXISTING STACK
+              </span>
+              <h3>A layer, alongside your platform.</h3>
+              <p>
+                Where customer intelligence fits in the tools you already own.
+              </p>
+              <ArrowUpRight size={22} className="ed-reading-arrow" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="ed-section ed-founder">
+        <div className="ed-wrap ed-founder-layout">
+          <div>
+            <p className="ed-eyebrow">A HUMAN AT THE OTHER END.</p>
+            <h2>
+              Good intelligence
+              <br />
+              comes with
+              <br />
+              <em>accountability.</em>
+            </h2>
+            <p>
+              Work directly with Sahil, the founder of NexaWorks. A clear scope,
+              evidence you can question, and a person who owns the work.
+            </p>
+            <Link href="/about" className="ed-inline-link">
+              Meet the founder <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <div className="ed-brief-form" id="sample-brief">
+            <span className="ed-micro">TAKE A CLOSER LOOK</span>
+            <FileText size={28} strokeWidth={1} />
+            <h3>
+              Let the work
+              <br />
+              <em>speak for itself.</em>
+            </h3>
+            <p>
+              Get an illustrative meeting brief in your inbox. See how sources,
+              signals and next steps come together.
+            </p>
+            <SampleBriefForm />
+          </div>
+        </div>
+      </section>
+    </EditorialExperience>
   );
 }

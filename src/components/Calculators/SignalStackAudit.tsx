@@ -90,7 +90,7 @@ export default function SignalStackAudit() {
   };
 
   if (showResults) {
-    const blindSpots = perSource.slice(0, 3);
+    const blindSpots = perSource.filter((source) => source.pct < 100).slice(0, 3);
     return (
       <div>
         <div className="rounded-xl p-8 md:p-10 mb-8" style={{ backgroundColor: 'white', border: '1px solid var(--nw-line-light)' }}>
@@ -127,7 +127,8 @@ export default function SignalStackAudit() {
           ))}
         </div>
 
-        <h3 className="text-xl mb-6" style={{ color: 'var(--nw-ink)' }}>Your three biggest blind spots</h3>
+        <h3 className="text-xl mb-6" style={{ color: 'var(--nw-ink)' }}>{blindSpots.length ? "Your priority blind spots" : "All sources covered in your answers"}</h3>
+        {blindSpots.length === 0 && <p className="mb-8 leading-relaxed" style={{ color: 'var(--nw-ink-soft)' }}>Your answers indicate coverage across all six sources. The next step is to validate the quality of that coverage and how the sources connect; this questionnaire does not verify your underlying data.</p>}
         <div className="space-y-4 mb-10">
           {blindSpots.map((s, i) => (
             <div
@@ -208,9 +209,9 @@ export default function SignalStackAudit() {
             <p className="eyebrow mb-2" style={{ color: 'var(--nw-accent)' }}>
               {i + 1} · {q.source}
             </p>
-            <p className="text-lg mb-1" style={{ color: 'var(--nw-ink)' }}>{q.text}</p>
-            <p className="text-sm mb-4" style={{ color: 'var(--nw-dark-soft)' }}>{q.hint}</p>
-            <div className="flex gap-3">
+            <p id={`audit-question-${q.id}`} className="text-lg mb-1" style={{ color: 'var(--nw-ink)' }}>{q.text}</p>
+            <p className="text-sm mb-4" style={{ color: 'var(--nw-ink-soft)' }}>{q.hint}</p>
+            <div className="flex gap-3" role="group" aria-labelledby={`audit-question-${q.id}`}>
               {[
                 { v: 2 as Answer, label: 'Yes' },
                 { v: 1 as Answer, label: 'Partially' },
@@ -218,8 +219,9 @@ export default function SignalStackAudit() {
               ].map((opt) => (
                 <button
                   key={opt.label}
+                  aria-pressed={answers[q.id] === opt.v}
                   onClick={() => setAnswers((a) => ({ ...a, [q.id]: opt.v }))}
-                  className="px-5 py-2 rounded-full text-sm font-medium transition-colors"
+                  className="min-h-11 px-5 py-2 rounded-full text-sm font-medium transition-colors"
                   style={{
                     backgroundColor: answers[q.id] === opt.v ? 'var(--nw-ink)' : 'transparent',
                     color: answers[q.id] === opt.v ? 'white' : 'var(--nw-ink)',

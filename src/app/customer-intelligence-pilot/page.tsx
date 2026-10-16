@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 export const metadata = {
   title: "Customer Intelligence Pilot",
@@ -11,20 +11,25 @@ export default function PilotPage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Flagship • 4-6 Weeks • $9,500–$18,000
           </p>
           <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>Customer Intelligence Pilot</h1>
-          
+
           <p className="text-xl leading-relaxed mb-4" style={{ color: "var(--nw-ink-soft)" }}>
             One workflow. 20–50 strategic accounts. 3–5 source systems. We build and run a human-reviewed intelligence pipeline on your data to prove value before you scale.
           </p>
-          <p className="text-sm italic mb-16" style={{ color: "var(--nw-ink-soft)" }}>
+          <p className="text-sm italic mb-6" style={{ color: "var(--nw-ink-soft)" }}>
             Offered at $9,500–$18,000 for founding clients — most land around $15,000 — in exchange for feedback and permission to publish a measured case study. Final price set on a scoping call.
           </p>
 
-          <div className="p-10 mb-16 relative overflow-hidden" style={{ backgroundColor: "var(--nw-dark)", color: "white" }}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-medium text-white" style={{ backgroundColor: "var(--nw-ink)" }}>Book a discovery call</Link>
+            <Link href="/account-risk-snapshot" className="inline-flex min-h-12 items-center justify-center rounded-full border px-6 text-sm font-medium" style={{ borderColor: "var(--nw-line-light)" }}>Start with a free Snapshot</Link>
+          </div>
+
+          <div className="p-6 md:p-10 mb-16 relative overflow-hidden" style={{ backgroundColor: "var(--nw-dark)", color: "white" }}>
             <h2 className="text-3xl mb-10 text-white">Deliverables</h2>
             <ul className="space-y-10 relative z-10">
               <li className="flex items-start gap-6">
@@ -32,7 +37,7 @@ export default function PilotPage() {
                   <Check size={28} strokeWidth={3} />
                 </div>
                 <div>
-                  <h4 className="text-2xl mb-2 text-white">One-Click Meeting Briefs</h4>
+                  <h3 className="text-2xl mb-2 text-white">One-Click Meeting Briefs</h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-dark-soft)" }}>Pre-meeting context assembled across CRM, Zendesk, and Gong, formatted for quick reading.</p>
                 </div>
               </li>
@@ -41,7 +46,7 @@ export default function PilotPage() {
                   <Check size={28} strokeWidth={3} />
                 </div>
                 <div>
-                  <h4 className="text-2xl mb-2 text-white">Evidence-Backed Risk Signals</h4>
+                  <h3 className="text-2xl mb-2 text-white">Evidence-Backed Risk Signals</h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-dark-soft)" }}>Alerts for churn risks (e.g. champion left, usage drop, negative sentiment) with direct links to the source data.</p>
                 </div>
               </li>
@@ -50,7 +55,7 @@ export default function PilotPage() {
                   <Check size={28} strokeWidth={3} />
                 </div>
                 <div>
-                  <h4 className="text-2xl mb-2 text-white">Weekly Portfolio Action Lists</h4>
+                  <h3 className="text-2xl mb-2 text-white">Weekly Portfolio Action Lists</h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-dark-soft)" }}>A curated weekly digest for CS leaders highlighting the top 5 accounts requiring immediate intervention.</p>
                 </div>
               </li>
@@ -58,7 +63,7 @@ export default function PilotPage() {
           </div>
 
           <div className="mb-16">
-            <h3 className="mb-6" style={{ color: "var(--nw-ink)" }}>Qualification Criteria</h3>
+            <h2 className="text-3xl mb-6" style={{ color: "var(--nw-ink)" }}>Qualification Criteria</h2>
             <p className="text-lg mb-6" style={{ color: "var(--nw-ink-soft)" }}>To ensure the pilot is successful, we require:</p>
             <ul className="list-disc pl-6 space-y-3 text-lg" style={{ color: "var(--nw-ink-soft)" }}>
               <li>A specific, urgent business problem (e.g., high churn in a specific segment).</li>

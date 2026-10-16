@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Layers, Database, ScanSearch, FileText, Zap } from "lucide-react";
 
 export const metadata = {
-  title: "Customer Success AI for B2B SaaS | NexaWorks",
+  title: "Customer Success AI for B2B SaaS",
   description:
     "Customer Success AI that works as a signal layer on top of the CS platform you already own — finding the churn, renewal, and expansion signals hiding across your CRM, calls, tickets, and product data, and turning them into action.",
   alternates: { canonical: "/customer-success-ai" },
@@ -67,7 +67,7 @@ export default function CustomerSuccessAIPage() {
     <>
       {/* Hero */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Customer Success AI
           </p>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Tariff Intelligence (Paused) | NexaWorks",
+  title: "Tariff Intelligence (Paused)",
   description:
     "NexaWorks' Tariff Intelligence practice is currently paused while we focus on customer signal work for B2B SaaS teams.",
   alternates: { canonical: "/tariff-intelligence" },

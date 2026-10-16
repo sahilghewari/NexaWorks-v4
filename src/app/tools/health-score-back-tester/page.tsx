@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import HealthScoreBacktester from "@/components/Calculators/HealthScoreBacktester";
 
 export const metadata = {
-  title: "Health Score Back-tester | NexaWorks",
+  title: "Health Score Back-tester",
   description:
     "Would your health score have caught your churn? Paste your score history and find out in 30 seconds. Free, runs entirely in your browser — your data never leaves the page.",
   alternates: { canonical: "/tools/health-score-back-tester" },

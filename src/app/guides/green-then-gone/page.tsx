@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Why 'Healthy' Accounts Churn | NexaWorks",
+  title: "Why 'Healthy' Accounts Churn",
   description:
     "Green health score. Strong adoption. Plenty of engagement. The account churned anyway. A post-mortem framework for the churns your dashboards said were impossible.",
   alternates: { canonical: "/guides/green-then-gone" },
@@ -50,11 +50,11 @@ export default function GreenThenGonePage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Guide · Post-mortem framework
           </p>
-          <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>
+          <h1 className="article-title mb-6" style={{ color: "var(--nw-ink)" }}>
             Why &ldquo;healthy&rdquo; accounts churn.
           </h1>
           <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>

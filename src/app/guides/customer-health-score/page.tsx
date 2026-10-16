@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Customer Health Scores That Predict Churn — and How to Test Yours | NexaWorks",
+  title: "Customer Health Scores That Predict Churn — and How to Test Yours",
   description:
     "What separates health scores that predict churn from the ones that decorate dashboards: design principles from public models, the back-testing method, and how to test your own score in 30 seconds.",
   alternates: { canonical: "/guides/customer-health-score" },
@@ -46,19 +46,23 @@ export default function HealthScoreGuidePage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Guide
           </p>
-          <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>
+          <h1 className="article-title mb-6" style={{ color: "var(--nw-ink)" }}>
             Customer health scores that predict churn — and how to test yours.
           </h1>
+          <p className="text-sm mb-6" style={{ color: "var(--nw-ink-soft)" }}>By NexaWorks · A practical guide for CS leaders</p>
           <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>
             Most health scores are built from what was easy to query, tuned by opinion, and
             never tested against reality. Then everyone acts surprised when green accounts
             churn. Here&apos;s what the scores that actually work do differently — and how
             to check yours.
           </p>
+          <nav aria-label="On this page" className="flex flex-wrap gap-x-6 gap-y-3 text-sm mb-8 underline underline-offset-4">
+            <a href="#principles">Four principles</a><a href="#back-test">Test your score</a><a href="#questions">Common questions</a>
+          </nav>
           <div className="flex flex-col sm:flex-row gap-6 pb-4">
             <Link
               href="/tools/health-score-back-tester"
@@ -80,12 +84,12 @@ export default function HealthScoreGuidePage() {
 
       <section className="sp-section" style={{ backgroundColor: "white" }}>
         <div className="container-nw max-w-4xl">
-          <h2 className="text-3xl mb-12" style={{ color: "var(--nw-ink)" }}>
+          <h2 id="principles" className="text-3xl mb-12" style={{ color: "var(--nw-ink)" }}>
             Four principles of scores that work.
           </h2>
           <div className="space-y-10">
             {principles.map((p, i) => (
-              <div key={p.title} className="flex gap-6 items-start">
+              <div key={p.title} className="flex gap-4 md:gap-6 items-start">
                 <div
                   className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium"
                   style={{ backgroundColor: "var(--nw-accent)", color: "white" }}
@@ -104,7 +108,7 @@ export default function HealthScoreGuidePage() {
 
       <section className="sp-section" style={{ backgroundColor: "var(--nw-dark)" }}>
         <div className="container-nw max-w-4xl">
-          <h2 className="text-3xl mb-8 text-white">The 30-second test.</h2>
+          <h2 id="back-test" className="text-3xl mb-8 text-white">The 30-second test.</h2>
           <p className="text-lg mb-8 max-w-2xl" style={{ color: "var(--nw-dark-soft)" }}>
             Before redesigning anything, grade what you have. The back-tester needs three
             columns — account, score, churned or active — and answers the only question
@@ -136,7 +140,7 @@ export default function HealthScoreGuidePage() {
 
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-4xl">
-          <h2 className="text-3xl mb-10" style={{ color: "var(--nw-ink)" }}>
+          <h2 id="questions" className="text-3xl mb-10" style={{ color: "var(--nw-ink)" }}>
             Questions, answered honestly.
           </h2>
           <div className="space-y-8">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "NexaWorks for Gainsight Customers | NexaWorks",
+  title: "For Gainsight Customers",
   description:
     "Already on Gainsight? NexaWorks works alongside it — back-tested health scores, evidence-backed account briefs, and signal-layer intelligence delivered into the platform you own. No rip-and-replace.",
   alternates: { canonical: "/platforms/gainsight" },

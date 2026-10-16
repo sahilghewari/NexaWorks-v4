@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Churn and Renewal Risk Detection for B2B SaaS | NexaWorks",
+  title: "Churn and Renewal Risk Detection for B2B SaaS",
   description:
     "Churn doesn't start at renewal — it starts months earlier in signals your team can see but isn't reading together. How NexaWorks detects renewal risk across CRM, calls, tickets, and product data, and what to do about it.",
   alternates: { canonical: "/customer-success-ai/churn-renewal-risk" },
@@ -49,7 +49,7 @@ export default function ChurnRenewalRiskPage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Churn &amp; Renewal Risk
           </p>

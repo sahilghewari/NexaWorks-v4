@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import SignalStackAudit from "@/components/Calculators/SignalStackAudit";
 
 export const metadata = {
-  title: "Customer Signal Stack Audit | NexaWorks",
+  title: "Customer Signal Stack Audit",
   description:
     "Where are your churn signals hiding — and which ones are you blind to? Answer 15 questions about your CS data stack and get your signal map in 3 minutes. Free, runs entirely in your browser.",
   alternates: { canonical: "/tools/signal-stack-audit" },

@@ -1,0 +1,340 @@
+[
+  {
+    "route": "/about",
+    "file": "src/app/about/page.tsx",
+    "lines": 78,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/contact",
+      "mailto:hello@nexaworks.tech"
+    ]
+  },
+  {
+    "route": "/account-risk-snapshot",
+    "file": "src/app/account-risk-snapshot/page.tsx",
+    "lines": 319,
+    "client": false,
+    "forms": [
+      "SnapshotIntakeForm"
+    ],
+    "destinations": [
+      "#request",
+      "/customer-intelligence-pilot"
+    ]
+  },
+  {
+    "route": "/ai",
+    "file": "src/app/ai/page.tsx",
+    "lines": 28,
+    "client": false,
+    "forms": [],
+    "destinations": []
+  },
+  {
+    "route": "/cancellation-policy",
+    "file": "src/app/cancellation-policy/page.tsx",
+    "lines": 72,
+    "client": false,
+    "forms": [],
+    "destinations": []
+  },
+  {
+    "route": "/compare/build-vs-buy-cs-platform",
+    "file": "src/app/compare/build-vs-buy-cs-platform/page.tsx",
+    "lines": 134,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot"
+    ]
+  },
+  {
+    "route": "/compare/signal-layer-vs-cs-platform",
+    "file": "src/app/compare/signal-layer-vs-cs-platform/page.tsx",
+    "lines": 152,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/compare/build-vs-buy-cs-platform"
+    ]
+  },
+  {
+    "route": "/contact",
+    "file": "src/app/contact/page.tsx",
+    "lines": 57,
+    "client": false,
+    "forms": [
+      "ContactForm"
+    ],
+    "destinations": [
+      "mailto:hello@nexaworks.tech"
+    ]
+  },
+  {
+    "route": "/customer-health-score-consultant",
+    "file": "src/app/customer-health-score-consultant/page.tsx",
+    "lines": 334,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/contact",
+      "/customer-intelligence-blueprint",
+      "/customer-intelligence-pilot"
+    ]
+  },
+  {
+    "route": "/customer-intelligence-blueprint",
+    "file": "src/app/customer-intelligence-blueprint/page.tsx",
+    "lines": 87,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/contact",
+      "/customer-intelligence-pilot"
+    ]
+  },
+  {
+    "route": "/customer-intelligence-pilot",
+    "file": "src/app/customer-intelligence-pilot/page.tsx",
+    "lines": 89,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/contact"
+    ]
+  },
+  {
+    "route": "/customer-success-ai/churn-renewal-risk",
+    "file": "src/app/customer-success-ai/churn-renewal-risk/page.tsx",
+    "lines": 176,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/signals"
+    ]
+  },
+  {
+    "route": "/customer-success-ai/health-score",
+    "file": "src/app/customer-success-ai/health-score/page.tsx",
+    "lines": 217,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/customer-health-score-consultant",
+      "/guides/customer-health-score",
+      "/tools/health-score-back-tester"
+    ]
+  },
+  {
+    "route": "/customer-success-ai/meeting-prep",
+    "file": "src/app/customer-success-ai/meeting-prep/page.tsx",
+    "lines": 193,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/signals"
+    ]
+  },
+  {
+    "route": "/customer-success-ai",
+    "file": "src/app/customer-success-ai/page.tsx",
+    "lines": 270,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/signals"
+    ]
+  },
+  {
+    "route": "/faq",
+    "file": "src/app/faq/page.tsx",
+    "lines": 97,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/contact"
+    ]
+  },
+  {
+    "route": "/guides/attention-list",
+    "file": "src/app/guides/attention-list/page.tsx",
+    "lines": 232,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/guides/green-then-gone"
+    ]
+  },
+  {
+    "route": "/guides/customer-health-score",
+    "file": "src/app/guides/customer-health-score/page.tsx",
+    "lines": 158,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "#back-test",
+      "#principles",
+      "#questions",
+      "/customer-success-ai/health-score",
+      "/tools/health-score-back-tester"
+    ]
+  },
+  {
+    "route": "/guides/green-then-gone",
+    "file": "src/app/guides/green-then-gone/page.tsx",
+    "lines": 143,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/guides/customer-health-score",
+      "/tools/health-score-back-tester"
+    ]
+  },
+  {
+    "route": "/guides/renewal-risk",
+    "file": "src/app/guides/renewal-risk/page.tsx",
+    "lines": 157,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/customer-success-ai/churn-renewal-risk"
+    ]
+  },
+  {
+    "route": "/",
+    "file": "src/app/page.tsx",
+    "lines": 662,
+    "client": false,
+    "forms": [
+      "SampleBriefForm"
+    ],
+    "destinations": [
+      "#intelligence-demo",
+      "/about",
+      "/account-risk-snapshot",
+      "/compare/signal-layer-vs-cs-platform",
+      "/contact",
+      "/customer-success-ai",
+      "/guides/green-then-gone",
+      "/signals",
+      "/tools/health-score-back-tester"
+    ]
+  },
+  {
+    "route": "/platforms/gainsight",
+    "file": "src/app/platforms/gainsight/page.tsx",
+    "lines": 153,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/customer-success-ai/health-score"
+    ]
+  },
+  {
+    "route": "/privacy",
+    "file": "src/app/privacy/page.tsx",
+    "lines": 89,
+    "client": false,
+    "forms": [],
+    "destinations": []
+  },
+  {
+    "route": "/refund-policy",
+    "file": "src/app/refund-policy/page.tsx",
+    "lines": 72,
+    "client": false,
+    "forms": [],
+    "destinations": []
+  },
+  {
+    "route": "/signals/[source]",
+    "file": "src/app/signals/[source]/page.tsx",
+    "lines": 204,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/signals"
+    ]
+  },
+  {
+    "route": "/signals",
+    "file": "src/app/signals/page.tsx",
+    "lines": 270,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "#matrix",
+      "/account-risk-snapshot",
+      "/contact",
+      "/signals/salesforce"
+    ]
+  },
+  {
+    "route": "/signals/salesforce",
+    "file": "src/app/signals/salesforce/page.tsx",
+    "lines": 170,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/account-risk-snapshot",
+      "/signals"
+    ]
+  },
+  {
+    "route": "/tariff-intelligence",
+    "file": "src/app/tariff-intelligence/page.tsx",
+    "lines": 49,
+    "client": false,
+    "forms": [],
+    "destinations": [
+      "/",
+      "/signals"
+    ]
+  },
+  {
+    "route": "/terms",
+    "file": "src/app/terms/page.tsx",
+    "lines": 94,
+    "client": false,
+    "forms": [],
+    "destinations": []
+  },
+  {
+    "route": "/tools/health-score-back-tester",
+    "file": "src/app/tools/health-score-back-tester/page.tsx",
+    "lines": 129,
+    "client": false,
+    "forms": [
+      "HealthScoreBacktester"
+    ],
+    "destinations": [
+      "/customer-health-score-consultant"
+    ]
+  },
+  {
+    "route": "/tools/signal-stack-audit",
+    "file": "src/app/tools/signal-stack-audit/page.tsx",
+    "lines": 86,
+    "client": false,
+    "forms": [
+      "SignalStackAudit"
+    ],
+    "destinations": [
+      "/account-risk-snapshot"
+    ]
+  }
+]

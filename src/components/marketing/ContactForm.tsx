@@ -22,49 +22,49 @@ export default function ContactForm() {
       setEmail("");
       setName("");
       setSource("");
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form aria-busy={status === "loading"} onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <label htmlFor="name" className="sr-only">Name</label>
+        <label htmlFor="name" className="form-label">Name (required)</label>
         <input
           type="text"
-          id="name"
+          id="name" autoComplete="name"
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Your name"
           className="w-full px-4 py-3 rounded-md border focus:outline-none focus:ring-2"
-          style={{ 
-            backgroundColor: "white", 
+          style={{
+            backgroundColor: "white",
             borderColor: "var(--nw-line-light)",
             color: "var(--nw-ink)"
           }}
         />
       </div>
       <div>
-        <label htmlFor="email" className="sr-only">Email</label>
+        <label htmlFor="email" className="form-label">Email (required)</label>
         <input
           type="email"
-          id="email"
+          id="email" autoComplete="email"
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="name@company.com"
           className="w-full px-4 py-3 rounded-md border focus:outline-none focus:ring-2"
-          style={{ 
-            backgroundColor: "white", 
+          style={{
+            backgroundColor: "white",
             borderColor: "var(--nw-line-light)",
             color: "var(--nw-ink)"
           }}
         />
       </div>
       <div>
-        <label htmlFor="source" className="sr-only">How did you hear about us?</label>
+        <label htmlFor="source" className="form-label">How did you hear about us? (optional)</label>
         <input
           type="text"
           id="source"
@@ -72,8 +72,8 @@ export default function ContactForm() {
           onChange={(e) => setSource(e.target.value)}
           placeholder="How did you hear about us? (optional)"
           className="w-full px-4 py-3 rounded-md border focus:outline-none focus:ring-2"
-          style={{ 
-            backgroundColor: "white", 
+          style={{
+            backgroundColor: "white",
             borderColor: "var(--nw-line-light)",
             color: "var(--nw-ink)"
           }}
@@ -88,10 +88,10 @@ export default function ContactForm() {
         {status === "loading" ? "Sending..." : status === "success" ? "Sent!" : "Get the Guide"}
       </button>
       {status === "error" && (
-        <p className="text-red-500 text-sm text-center mt-2">Something went wrong. Please try again.</p>
+        <p role="alert" className="text-red-700 text-sm text-center mt-2">Something went wrong. Please try again.</p>
       )}
       {status === "success" && (
-        <p className="text-sm text-center mt-2" style={{ color: "var(--nw-ink)" }}>
+        <p role="status" className="text-sm text-center mt-2" style={{ color: "var(--nw-ink)" }}>
           Sent — the guide is on its way to your inbox.
         </p>
       )}

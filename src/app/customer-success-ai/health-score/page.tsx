@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Health Scores Your CSMs Will Trust | NexaWorks",
+  title: "Health Scores Your CSMs Will Trust",
   description:
     "Most health scores measure activity around the product, not value from it — which is why green accounts churn. NexaWorks designs and back-tests health scores against your actual renewal history, on the stack you already own.",
   alternates: { canonical: "/customer-success-ai/health-score" },
@@ -65,7 +65,7 @@ export default function HealthScorePage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Health Scores
           </p>

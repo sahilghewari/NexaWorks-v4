@@ -29,22 +29,26 @@ export default function SampleBriefForm() {
 
   if (status === "success") {
     return (
-      <p className="text-white text-lg max-w-md mx-auto">
+      <p role="status" className="text-white text-lg max-w-md mx-auto">
         You&apos;re in — we&apos;ll send the sample brief to {email}.
       </p>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 max-w-md mx-auto" aria-busy={status === "loading"}>
+      <label htmlFor="sample-email" className="text-sm text-left text-white">Work email (required)</label>
+      <div className="flex flex-col sm:flex-row gap-3">
       <input
+        id="sample-email"
+        autoComplete="email"
         type="email"
         placeholder="Work email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         disabled={status === "loading"}
-        className="flex-1 rounded-full px-5 py-3 text-sm text-white focus:outline-none focus:ring-1 disabled:opacity-60"
+        className="min-w-0 flex-1 rounded-full px-5 py-3 text-sm text-white focus:outline-none focus:ring-1 disabled:opacity-60"
         style={{
           backgroundColor: "var(--nw-dark-mid)",
           border: "1px solid var(--nw-line-dark)",
@@ -59,8 +63,9 @@ export default function SampleBriefForm() {
       >
         {status === "loading" ? "Sending..." : "Send sample"}
       </button>
+      </div>
       {status === "error" && (
-        <p className="text-sm w-full" style={{ color: "#f87171" }}>
+        <p role="alert" className="text-sm w-full" style={{ color: "#f87171" }}>
           Something went wrong — please try again.
         </p>
       )}
