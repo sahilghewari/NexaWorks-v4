@@ -1,33 +1,22 @@
 import Link from "next/link";
-import Image from "next/image";
-import {
-  AmbientLight,
-  LivingCard,
-  LivingExperience,
-  MotionToggle,
-  SignalFlow,
-} from "@/components/marketing/LivingExperience";
 import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  CheckCheck,
+  CornerDownRight,
   Database,
   FileText,
   Fingerprint,
-  GitBranch,
   Headphones,
   Layers3,
   LockKeyhole,
   MessageSquareText,
   Network,
   ShieldCheck,
-  TrendingDown,
 } from "lucide-react";
 import SampleBriefForm from "@/components/marketing/SampleBriefForm";
-import IntelligencePreview from "@/components/marketing/IntelligencePreview";
-import "./homepage.css";
-import "./living-home.css";
+import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
+import "./editorial-home.css";
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -86,522 +75,453 @@ const offers = [
 
 export default function Home() {
   return (
-    <LivingExperience>
-      <section className="eh-hero">
-        <div className="eh-material-art" aria-hidden="true">
-          <Image
-            src="/brand/signal-glass.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            preload
-            className="eh-material-image"
-          />
-        </div>
-        <AmbientLight />
-        <div className="eh-hero-grid" aria-hidden="true" />
-        <div className="container-nw eh-hero-content">
-          <div className="eh-hero-heading">
-            <div className="eh-eyebrow">
-              <span className="eh-status-dot" /> CUSTOMER INTELLIGENCE / B2B
-              SAAS
-            </div>
-            <h1>
-              Your next renewal
-              <br className="hidden md:block" /> shouldn’t be
-              <br className="hidden md:block" /> <span>a surprise.</span>
-            </h1>
-            <p>
-              Your CRM has the facts. Your calls have the context. We connect
-              the signals so your CS team knows which accounts need
-              attention—and why.
+    <div className="ed-home">
+      <section className="ed-hero" aria-labelledby="ed-hero-title">
+        <div className="ed-wrap ed-hero-layout">
+          <div className="ed-hero-copy">
+            <p className="ed-eyebrow">
+              <span /> CUSTOMER INTELLIGENCE, WITH PERSPECTIVE.
             </p>
-            <div className="eh-actions">
+            <h1 id="ed-hero-title">
+              See what
+              <br />
+              the numbers
+              <br />
+              <em>aren’t saying.</em>
+            </h1>
+            <p className="ed-hero-description">
+              Behind every renewal is a relationship. We connect the people
+              signals with the product signals, so your next conversation starts
+              with the whole story.
+            </p>
+            <div className="ed-actions">
               <Link
                 href="/account-risk-snapshot"
-                className="eh-button eh-button-mint"
+                className="ed-button ed-button-primary"
               >
-                Get the free Snapshot <ArrowUpRight size={17} />
+                Get your free Snapshot <ArrowUpRight size={17} />
               </Link>
-              <Link
-                href="#intelligence-demo"
-                className="eh-button eh-button-ghost"
-              >
-                Explore an example <ArrowRight size={17} />
+              <Link href="#intelligence-demo" className="ed-inline-link">
+                Explore the example <ArrowRight size={15} />
               </Link>
             </div>
-            <div className="eh-hero-assurance">
-              <span>
-                <Check size={13} /> Founder-led
-              </span>
-              <span>
-                <Check size={13} /> Fixed scope
-              </span>
-              <span>
-                <Check size={13} /> Your existing stack
-              </span>
+            <p className="ed-hero-note">
+              FOUNDER-LED. HUMAN-REVIEWED. EVIDENCE-ATTACHED.
+            </p>
+            <div className="ed-hero-margin">
+              <span />
+              <p>
+                A clearer view of your accounts.
+                <br />
+                Built on the tools you already own.
+              </p>
             </div>
           </div>
-          <div className="eh-hero-preview">
-            <div className="eh-preview-label">
-              <span>FROM FRAGMENTED SIGNALS TO A CLEAR NEXT STEP</span>
-              <MotionToggle />
+          <EditorialSnapshot />
+        </div>
+        <div className="ed-wrap">
+          <div className="ed-snapshot-strip">
+            <div>
+              <span className="ed-micro">THE FREE ACCOUNT RISK SNAPSHOT</span>
+              <h2>
+                Perspective first.
+                <br />
+                <em>Then the next move.</em>
+              </h2>
             </div>
-            <div className="eh-glass-signal" aria-hidden="true">
-              <span className="eh-signal-glyph">↗</span>
-              <div>
-                <small>FROM SIGNAL TO DECISION</small>
-                <strong>Context, reconstructed.</strong>
-              </div>
-              <span className="eh-glass-signal-sources">
-                CRM + calls + tickets
-              </span>
+            <div>
+              <strong>20 accounts.</strong>
+              <span>Prioritized, with the signals behind each.</span>
             </div>
-            <LivingCard className="eh-glass-preview">
-              <IntelligencePreview />
-            </LivingCard>
-            <p className="eh-preview-footnote">
-              <Fingerprint size={14} /> A preview of the intelligence we
-              deliver. Built around your systems.
-            </p>
+            <div>
+              <strong>5 business days.</strong>
+              <span>From your data to a clear readout.</span>
+            </div>
+            <Link
+              href="/account-risk-snapshot"
+              aria-label="Explore the free Account Risk Snapshot"
+            >
+              <ArrowUpRight size={28} strokeWidth={1} />
+            </Link>
           </div>
         </div>
-        <div className="container-nw eh-stack">
+      </section>
+      <section
+        className="ed-sources-strip"
+        aria-label="Examples of source systems"
+      >
+        <div className="ed-wrap">
           <p>
             CONTEXT FROM THE TOOLS
             <br />
             YOU ALREADY OWN
           </p>
           <div>
-            <span>Salesforce</span>
-            <span>HubSpot</span>
-            <span>Gong</span>
-            <span>Zendesk</span>
-            <span>Slack</span>
-            <span>Product data</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="eh-section eh-intelligence">
-        <div className="container-nw">
-          <div className="eh-section-heading">
-            <div>
-              <p className="eh-eyebrow">THE MISSING CONTEXT</p>
-              <h2>
-                One account.
-                <br />
-                The whole story.
-              </h2>
-            </div>
-            <p>
-              A green health score can hide a quiet champion, a frustrated team,
-              or an unresolved issue. See the relationship between the signals,
-              with evidence behind every recommendation.
-            </p>
-          </div>
-          <div className="eh-evidence-grid">
-            <LivingCard className="eh-story-card">
-              <div className="eh-card-top">
-                <span>
-                  <GitBranch size={16} /> ACCOUNT TIMELINE
-                </span>
-                <span className="eh-mini-tag">ILLUSTRATIVE</span>
-              </div>
-              <div className="eh-timeline">
-                <div>
-                  <span className="eh-time-dot" />
-                  <small>DAY −47 · CALLS</small>
-                  <h3>The champion goes quiet.</h3>
-                  <p>
-                    Weekly participation stops. The account still looks healthy.
-                  </p>
-                </div>
-                <div>
-                  <span className="eh-time-dot" />
-                  <small>DAY −21 · PRODUCT</small>
-                  <h3>Adoption begins to fall.</h3>
-                  <p>Two power users leave. Usage drops across the team.</p>
-                </div>
-                <div>
-                  <span className="eh-time-dot eh-time-risk" />
-                  <small>DAY −04 · SUPPORT</small>
-                  <h3>A critical issue stays open.</h3>
-                  <p>
-                    Separate events become a commercial risk worth reviewing.
-                  </p>
-                </div>
-              </div>
-              <div className="eh-story-bottom">
-                <TrendingDown size={17} />
-                <span>Connect the pattern before the post-mortem.</span>
-              </div>
-            </LivingCard>
-            <LivingCard className="eh-brief-card">
-              <div className="eh-card-top">
-                <span>
-                  <FileText size={16} /> THE INTELLIGENCE BRIEF
-                </span>
-                <span className="eh-mini-tag">EXAMPLE OUTPUT</span>
-              </div>
-              <div className="eh-brief-header">
-                <div className="eh-brief-avatar">M</div>
-                <div>
-                  <small>MERIDIAN / STRATEGIC ACCOUNT</small>
-                  <h3>What your team needs to know.</h3>
-                </div>
-              </div>
-              <div className="eh-brief-section">
-                <span>01</span>
-                <div>
-                  <h4>What changed</h4>
-                  <p>
-                    Champion disengagement, declining usage, and an unresolved
-                    P1 ticket.
-                  </p>
-                </div>
-              </div>
-              <div className="eh-brief-section">
-                <span>02</span>
-                <div>
-                  <h4>Why it matters</h4>
-                  <p>
-                    The renewal is 60 days away. Engagement and value both need
-                    validation.
-                  </p>
-                </div>
-              </div>
-              <div className="eh-evidence-chips">
-                <span>
-                  <MessageSquareText size={12} /> Call history
-                </span>
-                <span>
-                  <Database size={12} /> Usage export
-                </span>
-                <span>
-                  <Headphones size={12} /> Support ticket
-                </span>
-              </div>
-              <div className="eh-brief-next">
-                <CheckCheck size={20} />
-                <div>
-                  <small>HUMAN-REVIEWED NEXT STEP</small>
-                  <p>
-                    Arrange an executive alignment call. Confirm the renewal
-                    owner and a plan for the open issue.
-                  </p>
-                </div>
-              </div>
-            </LivingCard>
-          </div>
-          <div className="eh-under-grid">
-            <span>
-              <ShieldCheck size={18} /> Evidence-backed recommendations
-            </span>
-            <span>
-              <LockKeyhole size={18} /> Read-only access or exports
-            </span>
-            <span>
-              <CheckCheck size={18} /> Your team reviews and acts
-            </span>
-          </div>
-        </div>
-      </section>
-
-      <section id="method" className="eh-section eh-method">
-        <div className="container-nw">
-          <div className="eh-section-heading">
-            <div>
-              <p className="eh-eyebrow">THE SIGNAL LAYER</p>
-              <h2>
-                Your stack stays.
-                <br />
-                The blind spots go.
-              </h2>
-            </div>
-            <div>
-              <p>
-                We work alongside your CS platform. A scoped, human-reviewed
-                workflow brings the context together and sends it back where
-                your team works.
-              </p>
-              <Link href="/customer-success-ai" className="eh-text-link">
-                Inside the approach <ArrowUpRight size={17} />
-              </Link>
-            </div>
-          </div>
-          <div className="eh-flow">
-            <SignalFlow />
-            <div className="eh-flow-sources">
-              <span className="eh-flow-caption">01 / EXISTING SOURCES</span>
-              {[
-                {
-                  icon: Database,
-                  title: "CRM & product",
-                  detail: "Accounts, renewals, usage",
-                },
-                {
-                  icon: MessageSquareText,
-                  title: "Calls & conversations",
-                  detail: "Champions, sentiment, goals",
-                },
-                {
-                  icon: Headphones,
-                  title: "Support & tickets",
-                  detail: "Friction, blockers, escalations",
-                },
-              ].map((item) => (
-                <div key={item.title}>
-                  <item.icon size={19} />
-                  <span>
-                    <strong>{item.title}</strong>
-                    <small>{item.detail}</small>
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="eh-flow-connector" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="eh-flow-engine">
-              <div className="eh-engine-mark">
-                <Network size={38} strokeWidth={1} />
-              </div>
-              <span className="eh-flow-caption">02 / NEXAWORKS</span>
-              <h3>Context, connected.</h3>
-              <p>
-                Extract signals.
-                <br />
-                Attach evidence.
-                <br />
-                Review with a human.
-              </p>
-              <div className="eh-engine-footer">
-                <span className="eh-status-dot" /> INTELLIGENCE WORKFLOW
-              </div>
-            </div>
-            <div className="eh-flow-arrow" aria-hidden="true">
-              <ArrowRight size={22} />
-            </div>
-            <div className="eh-flow-output">
-              <span className="eh-flow-caption">
-                03 / WHERE YOUR TEAM WORKS
-              </span>
-              <div>
-                <FileText size={23} />
-                <h3>Ready for the next conversation.</h3>
-                <p>
-                  Pre-call briefs. Weekly account priorities. Renewal and
-                  expansion signals.
-                </p>
-                <span className="eh-destination">
-                  Slack <span>·</span> Email <span>·</span> Your workflow
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="eh-delivery-steps">
             {[
-              {
-                num: "01",
-                title: "Diagnose",
-                time: "Days 1–2",
-                text: "Map the workflow and missing context.",
-              },
-              {
-                num: "02",
-                title: "Connect",
-                time: "Days 3–5",
-                text: "Agree read-only access to 3–5 systems.",
-              },
-              {
-                num: "03",
-                title: "Extract",
-                time: "Weeks 2–5",
-                text: "Deliver briefs and account signals.",
-              },
-              {
-                num: "04",
-                title: "Review",
-                time: "Week 6",
-                text: "Assess results and define the next step.",
-              },
-            ].map((step) => (
-              <div key={step.num}>
-                <small>
-                  {step.num} <span>{step.time}</span>
-                </small>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </div>
+              "Salesforce",
+              "HubSpot",
+              "Gong",
+              "Zendesk",
+              "Slack",
+              "Product data",
+            ].map((name) => (
+              <span key={name}>{name}</span>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="services" className="eh-snapshot-section">
-        <div className="container-nw eh-snapshot-layout">
+      <section className="ed-section ed-perspective" id="method">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">01 / THE MISSING CONTEXT</p>
+            <span className="ed-micro">LOOK BETWEEN THE METRICS.</span>
+          </div>
+          <div className="ed-perspective-intro">
+            <h2>
+              A healthy score.
+              <br />
+              An incomplete <em>story.</em>
+            </h2>
+            <div>
+              <p>
+                The score is green. But the champion stopped showing up,
+                adoption is falling, and a critical issue is still open.
+              </p>
+              <p>
+                Each system holds a piece. We bring the pieces together so your
+                team can see what needs attention—and why.
+              </p>
+              <Link href="/guides/green-then-gone" className="ed-inline-link">
+                Read: green, then gone <ArrowUpRight size={16} />
+              </Link>
+            </div>
+          </div>
+          <div className="ed-story-board">
+            <div className="ed-story-score">
+              <div className="ed-story-card-label">
+                <span>THE DASHBOARD VIEW</span>
+                <span>ILLUSTRATIVE</span>
+              </div>
+              <div className="ed-score-ring">
+                <svg viewBox="0 0 170 170" aria-hidden="true">
+                  <circle
+                    cx="85"
+                    cy="85"
+                    r="72"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeOpacity=".12"
+                    strokeWidth="2"
+                  />
+                  <circle
+                    cx="85"
+                    cy="85"
+                    r="72"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeDasharray="371 452"
+                    transform="rotate(-90 85 85)"
+                  />
+                </svg>
+                <div>
+                  <strong>
+                    82<span>/100</span>
+                  </strong>
+                  <span>
+                    <i />
+                    Healthy
+                  </span>
+                </div>
+              </div>
+              <p>
+                Activity looks good.
+                <br />
+                The relationship needs a closer look.
+              </p>
+              <span className="ed-micro">ONE SCORE ≠ THE WHOLE ACCOUNT</span>
+            </div>
+            <div className="ed-story-timeline">
+              <div className="ed-story-card-label">
+                <span>THE STORY BETWEEN THE SYSTEMS</span>
+                <MessageSquareText size={16} />
+              </div>
+              {[
+                {
+                  day: "−47",
+                  source: "CALLS",
+                  title: "The champion goes quiet.",
+                  text: "A familiar voice disappears from the conversation.",
+                },
+                {
+                  day: "−21",
+                  source: "PRODUCT",
+                  title: "Adoption begins to fall.",
+                  text: "Fewer people are getting value from the product.",
+                },
+                {
+                  day: "−04",
+                  source: "SUPPORT",
+                  title: "A critical issue stays open.",
+                  text: "An unresolved blocker becomes a commercial concern.",
+                },
+              ].map((item) => (
+                <div className="ed-timeline-event" key={item.day}>
+                  <span className="ed-timeline-day">
+                    {item.day}
+                    <small>DAYS</small>
+                  </span>
+                  <div>
+                    <small>{item.source}</small>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="ed-story-insight">
+                <CornerDownRight size={19} />
+                <p>
+                  The risk is in the pattern.
+                  <br />
+                  <strong>The next step is a conversation.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="ed-section ed-approach">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">02 / HOW WE WORK</p>
+            <span className="ed-micro">YOUR STACK. A CLEARER PICTURE.</span>
+          </div>
+          <div className="ed-approach-heading">
+            <h2>
+              Connect the context.
+              <br />
+              <em>Keep your stack.</em>
+            </h2>
+            <p>
+              A scoped intelligence service alongside your CS platform. Evidence
+              comes together. Your people stay in control.
+            </p>
+          </div>
+          <div className="ed-method-board">
+            <div className="ed-method-sources">
+              <span className="ed-micro">01 / YOUR EXISTING SOURCES</span>
+              {[
+                {
+                  icon: Database,
+                  title: "CRM & product",
+                  detail: "Accounts, renewals, adoption",
+                },
+                {
+                  icon: MessageSquareText,
+                  title: "Calls & conversations",
+                  detail: "Champions, goals, sentiment",
+                },
+                {
+                  icon: Headphones,
+                  title: "Support & tickets",
+                  detail: "Blockers, friction, escalations",
+                },
+              ].map((source) => (
+                <div key={source.title}>
+                  <source.icon size={20} strokeWidth={1.3} />
+                  <div>
+                    <h3>{source.title}</h3>
+                    <p>{source.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="ed-method-center">
+              <span className="ed-method-line" aria-hidden="true" />
+              <div className="ed-method-mark">
+                <Network size={43} strokeWidth={1} />
+              </div>
+              <span className="ed-micro">02 / CONNECT & REVIEW</span>
+              <p>
+                Extract the signals.
+                <br />
+                Attach the evidence.
+                <br />
+                Review with a human.
+              </p>
+            </div>
+            <div className="ed-method-output">
+              <span className="ed-micro">03 / A CLEAR NEXT STEP</span>
+              <FileText size={28} strokeWidth={1} />
+              <h3>
+                Ready for the
+                <br />
+                next conversation.
+              </h3>
+              <p>
+                Account briefs. Weekly priorities. Renewal and expansion
+                signals.
+              </p>
+              <span className="ed-method-destination">
+                Slack / Email / Your workflow
+              </span>
+            </div>
+          </div>
+          <div className="ed-method-assurance">
+            <span>
+              <LockKeyhole size={16} /> Read-only access or exports
+            </span>
+            <span>
+              <Fingerprint size={16} /> Source-backed context
+            </span>
+            <span>
+              <ShieldCheck size={16} /> Your team reviews and acts
+            </span>
+          </div>
+          <Link href="/customer-success-ai" className="ed-inline-link">
+            Inside the approach <ArrowUpRight size={17} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="ed-section ed-offer" id="services">
+        <div className="ed-wrap ed-offer-layout">
           <div>
-            <p className="eh-eyebrow">PROOF BEFORE PAYMENT</p>
+            <p className="ed-eyebrow">03 / A CLEARER PLACE TO BEGIN</p>
             <h2>
               Start with the
               <br />
               accounts you
               <br />
-              <span>can’t afford to miss.</span>
+              <em>can’t afford to miss.</em>
             </h2>
-            <p>
-              The free Account Risk Snapshot ranks your 20 riskiest accounts,
-              shows the signals behind each one, and gives your team a clear
-              next step.
+            <p className="ed-section-description">
+              Your free Account Risk Snapshot: the 20 accounts that need
+              attention, the evidence behind each, and a readout to decide what
+              happens next.
             </p>
-            <div className="eh-actions">
-              <Link
-                href="/account-risk-snapshot"
-                className="eh-button eh-button-mint"
-              >
-                Request your free Snapshot <ArrowUpRight size={17} />
-              </Link>
-            </div>
-            <p className="eh-snapshot-qualification">
-              B2B SaaS · 100+ employees · At least two data sources
+            <Link
+              href="/account-risk-snapshot"
+              className="ed-button ed-button-primary"
+            >
+              Request your free Snapshot <ArrowUpRight size={17} />
+            </Link>
+            <p className="ed-offer-fit">
+              For B2B SaaS · 100+ employees · At least two data sources
             </p>
           </div>
-          <LivingCard className="eh-snapshot-deliverable">
-            <div className="eh-card-top">
-              <span>
-                <Layers3 size={16} /> ACCOUNT RISK SNAPSHOT
-              </span>
-              <span className="eh-mini-tag">EXAMPLE</span>
+          <div className="ed-offer-paper">
+            <div className="ed-paper-fold" aria-hidden="true" />
+            <div className="ed-story-card-label">
+              <Layers3 size={20} />
+              <span>YOUR SNAPSHOT / AT A GLANCE</span>
             </div>
-            <div className="eh-snapshot-numbers">
-              <div>
-                <strong>20</strong>
-                <span>accounts, prioritized</span>
-              </div>
-              <div>
-                <strong>5</strong>
-                <span>business days</span>
-              </div>
-            </div>
-            <div className="eh-ranked-accounts">
-              {[
-                {
-                  rank: "01",
-                  name: "Meridian",
-                  reason: "Champion disengagement",
-                  type: "risk",
-                  score: "Review now",
-                },
-                {
-                  rank: "02",
-                  name: "Atlas",
-                  reason: "Onboarding stalled",
-                  type: "risk",
-                  score: "Review now",
-                },
-                {
-                  rank: "03",
-                  name: "Solstice",
-                  reason: "Sponsor change",
-                  type: "watch",
-                  score: "Investigate",
-                },
-              ].map((item) => (
-                <div key={item.rank}>
-                  <span>{item.rank}</span>
-                  <div>
-                    <strong>{item.name}</strong>
-                    <small>{item.reason}</small>
-                  </div>
-                  <span className={`eh-rank-status ${item.type}`}>
-                    {item.score}
-                  </span>
+            <h3>
+              A point of view.
+              <br />
+              <em>Backed by evidence.</em>
+            </h3>
+            {[
+              {
+                title: "A ranked attention list",
+                text: "Your 20 riskiest accounts, with 3–5 signals behind each.",
+              },
+              {
+                title: "The context that matters",
+                text: "People and product signals across up to three sources.",
+              },
+              {
+                title: "A conversation about action",
+                text: "A 45-minute readout, five business days after data access.",
+              },
+            ].map((item, i) => (
+              <div className="ed-deliverable-row" key={item.title}>
+                <span>0{i + 1}</span>
+                <div>
+                  <strong>{item.title}</strong>
+                  <p>{item.text}</p>
                 </div>
-              ))}
+                <Check size={17} />
+              </div>
+            ))}
+            <div className="ed-paper-bottom">
+              <span>No contract. No platform to buy.</span>
+              <span>Four Snapshots / month</span>
             </div>
-            <div className="eh-snapshot-readout">
-              <Check size={16} /> Includes a 45-minute readout with next
-              actions.
-            </div>
-            <small className="eh-snapshot-disclosure">
-              Illustrative accounts. No contract. Four Snapshots per month.
-            </small>
-          </LivingCard>
+          </div>
         </div>
       </section>
 
-      <section id="pricing" className="eh-section eh-pricing">
-        <div className="container-nw">
-          <div className="eh-section-heading">
-            <div>
-              <p className="eh-eyebrow">A CLEAR PATH FORWARD</p>
-              <h2>
-                Start small.
-                <br />
-                Prove it. Then build.
-              </h2>
-            </div>
+      <section className="ed-section ed-engagements" id="pricing">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">04 / THE ENGAGEMENTS</p>
+            <span className="ed-micro">
+              FIXED SCOPE. A SHARED DEFINITION OF SUCCESS.
+            </span>
+          </div>
+          <div className="ed-engagements-heading">
+            <h2>
+              Start small.
+              <br />
+              <em>Build on the evidence.</em>
+            </h2>
             <p>
-              Fixed-scope engagements around a specific commercial question.
-              Work directly with the founder, with scope and price agreed before
-              the work starts.
+              Work directly with the founder. Agree the question, the scope and
+              the price before the work begins.
             </p>
           </div>
-          <div className="eh-price-grid">
+          <div className="ed-price-grid">
             {offers.map((offer) => (
-              <LivingCard
+              <article
                 key={offer.name}
-                className={`eh-price-card ${offer.featured ? "is-featured" : ""}`}
+                className={`ed-price-card ${offer.featured ? "is-featured" : ""}`}
               >
-                <p className="eh-eyebrow">{offer.label}</p>
+                <div className="ed-price-top">
+                  <span className="ed-micro">{offer.label}</span>
+                  {offer.featured && (
+                    <span className="ed-price-badge">PROVE THE WORKFLOW</span>
+                  )}
+                </div>
                 <h3>{offer.name}</h3>
-                <p className="eh-price-description">{offer.description}</p>
-                <div className="eh-price">{offer.price}</div>
-                <p className="eh-price-time">{offer.timing}</p>
+                <p>{offer.description}</p>
+                <div className="ed-price-value">{offer.price}</div>
+                <span className="ed-price-timing">{offer.timing}</span>
                 <ul>
                   {offer.items.map((item) => (
                     <li key={item}>
-                      <Check size={15} />
+                      <Check size={14} />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <p className="eh-price-note">{offer.note}</p>
-                <Link
-                  href={offer.href}
-                  className={`eh-button ${offer.featured ? "eh-button-dark" : "eh-button-outline"}`}
-                >
+                <small className="ed-price-note">{offer.note}</small>
+                <Link href={offer.href} className="ed-button ed-button-outline">
                   {offer.cta}
                   <ArrowUpRight size={16} />
                 </Link>
-              </LivingCard>
+              </article>
             ))}
           </div>
-          <p className="eh-pricing-fine">
+          <p className="ed-pricing-fine">
             Pilot founding-client pricing is offered in exchange for feedback
             and permission for a measured case study. Final price depends on
-            sources, accounts, and integrations.
+            sources, accounts and integrations.
           </p>
-          <div className="eh-alternative">
+          <div className="ed-audit-row">
             <div>
-              <span className="eh-eyebrow">ANOTHER WAY TO START</span>
+              <span className="ed-micro">ANOTHER WAY TO START</span>
               <p>
-                <strong>Signal Stack Audit</strong> · $1,500 · 3 business days
+                Signal Stack Audit <span>· $1,500 · 3 business days</span>
               </p>
-              <small>
-                A written report on the signals you capture, your blind spots,
-                and the three highest-leverage fixes.
-              </small>
             </div>
-            <Link href="/contact" className="eh-text-link">
-              Discuss an audit
-              <ArrowUpRight size={16} />
+            <Link href="/contact" className="ed-inline-link">
+              Discuss an audit <ArrowUpRight size={17} />
             </Link>
           </div>
-          <details className="eh-follow-on">
+          <details className="ed-follow-on">
             <summary>Follow-on engagements & regional pricing</summary>
             <p>
               Renewal Risk & Expansion Intelligence ($30K–$75K) ·
@@ -616,136 +536,127 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="eh-section eh-resources">
-        <div className="container-nw">
-          <div className="eh-section-heading">
-            <div>
-              <p className="eh-eyebrow">EXPLORE THE THINKING</p>
-              <h2>
-                Make your next
-                <br />
-                CS decision clearer.
-              </h2>
-            </div>
-            <Link href="/signals" className="eh-text-link">
-              Browse the Signal Library <ArrowUpRight size={17} />
+      <section className="ed-section ed-reading">
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">05 / THE READING ROOM</p>
+            <Link href="/signals" className="ed-inline-link">
+              Browse the Signal Library <ArrowUpRight size={16} />
             </Link>
           </div>
-          <div className="eh-resource-grid">
-            <Link href="/guides/customer-health-score" className="eh-resource">
-              <div className="eh-resource-art eh-score-art" aria-hidden="true">
+          <h2>
+            A little more
+            <br />
+            <em>perspective.</em>
+          </h2>
+          <div className="ed-reading-grid">
+            <Link href="/guides/green-then-gone" className="ed-reading-card">
+              <div
+                className="ed-reading-art ed-reading-score"
+                aria-hidden="true"
+              >
+                <span>THE HEALTH SCORE PARADOX</span>
                 <div>
-                  <span>HEALTH SCORE</span>
-                  <strong>
-                    82<span>/100</span>
-                  </strong>
-                  <small>Healthy?</small>
+                  <strong>82</strong>
+                  <i>healthy?</i>
                 </div>
-                <div className="eh-art-flags">
-                  <span>Champion quiet</span>
-                  <span>Usage declining</span>
-                  <span>Evidence missing</span>
-                </div>
+                <small>GREEN, THEN GONE.</small>
               </div>
-              <small>GUIDE / HEALTH SCORES</small>
+              <span className="ed-micro">FIELD NOTES / RENEWAL RISK</span>
               <h3>When green accounts churn.</h3>
-              <p>
-                How to test whether your health score sees the risk in time.
-              </p>
-              <span className="eh-resource-arrow">
-                <ArrowUpRight size={20} />
-              </span>
+              <p>What the dashboard sees—and what it can miss.</p>
+              <ArrowUpRight size={22} className="ed-reading-arrow" />
             </Link>
             <Link
               href="/tools/health-score-back-tester"
-              className="eh-resource"
+              className="ed-reading-card"
             >
-              <div className="eh-resource-art eh-test-art" aria-hidden="true">
-                <div className="eh-test-bars">
-                  {[35, 58, 40, 74, 52, 90, 66, 100, 79].map((height, i) => (
-                    <span key={i} style={{ height: `${height}%` }} />
+              <div
+                className="ed-reading-art ed-reading-test"
+                aria-hidden="true"
+              >
+                <span>A SCORE IS A HYPOTHESIS.</span>
+                <div>
+                  {[40, 67, 48, 82, 61, 94, 72, 100, 85].map((height, i) => (
+                    <i key={i} style={{ height: `${height}%` }} />
                   ))}
                 </div>
-                <span className="eh-test-label">
-                  YOUR SCORE × REAL OUTCOMES
-                </span>
+                <small>TEST IT AGAINST THE OUTCOME.</small>
               </div>
-              <small>FREE TOOL / BACK-TESTER</small>
+              <span className="ed-micro">FREE TOOL / BACK-TESTER</span>
               <h3>Put your score to the test.</h3>
               <p>
                 Check catch rates and false alarms. Your data stays in your
                 browser.
               </p>
-              <span className="eh-resource-arrow">
-                <ArrowUpRight size={20} />
-              </span>
+              <ArrowUpRight size={22} className="ed-reading-arrow" />
             </Link>
-            <Link href="/customer-success-ai" className="eh-resource">
+            <Link
+              href="/compare/signal-layer-vs-cs-platform"
+              className="ed-reading-card"
+            >
               <div
-                className="eh-resource-art eh-network-art"
+                className="ed-reading-art ed-reading-context"
                 aria-hidden="true"
               >
-                <div className="eh-network-nodes">
-                  <Database />
-                  <MessageSquareText />
-                  <Headphones />
+                <span>THE SPACE BETWEEN THE TOOLS.</span>
+                <div>
+                  <Database size={29} strokeWidth={1} />
+                  <i />
+                  <Network size={43} strokeWidth={1} />
+                  <i />
+                  <FileText size={29} strokeWidth={1} />
                 </div>
-                <span className="eh-network-line" />
-                <div className="eh-network-core">
-                  <Network size={30} />
-                </div>
-                <span className="eh-network-line" />
-                <FileText size={30} />
+                <small>CONTEXT, CONNECTED.</small>
               </div>
-              <small>APPROACH / CUSTOMER SUCCESS AI</small>
-              <h3>The context between the tools.</h3>
-              <p>
-                See how a signal layer works alongside your existing CS
-                platform.
-              </p>
-              <span className="eh-resource-arrow">
-                <ArrowUpRight size={20} />
+              <span className="ed-micro">
+                PERSPECTIVE / YOUR EXISTING STACK
               </span>
+              <h3>A layer, alongside your platform.</h3>
+              <p>
+                Where customer intelligence fits in the tools you already own.
+              </p>
+              <ArrowUpRight size={22} className="ed-reading-arrow" />
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="eh-section eh-sample-section" id="sample-brief">
-        <div className="container-nw eh-sample-layout">
+      <section className="ed-section ed-founder">
+        <div className="ed-wrap ed-founder-layout">
           <div>
-            <p className="eh-eyebrow">TAKE A CLOSER LOOK</p>
+            <p className="ed-eyebrow">A HUMAN AT THE OTHER END.</p>
             <h2>
               Good intelligence
               <br />
-              speaks for itself.
+              comes with
+              <br />
+              <em>accountability.</em>
             </h2>
             <p>
-              Get an illustrative meeting brief in your inbox. See how sources,
-              signals, and recommended actions come together.
+              Work directly with Sahil, the founder of NexaWorks. A clear scope,
+              evidence you can question, and a person who owns the work.
             </p>
-            <Link href="/about" className="eh-text-link">
-              Meet the founder <ArrowUpRight size={17} />
+            <Link href="/about" className="ed-inline-link">
+              Meet the founder <ArrowUpRight size={16} />
             </Link>
           </div>
-          <LivingCard className="eh-sample-form">
-            <div className="eh-sample-icon">
-              <FileText size={28} strokeWidth={1.4} />
-            </div>
-            <h3>See a sample meeting brief.</h3>
-            <p>One example. A clearer picture of what your team receives.</p>
+          <div className="ed-brief-form">
+            <span className="ed-micro">TAKE A CLOSER LOOK</span>
+            <FileText size={28} strokeWidth={1} />
+            <h3>
+              Let the work
+              <br />
+              <em>speak for itself.</em>
+            </h3>
+            <p>
+              Get an illustrative meeting brief in your inbox. See how sources,
+              signals and next steps come together.
+            </p>
             <SampleBriefForm />
-          </LivingCard>
+          </div>
         </div>
       </section>
-      <div className="eh-mobile-cta">
-        <Link
-          href="/account-risk-snapshot"
-          className="eh-button eh-button-dark"
-        >
-          Get the free Snapshot <ArrowUpRight size={16} />
-        </Link>
-      </div>
-    </LivingExperience>
+    </div>
   );
 }

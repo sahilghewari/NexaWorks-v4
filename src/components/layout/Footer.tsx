@@ -6,7 +6,7 @@ export default function Footer({ enterprise = false }: { enterprise?: boolean })
   const year = new Date().getFullYear();
 
   return (
-    <footer className={`section-dark ${enterprise ? "eh-enterprise-footer" : ""}`} style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
+    <footer className={`section-dark ${enterprise ? "nw-editorial-footer" : ""}`} style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
       {/* Giant closing CTA */}
       <div className="container-nw pt-20 pb-16 md:pt-32 md:pb-24">
         <h2 className="text-white mb-8 max-w-4xl">

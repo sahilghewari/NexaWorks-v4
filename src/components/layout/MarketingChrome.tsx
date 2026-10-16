@@ -13,17 +13,21 @@ export default function MarketingChrome({
   if (pathname === "/ai") return <>{children}</>;
   return (
     <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] bg-white px-4 py-3"
+      <div
+        className={pathname === "/" ? "nw-editorial-site contents" : "contents"}
       >
-        Skip to content
-      </a>
-      <Navbar enterprise={pathname === "/"} />
-      <main id="main-content" tabIndex={-1} className="flex-1">
-        {children}
-      </main>
-      <Footer enterprise={pathname === "/"} />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] bg-white px-4 py-3"
+        >
+          Skip to content
+        </a>
+        <Navbar enterprise={pathname === "/"} />
+        <main id="main-content" tabIndex={-1} className="flex-1">
+          {children}
+        </main>
+        <Footer enterprise={pathname === "/"} />
+      </div>
     </>
   );
 }

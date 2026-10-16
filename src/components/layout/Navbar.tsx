@@ -40,9 +40,9 @@ export default function Navbar({ enterprise = false }: { enterprise?: boolean })
   return (
     <>
     <header
-      className="sticky top-0 z-50 w-full"
+      className={`sticky top-0 z-50 w-full ${enterprise ? "ed-site-header" : ""}`}
       style={{
-        backgroundColor: enterprise ? "rgba(250, 252, 248, 0.86)" : "var(--nw-canvas)",
+        backgroundColor: enterprise ? "rgba(244, 240, 232, 0.92)" : "var(--nw-canvas)",
         backdropFilter: enterprise ? "blur(16px)" : undefined,
         WebkitBackdropFilter: enterprise ? "blur(16px)" : undefined,
         borderBottom: "1px solid var(--nw-line-light)",
@@ -50,10 +50,10 @@ export default function Navbar({ enterprise = false }: { enterprise?: boolean })
     >
       <div className="container-nw flex h-14 items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 text-lg font-semibold tracking-tight" style={{ color: "var(--nw-ink)", fontFamily: "var(--font-display)" }}>
-          <div className="flex items-center justify-center rounded-lg shadow-sm" style={{ backgroundColor: "#0A0A0C", width: "32px", height: "32px", border: "1px solid rgba(255,255,255,0.1)" }}>
+        <Link href="/" className={`flex items-center gap-2.5 text-lg font-semibold tracking-tight ${enterprise ? "ed-wordmark" : ""}`} style={{ color: "var(--nw-ink)", fontFamily: "var(--font-display)" }}>
+          {!enterprise && <div className="flex items-center justify-center rounded-lg shadow-sm" style={{ backgroundColor: "#0A0A0C", width: "32px", height: "32px", border: "1px solid rgba(255,255,255,0.1)" }}>
             <Image src="/logo.png" alt="NexaWorks" width={26} height={26} style={{ objectFit: "contain" }} />
-          </div>
+          </div>}
           nexaworks
         </Link>
 
