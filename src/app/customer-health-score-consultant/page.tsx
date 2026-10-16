@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Search, FlaskConical, Rocket } from "lucide-react";
 
 export const metadata = {
-  title: "Customer Health Score Consultant for B2B SaaS | NexaWorks",
+  title: "Customer Health Score Consultant for B2B SaaS",
   description:
     "Your health score misses half your churn. NexaWorks designs and back-tests customer health scores on the stack you already own — Salesforce, Gainsight, Gong, Zendesk — so your CSMs trust the number again.",
   alternates: { canonical: "/customer-health-score-consultant" },

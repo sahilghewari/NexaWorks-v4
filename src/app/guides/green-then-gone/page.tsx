@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "Why 'Healthy' Accounts Churn | NexaWorks",
+  title: "Why 'Healthy' Accounts Churn",
   description:
     "Green health score. Strong adoption. Plenty of engagement. The account churned anyway. A post-mortem framework for the churns your dashboards said were impossible.",
   alternates: { canonical: "/guides/green-then-gone" },

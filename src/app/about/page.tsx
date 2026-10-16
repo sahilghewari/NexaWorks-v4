@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "About the Founder | NexaWorks",
+  title: "About the Founder",
   description: "Learn about the founder behind NexaWorks and our philosophy on customer intelligence.",
   alternates: { canonical: "/about" },
 };

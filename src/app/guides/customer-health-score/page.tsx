@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Customer Health Scores That Predict Churn — and How to Test Yours | NexaWorks",
+  title: "Customer Health Scores That Predict Churn — and How to Test Yours",
   description:
     "What separates health scores that predict churn from the ones that decorate dashboards: design principles from public models, the back-testing method, and how to test your own score in 30 seconds.",
   alternates: { canonical: "/guides/customer-health-score" },

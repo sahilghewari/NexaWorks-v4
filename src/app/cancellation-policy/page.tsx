@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Cancellation Policy | NexaWorks",
+  title: "Cancellation Policy",
   description:
     "NexaWorks cancellation policy: paid engagements cannot be cancelled for a refund once payment is completed.",
   alternates: { canonical: "/cancellation-policy" },

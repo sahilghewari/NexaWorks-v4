@@ -90,8 +90,6 @@ export default function HealthScoreBacktester() {
   const [ran, setRan] = useState(false);
   const [error, setError] = useState('');
   const [rows, setRows] = useState<ParsedRow[]>([]);
-  const [colMap, setColMap] = useState({ account: -1, score: -1, status: -1 });
-  const [headers, setHeaders] = useState<string[]>([]);
   const [threshold, setThreshold] = useState(50);
 
   const loadFile = (f: File) => {
@@ -139,8 +137,6 @@ export default function HealthScoreBacktester() {
       setError(`${skipped.length} row(s) could not be read and too few valid rows remain (need at least 5).`);
       return;
     }
-    setHeaders(hdrs);
-    setColMap({ account: a, score: s, status: st });
     setRows(parsed);
     setRan(true);
   };
@@ -191,7 +187,9 @@ export default function HealthScoreBacktester() {
             stood ~90 days before each outcome. Everything runs in your browser — your data
             never leaves this page.
           </p>
+          <label htmlFor="health-history" className="block text-sm text-white mb-2">Score history CSV</label>
           <textarea
+            id="health-history"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder={'account_id,health_score,status\nacme-corp,72,active\ninitech,34,churned\numbrella,81,active'}

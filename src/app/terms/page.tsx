@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Terms of Service | NexaWorks",
+  title: "Terms of Service",
   description:
     "The terms under which NexaWorks provides its AI visibility audits, snapshots, and customer intelligence consulting services.",
   alternates: { canonical: "/terms" },

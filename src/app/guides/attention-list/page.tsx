@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "From Dashboards to Attention Lists | NexaWorks",
+  title: "From Dashboards to Attention Lists",
   description:
     "Your CS team does not need another dashboard. It needs to know which customer needs attention today. A practical guide to building an account attention list from signals you already have.",
   alternates: { canonical: "/guides/attention-list" },

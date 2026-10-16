@@ -15,6 +15,8 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import SampleBriefForm from "@/components/marketing/SampleBriefForm";
+import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
+import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
 import "./editorial-home.css";
 
@@ -75,7 +77,7 @@ const offers = [
 
 export default function Home() {
   return (
-    <div className="ed-home">
+    <EditorialExperience>
       <section className="ed-hero" aria-labelledby="ed-hero-title">
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
@@ -454,6 +456,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="ed-intake-section">
+        <div className="ed-wrap">
+          <details className="ed-intake">
+            <summary>
+              <span>Ready for a clearer picture?</span>
+              <span>
+                Request your Snapshot here <ArrowUpRight size={19} />
+              </span>
+            </summary>
+            <div className="ed-intake-layout">
+              <div>
+                <p className="ed-eyebrow">YOUR FIRST STEP</p>
+                <h2>
+                  Tell us where
+                  <br />
+                  to begin.
+                </h2>
+                <p>
+                  Share your contact details and available data sources. We’ll
+                  discuss read-only access or exports with you after your
+                  request.
+                </p>
+                <p>No data access is granted by this form.</p>
+              </div>
+              <SnapshotIntakeForm />
+            </div>
+          </details>
+        </div>
+      </section>
+
       <section className="ed-section ed-engagements" id="pricing">
         <div className="ed-wrap">
           <div className="ed-section-head">
@@ -641,7 +673,7 @@ export default function Home() {
               Meet the founder <ArrowUpRight size={16} />
             </Link>
           </div>
-          <div className="ed-brief-form">
+          <div className="ed-brief-form" id="sample-brief">
             <span className="ed-micro">TAKE A CLOSER LOOK</span>
             <FileText size={28} strokeWidth={1} />
             <h3>
@@ -657,6 +689,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </EditorialExperience>
   );
 }

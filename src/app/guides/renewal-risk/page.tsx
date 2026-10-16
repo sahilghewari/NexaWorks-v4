@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Renewal Risk at 90, 60 and 30 Days | NexaWorks",
+  title: "Renewal Risk at 90, 60 and 30 Days",
   description:
     "A practical renewal-risk playbook: what to check at 90 days, what changes at 60, and what the last 30 days demand. Checklists your CSMs can run this week.",
   alternates: { canonical: "/guides/renewal-risk" },

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Get Value From Your CS Platform in 30 Days | NexaWorks",
+  title: "Get Value From Your CS Platform in 30 Days",
   description:
     "Month four of your CS platform implementation and still no trusted score? The signal-first sequence: get intelligence from your existing stack in 30 days, then decide what the platform still needs to do.",
   alternates: { canonical: "/compare/signal-layer-vs-cs-platform" },

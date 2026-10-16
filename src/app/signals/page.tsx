@@ -4,7 +4,7 @@ import SignalMatrix from "@/components/signals/SignalMatrix";
 import { signalSources, signals } from "@/data/signals";
 
 export const metadata = {
-  title: "Customer Signal Library: 40 Churn, Renewal & Expansion Signals | NexaWorks",
+  title: "Customer Signal Library: 40 Churn, Renewal & Expansion Signals",
   description:
     "40 churn, renewal, and expansion signals organized by data source — each with a definition, concrete detection logic, and honest false-positive notes. The citable reference for B2B SaaS CS teams.",
   alternates: { canonical: "/signals" },
@@ -52,7 +52,7 @@ export default function SignalsHubPage() {
       <section className="sp-section" style={{ backgroundColor: "white" }}>
         <div className="container-nw max-w-4xl">
           <h2 className="text-3xl mb-8" style={{ color: "var(--nw-ink)" }}>
-            What a signal is — and what it isn't
+            What a signal is — and what it isn&apos;t
           </h2>
           <div className="space-y-6 text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
             <p>
@@ -63,8 +63,8 @@ export default function SignalsHubPage() {
               exquisite detail while the future walks out the door unnoticed.
             </p>
             <p>
-              “NPS is 32” is a metric. “The champion's reply latency doubled over
-              60 days” is a signal. The difference isn't sophistication — it's
+              “NPS is 32” is a metric. “The champion&apos;s reply latency doubled over
+              60 days” is a signal. The difference isn&apos;t sophistication — it&apos;s
               actionability. A signal points at a specific account, a specific
               change, and a specific next step. A metric points at a slide.
             </p>
@@ -244,7 +244,7 @@ export default function SignalsHubPage() {
           </h2>
           <p className="text-lg mb-10" style={{ color: "var(--nw-dark-soft)" }}>
             The Signal Stack Audit maps which of these 40 signals your stack can
-            already detect, which data you're missing, and where your blind
+            already detect, which data you&apos;re missing, and where your blind
             spots are. Three business days, $1,500, async.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

@@ -14,10 +14,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { source } = await params;
   const info = signalSources.find((s) => s.page === source);
-  if (!info) return { title: "Signals | NexaWorks" };
+  if (!info) return { title: "Signals" };
   const count = signals.filter((s) => s.source === info.slug).length;
   return {
-    title: `${info.label} Churn Signals: ${count} Early-Warning Signals | NexaWorks`,
+    title: `${info.label} Churn Signals: ${count} Early-Warning Signals`,
     description: `The ${count} churn, renewal, and expansion signals hiding in ${info.label} — each with definition, detection logic, and false-positive notes. ${info.blurb}`,
     alternates: { canonical: `/signals/${info.page}` },
   };

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -20,8 +20,8 @@ const accounts = [
     metric: "−22%",
     metricLabel: "Active users · 30 days",
     rising: false,
-    points:
-      "0,16 28,12 56,26 84,22 112,39 140,35 168,57 196,61 224,76 252,72 280,92",
+    health: 82,
+    values: [128, 130, 125, 126, 119, 121, 113, 111, 104, 106, 100],
     signals: [
       {
         icon: MessageSquareText,
@@ -58,8 +58,8 @@ const accounts = [
     metric: "+31%",
     metricLabel: "Active users · 30 days",
     rising: true,
-    points:
-      "0,92 28,85 56,88 84,68 112,72 140,52 168,47 196,33 224,34 252,20 280,12",
+    health: 86,
+    values: [84, 86, 85, 91, 90, 97, 98, 102, 104, 108, 110],
     signals: [
       {
         icon: Database,
@@ -94,12 +94,17 @@ const accounts = [
 export default function EditorialSnapshot() {
   const [selected, setSelected] = useState(0);
   const [expanded, setExpanded] = useState<number | null>(null);
+  const [point, setPoint] = useState(10);
+  const gradientId = useId();
   const account = accounts[selected];
+  const points = account.values
+    .map((value, i) => `${32 + i * 26},${124 - (value / 150) * 104}`)
+    .join(" ");
 
   return (
     <div className="ed-dossier" id="intelligence-demo">
       <div className="ed-dossier-folio">
-        <span>AN ACCOUNT, IN PERSPECTIVE</span>
+        <span>ACCOUNT INTELLIGENCE / WORKED EXAMPLE</span>
         <span>ILLUSTRATIVE DATA / 0{selected + 1}</span>
       </div>
       <div className="ed-account-tabs" aria-label="Explore example accounts">
@@ -111,6 +116,7 @@ export default function EditorialSnapshot() {
             onClick={() => {
               setSelected(i);
               setExpanded(null);
+              setPoint(10);
             }}
           >
             {item.name}
@@ -121,7 +127,7 @@ export default function EditorialSnapshot() {
       <div className="ed-account-sheet">
         <div className="ed-sheet-heading" aria-live="polite" aria-atomic="true">
           <div>
-            <p className="ed-micro">THE RELATIONSHIP BEHIND THE RENEWAL</p>
+            <p className="ed-micro">ACCOUNT OVERVIEW</p>
             <h2>
               {account.name}
               <span
@@ -138,6 +144,22 @@ export default function EditorialSnapshot() {
           </div>
           <p className="ed-account-timing">{account.timing}</p>
         </div>
+        <div className="ed-health-summary">
+          <span className="ed-health-value">
+            <i />
+            {account.health}
+            <small>/100</small>
+          </span>
+          <div>
+            <strong>Recorded health score</strong>
+            <span>
+              {account.rising
+                ? "Healthy · growth worth validating"
+                : "Healthy · relationship needs review"}
+            </span>
+          </div>
+          <span className="ed-health-caption">CRM / EXAMPLE</span>
+        </div>
         <div className="ed-account-chart">
           <div>
             <strong>
@@ -151,51 +173,113 @@ export default function EditorialSnapshot() {
             <span>{account.metricLabel}</span>
           </div>
           <div className="ed-chart-plot">
-            <svg
-              viewBox="0 0 280 110"
-              role="img"
-              aria-label={`Illustrative trend: active users ${account.rising ? "increased 31%" : "declined 22%"} over 30 days`}
-            >
-              <defs>
-                <linearGradient id="ed-chart-fill" x1="0" y1="0" x2="0" y2="1">
-                  <stop
-                    offset="0%"
-                    stopColor="currentColor"
-                    stopOpacity=".14"
-                  />
-                  <stop
-                    offset="100%"
-                    stopColor="currentColor"
-                    stopOpacity="0"
-                  />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0 20H280M0 55H280M0 90H280"
-                stroke="currentColor"
-                strokeOpacity=".14"
-                fill="none"
-              />
-              <polygon
-                points={`0,110 ${account.points} 280,110`}
-                fill="url(#ed-chart-fill)"
-              />
-              <polyline
-                key={account.name}
-                className="ed-chart-line"
-                points={account.points}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-            <div>
-              <span>30 days ago</span>
-              <span>Today</span>
+            <div className="ed-plot-canvas">
+              <div className="ed-y-axis" aria-hidden="true">
+                <span>150</span>
+                <span>75</span>
+                <span>0</span>
+              </div>
+              <svg
+                preserveAspectRatio="none"
+                viewBox="32 20 260 104"
+                role="img"
+                aria-label={`Illustrative weekly active users over 30 days: ${account.values[0]} to ${account.values[10]}. Vertical axis: 0 to 150 users.`}
+              >
+                <defs>
+                  <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+                    <stop
+                      offset="0%"
+                      stopColor="currentColor"
+                      stopOpacity=".18"
+                    />
+                    <stop
+                      offset="100%"
+                      stopColor="currentColor"
+                      stopOpacity="0"
+                    />
+                  </linearGradient>
+                </defs>
+                {[0, 75, 150].map((value) => (
+                  <g key={value}>
+                    <line
+                      x1="32"
+                      x2="292"
+                      y1={124 - (value / 150) * 104}
+                      y2={124 - (value / 150) * 104}
+                      stroke="currentColor"
+                      strokeOpacity=".14"
+                    />
+                  </g>
+                ))}
+                <polygon
+                  points={`32,124 ${points} 292,124`}
+                  fill={`url(#${gradientId})`}
+                />
+                <polyline
+                  key={account.name}
+                  className="ed-chart-line"
+                  points={points}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  vectorEffect="non-scaling-stroke"
+                />
+                {account.values.map((value, i) => (
+                  <circle
+                    key={i}
+                    cx={32 + i * 26}
+                    cy={124 - (value / 150) * 104}
+                    r={point === i ? 4 : 2}
+                    fill="currentColor"
+                    onPointerEnter={() => setPoint(i)}
+                  >
+                    <title>{`${i === 10 ? "Today" : `${30 - i * 3} days ago`}: ${value} active users`}</title>
+                  </circle>
+                ))}
+              </svg>
             </div>
+            <div
+              className="ed-chart-controls"
+              aria-label="Inspect active-user data"
+            >
+              {[0, 5, 10].map((i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-pressed={point === i}
+                  onClick={() => setPoint(i)}
+                  onFocus={() => setPoint(i)}
+                >
+                  {i === 10 ? "Today" : `${30 - i * 3} days ago`}
+                </button>
+              ))}
+            </div>
+            <output className="ed-chart-tooltip" aria-live="polite">
+              {point === 10 ? "Today" : `${30 - point * 3} days ago`} ·{" "}
+              <strong>{account.values[point]} active users</strong>
+            </output>
           </div>
         </div>
+        <details className="ed-chart-data">
+          <summary>View chart data</summary>
+          <table>
+            <caption>Illustrative weekly active users · {account.name}</caption>
+            <thead>
+              <tr>
+                <th scope="col">Relative date</th>
+                <th scope="col">Active users</th>
+              </tr>
+            </thead>
+            <tbody>
+              {account.values.map((value, i) => (
+                <tr key={i}>
+                  <td>{i === 10 ? "Today" : `${30 - i * 3} days ago`}</td>
+                  <td>{value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
         <div className="ed-evidence-heading">
           <span className="ed-micro">WHAT THE SIGNALS ARE SAYING</span>
           <span>SELECT TO EXPLORE</span>

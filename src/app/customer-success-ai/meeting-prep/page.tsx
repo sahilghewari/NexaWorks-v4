@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Automate CSM Meeting Prep and QBRs | NexaWorks",
+  title: "Automate CSM Meeting Prep and QBRs",
   description:
     "Your CSMs spend half a day preparing for every QBR — stitching together call notes, tickets, and usage reports by hand. NexaWorks automates meeting prep: one brief per account with what changed, why it matters, and what to do next.",
   alternates: { canonical: "/customer-success-ai/meeting-prep" },

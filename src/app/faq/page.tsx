@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "FAQ | NexaWorks Customer Intelligence",
+  title: "FAQ — Customer Intelligence",
   description: "Frequently asked questions about NexaWorks customer intelligence consulting, pricing, and process.",
   alternates: { canonical: "/faq" },
 };

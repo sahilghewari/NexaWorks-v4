@@ -3,7 +3,7 @@ import { ArrowRight, Check, Search, Layers, PhoneCall } from "lucide-react";
 import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 
 export const metadata = {
-  title: "Account Risk Snapshot | NexaWorks",
+  title: "Account Risk Snapshot",
   description:
     "A free 5-day diagnostic for B2B SaaS: we connect your CRM, call, ticket, and product data, rank your 20 riskiest accounts, and show you the churn signals your health score missed. No contract, no platform to buy.",
   alternates: { canonical: "/account-risk-snapshot" },

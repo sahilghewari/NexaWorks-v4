@@ -13,9 +13,7 @@ export default function MarketingChrome({
   if (pathname === "/ai") return <>{children}</>;
   return (
     <>
-      <div
-        className={pathname === "/" ? "nw-editorial-site contents" : "contents"}
-      >
+      <div className="nw-designed-site contents">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] bg-white px-4 py-3"
@@ -23,7 +21,11 @@ export default function MarketingChrome({
           Skip to content
         </a>
         <Navbar enterprise={pathname === "/"} />
-        <main id="main-content" tabIndex={-1} className="flex-1">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className={`flex-1 ${pathname === "/" ? "" : "nw-inner"}`}
+        >
           {children}
         </main>
         <Footer enterprise={pathname === "/"} />

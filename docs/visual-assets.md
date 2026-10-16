@@ -21,3 +21,5 @@ The implementation is project-specific code using the existing Framer Motion/Mot
 - Motion accessibility: https://motion.dev/docs/react-accessibility — reduced-motion policy and hook.
 
 These are visual references, not copied component source. The user's explicit request for glassmorphism supersedes the older no-glass guideline in `design-standard/01_Philosophy_and_Tokens.md` for this homepage treatment.
+
+> The generated glass artwork is retained as an asset but is not used by the current cinematic homepage. The current product visuals are HTML/SVG.

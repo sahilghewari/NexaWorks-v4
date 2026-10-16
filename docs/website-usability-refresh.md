@@ -1,54 +1,51 @@
-# Website usability refresh
+# NexaWorks premium redesign — implementation and verification
 
-Addresses the desktop/mobile visual audit while preserving the existing Next.js routes and lead-capture contract.
+The redesign is implemented in the existing Next.js repository and available locally at http://127.0.0.1:3004/. The work remains on draft PR #26; production has not been deployed.
 
-## Changes
+## What changed
 
-- Replace the blurred-header mobile overlay with an opaque native modal dialog, accessible state, Escape dismissal, focus return, scroll locking, and desktop-breakpoint cleanup.
-- Shorten the homepage headline; elevate the free Snapshot alongside discovery; make the illustrative meeting brief visible on mobile.
-- Preserve `/#services` and give it a positive Snapshot / Blueprint / Pilot overview. Keep limitations in their own section.
-- Reduce shared mobile heading size and section spacing, compact solution/article intros, add article jump links and earlier paid-offer CTAs.
-- Add persistent form labels, autocomplete, required/optional cues, grouped source selection, live feedback, privacy link and clearer data-access expectations.
-- Put Snapshot deliverables before market-research quotes, bring qualification criteria forward, and identify the quotes as research rather than customer endorsements.
-- Give Calendly the full content width, a taller mobile/tablet area and a direct fallback link. Retain NEXT_PUBLIC_CALENDLY_URL and its current fallback.
-- Improve light-surface accent/placeholder contrast, visible focus, skip navigation, heading hierarchy and reduced-motion handling.
-- Identify the founder as Sahil using the identity already present in the lead-email templates. No credentials, customer logos or case-study metrics were invented.
+- A near-black, cinematic hero with the original headline and positioning, the actual logo, editorial serif type, controlled lighting and restrained periwinkle actions. Glass is limited to the dashboard frame.
+- An interactive, explicitly illustrative account-intelligence experience: Meridian and Northstar, renewal/review timing, recorded health score, coherent active-user history, labeled axes, inspectable points, a data table, source categories, evidence disclosures and recommended action.
+- A complete homepage composition: health-score/timeline comparison, source-to-action diagram, concrete Snapshot deliverables, an inline disclosure containing the existing intake form, structured engagement pricing, varied resource layouts, founder accountability, sample-email capture and final CTA/footer.
+- Shared marketing tokens for palette, typography, spacing, radii, borders, states and motion. Inner pages receive consistent colors, typography, controls and navigation; the independent /ai paid campaign keeps its own layout and checkout.
+- Short load and selected intersection-based reveals using the existing Motion library. No continuous animation, scroll hijacking, WebGL scene, new font download or new runtime dependency. Reduced-motion handling is included in the motion hook and CSS. Content is server rendered and not initially hidden by reveal classes.
+- Chart tooltip titles render as single strings, fixing a production-only React hydration mismatch found during the final console check.
+- Duplicate brand suffixes removed from page metadata while canonicals, descriptions, social metadata and structured data remain intact.
+- An existing Signal Stack Audit edge case corrected: fully covered sources are no longer called blind spots. Added question-group/pressed semantics, improved hint contrast and labeled the back-tester CSV field. Removed two unused back-tester state values without changing its calculation.
 
-## Preserved
+## Main implementation files
 
-No route files were added or removed. Existing canonicals, metadata, structured-data definitions, sitemap, robots, pricing and paid checkout remain in place. No API handlers, email templates, CRM integrations, analytics configuration, submission JSON keys, lead-source values, consent requirements or idempotency behavior were changed. The homepage CTA emphasis changes intentionally, while booking remains available in the navigation and footer. The homepage hero also links to an interactive example, and the mobile action promotes the Snapshot.
+`src/app/page.tsx`, `src/app/editorial-home.css`, `src/app/marketing-system.css`, `src/components/marketing/EditorialSnapshot.tsx`, `src/components/marketing/EditorialExperience.tsx`, shared `Navbar`/`MarketingChrome`, metadata in existing route files, and the two existing calculator components. `docs/redesign-route-inventory.json` records the 30 page templates and their static destinations/form references.
 
-## Validation
+The intake, contact and sample form component submission code is unchanged. API handlers, CRM routing, idempotency contract, calendar URL/configuration, checkout, pricing, sitemap and existing route paths are preserved. The original homepage sample anchor is available again, and the wordmark has an explicit top anchor.
 
-- Production build passes (all 44 pages generated). Existing configuration skips build-time type validation; a separate type check was run.
-- ESLint passes for every changed TSX file; diff whitespace check passes.
-- Existing payment suite: 9/9 tests pass.
-- Browser inspection on local development and production builds: desktop 1440x1000, mobile 390x844, narrow mobile Pilot at 320x740. Checked menu opening/closing, Escape, restored focus, services navigation, visible intake labels, guide layout, calendar loading and fallback URL. No horizontal document overflow was detected in inspected layouts.
-- Separate TypeScript check reports 10 existing diagnostics in payment routes, calendar/resizable shared UI and scroll-state utilities. A clean checkout of the original commit with the same installed dependencies reproduces all 10. No changed file is named in those diagnostics.
-- No real leads, emails, CRM records, calendar bookings or payments were created during verification. End-to-end delivery requires deployment environment credentials and a controlled test.
+## Checks performed
 
-## External follow-up
+| Check | Result |
+|---|---|
+| Production build | Pass; all 44 generated pages reported by Next.js |
+| ESLint on changed TSX files | Pass, no errors or warnings; new motion component also checked |
+| Existing payment suite | 9/9 pass; no live payment created |
+| Route review | 35 rendered pages checked on desktop and mobile, including generated signal-source pages; one H1 each and no horizontal document overflow |
+| Internal destinations | 32 distinct internal paths observed; all correspond to existing routes |
+| Homepage responsive review | Actual viewports verified at 1920, 1440, 1024, 768, 390 and 320px; no detected overflow |
+| Production console | Fresh production load and account switching: no errors or warnings |
+| Dashboard | Account switching, keyboard activation, source disclosure, chart point selection and full data table checked |
+| Navigation | Section links, top anchor, mobile modal, Escape and focus restoration checked |
+| Forms | Native required validation, controlled failure/retry/success, sample capture and contact capture checked through a local-only test endpoint |
+| Submission contracts | Snapshot source and field keys retained; retry reused the same submission ID; sample asset/source keys retained |
+| Tools | Built-in back-test sample produces 67% catch rate / 13% false alarms; keyboard threshold update works. All-Yes audit yields 30/30 with no false blind spots |
+| Calendar/assets | Calendly iframe and direct fallback observed; logo assets loaded |
+| Contrast | Main body, hero copy, dashboard copy and primary CTA pairs measured above 4.5:1 (5.74–9.25:1) |
 
-The configured Calendly event still calls itself “NexaWorks Enterprise Beta Onboarding.” Rename it and its description in the Calendly account, or set NEXT_PUBLIC_CALENDLY_URL to the intended discovery event after verifying the destination. This repository change deliberately retains the functioning booking destination rather than inventing a replacement.
+Form testing used fictional local data and intercepted lead requests locally. It did not send emails, create CRM records or book meetings. This validates presentation and client submission behavior, not real provider delivery. No Lighthouse score, field performance result or formal assistive-technology certification is claimed.
 
-Real founder credentials, portraits, attributable research sources and measured customer case studies should be supplied and verified before publishing those additions. This pass does not claim to complete those editorial follow-ups.
+## Remaining issues before release
 
-## Release
+The production configuration already skips type validation. The separate type check still reports 10 existing diagnostics, all outside changed files: implicit-any values in the two payment routes (2), calendar class-name API mismatch (1), resizable panel API mismatches (5), and generic casts in scroll-state (2).
 
-Review the branch in a preview deployment, exercise consent, lead routing, asset email delivery and attribution using controlled test details, then deploy through the existing release workflow. Roll back by reverting this commit.
+Full-project lint still reports 10 errors and 18 warnings in unchanged files. Errors are in InteractiveLeadFilter, InteractiveSolutionsHero, TrustSignals, the unused CalEmbed, the independent AI AuditLanding, SignalMatrix, carousel, sidebar and use-mobile. Changed files pass their lint checks.
 
-## Editorial homepage redesign
+Real SMTP/email/CRM delivery and checkout should be exercised with controlled deployment-environment credentials before release. The existing Calendly event retains its configured destination; its account-owned event title should be reviewed. Existing public-research claims and customer evidence need editorial verification before publishing new claims.
 
-The final homepage follows the selected Editorial concept: warm ivory, aubergine, large serif typography and an interactive account dossier. This supersedes the earlier green/mint and generated-glass directions on this branch. Those unused components/assets are no longer imported by the homepage.
-
-The illustrative Meridian and Northstar examples switch account status, metric, chart, evidence and next action. Evidence rows expand with source context; buttons expose pressed/expanded state and support keyboard activation. The page combines a score-versus-timeline comparison, source-to-action diagram, Snapshot deliverable, original pricing, illustrated resources and founder/sample-brief section. Shared navigation and footer receive the new treatment only on the homepage; scoped variables prevent styling from persisting onto inner routes after navigation.
-
-No new library or font dependency. Motion consists of a short arrival, chart draw on selection and hover feedback; there is no repeating ambient motion, and reduced-motion CSS disables these effects. The illustration and report visuals are code-native, with examples labeled as illustrative. Existing sample-email form code, intake and contact routes, CRM handlers, pricing and SEO metadata remain unchanged.
-
-Validation: production build generates all 44 pages; changed-file ESLint passes. The separate type check reports the same 10 previously established diagnostics in unchanged payment/UI/scroll files, with no changed file named. Browser review includes desktop, mobile and narrow-mobile layouts, account selection, evidence disclosure, navigation and the existing Snapshot intake handoff. No live lead, email, booking or payment was submitted; CRM delivery still needs a controlled deployment-environment check.
-
-## Editorial glass materials
-
-The homepage cards now use translucent gradient surfaces with backdrop blur/saturation, reflective borders, inset highlights and layered shadows. Soft plum, warm ivory, sage and slate light fields sit behind the account dossier, story panels, deliverable, pricing and resource illustrations. Pricing cards are separate floating panels. Dark method panels and the sample-brief form receive matching glass treatments. There are no new runtime dependencies or automatic repeating animations; desktop hover lift respects reduced-motion preferences.
-
-Mobile uses a lower blur radius, and browsers without backdrop-filter receive a more opaque fallback. Production build and whitespace checks pass. Rendered desktop (1440px), mobile (390px) and narrow phone (320px) reviewed; the narrow layout has no horizontal overflow. Account switching, keyboard evidence expansion and mobile pricing navigation remain functional. Changes are limited to homepage CSS and this note; routes, content, forms and integrations are unchanged.
+Only a text brief was attached for this turn. No separate reference image was available, so the design follows the supplied written art direction and the established NexaWorks narrative. Desktop/mobile screenshots are saved alongside this report.

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Build vs Buy: CS Platform or Signal Layer? | NexaWorks",
+  title: "Build vs Buy: CS Platform or Signal Layer?",
   description:
     "Should you buy a customer success platform, build your own intelligence, or add a signal layer first? An honest 3-year cost comparison — including when you should just buy the platform.",
   alternates: { canonical: "/compare/build-vs-buy-cs-platform" },

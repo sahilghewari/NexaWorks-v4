@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Privacy Policy | NexaWorks",
+  title: "Privacy Policy",
   description:
     "How NexaWorks collects, uses, and protects your information across nexaworks.tech and our paid engagements.",
   alternates: { canonical: "/privacy" },

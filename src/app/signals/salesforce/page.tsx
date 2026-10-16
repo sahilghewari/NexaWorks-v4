@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
 export const metadata = {
-  title: "Churn Signals Hiding in Salesforce | NexaWorks",
+  title: "Churn Signals Hiding in Salesforce",
   description:
     "Your Salesforce already holds churn signals — close-date pushes, champion role changes, activity gaps. The five Salesforce queries that surface renewal risk, with honest notes on where the data lies.",
   alternates: { canonical: "/signals/salesforce" },
