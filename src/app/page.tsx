@@ -1,4 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
+import {
+  AmbientLight,
+  LivingCard,
+  LivingExperience,
+  MotionToggle,
+  SignalFlow,
+} from "@/components/marketing/LivingExperience";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -19,6 +27,7 @@ import {
 import SampleBriefForm from "@/components/marketing/SampleBriefForm";
 import IntelligencePreview from "@/components/marketing/IntelligencePreview";
 import "./homepage.css";
+import "./living-home.css";
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -77,8 +86,19 @@ const offers = [
 
 export default function Home() {
   return (
-    <div className="enterprise-home home-with-sticky-cta">
+    <LivingExperience>
       <section className="eh-hero">
+        <div className="eh-material-art" aria-hidden="true">
+          <Image
+            src="/brand/signal-glass.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            preload
+            className="eh-material-image"
+          />
+        </div>
+        <AmbientLight />
         <div className="eh-hero-grid" aria-hidden="true" />
         <div className="container-nw eh-hero-content">
           <div className="eh-hero-heading">
@@ -125,9 +145,21 @@ export default function Home() {
           <div className="eh-hero-preview">
             <div className="eh-preview-label">
               <span>FROM FRAGMENTED SIGNALS TO A CLEAR NEXT STEP</span>
-              <span>01—03</span>
+              <MotionToggle />
             </div>
-            <IntelligencePreview />
+            <div className="eh-glass-signal" aria-hidden="true">
+              <span className="eh-signal-glyph">↗</span>
+              <div>
+                <small>FROM SIGNAL TO DECISION</small>
+                <strong>Context, reconstructed.</strong>
+              </div>
+              <span className="eh-glass-signal-sources">
+                CRM + calls + tickets
+              </span>
+            </div>
+            <LivingCard className="eh-glass-preview">
+              <IntelligencePreview />
+            </LivingCard>
             <p className="eh-preview-footnote">
               <Fingerprint size={14} /> A preview of the intelligence we
               deliver. Built around your systems.
@@ -169,7 +201,7 @@ export default function Home() {
             </p>
           </div>
           <div className="eh-evidence-grid">
-            <article className="eh-story-card">
+            <LivingCard className="eh-story-card">
               <div className="eh-card-top">
                 <span>
                   <GitBranch size={16} /> ACCOUNT TIMELINE
@@ -204,8 +236,8 @@ export default function Home() {
                 <TrendingDown size={17} />
                 <span>Connect the pattern before the post-mortem.</span>
               </div>
-            </article>
-            <article className="eh-brief-card">
+            </LivingCard>
+            <LivingCard className="eh-brief-card">
               <div className="eh-card-top">
                 <span>
                   <FileText size={16} /> THE INTELLIGENCE BRIEF
@@ -260,7 +292,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </article>
+            </LivingCard>
           </div>
           <div className="eh-under-grid">
             <span>
@@ -299,6 +331,7 @@ export default function Home() {
             </div>
           </div>
           <div className="eh-flow">
+            <SignalFlow />
             <div className="eh-flow-sources">
               <span className="eh-flow-caption">01 / EXISTING SOURCES</span>
               {[
@@ -436,7 +469,7 @@ export default function Home() {
               B2B SaaS · 100+ employees · At least two data sources
             </p>
           </div>
-          <div className="eh-snapshot-deliverable">
+          <LivingCard className="eh-snapshot-deliverable">
             <div className="eh-card-top">
               <span>
                 <Layers3 size={16} /> ACCOUNT RISK SNAPSHOT
@@ -496,7 +529,7 @@ export default function Home() {
             <small className="eh-snapshot-disclosure">
               Illustrative accounts. No contract. Four Snapshots per month.
             </small>
-          </div>
+          </LivingCard>
         </div>
       </section>
 
@@ -519,7 +552,7 @@ export default function Home() {
           </div>
           <div className="eh-price-grid">
             {offers.map((offer) => (
-              <article
+              <LivingCard
                 key={offer.name}
                 className={`eh-price-card ${offer.featured ? "is-featured" : ""}`}
               >
@@ -544,7 +577,7 @@ export default function Home() {
                   {offer.cta}
                   <ArrowUpRight size={16} />
                 </Link>
-              </article>
+              </LivingCard>
             ))}
           </div>
           <p className="eh-pricing-fine">
@@ -695,14 +728,14 @@ export default function Home() {
               Meet the founder <ArrowUpRight size={17} />
             </Link>
           </div>
-          <div className="eh-sample-form">
+          <LivingCard className="eh-sample-form">
             <div className="eh-sample-icon">
               <FileText size={28} strokeWidth={1.4} />
             </div>
             <h3>See a sample meeting brief.</h3>
             <p>One example. A clearer picture of what your team receives.</p>
             <SampleBriefForm />
-          </div>
+          </LivingCard>
         </div>
       </section>
       <div className="eh-mobile-cta">
@@ -713,6 +746,6 @@ export default function Home() {
           Get the free Snapshot <ArrowUpRight size={16} />
         </Link>
       </div>
-    </div>
+    </LivingExperience>
   );
 }

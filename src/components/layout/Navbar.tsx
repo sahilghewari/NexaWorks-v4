@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ enterprise = false }: { enterprise?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -42,7 +42,9 @@ export default function Navbar() {
     <header
       className="sticky top-0 z-50 w-full"
       style={{
-        backgroundColor: "var(--nw-canvas)",
+        backgroundColor: enterprise ? "rgba(250, 252, 248, 0.86)" : "var(--nw-canvas)",
+        backdropFilter: enterprise ? "blur(16px)" : undefined,
+        WebkitBackdropFilter: enterprise ? "blur(16px)" : undefined,
         borderBottom: "1px solid var(--nw-line-light)",
       }}
     >

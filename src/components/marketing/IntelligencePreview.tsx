@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { useExperienceMotion } from "./LivingExperience";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -111,6 +113,7 @@ const examples = [
 
 export default function IntelligencePreview() {
   const [selected, setSelected] = useState(0);
+  const animate = useExperienceMotion();
   const account = examples[selected];
   return (
     <div className="intel-shell" id="intelligence-demo">
@@ -191,14 +194,20 @@ export default function IntelligencePreview() {
               >
                 <path
                   d="M0 20H320 M0 50H320 M0 80H320"
-                  stroke="#e9eeec"
+                  stroke="rgba(209,235,190,0.12)"
                   strokeWidth="1"
                   fill="none"
                 />
-                <polyline
+                <motion.polyline
                   points={account.points}
+                  key={account.name}
+                  initial={false}
+                  animate={
+                    animate ? { pathLength: [0.15, 1] } : { pathLength: 1 }
+                  }
+                  transition={{ duration: animate ? 0.8 : 0, ease: "easeOut" }}
                   fill="none"
-                  stroke={selected === 0 ? "#b05d3b" : "#087768"}
+                  stroke={selected === 0 ? "#e8bd91" : "#c6eba1"}
                   strokeWidth="2.5"
                   vectorEffect="non-scaling-stroke"
                 />

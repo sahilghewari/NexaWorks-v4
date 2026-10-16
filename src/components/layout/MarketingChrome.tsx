@@ -19,7 +19,7 @@ export default function MarketingChrome({
       >
         Skip to content
       </a>
-      <Navbar />
+      <Navbar enterprise={pathname === "/"} />
       <main id="main-content" tabIndex={-1} className="flex-1">
         {children}
       </main>
