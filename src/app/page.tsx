@@ -1,400 +1,716 @@
 import Link from "next/link";
-import { ArrowDown, Check, X } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  CheckCheck,
+  Database,
+  FileText,
+  Fingerprint,
+  GitBranch,
+  Headphones,
+  Layers3,
+  LockKeyhole,
+  MessageSquareText,
+  Network,
+  ShieldCheck,
+  TrendingDown,
+} from "lucide-react";
 import SampleBriefForm from "@/components/marketing/SampleBriefForm";
+import IntelligencePreview from "@/components/marketing/IntelligencePreview";
+import "./homepage.css";
 
-export const metadata = {
-  alternates: { canonical: "/" },
-};
+export const metadata = { alternates: { canonical: "/" } };
+
+const offers = [
+  {
+    label: "01 / DIAGNOSE",
+    name: "Intelligence Blueprint",
+    price: "$3,500",
+    timing: "10 business days",
+    description: "A clear plan before you commit to a build.",
+    items: [
+      "Data & workflow map",
+      "5–15 strategic account review",
+      "Prioritized use cases",
+      "Pilot architecture & ROI hypothesis",
+    ],
+    href: "/customer-intelligence-blueprint",
+    cta: "Explore the Blueprint",
+    note: "Fully credited toward the Pilot",
+  },
+  {
+    label: "02 / PROVE",
+    name: "Intelligence Pilot",
+    price: "$9,500–$18,000",
+    timing: "4–6 weeks",
+    description: "One workflow. Your data. Evidence your team can use.",
+    items: [
+      "One-click meeting briefs",
+      "Chronological account timelines",
+      "Evidence-backed risk & opportunity signals",
+      "Weekly portfolio action lists in Slack or email",
+      "Pilot-results report & production proposal",
+    ],
+    href: "/customer-intelligence-pilot",
+    cta: "Explore the Pilot",
+    note: "Most pilots land around $15,000",
+    featured: true,
+  },
+  {
+    label: "03 / SCALE",
+    name: "Custom Build",
+    price: "Scoped with you",
+    timing: "Your workflows & systems",
+    description: "Extend what works into your everyday operations.",
+    items: [
+      "Custom integrations with your stack",
+      "Scope built around your workflows and data",
+      "Direct access to the people doing the work",
+      "Pricing agreed after discovery",
+    ],
+    href: "/contact",
+    cta: "Discuss your workflow",
+    note: "Fixed scope, agreed together",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="home-with-sticky-cta">
-      {/* ————— HERO — Asymmetric, never centered ————— */}
-      <section style={{ backgroundColor: "var(--nw-canvas)" }} className="relative overflow-hidden">
-        <div className="container-nw pt-12 pb-14 md:pt-20 md:pb-20">
-          {/* Eyebrow */}
-          <p className="eyebrow mb-8" style={{ color: "var(--nw-accent)" }}>
-            Customer Signals — For B2B SaaS Teams
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-            <div className="lg:col-span-7">
-              <h1 style={{ color: "var(--nw-ink)" }} className="home-hero-title mb-6">
-                See renewal risk. Know what to do next.
-              </h1>
-              <p className="text-lg md:text-xl mb-10 leading-relaxed max-w-xl" style={{ color: "var(--nw-ink-soft)" }}>
-                NexaWorks connects the signals across your CRM, calls, tickets, and product data to surface churn risk and expansion opportunities — alongside the CS platform you already own.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                <Link
-                  href="/account-risk-snapshot"
-                  className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
-                  style={{ backgroundColor: "var(--nw-ink)" }}
-                >
-                  Get the free Snapshot
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-8 text-sm font-medium transition-colors"
-                  style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)" }}
-                >
-                  Book a discovery call <ArrowDown size={14} className="-rotate-90" />
-                </Link>
-              </div>
-              <p className="eyebrow flex flex-wrap items-center gap-x-4 gap-y-2" style={{ color: "var(--nw-ink-soft)", fontSize: "11px", letterSpacing: "0.1em" }}>
-                <span>Founder-led</span>
-                <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--nw-accent)" }} />
-                <span>Fixed scope & price</span>
-                <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--nw-accent)" }} />
-                <span>No rip-and-replace</span>
-              </p>
+    <div className="enterprise-home home-with-sticky-cta">
+      <section className="eh-hero">
+        <div className="eh-hero-grid" aria-hidden="true" />
+        <div className="container-nw eh-hero-content">
+          <div className="eh-hero-heading">
+            <div className="eh-eyebrow">
+              <span className="eh-status-dot" /> CUSTOMER INTELLIGENCE / B2B
+              SAAS
             </div>
-
-            {/* Deliverable artifact mockup */}
-            <div className="lg:col-span-5 relative flex items-start lg:justify-end">
-              <div
-                className="w-full max-w-md rounded-lg bg-white p-6 md:p-8 shadow-sm"
-                style={{ border: "1px solid var(--nw-line-light)" }}
+            <h1>
+              Your next renewal
+              <br className="hidden md:block" /> shouldn’t be
+              <br className="hidden md:block" /> <span>a surprise.</span>
+            </h1>
+            <p>
+              Your CRM has the facts. Your calls have the context. We connect
+              the signals so your CS team knows which accounts need
+              attention—and why.
+            </p>
+            <div className="eh-actions">
+              <Link
+                href="/account-risk-snapshot"
+                className="eh-button eh-button-mint"
               >
-                <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>
-                  Meeting Brief · Illustrative Sample
-                </p>
-                <div className="space-y-3">
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>ACCOUNT</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink)" }}>Example account · renewal in 60 days</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>RISK SIGNAL</p>
-                    <p className="text-sm" style={{ color: "var(--nw-amber)" }}>Champion departed · Usage −22% · Open P1 ticket</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>EVIDENCE</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink-soft)" }}>Gong call 09/12, Zendesk #4891, SFDC opp stage unchanged 42d</p>
-                  </div>
-                  <div>
-                    <p className="eyebrow mb-0.5" style={{ color: "var(--nw-accent)", fontSize: "11px" }}>RECOMMENDED ACTION</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink)" }}>Escalate to VP CS. Schedule exec alignment before renewal window.</p>
-                  </div>
-                </div>
-                <p className="eyebrow mt-4" style={{ color: "var(--nw-ink-soft)", fontSize: "11px" }}>
-                  ILLUSTRATIVE SAMPLE — NOT A SHIPPED PRODUCT
-                </p>
-              </div>
+                Get the free Snapshot <ArrowUpRight size={17} />
+              </Link>
+              <Link
+                href="#intelligence-demo"
+                className="eh-button eh-button-ghost"
+              >
+                Explore an example <ArrowRight size={17} />
+              </Link>
+            </div>
+            <div className="eh-hero-assurance">
+              <span>
+                <Check size={13} /> Founder-led
+              </span>
+              <span>
+                <Check size={13} /> Fixed scope
+              </span>
+              <span>
+                <Check size={13} /> Your existing stack
+              </span>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="services" className="sp-section" style={{ backgroundColor: "var(--nw-warm-100)" }}>
-        <div className="container-nw">
-          <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>Services · Built on your existing stack</p>
-          <h2 className="mb-6 max-w-3xl">Start with the question your team needs answered.</h2>
-          <p className="text-lg max-w-2xl mb-10" style={{ color: "var(--nw-ink-soft)" }}>See the evidence first. Then choose a fixed-scope engagement around your accounts, workflows, and systems.</p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: "01 · Find the risk", title: "Account Risk Snapshot", detail: "Free · 5 business days", text: "Your 20 riskiest accounts, ranked with the signals behind each one and a 45-minute readout.", href: "/account-risk-snapshot", cta: "Explore the free Snapshot" },
-              { step: "02 · Define the scope", title: "Intelligence Blueprint", detail: "$3,500 · 10 business days", text: "Map one workflow, assess your data, and define the pilot. The fee is fully credited toward the Pilot.", href: "/customer-intelligence-blueprint", cta: "Explore the Blueprint" },
-              { step: "03 · Prove the workflow", title: "Intelligence Pilot", detail: "$9,500–$18,000 · 4–6 weeks", text: "Run a human-reviewed intelligence workflow across 20–50 strategic accounts and 3–5 systems.", href: "/customer-intelligence-pilot", cta: "Explore the Pilot" },
-            ].map((offer) => (
-              <div key={offer.href} className="flex flex-col border-t pt-6" style={{ borderColor: "var(--nw-warm-300)" }}>
-                <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>{offer.step}</p>
-                <h3 className="text-2xl mb-3">{offer.title}</h3>
-                <p className="text-sm font-medium mb-4">{offer.detail}</p>
-                <p className="leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>{offer.text}</p>
-                <Link href={offer.href} className="underline underline-offset-4 mt-auto text-sm font-medium">{offer.cta} →</Link>
-              </div>
-            ))}
+          <div className="eh-hero-preview">
+            <div className="eh-preview-label">
+              <span>FROM FRAGMENTED SIGNALS TO A CLEAR NEXT STEP</span>
+              <span>01—03</span>
+            </div>
+            <IntelligencePreview />
+            <p className="eh-preview-footnote">
+              <Fingerprint size={14} /> A preview of the intelligence we
+              deliver. Built around your systems.
+            </p>
           </div>
-          <Link href="/customer-success-ai" className="inline-block mt-10 underline underline-offset-4">See how Customer Success Intelligence works →</Link>
+        </div>
+        <div className="container-nw eh-stack">
+          <p>
+            CONTEXT FROM THE TOOLS
+            <br />
+            YOU ALREADY OWN
+          </p>
+          <div>
+            <span>Salesforce</span>
+            <span>HubSpot</span>
+            <span>Gong</span>
+            <span>Zendesk</span>
+            <span>Slack</span>
+            <span>Product data</span>
+          </div>
         </div>
       </section>
 
-      {/* ————— PROBLEM — Dark register with stats ————— */}
-      <section className="section-dark sp-section">
+      <section className="eh-section eh-intelligence">
         <div className="container-nw">
-          <p className="eyebrow mb-12" style={{ color: "var(--nw-accent-glow)" }}>The Problem</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
-            <div className="md:col-span-7">
-              <h2 className="text-white mb-8">
-                Your team sees the facts. Nobody sees the pattern.
+          <div className="eh-section-heading">
+            <div>
+              <p className="eh-eyebrow">THE MISSING CONTEXT</p>
+              <h2>
+                One account.
+                <br />
+                The whole story.
               </h2>
-              <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--nw-dark-soft)" }}>
-                The renewal is 60 days out. Usage is down. Your champion went
-                quiet two weeks ago. A severity-1 support ticket just opened.
-                Implementation is behind. The signals are sitting in Salesforce,
-                Zendesk, and Gong — but because they don&apos;t live in one place,
-                nobody connects the dots until the post-mortem.
-              </p>
             </div>
-            <div className="md:col-span-5 md:col-start-8 flex flex-col justify-center gap-8">
-              {[
-                { number: "60", unit: "days", label: "Renewal approaching" },
-                { number: "−22%", unit: "", label: "Product usage decline" },
-                { number: "0", unit: "replies", label: "From your champion this month" },
-              ].map((stat) => (
-                <div key={stat.label} className="pb-8" style={{ borderBottom: "1px solid var(--nw-line-dark)" }}>
-                  <p className="text-white text-4xl md:text-5xl tracking-tight mb-1" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
-                    {stat.number}
-                    <span className="text-lg ml-1" style={{ color: "var(--nw-dark-soft)" }}>{stat.unit}</span>
+            <p>
+              A green health score can hide a quiet champion, a frustrated team,
+              or an unresolved issue. See the relationship between the signals,
+              with evidence behind every recommendation.
+            </p>
+          </div>
+          <div className="eh-evidence-grid">
+            <article className="eh-story-card">
+              <div className="eh-card-top">
+                <span>
+                  <GitBranch size={16} /> ACCOUNT TIMELINE
+                </span>
+                <span className="eh-mini-tag">ILLUSTRATIVE</span>
+              </div>
+              <div className="eh-timeline">
+                <div>
+                  <span className="eh-time-dot" />
+                  <small>DAY −47 · CALLS</small>
+                  <h3>The champion goes quiet.</h3>
+                  <p>
+                    Weekly participation stops. The account still looks healthy.
                   </p>
-                  <p className="text-sm" style={{ color: "var(--nw-dark-soft)" }}>{stat.label}</p>
+                </div>
+                <div>
+                  <span className="eh-time-dot" />
+                  <small>DAY −21 · PRODUCT</small>
+                  <h3>Adoption begins to fall.</h3>
+                  <p>Two power users leave. Usage drops across the team.</p>
+                </div>
+                <div>
+                  <span className="eh-time-dot eh-time-risk" />
+                  <small>DAY −04 · SUPPORT</small>
+                  <h3>A critical issue stays open.</h3>
+                  <p>
+                    Separate events become a commercial risk worth reviewing.
+                  </p>
+                </div>
+              </div>
+              <div className="eh-story-bottom">
+                <TrendingDown size={17} />
+                <span>Connect the pattern before the post-mortem.</span>
+              </div>
+            </article>
+            <article className="eh-brief-card">
+              <div className="eh-card-top">
+                <span>
+                  <FileText size={16} /> THE INTELLIGENCE BRIEF
+                </span>
+                <span className="eh-mini-tag">EXAMPLE OUTPUT</span>
+              </div>
+              <div className="eh-brief-header">
+                <div className="eh-brief-avatar">M</div>
+                <div>
+                  <small>MERIDIAN / STRATEGIC ACCOUNT</small>
+                  <h3>What your team needs to know.</h3>
+                </div>
+              </div>
+              <div className="eh-brief-section">
+                <span>01</span>
+                <div>
+                  <h4>What changed</h4>
+                  <p>
+                    Champion disengagement, declining usage, and an unresolved
+                    P1 ticket.
+                  </p>
+                </div>
+              </div>
+              <div className="eh-brief-section">
+                <span>02</span>
+                <div>
+                  <h4>Why it matters</h4>
+                  <p>
+                    The renewal is 60 days away. Engagement and value both need
+                    validation.
+                  </p>
+                </div>
+              </div>
+              <div className="eh-evidence-chips">
+                <span>
+                  <MessageSquareText size={12} /> Call history
+                </span>
+                <span>
+                  <Database size={12} /> Usage export
+                </span>
+                <span>
+                  <Headphones size={12} /> Support ticket
+                </span>
+              </div>
+              <div className="eh-brief-next">
+                <CheckCheck size={20} />
+                <div>
+                  <small>HUMAN-REVIEWED NEXT STEP</small>
+                  <p>
+                    Arrange an executive alignment call. Confirm the renewal
+                    owner and a plan for the open issue.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div className="eh-under-grid">
+            <span>
+              <ShieldCheck size={18} /> Evidence-backed recommendations
+            </span>
+            <span>
+              <LockKeyhole size={18} /> Read-only access or exports
+            </span>
+            <span>
+              <CheckCheck size={18} /> Your team reviews and acts
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section id="method" className="eh-section eh-method">
+        <div className="container-nw">
+          <div className="eh-section-heading">
+            <div>
+              <p className="eh-eyebrow">THE SIGNAL LAYER</p>
+              <h2>
+                Your stack stays.
+                <br />
+                The blind spots go.
+              </h2>
+            </div>
+            <div>
+              <p>
+                We work alongside your CS platform. A scoped, human-reviewed
+                workflow brings the context together and sends it back where
+                your team works.
+              </p>
+              <Link href="/customer-success-ai" className="eh-text-link">
+                Inside the approach <ArrowUpRight size={17} />
+              </Link>
+            </div>
+          </div>
+          <div className="eh-flow">
+            <div className="eh-flow-sources">
+              <span className="eh-flow-caption">01 / EXISTING SOURCES</span>
+              {[
+                {
+                  icon: Database,
+                  title: "CRM & product",
+                  detail: "Accounts, renewals, usage",
+                },
+                {
+                  icon: MessageSquareText,
+                  title: "Calls & conversations",
+                  detail: "Champions, sentiment, goals",
+                },
+                {
+                  icon: Headphones,
+                  title: "Support & tickets",
+                  detail: "Friction, blockers, escalations",
+                },
+              ].map((item) => (
+                <div key={item.title}>
+                  <item.icon size={19} />
+                  <span>
+                    <strong>{item.title}</strong>
+                    <small>{item.detail}</small>
+                  </span>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ————— METHOD — Branded diagram ————— */}
-      <section className="sp-section" id="method" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>The Method</p>
-          <h2 className="mb-4 max-w-3xl" style={{ color: "var(--nw-ink)" }}>
-            How we build your intelligence workflow
-          </h2>
-          <p className="text-lg max-w-xl mb-16" style={{ color: "var(--nw-ink-soft)" }}>
-            We don&apos;t sell software. We sell scoped pilots that prove value on
-            your actual data, without a multi-year lock-in.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-0 relative">
-            {/* Connecting line */}
-            <div className="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px" style={{ backgroundColor: "var(--nw-line-light)" }} />
-
-            {[
-              { num: "01", name: "Diagnose", timeline: "Days 1–2", desc: "Map your current CS workflows. Identify which systems hold the missing context." },
-              { num: "02", name: "Connect", timeline: "Days 3–5", desc: "Establish read-only access to 3–5 source systems. Salesforce, Gong, Zendesk — safely." },
-              { num: "03", name: "Extract", timeline: "Weeks 2–5", desc: "Weekly intelligence briefs and automated risk signals delivered to Slack or your inbox." },
-              { num: "04", name: "Review", timeline: "Week 6", desc: "Pilot results, ROI hypothesis, and a production architecture proposal — delivered." },
-            ].map((step, i) => (
-              <div
-                key={step.num}
-                className="relative p-6 md:p-8"
-                style={{
-                  borderRight: i < 3 ? "1px solid var(--nw-line-light)" : "none",
-                  borderBottom: "1px solid var(--nw-line-light)",
-                }}
-              >
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-6 relative z-10 eyebrow"
-                  style={{
-                    backgroundColor: "var(--nw-canvas)",
-                    border: "1px solid var(--nw-line-light)",
-                    fontSize: "13px",
-                    color: "var(--nw-accent)",
-                  }}
-                >
-                  {step.num}
-                </div>
-                <h3 style={{ color: "var(--nw-ink)" }} className="mb-1">{step.name}</h3>
-                <p className="eyebrow mb-3" style={{ color: "var(--nw-accent)", fontSize: "11px", letterSpacing: "0.15em" }}>
-                  {step.timeline}
-                </p>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ————— PRICING — Asymmetric cards ————— */}
-      <section className="section-dark sp-section" id="pricing">
-        <div className="container-nw">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>Pricing</p>
-          <h2 className="text-white mb-4">Honest pricing.</h2>
-          <p className="text-lg mb-10 max-w-xl" style={{ color: "var(--nw-dark-soft)" }}>
-            No open-ended retainers. Scope and pricing are set together, around your workflows.
-          </p>
-
-          <div className="rounded-xl p-6 md:p-8 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-            <p className="text-lg" style={{ color: "var(--nw-warm-400)" }}>
-              Not ready for a paid engagement? Start with a free Account Risk Snapshot — your 20 riskiest accounts, ranked, in 5 business days.
-            </p>
-            <Link
-              href="/account-risk-snapshot"
-              className="inline-flex h-11 flex-shrink-0 items-center justify-center rounded-full px-6 text-sm font-medium text-white transition-colors"
-              style={{ border: "1px solid var(--nw-accent)" }}
-            >
-              Get the Snapshot
-            </Link>
-          </div>
-
-          <div className="rounded-xl p-6 md:p-8 mb-6 flex flex-col sm:flex-row sm:items-center gap-4 justify-between" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-            <p className="text-lg" style={{ color: "var(--nw-warm-400)" }}>
-              Smaller budget? Start with a Signal Stack Audit — $1,500, delivered in 3 business days. A written report on the signals you&apos;re already capturing, the ones you&apos;re blind to, and the three highest-leverage fixes.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-11 flex-shrink-0 items-center justify-center rounded-full px-6 text-sm font-medium text-white transition-colors"
-              style={{ border: "1px solid var(--nw-accent)" }}
-            >
-              Get the Audit
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Blueprint */}
-            <div className="rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>10 Business Days</p>
-              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Intelligence Blueprint</h3>
-              <p className="text-3xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$3,500</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-accent-glow)", fontSize: "11px" }}>Fully credited toward the Pilot</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {["Data & workflow map", "5–15 strategic account review", "Prioritized use cases", "Pilot architecture & ROI hypothesis"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/customer-intelligence-blueprint"
-                className="flex h-11 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
-                style={{ border: "1px solid var(--nw-line-dark)" }}
-              >
-                View Blueprint
-              </Link>
+            <div className="eh-flow-connector" aria-hidden="true">
+              <span />
+              <span />
+              <span />
             </div>
-
-            {/* Pilot — accent border */}
-            <div className="rounded-xl p-8 md:p-10 flex flex-col relative" style={{ backgroundColor: "var(--nw-dark-mid)", border: "2px solid var(--nw-accent)" }}>
-              <span className="absolute -top-3 left-8 px-3 py-0.5 rounded-full text-white eyebrow" style={{ backgroundColor: "var(--nw-accent)", fontSize: "10px" }}>
-                MOST COMMON
+            <div className="eh-flow-engine">
+              <div className="eh-engine-mark">
+                <Network size={38} strokeWidth={1} />
+              </div>
+              <span className="eh-flow-caption">02 / NEXAWORKS</span>
+              <h3>Context, connected.</h3>
+              <p>
+                Extract signals.
+                <br />
+                Attach evidence.
+                <br />
+                Review with a human.
+              </p>
+              <div className="eh-engine-footer">
+                <span className="eh-status-dot" /> INTELLIGENCE WORKFLOW
+              </div>
+            </div>
+            <div className="eh-flow-arrow" aria-hidden="true">
+              <ArrowRight size={22} />
+            </div>
+            <div className="eh-flow-output">
+              <span className="eh-flow-caption">
+                03 / WHERE YOUR TEAM WORKS
               </span>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>4–6 Weeks · Founding-Client Pricing</p>
-              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Intelligence Pilot</h3>
-              <p className="text-4xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>$9,500 – $18,000</p>
-              <p className="text-sm mb-1" style={{ color: "var(--nw-warm-400)" }}>Most pilots land around $15,000.</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-dark-soft)", fontSize: "11px" }}>Final price set on a scoping call — depends on your data sources, accounts in scope & integrations. Founding-client pricing in exchange for feedback & a case study.</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {["One-click meeting briefs", "Chronological account timelines", "Evidence-backed risk & opportunity signals", "Weekly portfolio action lists (Slack/Email)", "Pilot-results report with production proposal"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/customer-intelligence-pilot"
-                className="flex h-12 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
-                style={{ backgroundColor: "var(--nw-accent)" }}
-              >
-                View Pilot Details
-              </Link>
-            </div>
-
-            {/* Custom Build */}
-            <div className="rounded-xl p-8 md:p-10 flex flex-col" style={{ backgroundColor: "var(--nw-dark-mid)", border: "1px solid var(--nw-line-dark)" }}>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>Scoped with you</p>
-              <h3 className="text-white text-2xl mb-1" style={{ fontFamily: "var(--font-display)" }}>Custom Build</h3>
-              <p className="text-3xl tracking-tight mb-2" style={{ fontFamily: "var(--font-display)", color: "var(--nw-accent-glow)", fontWeight: 400 }}>Custom</p>
-              <p className="eyebrow mb-8" style={{ color: "var(--nw-accent-glow)", fontSize: "11px" }}>Priced around your workflows & systems</p>
-              <ul className="space-y-3 mb-10 flex-1">
-                {["Scoped around your workflows and data", "Custom integrations with your stack", "Direct access to the people doing the work", "Pricing set together after discovery"].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-                    <Check size={16} className="mt-0.5 flex-shrink-0" strokeWidth={1.5} style={{ color: "var(--nw-accent-glow)" }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/contact"
-                className="flex h-11 items-center justify-center rounded-full text-sm font-medium text-white transition-colors"
-                style={{ border: "1px solid var(--nw-line-dark)" }}
-              >
-                Talk to us
-              </Link>
+              <div>
+                <FileText size={23} />
+                <h3>Ready for the next conversation.</h3>
+                <p>
+                  Pre-call briefs. Weekly account priorities. Renewal and
+                  expansion signals.
+                </p>
+                <span className="eh-destination">
+                  Slack <span>·</span> Email <span>·</span> Your workflow
+                </span>
+              </div>
             </div>
           </div>
-
-          <p className="text-sm mt-8 max-w-xl" style={{ color: "var(--nw-warm-400)" }}>
-            Follow-on: Renewal Risk & Expansion Intelligence ($30K–$75K) · Deal-to-Delivery Assurance ($40K–$100K+) · Managed Improvement ($3K–$15K/mo).{" "}
-            <Link href="/contact" className="underline" style={{ color: "var(--nw-accent-glow)" }}>Inquire</Link>
-          </p>
-          <p className="text-sm mt-4 max-w-xl" style={{ color: "var(--nw-warm-400)" }}>
-            Based in India? We price in ₹ for Indian companies — just mention it when you reach out.
-          </p>
-        </div>
-      </section>
-
-      {/* ————— INTELLIGENCE STANDARD ————— */}
-      <section className="py-16 md:py-20" style={{ backgroundColor: "var(--nw-canvas)", borderTop: "1px solid var(--nw-line-light)", borderBottom: "1px solid var(--nw-line-light)" }}>
-        <div className="container-nw">
-          <p className="eyebrow mb-8 text-center" style={{ color: "var(--nw-accent)" }}>
-            Every output answers four questions
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="eh-delivery-steps">
             {[
-              { num: "01", q: "What changed?" },
-              { num: "02", q: "Why does it matter commercially?" },
-              { num: "03", q: "What evidence supports it?" },
-              { num: "04", q: "What should the team do next?" },
-            ].map((item) => (
-              <div key={item.num} className="text-center md:text-left">
-                <p className="eyebrow mb-2" style={{ color: "var(--nw-accent)", fontSize: "12px" }}>{item.num}</p>
-                <p className="font-medium" style={{ color: "var(--nw-ink)" }}>{item.q}</p>
+              {
+                num: "01",
+                title: "Diagnose",
+                time: "Days 1–2",
+                text: "Map the workflow and missing context.",
+              },
+              {
+                num: "02",
+                title: "Connect",
+                time: "Days 3–5",
+                text: "Agree read-only access to 3–5 systems.",
+              },
+              {
+                num: "03",
+                title: "Extract",
+                time: "Weeks 2–5",
+                text: "Deliver briefs and account signals.",
+              },
+              {
+                num: "04",
+                title: "Review",
+                time: "Week 6",
+                text: "Assess results and define the next step.",
+              },
+            ].map((step) => (
+              <div key={step.num}>
+                <small>
+                  {step.num} <span>{step.time}</span>
+                </small>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ————— HONEST LIMITATIONS ————— */}
-      <section className="sp-section" id="boundaries" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-5">
-            <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>Honesty As Policy</p>
-            <h2 className="mb-6" style={{ color: "var(--nw-ink)" }}>What this isn&apos;t.</h2>
-            <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
-              We tell every prospect exactly what we don&apos;t do. It&apos;s not modesty — it&apos;s how we build trust with VPs who are tired of vendor overpromises.
+      <section id="services" className="eh-snapshot-section">
+        <div className="container-nw eh-snapshot-layout">
+          <div>
+            <p className="eh-eyebrow">PROOF BEFORE PAYMENT</p>
+            <h2>
+              Start with the
+              <br />
+              accounts you
+              <br />
+              <span>can’t afford to miss.</span>
+            </h2>
+            <p>
+              The free Account Risk Snapshot ranks your 20 riskiest accounts,
+              shows the signals behind each one, and gives your team a clear
+              next step.
+            </p>
+            <div className="eh-actions">
+              <Link
+                href="/account-risk-snapshot"
+                className="eh-button eh-button-mint"
+              >
+                Request your free Snapshot <ArrowUpRight size={17} />
+              </Link>
+            </div>
+            <p className="eh-snapshot-qualification">
+              B2B SaaS · 100+ employees · At least two data sources
             </p>
           </div>
-          <div className="lg:col-span-6 lg:col-start-7 space-y-6">
-            {[
-              { title: "Not a Gainsight / Vitally replacement", desc: "We augment your CS platform with unstructured context it can't extract on its own." },
-              { title: "No autonomous agents sending emails", desc: "Human-in-the-loop always. We surface the risk; your leaders review and act." },
-              { title: "No generic company-wide search", desc: "We build scoped pipelines for specific commercial questions, not a chatbot." },
-              { title: "No legal interpretation of contracts", desc: "We read structured and unstructured data — not legal documents." },
-            ].map((item) => (
-              <div key={item.title} className="flex items-start gap-4 pb-6" style={{ borderBottom: "1px solid var(--nw-line-light)" }}>
-                <div className="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "rgba(217, 119, 6, 0.1)" }}>
-                  <X size={12} strokeWidth={2} style={{ color: "var(--nw-amber)" }} />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm mb-1" style={{ color: "var(--nw-ink)" }}>{item.title}</p>
-                  <p className="text-sm" style={{ color: "var(--nw-ink-soft)" }}>{item.desc}</p>
-                </div>
+          <div className="eh-snapshot-deliverable">
+            <div className="eh-card-top">
+              <span>
+                <Layers3 size={16} /> ACCOUNT RISK SNAPSHOT
+              </span>
+              <span className="eh-mini-tag">EXAMPLE</span>
+            </div>
+            <div className="eh-snapshot-numbers">
+              <div>
+                <strong>20</strong>
+                <span>accounts, prioritized</span>
               </div>
-            ))}
+              <div>
+                <strong>5</strong>
+                <span>business days</span>
+              </div>
+            </div>
+            <div className="eh-ranked-accounts">
+              {[
+                {
+                  rank: "01",
+                  name: "Meridian",
+                  reason: "Champion disengagement",
+                  type: "risk",
+                  score: "Review now",
+                },
+                {
+                  rank: "02",
+                  name: "Atlas",
+                  reason: "Onboarding stalled",
+                  type: "risk",
+                  score: "Review now",
+                },
+                {
+                  rank: "03",
+                  name: "Solstice",
+                  reason: "Sponsor change",
+                  type: "watch",
+                  score: "Investigate",
+                },
+              ].map((item) => (
+                <div key={item.rank}>
+                  <span>{item.rank}</span>
+                  <div>
+                    <strong>{item.name}</strong>
+                    <small>{item.reason}</small>
+                  </div>
+                  <span className={`eh-rank-status ${item.type}`}>
+                    {item.score}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="eh-snapshot-readout">
+              <Check size={16} /> Includes a 45-minute readout with next
+              actions.
+            </div>
+            <small className="eh-snapshot-disclosure">
+              Illustrative accounts. No contract. Four Snapshots per month.
+            </small>
           </div>
         </div>
       </section>
 
-      {/* ————— LEAD MAGNET ————— */}
-      <section className="section-dark sp-section" id="sample-brief">
-        <div className="container-nw text-center max-w-2xl mx-auto">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>See What We Deliver</p>
-          <h2 className="text-white mb-6">See a sample<br />meeting brief.</h2>
-          <p className="mb-10 mx-auto" style={{ color: "var(--nw-dark-soft)" }}>
-            Curious what the output looks like? Drop your email and we&apos;ll send an illustrative sample of a Customer Intelligence Pilot meeting brief.
+      <section id="pricing" className="eh-section eh-pricing">
+        <div className="container-nw">
+          <div className="eh-section-heading">
+            <div>
+              <p className="eh-eyebrow">A CLEAR PATH FORWARD</p>
+              <h2>
+                Start small.
+                <br />
+                Prove it. Then build.
+              </h2>
+            </div>
+            <p>
+              Fixed-scope engagements around a specific commercial question.
+              Work directly with the founder, with scope and price agreed before
+              the work starts.
+            </p>
+          </div>
+          <div className="eh-price-grid">
+            {offers.map((offer) => (
+              <article
+                key={offer.name}
+                className={`eh-price-card ${offer.featured ? "is-featured" : ""}`}
+              >
+                <p className="eh-eyebrow">{offer.label}</p>
+                <h3>{offer.name}</h3>
+                <p className="eh-price-description">{offer.description}</p>
+                <div className="eh-price">{offer.price}</div>
+                <p className="eh-price-time">{offer.timing}</p>
+                <ul>
+                  {offer.items.map((item) => (
+                    <li key={item}>
+                      <Check size={15} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="eh-price-note">{offer.note}</p>
+                <Link
+                  href={offer.href}
+                  className={`eh-button ${offer.featured ? "eh-button-dark" : "eh-button-outline"}`}
+                >
+                  {offer.cta}
+                  <ArrowUpRight size={16} />
+                </Link>
+              </article>
+            ))}
+          </div>
+          <p className="eh-pricing-fine">
+            Pilot founding-client pricing is offered in exchange for feedback
+            and permission for a measured case study. Final price depends on
+            sources, accounts, and integrations.
           </p>
-          <SampleBriefForm />
+          <div className="eh-alternative">
+            <div>
+              <span className="eh-eyebrow">ANOTHER WAY TO START</span>
+              <p>
+                <strong>Signal Stack Audit</strong> · $1,500 · 3 business days
+              </p>
+              <small>
+                A written report on the signals you capture, your blind spots,
+                and the three highest-leverage fixes.
+              </small>
+            </div>
+            <Link href="/contact" className="eh-text-link">
+              Discuss an audit
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          <details className="eh-follow-on">
+            <summary>Follow-on engagements & regional pricing</summary>
+            <p>
+              Renewal Risk & Expansion Intelligence ($30K–$75K) ·
+              Deal-to-Delivery Assurance ($40K–$100K+) · Managed Improvement
+              ($3K–$15K/mo).
+            </p>
+            <p>
+              Based in India? We price in ₹ for Indian companies. Mention it
+              when you <Link href="/contact">reach out</Link>.
+            </p>
+          </details>
         </div>
       </section>
 
-      {/* ————— MOBILE STICKY CTA ————— */}
-      <div
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-3"
-        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))", backgroundColor: "var(--nw-canvas)", borderTop: "1px solid var(--nw-line-light)" }}
-      >
+      <section className="eh-section eh-resources">
+        <div className="container-nw">
+          <div className="eh-section-heading">
+            <div>
+              <p className="eh-eyebrow">EXPLORE THE THINKING</p>
+              <h2>
+                Make your next
+                <br />
+                CS decision clearer.
+              </h2>
+            </div>
+            <Link href="/signals" className="eh-text-link">
+              Browse the Signal Library <ArrowUpRight size={17} />
+            </Link>
+          </div>
+          <div className="eh-resource-grid">
+            <Link href="/guides/customer-health-score" className="eh-resource">
+              <div className="eh-resource-art eh-score-art" aria-hidden="true">
+                <div>
+                  <span>HEALTH SCORE</span>
+                  <strong>
+                    82<span>/100</span>
+                  </strong>
+                  <small>Healthy?</small>
+                </div>
+                <div className="eh-art-flags">
+                  <span>Champion quiet</span>
+                  <span>Usage declining</span>
+                  <span>Evidence missing</span>
+                </div>
+              </div>
+              <small>GUIDE / HEALTH SCORES</small>
+              <h3>When green accounts churn.</h3>
+              <p>
+                How to test whether your health score sees the risk in time.
+              </p>
+              <span className="eh-resource-arrow">
+                <ArrowUpRight size={20} />
+              </span>
+            </Link>
+            <Link
+              href="/tools/health-score-back-tester"
+              className="eh-resource"
+            >
+              <div className="eh-resource-art eh-test-art" aria-hidden="true">
+                <div className="eh-test-bars">
+                  {[35, 58, 40, 74, 52, 90, 66, 100, 79].map((height, i) => (
+                    <span key={i} style={{ height: `${height}%` }} />
+                  ))}
+                </div>
+                <span className="eh-test-label">
+                  YOUR SCORE × REAL OUTCOMES
+                </span>
+              </div>
+              <small>FREE TOOL / BACK-TESTER</small>
+              <h3>Put your score to the test.</h3>
+              <p>
+                Check catch rates and false alarms. Your data stays in your
+                browser.
+              </p>
+              <span className="eh-resource-arrow">
+                <ArrowUpRight size={20} />
+              </span>
+            </Link>
+            <Link href="/customer-success-ai" className="eh-resource">
+              <div
+                className="eh-resource-art eh-network-art"
+                aria-hidden="true"
+              >
+                <div className="eh-network-nodes">
+                  <Database />
+                  <MessageSquareText />
+                  <Headphones />
+                </div>
+                <span className="eh-network-line" />
+                <div className="eh-network-core">
+                  <Network size={30} />
+                </div>
+                <span className="eh-network-line" />
+                <FileText size={30} />
+              </div>
+              <small>APPROACH / CUSTOMER SUCCESS AI</small>
+              <h3>The context between the tools.</h3>
+              <p>
+                See how a signal layer works alongside your existing CS
+                platform.
+              </p>
+              <span className="eh-resource-arrow">
+                <ArrowUpRight size={20} />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="eh-section eh-sample-section" id="sample-brief">
+        <div className="container-nw eh-sample-layout">
+          <div>
+            <p className="eh-eyebrow">TAKE A CLOSER LOOK</p>
+            <h2>
+              Good intelligence
+              <br />
+              speaks for itself.
+            </h2>
+            <p>
+              Get an illustrative meeting brief in your inbox. See how sources,
+              signals, and recommended actions come together.
+            </p>
+            <Link href="/about" className="eh-text-link">
+              Meet the founder <ArrowUpRight size={17} />
+            </Link>
+          </div>
+          <div className="eh-sample-form">
+            <div className="eh-sample-icon">
+              <FileText size={28} strokeWidth={1.4} />
+            </div>
+            <h3>See a sample meeting brief.</h3>
+            <p>One example. A clearer picture of what your team receives.</p>
+            <SampleBriefForm />
+          </div>
+        </div>
+      </section>
+      <div className="eh-mobile-cta">
         <Link
-          href="/contact"
-          className="flex h-12 w-full items-center justify-center rounded-full text-sm font-medium text-white"
-          style={{ backgroundColor: "var(--nw-ink)" }}
+          href="/account-risk-snapshot"
+          className="eh-button eh-button-dark"
         >
-          Book a discovery call
+          Get the free Snapshot <ArrowUpRight size={16} />
         </Link>
       </div>
     </div>

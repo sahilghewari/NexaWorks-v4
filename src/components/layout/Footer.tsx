@@ -2,17 +2,15 @@ import Image from "next/image";
 
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({ enterprise = false }: { enterprise?: boolean }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="section-dark" style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
+    <footer className={`section-dark ${enterprise ? "eh-enterprise-footer" : ""}`} style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
       {/* Giant closing CTA */}
       <div className="container-nw pt-20 pb-16 md:pt-32 md:pb-24">
         <h2 className="text-white mb-8 max-w-4xl">
-          One workflow.<br />
-          3–5 systems.<br />
-          4–6 weeks.
+          {enterprise ? <>The signal is there.<br />Let’s find it.</> : <>One workflow.<br />3–5 systems.<br />4–6 weeks.</>}
         </h2>
         <Link
           href="/contact"
