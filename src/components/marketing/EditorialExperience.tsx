@@ -15,7 +15,7 @@ export default function EditorialExperience({
     if (reduceMotion !== false || !scope.current) return;
     const controls: { stop: () => void }[] = [];
     const hero = scope.current.querySelectorAll(
-      ".ed-hero-copy > :not(.ed-hero-margin), .ed-dossier",
+      ".ed-hero-copy > :not(.ed-hero-margin), .nw-spatial-interface",
     );
     hero.forEach((element: Element, i: number) =>
       controls.push(
@@ -26,6 +26,53 @@ export default function EditorialExperience({
         ),
       ),
     );
+    const environment = scope.current.querySelector(".nw-environment");
+    if (environment)
+      controls.push(
+        animate(
+          environment,
+          { opacity: [0.3, 1] },
+          { duration: 0.8, ease: "easeOut" },
+        ),
+      );
+    const heroElement = scope.current.querySelector(
+      ".ed-hero",
+    ) as HTMLElement | null;
+    const desktopPointer = window.matchMedia(
+      "(min-width: 1025px) and (pointer: fine)",
+    );
+    let frame = 0;
+    const resetDepth = () => {
+      heroElement?.style.setProperty("--nw-depth-x", "0px");
+      heroElement?.style.setProperty("--nw-depth-y", "0px");
+    };
+    const moveDepth = (event: PointerEvent) => {
+      if (!desktopPointer.matches || !heroElement) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const rect = heroElement.getBoundingClientRect();
+        const x = Math.max(
+          -1,
+          Math.min(1, ((event.clientX - rect.left) / rect.width) * 2 - 1),
+        );
+        const y = Math.max(
+          -1,
+          Math.min(1, ((event.clientY - rect.top) / rect.height) * 2 - 1),
+        );
+        heroElement.style.setProperty("--nw-depth-x", `${x * 10}px`);
+        heroElement.style.setProperty("--nw-depth-y", `${y * 7}px`);
+      });
+    };
+    heroElement?.addEventListener("pointermove", moveDepth, { passive: true });
+    heroElement?.addEventListener("pointerleave", resetDepth);
+    // Pause the only continuous effects when the hero leaves the viewport.
+    const environmentObserver = new IntersectionObserver(([entry]) => {
+      heroElement?.classList.toggle(
+        "nw-environment-paused",
+        !entry.isIntersecting,
+      );
+    });
+    if (heroElement) environmentObserver.observe(heroElement);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -47,6 +94,11 @@ export default function EditorialExperience({
       .forEach((element: Element) => observer.observe(element));
     return () => {
       observer.disconnect();
+      environmentObserver.disconnect();
+      cancelAnimationFrame(frame);
+      heroElement?.removeEventListener("pointermove", moveDepth);
+      heroElement?.removeEventListener("pointerleave", resetDepth);
+      resetDepth();
       controls.forEach((control) => control.stop());
     };
   }, [animate, reduceMotion, scope]);

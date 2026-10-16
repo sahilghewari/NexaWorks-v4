@@ -1,3 +1,5 @@
+> Visual direction superseded by `cinematic-intelligence-redesign.md`. This report records the preceding implementation and its checks.
+
 # NexaWorks premium redesign — implementation and verification
 
 The redesign is implemented in the existing Next.js repository and available locally at http://127.0.0.1:3004/. The work remains on draft PR #26; production has not been deployed.

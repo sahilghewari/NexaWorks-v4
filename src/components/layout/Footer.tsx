@@ -7,6 +7,48 @@ export default function Footer({ enterprise = false }: { enterprise?: boolean })
 
   return (
     <footer className={`section-dark ${enterprise ? "nw-editorial-footer" : ""}`} style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
+      <svg
+        className="nw-footer-network"
+        viewBox="0 0 600 500"
+        fill="none"
+        aria-hidden="true"
+      >
+        <g stroke="#819bd7" strokeWidth=".7">
+          <circle cx="330" cy="240" r="170" opacity=".35" />
+          <ellipse
+            cx="330"
+            cy="240"
+            rx="170"
+            ry="60"
+            transform="rotate(-30 330 240)"
+          />
+          <ellipse
+            cx="330"
+            cy="240"
+            rx="170"
+            ry="70"
+            transform="rotate(50 330 240)"
+          />
+          <ellipse
+            cx="330"
+            cy="240"
+            rx="225"
+            ry="90"
+            transform="rotate(-20 330 240)"
+            opacity=".6"
+          />
+          <path
+            d="M185 150L410 90 480 290 245 390 185 150 480 290M245 390L410 90"
+            opacity=".5"
+          />
+        </g>
+        <g fill="#a0cbeb">
+          <circle cx="185" cy="150" r="3" />
+          <circle cx="410" cy="90" r="3" />
+          <circle cx="480" cy="290" r="3" />
+          <circle cx="245" cy="390" r="3" />
+        </g>
+      </svg>
       {/* Giant closing CTA */}
       <div className="container-nw pt-20 pb-16 md:pt-32 md:pb-24">
         <h2 className="text-white mb-8 max-w-4xl">

@@ -3,11 +3,11 @@
   --nw-canvas: #f6f4ef;
   --nw-ink: #20262e;
   --nw-ink-soft: #56616d;
-  --nw-accent: #4c55c7;
+  --nw-accent: #4b58bf;
   --nw-accent-hover: #3b43a6;
   --nw-accent-glow: #a6adff;
-  --nw-dark: #10151c;
-  --nw-dark-mid: #1c2430;
+  --nw-dark: #080e19;
+  --nw-dark-mid: #172337;
   --nw-dark-soft: #b4bfcc;
   --nw-amber: #8a590f;
   --nw-line-light: #d9dde0;
@@ -157,5 +157,52 @@
   }
   .nw-designed-site :where(a, button, input, textarea, select) {
     transition: none !important;
+  }
+}
+
+/* Shared spatial signature across service, guide, tool and contact pages. */
+.nw-designed-site .nw-inner h1 {
+  font-family: var(--nw-font-sans);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+.nw-designed-site .nw-inner > section:first-child {
+  background-image: linear-gradient(125deg, #b2bedb0d, transparent 65%);
+}
+.nw-designed-site footer {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+.nw-footer-network {
+  position: absolute;
+  pointer-events: none;
+  width: min(620px, 65vw);
+  height: auto;
+  top: -60px;
+  right: -45px;
+  opacity: 0.38;
+  z-index: -1;
+}
+.nw-designed-site footer > .container-nw {
+  position: relative;
+}
+.nw-designed-site footer > .container-nw:first-of-type {
+  background: linear-gradient(90deg, var(--nw-dark) 20%, transparent);
+}
+.nw-designed-site footer h2 {
+  font-family: var(--nw-font-sans);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+}
+.nw-designed-site .ed-site-header {
+  background-color: #090e18f0 !important;
+  border-bottom-color: #8b9fcd26 !important;
+}
+@media (max-width: 767px) {
+  .nw-footer-network {
+    width: 430px;
+    right: -240px;
+    opacity: 0.25;
   }
 }

@@ -18,7 +18,9 @@ import SampleBriefForm from "@/components/marketing/SampleBriefForm";
 import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
+import IntelligenceEnvironment from "@/components/marketing/IntelligenceEnvironment";
 import "./editorial-home.css";
+import "./cinematic-home.css";
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -79,6 +81,7 @@ export default function Home() {
   return (
     <EditorialExperience>
       <section className="ed-hero" aria-labelledby="ed-hero-title">
+        <IntelligenceEnvironment />
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
             <p className="ed-eyebrow">
@@ -119,8 +122,18 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <EditorialSnapshot />
+          <div className="nw-spatial-interface">
+            <div className="nw-interface-coordinate" aria-hidden="true">
+              NEXAWORKS / INTELLIGENCE LAYER <span>01 — ACCOUNT VIEW</span>
+            </div>
+            <EditorialSnapshot />
+          </div>
         </div>
+      </section>
+      <section
+        className="nw-snapshot-transition"
+        aria-label="Free Account Risk Snapshot"
+      >
         <div className="ed-wrap">
           <div className="ed-snapshot-strip">
             <div>
@@ -133,7 +146,9 @@ export default function Home() {
             </div>
             <div>
               <strong>20 accounts.</strong>
-              <span>Prioritized, with the signals behind each.</span>
+              <span>
+                Evidence-backed priorities, with the signals behind each.
+              </span>
             </div>
             <div>
               <strong>5 business days.</strong>
