@@ -23,7 +23,6 @@ export default function AiAuditPage() {
   return (
     <AuditLanding
       testMode={process.env.RAZORPAY_KEY_ID?.startsWith("rzp_test_") ?? false}
-      showTestimonialDrafts={process.env.NODE_ENV === "development"}
     />
   );
 }
