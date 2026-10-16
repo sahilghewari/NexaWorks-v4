@@ -1,14 +1,33 @@
 "use client";
 
 import Image from "next/image";
-
-
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!isOpen || !dialog) return;
+    // Native modal behavior keeps focus inside the menu and makes the page inert.
+    dialog.showModal();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setIsOpen(false);
+    };
+    desktop.addEventListener("change", closeOnDesktop);
+    closeOnDesktop();
+    return () => {
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [isOpen]);
 
   const links = [
     { name: "Services", href: "/#services" },
@@ -19,10 +38,11 @@ export default function Navbar() {
   ];
 
   return (
+    <>
     <header
-      className="sticky top-0 z-50 w-full backdrop-blur-md"
+      className="sticky top-0 z-50 w-full"
       style={{
-        backgroundColor: "rgba(250, 250, 248, 0.8)",
+        backgroundColor: "var(--nw-canvas)",
         borderBottom: "1px solid var(--nw-line-light)",
       }}
     >
@@ -61,15 +81,18 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden p-2" style={{ color: "var(--nw-ink)" }} onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+        <button className="md:hidden p-3" style={{ color: "var(--nw-ink)" }} onClick={() => setIsOpen(!isOpen)} aria-label="Open menu" aria-expanded={isOpen} aria-controls="mobile-navigation">
           {isOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
         </button>
       </div>
-
-      {/* Mobile Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 top-14 z-50 flex flex-col justify-between p-8 md:hidden" style={{ backgroundColor: "var(--nw-canvas)" }}>
-          <nav className="flex flex-col gap-6 mt-8">
+    </header>
+      <dialog ref={dialogRef} id="mobile-navigation" aria-label="Main navigation" onClose={() => setIsOpen(false)} className="mobile-navigation">
+        <div className="flex min-h-full flex-col p-6">
+          <div className="flex items-center justify-between mb-8">
+            <span className="text-lg font-semibold">nexaworks</span>
+            <button type="button" autoFocus aria-label="Close menu" className="p-3" onClick={() => setIsOpen(false)}><X size={22} /></button>
+          </div>
+          <nav aria-label="Mobile" className="flex flex-col gap-4">
             {links.map((link) => (
               <Link
                 key={link.name}
@@ -82,7 +105,7 @@ export default function Navbar() {
               </Link>
             ))}
           </nav>
-          <div className="flex flex-col gap-4 pb-8">
+          <div className="flex flex-col gap-4 mt-auto pt-8 pb-4">
             <Link
               href="/contact"
               className="flex h-14 items-center justify-center rounded-full text-base font-medium text-white"
@@ -96,7 +119,7 @@ export default function Navbar() {
             </a>
           </div>
         </div>
-      )}
-    </header>
+      </dialog>
+    </>
   );
 }

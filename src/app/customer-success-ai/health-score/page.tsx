@@ -65,7 +65,7 @@ export default function HealthScorePage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Health Scores
           </p>

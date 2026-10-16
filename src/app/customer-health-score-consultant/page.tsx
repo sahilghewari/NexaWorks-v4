@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "What data do you need from us?",
-    a: "Read-only access or exports: CRM, product usage, support tickets, call transcripts. Most teams get us what we need within a day. No implementation project, no security review gauntlet.",
+    a: "Read-only access or exports: CRM, product usage, support tickets, call transcripts. Most teams get us what we need within a day. We agree the access method and any security requirements with your team before starting.",
   },
   {
     q: "Can we see proof before paying?",
@@ -96,7 +96,7 @@ export default function HealthScoreConsultantPage() {
     <>
       {/* Hero */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Customer health score consulting • Built on your stack
           </p>
@@ -173,9 +173,9 @@ export default function HealthScoreConsultantPage() {
                   <Check size={28} strokeWidth={3} />
                 </div>
                 <div>
-                  <h4 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
+                  <h3 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
                     {item.title}
-                  </h4>
+                  </h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
                     {item.text}
                   </p>
@@ -240,9 +240,9 @@ export default function HealthScoreConsultantPage() {
                   <p className="text-sm mb-1" style={{ color: "var(--nw-accent)" }}>
                     Step {i + 1}
                   </p>
-                  <h4 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
+                  <h3 className="text-2xl mb-2" style={{ color: "var(--nw-ink)" }}>
                     {step.title}
-                  </h4>
+                  </h3>
                   <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
                     {step.text}
                   </p>
@@ -259,7 +259,7 @@ export default function HealthScoreConsultantPage() {
           <h2 className="text-3xl mb-12 text-white">Start free, then fixed price</h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 rounded-2xl" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              <h4 className="text-2xl mb-4 text-white">Free</h4>
+              <h3 className="text-2xl mb-4 text-white">Free</h3>
               <ul className="space-y-3 text-lg" style={{ color: "var(--nw-dark-soft)" }}>
                 <li>
                   • The{" "}
@@ -273,7 +273,7 @@ export default function HealthScoreConsultantPage() {
               </ul>
             </div>
             <div className="p-8 rounded-2xl" style={{ backgroundColor: "rgba(255,255,255,0.06)" }}>
-              <h4 className="text-2xl mb-4 text-white">Fixed price — only if you want it</h4>
+              <h3 className="text-2xl mb-4 text-white">Fixed price — only if you want it</h3>
               <ul className="space-y-3 text-lg" style={{ color: "var(--nw-dark-soft)" }}>
                 <li>
                   •{" "}
@@ -305,9 +305,9 @@ export default function HealthScoreConsultantPage() {
           <div className="space-y-10 mb-16">
             {faqs.map((faq) => (
               <div key={faq.q}>
-                <h4 className="text-xl mb-3" style={{ color: "var(--nw-ink)" }}>
+                <h3 className="text-xl mb-3" style={{ color: "var(--nw-ink)" }}>
                   {faq.q}
-                </h4>
+                </h3>
                 <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
                   {faq.a}
                 </p>

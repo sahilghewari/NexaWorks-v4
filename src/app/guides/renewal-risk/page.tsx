@@ -63,11 +63,11 @@ export default function RenewalRiskGuidePage() {
   return (
     <>
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
-        <div className="container-nw max-w-4xl pt-16">
+        <div className="container-nw max-w-4xl page-intro">
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
             Guide · Checklist
           </p>
-          <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>
+          <h1 className="article-title mb-6" style={{ color: "var(--nw-ink)" }}>
             Renewal risk at 90, 60, and 30 days.
           </h1>
           <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>

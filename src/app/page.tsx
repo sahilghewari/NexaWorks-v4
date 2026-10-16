@@ -8,40 +8,40 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="home-with-sticky-cta">
       {/* ————— HERO — Asymmetric, never centered ————— */}
       <section style={{ backgroundColor: "var(--nw-canvas)" }} className="relative overflow-hidden">
-        <div className="container-nw pt-24 pb-20 md:pt-40 md:pb-32">
+        <div className="container-nw pt-12 pb-14 md:pt-20 md:pb-20">
           {/* Eyebrow */}
           <p className="eyebrow mb-8" style={{ color: "var(--nw-accent)" }}>
             Customer Signals — For B2B SaaS Teams
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-            <div className="lg:col-span-8">
-              <h1 style={{ color: "var(--nw-ink)" }} className="mb-8">
-                We find the churn, renewal, and expansion signals hiding across your CRM, calls, tickets, and product data.
+            <div className="lg:col-span-7">
+              <h1 style={{ color: "var(--nw-ink)" }} className="home-hero-title mb-6">
+                See renewal risk. Know what to do next.
               </h1>
               <p className="text-lg md:text-xl mb-10 leading-relaxed max-w-xl" style={{ color: "var(--nw-ink-soft)" }}>
-                NexaWorks turns them into action — working alongside the CS platform you already own.
+                NexaWorks connects the signals across your CRM, calls, tickets, and product data to surface churn risk and expansion opportunities — alongside the CS platform you already own.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-6">
                 <Link
-                  href="/contact"
+                  href="/account-risk-snapshot"
                   className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
                   style={{ backgroundColor: "var(--nw-ink)" }}
                 >
-                  Book a discovery call
+                  Get the free Snapshot
                 </Link>
                 <Link
-                  href="#method"
+                  href="/contact"
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-full px-8 text-sm font-medium transition-colors"
                   style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)" }}
                 >
-                  See the method <ArrowDown size={14} />
+                  Book a discovery call <ArrowDown size={14} className="-rotate-90" />
                 </Link>
               </div>
-              <p className="eyebrow flex items-center gap-4" style={{ color: "var(--nw-ink-soft)", fontSize: "11px", letterSpacing: "0.1em" }}>
+              <p className="eyebrow flex flex-wrap items-center gap-x-4 gap-y-2" style={{ color: "var(--nw-ink-soft)", fontSize: "11px", letterSpacing: "0.1em" }}>
                 <span>Founder-led</span>
                 <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "var(--nw-accent)" }} />
                 <span>Fixed scope & price</span>
@@ -51,10 +51,10 @@ export default function Home() {
             </div>
 
             {/* Deliverable artifact mockup */}
-            <div className="lg:col-span-4 relative hidden lg:flex items-start justify-end">
+            <div className="lg:col-span-5 relative flex items-start lg:justify-end">
               <div
-                className="w-[320px] rounded-lg bg-white p-6 shadow-2xl"
-                style={{ border: "1px solid var(--nw-line-light)", transform: "rotate(2deg) translateY(20px)" }}
+                className="w-full max-w-md rounded-lg bg-white p-6 md:p-8 shadow-sm"
+                style={{ border: "1px solid var(--nw-line-light)" }}
               >
                 <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>
                   Meeting Brief · Illustrative Sample
@@ -62,7 +62,7 @@ export default function Home() {
                 <div className="space-y-3">
                   <div>
                     <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>ACCOUNT</p>
-                    <p className="text-sm" style={{ color: "var(--nw-ink)" }}>████████ Corp</p>
+                    <p className="text-sm" style={{ color: "var(--nw-ink)" }}>Example account · renewal in 60 days</p>
                   </div>
                   <div>
                     <p className="eyebrow mb-0.5" style={{ color: "var(--nw-ink)", fontSize: "11px" }}>RISK SIGNAL</p>
@@ -77,12 +77,36 @@ export default function Home() {
                     <p className="text-sm" style={{ color: "var(--nw-ink)" }}>Escalate to VP CS. Schedule exec alignment before renewal window.</p>
                   </div>
                 </div>
-                <p className="eyebrow mt-4" style={{ color: "var(--nw-ink-soft)", fontSize: "9px" }}>
+                <p className="eyebrow mt-4" style={{ color: "var(--nw-ink-soft)", fontSize: "11px" }}>
                   ILLUSTRATIVE SAMPLE — NOT A SHIPPED PRODUCT
                 </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="services" className="sp-section" style={{ backgroundColor: "var(--nw-warm-100)" }}>
+        <div className="container-nw">
+          <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>Services · Built on your existing stack</p>
+          <h2 className="mb-6 max-w-3xl">Start with the question your team needs answered.</h2>
+          <p className="text-lg max-w-2xl mb-10" style={{ color: "var(--nw-ink-soft)" }}>See the evidence first. Then choose a fixed-scope engagement around your accounts, workflows, and systems.</p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: "01 · Find the risk", title: "Account Risk Snapshot", detail: "Free · 5 business days", text: "Your 20 riskiest accounts, ranked with the signals behind each one and a 45-minute readout.", href: "/account-risk-snapshot", cta: "Explore the free Snapshot" },
+              { step: "02 · Define the scope", title: "Intelligence Blueprint", detail: "$3,500 · 10 business days", text: "Map one workflow, assess your data, and define the pilot. The fee is fully credited toward the Pilot.", href: "/customer-intelligence-blueprint", cta: "Explore the Blueprint" },
+              { step: "03 · Prove the workflow", title: "Intelligence Pilot", detail: "$9,500–$18,000 · 4–6 weeks", text: "Run a human-reviewed intelligence workflow across 20–50 strategic accounts and 3–5 systems.", href: "/customer-intelligence-pilot", cta: "Explore the Pilot" },
+            ].map((offer) => (
+              <div key={offer.href} className="flex flex-col border-t pt-6" style={{ borderColor: "var(--nw-warm-300)" }}>
+                <p className="eyebrow mb-4" style={{ color: "var(--nw-accent)" }}>{offer.step}</p>
+                <h3 className="text-2xl mb-3">{offer.title}</h3>
+                <p className="text-sm font-medium mb-4">{offer.detail}</p>
+                <p className="leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>{offer.text}</p>
+                <Link href={offer.href} className="underline underline-offset-4 mt-auto text-sm font-medium">{offer.cta} →</Link>
+              </div>
+            ))}
+          </div>
+          <Link href="/customer-success-ai" className="inline-block mt-10 underline underline-offset-4">See how Customer Success Intelligence works →</Link>
         </div>
       </section>
 
@@ -100,7 +124,7 @@ export default function Home() {
                 The renewal is 60 days out. Usage is down. Your champion went
                 quiet two weeks ago. A severity-1 support ticket just opened.
                 Implementation is behind. The signals are sitting in Salesforce,
-                Zendesk, and Gong — but because they don't live in one place,
+                Zendesk, and Gong — but because they don&apos;t live in one place,
                 nobody connects the dots until the post-mortem.
               </p>
             </div>
@@ -131,7 +155,7 @@ export default function Home() {
             How we build your intelligence workflow
           </h2>
           <p className="text-lg max-w-xl mb-16" style={{ color: "var(--nw-ink-soft)" }}>
-            We don't sell software. We sell scoped pilots that prove value on
+            We don&apos;t sell software. We sell scoped pilots that prove value on
             your actual data, without a multi-year lock-in.
           </p>
 
@@ -318,13 +342,13 @@ export default function Home() {
       </section>
 
       {/* ————— HONEST LIMITATIONS ————— */}
-      <section className="sp-section" id="services" style={{ backgroundColor: "var(--nw-canvas)" }}>
+      <section className="sp-section" id="boundaries" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
             <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>Honesty As Policy</p>
-            <h2 className="mb-6" style={{ color: "var(--nw-ink)" }}>What this isn't.</h2>
+            <h2 className="mb-6" style={{ color: "var(--nw-ink)" }}>What this isn&apos;t.</h2>
             <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
-              We tell every prospect exactly what we don't do. It's not modesty — it's how we build trust with VPs who are tired of vendor overpromises.
+              We tell every prospect exactly what we don&apos;t do. It&apos;s not modesty — it&apos;s how we build trust with VPs who are tired of vendor overpromises.
             </p>
           </div>
           <div className="lg:col-span-6 lg:col-start-7 space-y-6">
@@ -354,7 +378,7 @@ export default function Home() {
           <p className="eyebrow mb-6" style={{ color: "var(--nw-accent-glow)" }}>See What We Deliver</p>
           <h2 className="text-white mb-6">See a sample<br />meeting brief.</h2>
           <p className="mb-10 mx-auto" style={{ color: "var(--nw-dark-soft)" }}>
-            Curious what the output looks like? Drop your email and we'll send an illustrative sample of a Customer Intelligence Pilot meeting brief.
+            Curious what the output looks like? Drop your email and we&apos;ll send an illustrative sample of a Customer Intelligence Pilot meeting brief.
           </p>
           <SampleBriefForm />
         </div>
@@ -362,8 +386,8 @@ export default function Home() {
 
       {/* ————— MOBILE STICKY CTA ————— */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-3 backdrop-blur-md"
-        style={{ backgroundColor: "rgba(250, 250, 248, 0.9)", borderTop: "1px solid var(--nw-line-light)" }}
+        className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-3"
+        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))", backgroundColor: "var(--nw-canvas)", borderTop: "1px solid var(--nw-line-light)" }}
       >
         <Link
           href="/contact"
@@ -373,6 +397,6 @@ export default function Home() {
           Book a discovery call
         </Link>
       </div>
-    </>
+    </div>
   );
 }

@@ -55,7 +55,7 @@ export default function SnapshotIntakeForm() {
       setRole("");
       setSources([]);
       setReferrer("");
-    } catch (error) {
+    } catch {
       setStatus("error");
     }
   };
@@ -67,13 +67,13 @@ export default function SnapshotIntakeForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form aria-busy={status === "loading"} onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="snap-name" className="sr-only">Name</label>
+          <label htmlFor="snap-name" className="form-label">Name (required)</label>
           <input
             type="text"
-            id="snap-name"
+            id="snap-name" autoComplete="name"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -83,10 +83,10 @@ export default function SnapshotIntakeForm() {
           />
         </div>
         <div>
-          <label htmlFor="snap-email" className="sr-only">Work email</label>
+          <label htmlFor="snap-email" className="form-label">Work email (required)</label>
           <input
             type="email"
-            id="snap-email"
+            id="snap-email" autoComplete="email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -98,10 +98,10 @@ export default function SnapshotIntakeForm() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="snap-company" className="sr-only">Company</label>
+          <label htmlFor="snap-company" className="form-label">Company (required)</label>
           <input
             type="text"
-            id="snap-company"
+            id="snap-company" autoComplete="organization"
             required
             value={company}
             onChange={(e) => setCompany(e.target.value)}
@@ -111,10 +111,10 @@ export default function SnapshotIntakeForm() {
           />
         </div>
         <div>
-          <label htmlFor="snap-role" className="sr-only">Role (optional)</label>
+          <label htmlFor="snap-role" className="form-label">Role (optional)</label>
           <input
             type="text"
-            id="snap-role"
+            id="snap-role" autoComplete="organization-title"
             value={role}
             onChange={(e) => setRole(e.target.value)}
             placeholder="Your role (optional)"
@@ -123,10 +123,10 @@ export default function SnapshotIntakeForm() {
           />
         </div>
       </div>
-      <div>
-        <p className="text-sm mb-3 font-medium" style={{ color: "var(--nw-ink)" }}>
+      <fieldset>
+        <legend className="text-sm mb-3 font-medium" style={{ color: "var(--nw-ink)" }}>
           Which data sources could you share? (read-only access or exports — pick any)
-        </p>
+        </legend>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {DATA_SOURCES.map((s) => (
             <label
@@ -144,9 +144,9 @@ export default function SnapshotIntakeForm() {
             </label>
           ))}
         </div>
-      </div>
+      </fieldset>
       <div>
-        <label htmlFor="snap-referrer" className="sr-only">How did you hear about us?</label>
+        <label htmlFor="snap-referrer" className="form-label">How did you hear about us? (optional)</label>
         <input
           type="text"
           id="snap-referrer"
@@ -169,6 +169,7 @@ export default function SnapshotIntakeForm() {
           </span>
         </label>
       </div>
+      <p className="text-sm" style={{ color: "var(--nw-ink-soft)" }}>No data access is granted by this form. We will discuss access or exports with you after your request. <a href="/privacy" className="underline">Privacy policy</a></p>
       <button
         type="submit"
         disabled={status === "loading" || status === "success"}
@@ -178,10 +179,10 @@ export default function SnapshotIntakeForm() {
         {status === "loading" ? "Sending..." : status === "success" ? "Request received!" : "Request your Snapshot"}
       </button>
       {status === "error" && (
-        <p className="text-red-500 text-sm text-center mt-2">Something went wrong. Please try again.</p>
+        <p role="alert" className="text-red-700 text-sm text-center mt-2">Something went wrong. Please try again.</p>
       )}
       {status === "success" && (
-        <p className="text-sm text-center mt-2" style={{ color: "var(--nw-ink)" }}>
+        <p role="status" className="text-sm text-center mt-2" style={{ color: "var(--nw-ink)" }}>
           Got it — we will reply within one business day about data access. Your Snapshot lands within five business days.
         </p>
       )}

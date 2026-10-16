@@ -7,13 +7,13 @@
     --nw-canvas: #FAFAF8;
     --nw-ink: #1C1917;
     --nw-ink-soft: #57534E;
-    --nw-accent: #0E9F8A;
+    --nw-accent: #087768;
     --nw-accent-hover: #0B6E5F;
     --nw-accent-glow: #2DD4A8;
     --nw-dark: #131110;
     --nw-dark-mid: #1A1714;
     --nw-dark-soft: #A8A29E;
-    --nw-amber: #D97706;
+    --nw-amber: #9A4E05;
     --nw-line-light: #E8E6E1;
     --nw-line-dark: #292524;
     --nw-warm-100: #F5F5F0;
@@ -33,9 +33,9 @@
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
-  h1 { font-size: 3.5rem; }
-  @media (min-width: 768px) { h1 { font-size: 5rem; } }
-  h2 { font-size: 2.5rem; }
+  h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); text-wrap: balance; overflow-wrap: break-word; }
+
+  h2 { font-size: 2rem; text-wrap: balance; }
   @media (min-width: 768px) { h2 { font-size: 3.5rem; } }
   h3 { font-size: 1.75rem; }
   @media (min-width: 768px) { h3 { font-size: 2rem; } }
@@ -68,13 +68,46 @@
     color: white;
   }
   .sp-section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
   @media (min-width: 768px) {
     .sp-section {
-      padding-top: 8rem;
-      padding-bottom: 8rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
     }
   }
+}
+
+/* Opaque top-layer navigation: independent of the sticky header's containing block. */
+.mobile-navigation {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  overflow-y: auto;
+  background: var(--nw-canvas);
+  color: var(--nw-ink);
+}
+.mobile-navigation::backdrop { background: var(--nw-canvas); }
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--nw-accent);
+  outline-offset: 4px;
+}
+input::placeholder, textarea::placeholder { color: #6b6762; opacity: 1; }
+:where(section[id], h2[id], main[id]) { scroll-margin-top: 5rem; }
+:where(input, button, a):focus { scroll-margin-block: 6rem; }
+.form-label { display: block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 500; }
+.page-intro { padding-top: 0; }
+.article-title { font-size: clamp(2.25rem, 5vw, 3.75rem); }
+.home-hero-title { font-size: clamp(2.75rem, 5.4vw, 4.75rem); }
+.home-with-sticky-cta { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+@media (min-width: 768px) { .home-with-sticky-cta { padding-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
