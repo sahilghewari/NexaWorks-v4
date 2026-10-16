@@ -1,1 +1,232 @@
-aW1wb3J0IExpbmsgZnJvbSAibmV4dC9saW5rIjsKaW1wb3J0IHsgQXJyb3dSaWdodCB9IGZyb20gImx1Y2lkZS1yZWFjdCI7CgpleHBvcnQgY29uc3QgbWV0YWRhdGEgPSB7CiAgdGl0bGU6ICJGcm9tIERhc2hib2FyZHMgdG8gQXR0ZW50aW9uIExpc3RzIHwgTmV4YVdvcmtzIiwKICBkZXNjcmlwdGlvbjoKICAgICJZb3VyIENTIHRlYW0gZG9lcyBub3QgbmVlZCBhbm90aGVyIGRhc2hib2FyZC4gSXQgbmVlZHMgdG8ga25vdyB3aGljaCBjdXN0b21lciBuZWVkcyBhdHRlbnRpb24gdG9kYXkuIEEgcHJhY3RpY2FsIGd1aWRlIHRvIGJ1aWxkaW5nIGFuIGFjY291bnQgYXR0ZW50aW9uIGxpc3QgZnJvbSBzaWduYWxzIHlvdSBhbHJlYWR5IGhhdmUuIiwKICBhbHRlcm5hdGVzOiB7IGNhbm9uaWNhbDogIi9ndWlkZXMvYXR0ZW50aW9uLWxpc3QiIH0sCn07Cgpjb25zdCBzaWduYWxzID0gWwogIHsKICAgIHRpdGxlOiAiUGVvcGxlIG1vdmVtZW50IiwKICAgIHRleHQ6ICJUaXRsZSBjaGFuZ2VzLCBkZXBhcnR1cmVzLCBuZXcgZmFjZXMgb24gY2FsbHMsIHRoZSBjaGFtcGlvbidzIGxhc3QgbWVhbmluZ2Z1bCBhY3Rpdml0eS4gVGhlIHByb2R1Y3QgY2FuIGJlIHBlcmZlY3RseSBoZWFsdGh5IHdoaWxlIHRoZSByZWxhdGlvbnNoaXAgaXMgcXVpZXRseSBlbmRpbmcuIiwKICB9LAogIHsKICAgIHRpdGxlOiAiVG9uZSBpbiBzdXBwb3J0IHRpY2tldHMsIG5vdCB2b2x1bWUiLAogICAgdGV4dDogIlZvbHVtZSBvZnRlbiBzdGF5cyBub3JtYWwgcmlnaHQgdXAgdG8gYSBjaHVybi4gUmVhZGluZyB0aGUgbGFzdCB0d2VudHkgdGlja2V0cyBmb3IgdG9uZSDigJQgd2hlbiAndGhhbmtzIScgYmVjb21lcyAncGVyIG15IGxhc3QgZW1haWwnIOKAlCBzdXJmYWNlcyBzaGlmdHMgdGhhdCB2b2x1bWUtYmFzZWQgdmlld3MgbWlzcy4iLAogIH0sCiAgewogICAgdGl0bGU6ICJUaGUgbWVldGluZyB0aGF0IHN0b3BwZWQgaGFwcGVuaW5nIiwKICAgIHRleHQ6ICJXaGljaCByZWN1cnJpbmcgdG91Y2ggd2VudCBxdWlldCBmaXJzdCDigJQgdGhlIFFCUiwgdGhlIGNhZGVuY2UgY2FsbCwgdGhlIGNoZWNrLWluPyBObyBzeXN0ZW0gYWxlcnRzIG9uIHNvbWV0aGluZyBub3QgaGFwcGVuaW5nLCBzbyBhYnNlbmNlIGlzIGVhc3kgdG8gdW5kZXJ3ZWlnaHQuIENhbGVuZGFyIGhpc3RvcnkgaXMgYSBkYXRhc2V0IG1vc3QgdGVhbXMgbmV2ZXIgcXVlcnkuIiwKICB9LAogIHsKICAgIHRpdGxlOiAiVXNhZ2UgYWdhaW5zdCB0aGUgYWNjb3VudCdzIG93biBwZWFrIiwKICAgIHRleHQ6ICJBbiBhY2NvdW50IGF0IDYwJSBvZiBpdHMgb3duIGJlc3Qgd2VlayBpcyBkZWNheWluZyBldmVuIGlmIGl0IGJlYXRzIGV2ZXJ5IHNlZ21lbnQgYmVuY2htYXJrLiBDb21wYXJpbmcgYWNjb3VudHMgdG8gdGhlbXNlbHZlcyBjYXRjaGVzIGRlY2xpbmVzIHRoYXQgcGVlciBjb21wYXJpc29ucyBoaWRlLiIsCiAgfSwKICB7CiAgICB0aXRsZTogIkNvbW1lcmNpYWwgZHJpZnQiLAogICAgdGV4dDogIkNsb3NlIGRhdGVzIHRoYXQgbW92ZSwgcHJvY3VyZW1lbnQgZ29pbmcgcXVpZXQsIHRoZSBzcG9uc29yIGRlbGVnYXRpbmcgcmVuZXdhbCBjb252ZXJzYXRpb25zIGRvd253YXJkLiBUaGVzZSBsaXZlIGluIHRoZSBDUk0gcmF0aGVyIHRoYW4gdGhlIHByb2R1Y3QsIHdoaWNoIGlzIHdoeSBwcm9kdWN0LW9ubHkgdmlld3Mgb2Z0ZW4gbWlzcyB0aGVtLiIsCiAgfSwKXTsKCmNvbnN0IHBpdGZhbGxzID0gWwogIHsKICAgIHRpdGxlOiAiTGlzdCB3b3JzaGlwIiwKICAgIHRleHQ6ICJUaGUgbW9tZW50IHRoZSBsaXN0IGJlY29tZXMgYSBudW1iZXIgcGVvcGxlIGRlZmVuZCBpbnN0ZWFkIG9mIGEgcHJvbXB0IHRvIGFjdCwgaXQgaGFzIGJlY29tZSBhbm90aGVyIGRhc2hib2FyZC4gVGhlIGxpc3QgZXhpc3RzIHRvIHByb2R1Y2UgcGhvbmUgY2FsbHMsIG5vdCB0byBiZSBhY2N1cmF0ZS4iLAogIH0sCiAgewogICAgdGl0bGU6ICJTZXQgYW5kIGZvcmdldCIsCiAgICB0ZXh0OiAiU2lnbmFscyBkZWNheS4gVGhlIGNoYW1waW9uIG1hcHBlZCBpbiBKYW51YXJ5IG1heSBiZSBnb25lIGJ5IE1hcmNoLiBSZWJ1aWxkIHRoZSBzdGFrZWhvbGRlciBwaWN0dXJlIHF1YXJ0ZXJseSBvciB0aGUgbGlzdCBxdWlldGx5IGdvZXMgc3RhbGUuIiwKICB9LAogIHsKICAgIHRpdGxlOiAiTWVhc3VyaW5nIGFjdGl2aXR5IGluc3RlYWQgb2YgcmlzayIsCiAgICB0ZXh0OiAiXHUyMDFjV2UgY2FsbGVkIGV2ZXJ5b25lIG9uIHRoZSBsaXN0XHUyMDFkIGlzIGFjdGl2aXR5LiBcdTIwMWNUd28gb2YgdGhlIGZpdmUgY2FsbHMgc3VyZmFjZWQgcmVhbCByZW5ld2FsIHJpc2sgd2UgYXJlIG5vdyB3b3JraW5nXHUyMDFkIGlzIHRoZSBvdXRjb21lLiBUcmFjayB0aGUgc2Vjb25kIG9uZS4iLAogIH0sCl07Cgpjb25zdCBmYXFzID0gWwogIHsKICAgIHE6ICJIb3cgaXMgdGhpcyBkaWZmZXJlbnQgZnJvbSBhIGhlYWx0aCBzY29yZT8iLAogICAgYTogIkEgaGVhbHRoIHNjb3JlIHN1bW1hcml6ZXMgdGhlIHBhc3QgaW50byBhIG51bWJlci4gQW4gYXR0ZW50aW9uIGxpc3Qgc2NoZWR1bGVzIHRoZSBmdXR1cmUgaW50byBhY3Rpb25zLiBTY29yZXMgdGVuZCB0byBnZXQgcmV2aWV3ZWQgaW4gUUJSczsgbGlzdHMgZ2V0IHdvcmtlZCBvbiBNb25kYXlzLiIsCiAgfSwKICB7CiAgICBxOiAiRG8gd2UgbmVlZCBhIENTIHBsYXRmb3JtIHRvIGRvIHRoaXM/IiwKICAgIGE6ICJOby4gVGhlIG1hbnVhbCBwaWxvdCBkZXNjcmliZWQgYWJvdmUgcnVucyBvbiB0b29scyB5b3UgYWxyZWFkeSBwYXkgZm9yLiBQbGF0Zm9ybXMgaGVscCBhdCBzY2FsZSwgYWZ0ZXIgdGhlIHByb2Nlc3MgaXMgcHJvdmVuIGJ5IGhhbmQgYW5kIHlvdSBrbm93IHdoaWNoIHNpZ25hbHMgbWF0dGVyLiIsCiAgfSwKICB7CiAgICBxOiAiV2hvIG93bnMgdGhlIGxpc3Q/IiwKICAgIGE6ICJUaGUgQ1NNcyB3aG8gd29yayBpdC4gQ1MgT3BlcmF0aW9ucyBtYWludGFpbnMgdGhlIHRlbXBsYXRlIGFuZCB0aGUgZGVmaW5pdGlvbnMuIExlYWRlcnNoaXAgcmV2aWV3cyB0aGUgb3V0Y29tZXMgbW9udGhseSwgbm90IHRoZSBzcHJlYWRzaGVldC4iLAogIH0sCiAgewogICAgcTogIk91ciBib29rIGlzIDIwMCBhY2NvdW50cywgbm90IDIwLiBXaGVyZSBkbyB3ZSBzdGFydD8iLAogICAgYTogIlN0YXJ0IHdpdGggdGhlIHRvcCB0d2VudHkgYnkgcmV2ZW51ZSBhdCByaXNrLiBUaGUgZGlzY2lwbGluZSB0cmFuc2ZlcnMgZG93bndhcmQgb25jZSBpdCB3b3JrcyBhdCB0aGUgdG9wLiBDaHVybiBkYW1hZ2Ugb2Z0ZW4gY29uY2VudHJhdGVzIGluIGZld2VyIGFjY291bnRzIHRoYW4gdGVhbXMgZXhwZWN0LiIsCiAgfSwKXTsKCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEF0dGVudGlvbkxpc3RQYWdlKCkgewogIHJldHVybiAoCiAgICA8PgogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwLXNlY3Rpb24iIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogInZhcigtLW53LWNhbnZhcykiIH19PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWluZXItbncgbWF4LXctNHhsIHB0LTE2Ij4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0iZXllYnJvdyBtYi02IiBzdHlsZT17eyBjb2xvcjogInZhcigtLW53LWFjY2VudCkiIH19PgogICAgICAgICAgICBHdWlkZSDCtyBQcmlvcml0aXphdGlvbiBmcmFtZXdvcmsKICAgICAgICAgIDwvcD4KICAgICAgICAgIDxoMSBjbGFzc05hbWU9Im1iLTYiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rKSIgfX0+CiAgICAgICAgICAgIEZyb20gZGFzaGJvYXJkcyB0byBhdHRlbnRpb24gbGlzdHMuCiAgICAgICAgICA8L2gxPgogICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXhsIGxlYWRpbmctcmVsYXhlZCBtYi02IiBzdHlsZT17eyBjb2xvcjogInZhcigtLW53LWluay1zb2Z0KSIgfX0+CiAgICAgICAgICAgIFlvdXIgQ1MgdGVhbSBkb2VzIG5vdCBuZWVkIGFub3RoZXIgZGFzaGJvYXJkLiBJdCBuZWVkcyB0byBrbm93IHdoaWNoCiAgICAgICAgICAgIGN1c3RvbWVyIG5lZWRzIGF0dGVudGlvbiB0b2RheS4gQW4gYXR0ZW50aW9uIGxpc3QgaXMgYSBzaG9ydCwgcmFua2VkCiAgICAgICAgICAgIGxpc3Qgb2YgYWNjb3VudHMgdGhhdCBuZWVkIGEgaHVtYW4gdG91Y2ggdGhpcyB3ZWVrIOKAlCBidWlsdCBmcm9tCiAgICAgICAgICAgIHNpZ25hbHMgeW91IGFscmVhZHkgaGF2ZS4KICAgICAgICAgIDwvcD4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1sZyBsZWFkaW5nLXJlbGF4ZWQgbWItMTAiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rLXNvZnQpIiB9fT4KICAgICAgICAgICAgVGhlIHNpZ25hbHMgYmVsb3cgYXJlIGlsbHVzdHJhdGl2ZSBzdGFydGluZyBwb2ludHMsIGRyYXduIGZyb20KICAgICAgICAgICAgcHJhY3RpdGlvbmVyIGRpc2N1c3Npb25zIGFuZCBvdXIgcmVzZWFyY2guIFRoZXkgYXJlIG5vdCB2YWxpZGF0ZWQKICAgICAgICAgICAgcHJlZGljdG9ycy4gVHJlYXQgdGhlbSBhcyBhIHBsYWNlIHRvIGJlZ2luLCB0aGVuIGtlZXAgd2hhdCBwcm92ZXMKICAgICAgICAgICAgdXNlZnVsIGluIHlvdXIgYm9vayBhbmQgZGlzY2FyZCB0aGUgcmVzdC4KICAgICAgICAgIDwvcD4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGZsZXgtY29sIHNtOmZsZXgtcm93IGdhcC02IHBiLTQiPgogICAgICAgICAgICA8TGluawogICAgICAgICAgICAgIGhyZWY9Ii9hY2NvdW50LXJpc2stc25hcHNob3QiCiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJpbmxpbmUtZmxleCBoLTE0IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWZ1bGwgcHgtOCB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtd2hpdGUgdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiAidmFyKC0tbnctaW5rKSIgfX0KICAgICAgICAgICAgPgogICAgICAgICAgICAgIFNlZSBpdCBvbiB5b3VyIGJvb2sgPEFycm93UmlnaHQgc2l6ZT17MTh9IGNsYXNzTmFtZT0ibWwtMiIgLz4KICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgICA8TGluawogICAgICAgICAgICAgIGhyZWY9Ii9ndWlkZXMvZ3JlZW4tdGhlbi1nb25lIgogICAgICAgICAgICAgIGNsYXNzTmFtZT0iaW5saW5lLWZsZXggaC0xNCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgcm91bmRlZC1mdWxsIHB4LTggdGV4dC1zbSBmb250LW1lZGl1bSB0cmFuc2l0aW9uLWNvbG9ycyIKICAgICAgICAgICAgICBzdHlsZT17eyBib3JkZXI6ICIxcHggc29saWQgdmFyKC0tbnctbGluZS1saWdodCkiLCBjb2xvcjogInZhcigtLW53LWluaykiIH19CiAgICAgICAgICAgID4KICAgICAgICAgICAgICBSZWFkIHRoZSBwb3N0LW1vcnRlbSBndWlkZQogICAgICAgICAgICA8L0xpbms+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgICAgPC9zZWN0aW9uPgoKICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJzcC1zZWN0aW9uIiBzdHlsZT17eyBiYWNrZ3JvdW5kQ29sb3I6ICJ3aGl0ZSIgfX0+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhaW5lci1udyBtYXgtdy00eGwiPgogICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC0zeGwgbWItNCIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmspIiB9fT4KICAgICAgICAgICAgRml2ZSBzaWduYWxzIHdvcnRoIHdhdGNoaW5nLgogICAgICAgICAgPC9oMj4KICAgICAgICAgIDxwIGNsYXNzTmFtZT0idGV4dC1sZyBtYi0xMiIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmstc29mdCkiIH19PgogICAgICAgICAgICBNYXJrIHdoaWNoIHNpZ25hbHMgYXJlIGZsYXNoaW5nIHBlciBhY2NvdW50IGVhY2ggTW9uZGF5LiBUaHJlZSBvcgogICAgICAgICAgICBtb3JlIG1lYW5zIGNhbGwgdGhpcyB3ZWVrLiBPbmUgb3IgdHdvIG1lYW5zIHdhdGNoLiBaZXJvIG1lYW5zIGxlYXZlCiAgICAgICAgICAgIGFsb25lLiBUaGVzZSB0aHJlc2hvbGRzIGFyZSBhIHN0YXJ0aW5nIGd1ZXNzLCBub3QgYSB2YWxpZGF0ZWQgbW9kZWwg4oCUCiAgICAgICAgICAgIGFuZCBvbmUgcnVsZSBvdmVycmlkZXMgdGhlIGNvdW50OiBhIHNpbmdsZSBjcml0aWNhbCBzaWduYWwsIGEgY2hhbXBpb24KICAgICAgICAgICAgZGVwYXJ0aW5nIG9yIHByb2N1cmVtZW50IGdvaW5nIHF1aWV0LCBjYW4gd2FycmFudCBpbW1lZGlhdGUgYXR0ZW50aW9uCiAgICAgICAgICAgIG9uIGl0cyBvd24uIFNjb3Jpbmcgc3lzdGVtcyBzdXBwb3J0IGp1ZGdtZW50OyB0aGV5IGRvIG5vdCByZXBsYWNlIGl0LgogICAgICAgICAgPC9wPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktMTAiPgogICAgICAgICAgICB7c2lnbmFscy5tYXAoKHNpZ25hbCwgaSkgPT4gKAogICAgICAgICAgICAgIDxkaXYga2V5PXtzaWduYWwudGl0bGV9IGNsYXNzTmFtZT0iZmxleCBnYXAtNiBpdGVtcy1zdGFydCI+CiAgICAgICAgICAgICAgICA8ZGl2CiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleC1zaHJpbmstMCB3LTEwIGgtMTAgcm91bmRlZC1mdWxsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtc20gZm9udC1tZWRpdW0iCiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogInZhcigtLW53LWFjY2VudCkiLCBjb2xvcjogIndoaXRlIiB9fQogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICB7aSArIDF9CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9InRleHQteGwgbWItMiIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmspIiB9fT57c2lnbmFsLnRpdGxlfTwvaDM+CiAgICAgICAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibGVhZGluZy1yZWxheGVkIiBzdHlsZT17eyBjb2xvcjogInZhcigtLW53LWluay1zb2Z0KSIgfX0+e3NpZ25hbC50ZXh0fTwvcD4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICApKX0KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CgogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwLXNlY3Rpb24iIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogInZhcigtLW53LWNhbnZhcykiIH19PgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJjb250YWluZXItbncgbWF4LXctNHhsIj4KICAgICAgICAgIDxoMiBjbGFzc05hbWU9InRleHQtM3hsIG1iLTQiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rKSIgfX0+CiAgICAgICAgICAgIEEgc2ltcGxlIHdheSB0byBzdGFydC4KICAgICAgICAgIDwvaDI+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtbGcgbGVhZGluZy1yZWxheGVkIG1iLTYiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rLXNvZnQpIiB9fT4KICAgICAgICAgICAgQmVmb3JlIGludmVzdGluZyBpbiB0b29saW5nLCBydW4gYSBmb3VyLXdlZWsgbWFudWFsIHBpbG90LiBUYWtlIHlvdXIKICAgICAgICAgICAgdHdlbnR5IGxhcmdlc3Qgb3Igcmlza2llc3QgYWNjb3VudHMgYW5kIGEgc3ByZWFkc2hlZXQgd2l0aCBvbmUgY29sdW1uCiAgICAgICAgICAgIHBlciBzaWduYWwgYWJvdmUuIEVhY2ggTW9uZGF5IHRoZSBhY2NvdW50IG93bmVyIHNwZW5kcyB0aGlydHkgbWludXRlcwogICAgICAgICAgICBmaWxsaW5nIGl0IGluIGZyb20gdG9vbHMgdGhlIHRlYW0gYWxyZWFkeSBvcGVucywgcmFua3MgdGhlIGFjY291bnRzLAogICAgICAgICAgICBhbmQgY2FsbHMgdGhlIHRvcCBmaXZlIGJlZm9yZSBXZWRuZXNkYXkuCiAgICAgICAgICA8L3A+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtbGcgbGVhZGluZy1yZWxheGVkIG1iLTYiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rLXNvZnQpIiB9fT4KICAgICAgICAgICAgQmUgY2xlYXItZXllZCBhYm91dCB3aGF0IHRoZSBwaWxvdCBpczogYSBsZWFybmluZyBleGVyY2lzZSwgbm90IGEKICAgICAgICAgICAgdmFsaWRhdGlvbiBzdHVkeS4gRm91ciB3ZWVrcyB3aWxsIG5vdCBwcm92ZSB3aGljaCBzaWduYWxzIHByZWRpY3QKICAgICAgICAgICAgY2h1cm4uIEl0IHdpbGwgdGVhY2ggdGhlIHRlYW0gd2hpY2ggc2lnbmFscyBhcmUgYWN0dWFsbHkgb2JzZXJ2YWJsZSwKICAgICAgICAgICAgd2hpY2ggb25lcyBhcmUgbm9pc3ksIGFuZCB3aGVyZSB0aGUgZGF0YSByZWFsbHkgbGl2ZXMuIFRoYXQgbGVhcm5pbmcKICAgICAgICAgICAgYmVjb21lcyB0aGUgc3BlY2lmaWNhdGlvbiBmb3IgYW55dGhpbmcgYm91Z2h0IG9yIGJ1aWx0IGxhdGVyLgogICAgICAgICAgPC9wPgogICAgICAgICAgPGgzIGNsYXNzTmFtZT0idGV4dC0yeGwgbWItNCBtdC0xMiIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmspIiB9fT4KICAgICAgICAgICAgV2hlbiB0aGUgbWFudWFsIGxpc3Qgc3RvcHMgc2NhbGluZy4KICAgICAgICAgIDwvaDM+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtbGcgbGVhZGluZy1yZWxheGVkIG1iLTYiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rLXNvZnQpIiB9fT4KICAgICAgICAgICAgVGhlIHNwcmVhZHNoZWV0IHZlcnNpb24gd29ya3MgdW50aWwgaXQgZG9lcyBub3QuIFBhc3QgdGhpcnR5IG9yIGZvcnR5CiAgICAgICAgICAgIGFjY291bnRzIHBlciBDU00gdGhlIE1vbmRheSBkaXNjaXBsaW5lIHNsaXBzLiBBIHdlZWtseSBzbmFwc2hvdCBnb2VzCiAgICAgICAgICAgIHN0YWxlIGJ5IFRodXJzZGF5LiBXaGVuIHRoZSBzaWduYWxzIGxpdmUgYWNyb3NzIGZpdmUgc3lzdGVtcywgZmlsbGluZwogICAgICAgICAgICBpbiB0aGUgc2hlZXQgYmVjb21lcyBhcmNoYWVvbG9neSDigJQgYW5kIHRoZSBzaGVldCBzaG93cyB0aGlzIHdlZWssIG5vdAogICAgICAgICAgICBob3cgYW4gYWNjb3VudCZhcG9zO3Mgc2lnbmFscyB0cmVuZGVkIG92ZXIgdGhlIHF1YXJ0ZXIuCiAgICAgICAgICA8L3A+CiAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtbGcgbGVhZGluZy1yZWxheGVkIiBzdHlsZT17eyBjb2xvcjogInZhcigtLW53LWluay1zb2Z0KSIgfX0+CiAgICAgICAgICAgIFRoYXQgaXMgd2hlcmUgY3Jvc3Mtc3lzdGVtIEN1c3RvbWVyIEludGVsbGlnZW5jZSBlYXJucyBpdHMga2VlcDogdGhlCiAgICAgICAgICAgIHNhbWUgc2lnbmFscywgcHVsbGVkIGNvbnRpbnVvdXNseSBmcm9tIHRoZSBDUk0sIHRpY2tldHMsIHByb2R1Y3QgZGF0YSwKICAgICAgICAgICAgYW5kIGNhbGVuZGFyLCByYW5rZWQgYXV0b21hdGljYWxseSwgd2l0aCBoaXN0b3J5IGF0dGFjaGVkLiBUaGUgQ1NNIHN0aWxsCiAgICAgICAgICAgIG1ha2VzIHRoZSBjYWxscy4gVGhlIHN5c3RlbSBoZWxwcyBtYWtlIHN1cmUgdGhlIHJpZ2h0IGFjY291bnRzIGFyZSBvbgogICAgICAgICAgICB0aGUgbGlzdCwgZXZlcnkgZGF5LCB3aXRoIHRoZSByZWFzb25zIHZpc2libGUuIFRoYXQgaXMgd2hhdCB3ZSBhcmUKICAgICAgICAgICAgYnVpbGRpbmcgYXQgTmV4YVdvcmtzLgogICAgICAgICAgPC9wPgogICAgICAgIDwvZGl2PgogICAgICA8L3NlY3Rpb24+CgogICAgICA8c2VjdGlvbiBjbGFzc05hbWU9InNwLXNlY3Rpb24iIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogIndoaXRlIiB9fT4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY29udGFpbmVyLW53IG1heC13LTR4bCI+CiAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJ0ZXh0LTN4bCBtYi0xMCIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmspIiB9fT4KICAgICAgICAgICAgVGhyZWUgcGl0ZmFsbHMuCiAgICAgICAgICA8L2gyPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktMTAiPgogICAgICAgICAgICB7cGl0ZmFsbHMubWFwKChwaXRmYWxsLCBpKSA9PiAoCiAgICAgICAgICAgICAgPGRpdiBrZXk9e3BpdGZhbGwudGl0bGV9IGNsYXNzTmFtZT0iZmxleCBnYXAtNiBpdGVtcy1zdGFydCI+CiAgICAgICAgICAgICAgICA8ZGl2CiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleC1zaHJpbmstMCB3LTEwIGgtMTAgcm91bmRlZC1mdWxsIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQtc20gZm9udC1tZWRpdW0iCiAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IGJhY2tncm91bmRDb2xvcjogInZhcigtLW53LWFjY2VudCkiLCBjb2xvcjogIndoaXRlIiB9fQogICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICB7aSArIDF9CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICAgIDxoMyBjbGFzc05hbWU9InRleHQteGwgbWItMiIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmspIiB9fT57cGl0ZmFsbC50aXRsZX08L2gzPgogICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9ImxlYWRpbmctcmVsYXhlZCIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmstc29mdCkiIH19PntwaXRmYWxsLnRleHR9PC9wPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICkpfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvc2VjdGlvbj4KCiAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT0ic3Atc2VjdGlvbiIgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiAidmFyKC0tbnctY2FudmFzKSIgfX0+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9ImNvbnRhaW5lci1udyBtYXgtdy00eGwiPgogICAgICAgICAgPGgyIGNsYXNzTmFtZT0idGV4dC0zeGwgbWItMTAiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rKSIgfX0+CiAgICAgICAgICAgIFF1ZXN0aW9ucywgYW5zd2VyZWQgaG9uZXN0bHkuCiAgICAgICAgICA8L2gyPgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9InNwYWNlLXktOCI+CiAgICAgICAgICAgIHtmYXFzLm1hcCgoZmFxKSA9PiAoCiAgICAgICAgICAgICAgPGRpdiBrZXk9e2ZhcS5xfSBjbGFzc05hbWU9InBiLTgiIHN0eWxlPXt7IGJvcmRlckJvdHRvbTogIjFweCBzb2xpZCB2YXIoLS1udy1saW5lLWxpZ2h0KSIgfX0+CiAgICAgICAgICAgICAgICA8aDMgY2xhc3NOYW1lPSJ0ZXh0LXhsIG1iLTMiIHN0eWxlPXt7IGNvbG9yOiAidmFyKC0tbnctaW5rKSIgfX0+e2ZhcS5xfTwvaDM+CiAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9ImxlYWRpbmctcmVsYXhlZCIgc3R5bGU9e3sgY29sb3I6ICJ2YXIoLS1udy1pbmstc29mdCkiIH19PntmYXEuYX08L3A+CiAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICkpfQogICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMTIiPgogICAgICAgICAgICA8TGluawogICAgICAgICAgICAgIGhyZWY9Ii9hY2NvdW50LXJpc2stc25hcHNob3QiCiAgICAgICAgICAgICAgY2xhc3NOYW1lPSJpbmxpbmUtZmxleCBoLTE0IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciByb3VuZGVkLWZ1bGwgcHgtOCB0ZXh0LXNtIGZvbnQtbWVkaXVtIHRleHQtd2hpdGUgdHJhbnNpdGlvbi1jb2xvcnMiCiAgICAgICAgICAgICAgc3R5bGU9e3sgYmFja2dyb3VuZENvbG9yOiAidmFyKC0tbnctaW5rKSIgfX0KICAgICAgICAgICAgPgogICAgICAgICAgICAgIFNlZSBpdCBvbiB5b3VyIGJvb2sgPEFycm93UmlnaHQgc2l6ZT17MTh9IGNsYXNzTmFtZT0ibWwtMiIgLz4KICAgICAgICAgICAgPC9MaW5rPgogICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvc2VjdGlvbj4KICAgIDwvPgogICk7Cn0K
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
+export const metadata = {
+  title: "From Dashboards to Attention Lists | NexaWorks",
+  description:
+    "Your CS team does not need another dashboard. It needs to know which customer needs attention today. A practical guide to building an account attention list from signals you already have.",
+  alternates: { canonical: "/guides/attention-list" },
+};
+
+const signals = [
+  {
+    title: "People movement",
+    text: "Title changes, departures, new faces on calls, the champion's last meaningful activity. The product can be perfectly healthy while the relationship is quietly ending.",
+  },
+  {
+    title: "Tone in support tickets, not volume",
+    text: "Volume often stays normal right up to a churn. Reading the last twenty tickets for tone — when 'thanks!' becomes 'per my last email' — surfaces shifts that volume-based views miss.",
+  },
+  {
+    title: "The meeting that stopped happening",
+    text: "Which recurring touch went quiet first — the QBR, the cadence call, the check-in? No system alerts on something not happening, so absence is easy to underweight. Calendar history is a dataset most teams never query.",
+  },
+  {
+    title: "Usage against the account's own peak",
+    text: "An account at 60% of its own best week is decaying even if it beats every segment benchmark. Comparing accounts to themselves catches declines that peer comparisons hide.",
+  },
+  {
+    title: "Commercial drift",
+    text: "Close dates that move, procurement going quiet, the sponsor delegating renewal conversations downward. These live in the CRM rather than the product, which is why product-only views often miss them.",
+  },
+];
+
+const pitfalls = [
+  {
+    title: "List worship",
+    text: "The moment the list becomes a number people defend instead of a prompt to act, it has become another dashboard. The list exists to produce phone calls, not to be accurate.",
+  },
+  {
+    title: "Set and forget",
+    text: "Signals decay. The champion mapped in January may be gone by March. Rebuild the stakeholder picture quarterly or the list quietly goes stale.",
+  },
+  {
+    title: "Measuring activity instead of risk",
+    text: "\u201cWe called everyone on the list\u201d is activity. \u201cTwo of the five calls surfaced real renewal risk we are now working\u201d is the outcome. Track the second one.",
+  },
+];
+
+const faqs = [
+  {
+    q: "How is this different from a health score?",
+    a: "A health score summarizes the past into a number. An attention list schedules the future into actions. Scores tend to get reviewed in QBRs; lists get worked on Mondays.",
+  },
+  {
+    q: "Do we need a CS platform to do this?",
+    a: "No. The manual pilot described above runs on tools you already pay for. Platforms help at scale, after the process is proven by hand and you know which signals matter.",
+  },
+  {
+    q: "Who owns the list?",
+    a: "The CSMs who work it. CS Operations maintains the template and the definitions. Leadership reviews the outcomes monthly, not the spreadsheet.",
+  },
+  {
+    q: "Our book is 200 accounts, not 20. Where do we start?",
+    a: "Start with the top twenty by revenue at risk. The discipline transfers downward once it works at the top. Churn damage often concentrates in fewer accounts than teams expect.",
+  },
+];
+
+export default function AttentionListPage() {
+  return (
+    <>
+      <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
+        <div className="container-nw max-w-4xl pt-16">
+          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
+            Guide · Prioritization framework
+          </p>
+          <h1 className="mb-6" style={{ color: "var(--nw-ink)" }}>
+            From dashboards to attention lists.
+          </h1>
+          <p className="text-xl leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>
+            Your CS team does not need another dashboard. It needs to know which
+            customer needs attention today. An attention list is a short, ranked
+            list of accounts that need a human touch this week — built from
+            signals you already have.
+          </p>
+          <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--nw-ink-soft)" }}>
+            The signals below are illustrative starting points, drawn from
+            practitioner discussions and our research. They are not validated
+            predictors. Treat them as a place to begin, then keep what proves
+            useful in your book and discard the rest.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 pb-4">
+            <Link
+              href="/account-risk-snapshot"
+              className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
+              style={{ backgroundColor: "var(--nw-ink)" }}
+            >
+              See it on your book <ArrowRight size={18} className="ml-2" />
+            </Link>
+            <Link
+              href="/guides/green-then-gone"
+              className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
+              style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)" }}
+            >
+              Read the post-mortem guide
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="sp-section" style={{ backgroundColor: "white" }}>
+        <div className="container-nw max-w-4xl">
+          <h2 className="text-3xl mb-4" style={{ color: "var(--nw-ink)" }}>
+            Five signals worth watching.
+          </h2>
+          <p className="text-lg mb-12" style={{ color: "var(--nw-ink-soft)" }}>
+            Mark which signals are flashing per account each Monday. Three or
+            more means call this week. One or two means watch. Zero means leave
+            alone. These thresholds are a starting guess, not a validated model —
+            and one rule overrides the count: a single critical signal, a champion
+            departing or procurement going quiet, can warrant immediate attention
+            on its own. Scoring systems support judgment; they do not replace it.
+          </p>
+          <div className="space-y-10">
+            {signals.map((signal, i) => (
+              <div key={signal.title} className="flex gap-6 items-start">
+                <div
+                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium"
+                  style={{ backgroundColor: "var(--nw-accent)", color: "white" }}
+                >
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="text-xl mb-2" style={{ color: "var(--nw-ink)" }}>{signal.title}</h3>
+                  <p className="leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>{signal.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
+        <div className="container-nw max-w-4xl">
+          <h2 className="text-3xl mb-4" style={{ color: "var(--nw-ink)" }}>
+            A simple way to start.
+          </h2>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>
+            Before investing in tooling, run a four-week manual pilot. Take your
+            twenty largest or riskiest accounts and a spreadsheet with one column
+            per signal above. Each Monday the account owner spends thirty minutes
+            filling it in from tools the team already opens, ranks the accounts,
+            and calls the top five before Wednesday.
+          </p>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>
+            Be clear-eyed about what the pilot is: a learning exercise, not a
+            validation study. Four weeks will not prove which signals predict
+            churn. It will teach the team which signals are actually observable,
+            which ones are noisy, and where the data really lives. That learning
+            becomes the specification for anything bought or built later.
+          </p>
+          <h3 className="text-2xl mb-4 mt-12" style={{ color: "var(--nw-ink)" }}>
+            When the manual list stops scaling.
+          </h3>
+          <p className="text-lg leading-relaxed mb-6" style={{ color: "var(--nw-ink-soft)" }}>
+            The spreadsheet version works until it does not. Past thirty or forty
+            accounts per CSM the Monday discipline slips. A weekly snapshot goes
+            stale by Thursday. When the signals live across five systems, filling
+            in the sheet becomes archaeology — and the sheet shows this week, not
+            how an account&apos;s signals trended over the quarter.
+          </p>
+          <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>
+            That is where cross-system Customer Intelligence earns its keep: the
+            same signals, pulled continuously from the CRM, tickets, product data,
+            and calendar, ranked automatically, with history attached. The CSM still
+            makes the calls. The system helps make sure the right accounts are on
+            the list, every day, with the reasons visible. That is what we are
+            building at NexaWorks.
+          </p>
+        </div>
+      </section>
+
+      <section className="sp-section" style={{ backgroundColor: "white" }}>
+        <div className="container-nw max-w-4xl">
+          <h2 className="text-3xl mb-10" style={{ color: "var(--nw-ink)" }}>
+            Three pitfalls.
+          </h2>
+          <div className="space-y-10">
+            {pitfalls.map((pitfall, i) => (
+              <div key={pitfall.title} className="flex gap-6 items-start">
+                <div
+                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium"
+                  style={{ backgroundColor: "var(--nw-accent)", color: "white" }}
+                >
+                  {i + 1}
+                </div>
+                <div>
+                  <h3 className="text-xl mb-2" style={{ color: "var(--nw-ink)" }}>{pitfall.title}</h3>
+                  <p className="leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>{pitfall.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
+        <div className="container-nw max-w-4xl">
+          <h2 className="text-3xl mb-10" style={{ color: "var(--nw-ink)" }}>
+            Questions, answered honestly.
+          </h2>
+          <div className="space-y-8">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="pb-8" style={{ borderBottom: "1px solid var(--nw-line-light)" }}>
+                <h3 className="text-xl mb-3" style={{ color: "var(--nw-ink)" }}>{faq.q}</h3>
+                <p className="leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12">
+            <Link
+              href="/account-risk-snapshot"
+              className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
+              style={{ backgroundColor: "var(--nw-ink)" }}
+            >
+              See it on your book <ArrowRight size={18} className="ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
