@@ -216,7 +216,11 @@ export default function EditorialSnapshot({
                   fill="none"
                   stroke="var(--glass-positive)"
                   strokeWidth="3"
-                  strokeDasharray={`${account.health * 2.765} 276.5`}
+                  key={account.name}
+                  className="ed-health-progress"
+                  pathLength="100"
+                  strokeDasharray="100"
+                  strokeDashoffset={100 - account.health}
                   transform="rotate(-90 50 50)"
                   strokeLinecap="round"
                 />
@@ -295,6 +299,7 @@ export default function EditorialSnapshot({
                   <polyline
                     key={account.name}
                     className="ed-chart-line"
+                    pathLength="1"
                     points={points}
                     fill="none"
                     stroke="currentColor"
