@@ -3,13 +3,11 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
-  CornerDownRight,
   Database,
   FileText,
   Fingerprint,
   Layers3,
   LockKeyhole,
-  MessageSquareText,
   Network,
   ShieldCheck,
 } from "lucide-react";
@@ -18,7 +16,9 @@ import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
 import LiquidGlassBackground from "@/components/marketing/LiquidGlassBackground";
+import SignalBento from "@/components/marketing/SignalBento";
 import "./editorial-home.css";
+import "./signal-surfaces.css";
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -209,98 +209,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="ed-story-board">
-            <div className="ed-story-score">
-              <div className="ed-story-card-label">
-                <span>THE DASHBOARD VIEW</span>
-                <span>ILLUSTRATIVE</span>
-              </div>
-              <div className="ed-score-ring">
-                <svg viewBox="0 0 170 170" aria-hidden="true">
-                  <circle
-                    cx="85"
-                    cy="85"
-                    r="72"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeOpacity=".12"
-                    strokeWidth="2"
-                  />
-                  <circle
-                    cx="85"
-                    cy="85"
-                    r="72"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeDasharray="371 452"
-                    transform="rotate(-90 85 85)"
-                  />
-                </svg>
-                <div>
-                  <strong>
-                    82<span>/100</span>
-                  </strong>
-                  <span>
-                    <i />
-                    Healthy
-                  </span>
-                </div>
-              </div>
-              <p>
-                Activity looks good.
-                <br />
-                The relationship needs a closer look.
-              </p>
-              <span className="ed-micro">ONE SCORE ≠ THE WHOLE ACCOUNT</span>
-            </div>
-            <div className="ed-story-timeline">
-              <div className="ed-story-card-label">
-                <span>THE STORY BETWEEN THE SYSTEMS</span>
-                <MessageSquareText size={16} />
-              </div>
-              {[
-                {
-                  day: "−47",
-                  source: "CALLS",
-                  title: "The champion goes quiet.",
-                  text: "A familiar voice disappears from the conversation.",
-                },
-                {
-                  day: "−21",
-                  source: "PRODUCT",
-                  title: "Adoption begins to fall.",
-                  text: "Fewer people are getting value from the product.",
-                },
-                {
-                  day: "−04",
-                  source: "SUPPORT",
-                  title: "A critical issue stays open.",
-                  text: "An unresolved blocker becomes a commercial concern.",
-                },
-              ].map((item) => (
-                <div className="ed-timeline-event" key={item.day}>
-                  <span className="ed-timeline-day">
-                    {item.day}
-                    <small>DAYS</small>
-                  </span>
-                  <div>
-                    <small>{item.source}</small>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
-                  </div>
-                </div>
-              ))}
-              <div className="ed-story-insight">
-                <CornerDownRight size={19} />
-                <p>
-                  The risk is in the pattern.
-                  <br />
-                  <strong>The next step is a conversation.</strong>
-                </p>
-              </div>
-            </div>
-          </div>
+          <SignalBento />
         </div>
       </section>
 
