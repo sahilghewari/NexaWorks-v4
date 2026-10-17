@@ -22,7 +22,6 @@ import ReactBitsHeroBackground from "@/components/react-bits/ReactBitsHeroBackgr
 import SpotlightCard from "@/components/react-bits/SpotlightCard";
 import "./editorial-home.css";
 import "./cinematic-home.css";
-import "./react-bits-home.css";
 
 export const metadata = { alternates: { canonical: "/" } };
 
