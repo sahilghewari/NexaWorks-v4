@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useAnimate, useReducedMotion } from "framer-motion";
 
-/** Server-rendered content remains visible and usable even before motion loads. */
+/** Progressive enhancement: the complete page is visible before motion loads. */
 export default function EditorialExperience({
   children,
 }: {
@@ -11,95 +11,101 @@ export default function EditorialExperience({
 }) {
   const [scope, animate] = useAnimate();
   const reduceMotion = useReducedMotion();
+  const entered = useRef(false);
+  const revealed = useRef(new WeakSet<Element>());
+
   useEffect(() => {
-    if (reduceMotion !== false || !scope.current) return;
+    const root = scope.current as HTMLElement | null;
+    if (reduceMotion !== false || !root) return;
+    const compact = window.matchMedia("(max-width: 1024px)").matches;
     const controls: { stop: () => void }[] = [];
-    const hero = scope.current.querySelectorAll(
-      ".ed-hero-copy > :not(.ed-hero-margin), .nw-spatial-interface",
-    );
-    hero.forEach((element: Element, i: number) =>
+    const originalStyles = new Map<
+      HTMLElement,
+      { opacity: string; transform: string }
+    >();
+    const reveal = (
+      element: Element | null,
+      delay = 0,
+      y = 10,
+      duration = 0.5,
+    ) => {
+      if (!(element instanceof HTMLElement)) return;
+      if (!originalStyles.has(element))
+        originalStyles.set(element, {
+          opacity: element.style.opacity,
+          transform: element.style.transform,
+        });
       controls.push(
         animate(
           element,
-          { opacity: [0.5, 1], y: [12, 0] },
-          { duration: 0.42, delay: Math.min(i * 0.045, 0.2), ease: "easeOut" },
-        ),
-      ),
-    );
-    const environment = scope.current.querySelector(".nw-environment");
-    if (environment)
-      controls.push(
-        animate(
-          environment,
-          { opacity: [0.3, 1] },
-          { duration: 0.8, ease: "easeOut" },
+          { opacity: [0.65, 1], y: [compact ? y * 0.5 : y, 0] },
+          {
+            duration: compact ? Math.min(duration, 0.4) : duration,
+            delay: compact ? delay * 0.55 : delay,
+            ease: [0.22, 1, 0.36, 1],
+          },
         ),
       );
-    const heroElement = scope.current.querySelector(
-      ".ed-hero",
-    ) as HTMLElement | null;
-    const desktopPointer = window.matchMedia(
-      "(min-width: 1025px) and (pointer: fine)",
-    );
-    let frame = 0;
-    const resetDepth = () => {
-      heroElement?.style.setProperty("--nw-depth-x", "0px");
-      heroElement?.style.setProperty("--nw-depth-y", "0px");
     };
-    const moveDepth = (event: PointerEvent) => {
-      if (!desktopPointer.matches || !heroElement) return;
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const rect = heroElement.getBoundingClientRect();
-        const x = Math.max(
-          -1,
-          Math.min(1, ((event.clientX - rect.left) / rect.width) * 2 - 1),
-        );
-        const y = Math.max(
-          -1,
-          Math.min(1, ((event.clientY - rect.top) / rect.height) * 2 - 1),
-        );
-        heroElement.style.setProperty("--nw-depth-x", `${x * 10}px`);
-        heroElement.style.setProperty("--nw-depth-y", `${y * 7}px`);
-      });
-    };
-    heroElement?.addEventListener("pointermove", moveDepth, { passive: true });
-    heroElement?.addEventListener("pointerleave", resetDepth);
-    // Pause the only continuous effects when the hero leaves the viewport.
-    const environmentObserver = new IntersectionObserver(([entry]) => {
-      heroElement?.classList.toggle(
-        "nw-environment-paused",
-        !entry.isIntersecting,
+    root.classList.add("ed-motion-ready");
+    if (!entered.current) {
+      entered.current = true;
+      reveal(document.querySelector(".ed-site-header"), 0, 0, 0.4);
+      [
+        [".ed-hero-copy > .ed-eyebrow", 0.04],
+        [".ed-hero h1", 0.1],
+        [".ed-hero-description", 0.18],
+        [".ed-hero .ed-actions > a:first-child", 0.24],
+        [".ed-hero .ed-actions > a + a", 0.3],
+        [".ed-hero-note", 0.34],
+        [".nw-spatial-interface", 0.16],
+      ].forEach(([selector, delay]) =>
+        reveal(
+          root.querySelector(String(selector)),
+          Number(delay),
+          selector === ".nw-spatial-interface" ? 14 : 10,
+        ),
       );
-    });
-    if (heroElement) environmentObserver.observe(heroElement);
+      root
+        .querySelectorAll(".is-preview .ed-evidence-item")
+        .forEach((element, index) =>
+          reveal(element, 0.32 + index * 0.07, 5, 0.4),
+        );
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          controls.push(
-            animate(
-              entry.target,
-              { opacity: [0.7, 1], y: [16, 0] },
-              { duration: 0.45, ease: "easeOut" },
-            ),
-          );
+          if (!entry.isIntersecting || revealed.current.has(entry.target))
+            return;
+          revealed.current.add(entry.target);
+          if (entry.target.matches(".ed-dossier"))
+            entry.target.classList.add("ed-product-visible");
+          else if (
+            entry.target.matches(".ed-snapshot-strip, .ed-method-board")
+          ) {
+            entry.target
+              .querySelectorAll(":scope > div, :scope > a")
+              .forEach((element, i) => reveal(element, i * 0.07, 8, 0.45));
+          } else reveal(entry.target, 0, 10, 0.45);
           observer.unobserve(entry.target);
         });
       },
       { threshold: 0.12 },
     );
-    scope.current
-      .querySelectorAll(".ed-story-board, .ed-method-board, .ed-offer-paper")
-      .forEach((element: Element) => observer.observe(element));
+    root
+      .querySelectorAll(
+        ".ed-dossier, .ed-snapshot-strip, .ed-story-board, .ed-method-board, .ed-offer-paper",
+      )
+      .forEach((element) => observer.observe(element));
     return () => {
       observer.disconnect();
-      environmentObserver.disconnect();
-      cancelAnimationFrame(frame);
-      heroElement?.removeEventListener("pointermove", moveDepth);
-      heroElement?.removeEventListener("pointerleave", resetDepth);
-      resetDepth();
+      root.classList.remove("ed-motion-ready");
       controls.forEach((control) => control.stop());
+      originalStyles.forEach((style, element) => {
+        element.style.opacity = style.opacity;
+        element.style.transform = style.transform;
+      });
     };
   }, [animate, reduceMotion, scope]);
   return (

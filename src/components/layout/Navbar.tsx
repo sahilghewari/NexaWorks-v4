@@ -47,7 +47,7 @@ export default function Navbar({
         className={`sticky top-0 z-50 w-full ${enterprise ? "ed-site-header" : ""}`}
         style={{
           backgroundColor: enterprise
-            ? "rgba(16, 21, 28, 0.94)"
+            ? "rgba(248, 248, 255, 0.86)"
             : "var(--nw-canvas)",
           backdropFilter: enterprise ? "blur(16px)" : undefined,
           WebkitBackdropFilter: enterprise ? "blur(16px)" : undefined,

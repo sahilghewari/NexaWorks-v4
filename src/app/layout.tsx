@@ -1,13 +1,42 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import localFont from "next/font/local";
 import MarketingChrome from "@/components/layout/MarketingChrome";
 import "./globals.css";
 import "./marketing-system.css";
 
+const displayFont = localFont({
+  src: [
+    { path: "./fonts/instrument-serif.woff2", weight: "400", style: "normal" },
+    {
+      path: "./fonts/instrument-serif-italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-editorial",
+  display: "swap",
+  fallback: ["Georgia"],
+});
+const sansFont = localFont({
+  src: "./fonts/inter.woff2",
+  weight: "400 600",
+  variable: "--font-interface",
+  display: "swap",
+  fallback: ["Arial"],
+});
+const monoFont = localFont({
+  src: "./fonts/plex-mono.woff2",
+  weight: "400",
+  variable: "--font-technical",
+  display: "swap",
+  preload: false,
+});
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FAFAF8",
+  themeColor: "#F8F8FF",
 };
 
 export const metadata: Metadata = {
@@ -46,8 +75,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NexaWorks — Customer Intelligence for B2B SaaS",
-    description:
-      "Fixed-price intelligence pilots for B2B SaaS CS teams.",
+    description: "Fixed-price intelligence pilots for B2B SaaS CS teams.",
     images: ["/og-image.webp"],
   },
 };
@@ -63,54 +91,62 @@ export default function RootLayout({
       {
         "@type": "Organization",
         "@id": "https://nexaworks.tech/#organization",
-        "name": "NexaWorks",
-        "url": "https://nexaworks.tech",
-        "logo": "https://nexaworks.tech/logo.png",
-        "description": "Customer Intelligence for B2B SaaS",
-        "contactPoint": {
+        name: "NexaWorks",
+        url: "https://nexaworks.tech",
+        logo: "https://nexaworks.tech/logo.png",
+        description: "Customer Intelligence for B2B SaaS",
+        contactPoint: {
           "@type": "ContactPoint",
-          "email": "hello@nexaworks.tech",
-          "contactType": "customer support"
-        }
+          email: "hello@nexaworks.tech",
+          contactType: "customer support",
+        },
       },
       {
         "@type": "Service",
         "@id": "https://nexaworks.tech/#service",
-        "name": "Customer Intelligence Blueprint",
-        "provider": {
-          "@id": "https://nexaworks.tech/#organization"
+        name: "Customer Intelligence Blueprint",
+        provider: {
+          "@id": "https://nexaworks.tech/#organization",
         },
-        "description": "A 10-day diagnostic engagement to map your CS workflows, assess data, and build a pilot architecture."
-      }
-    ]
+        description:
+          "A 10-day diagnostic engagement to map your CS workflows, assess data, and build a pilot architecture.",
+      },
+    ],
   };
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${displayFont.variable} ${sansFont.variable} ${monoFont.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        
-        </head>
+      </head>
       <body className="min-h-screen flex flex-col">
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ESGQWS77L4"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive" dangerouslySetInnerHTML={{
-          __html: `
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-ESGQWS77L4', {
               page_path: window.location.pathname,
             });
-          `
-        }} />
+          `,
+          }}
+        />
 
         <MarketingChrome>{children}</MarketingChrome>
       </body>
