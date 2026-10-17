@@ -73,47 +73,9 @@ export default function EditorialExperience({
         );
     }
 
-    const hero = root.querySelector<HTMLElement>(".ed-hero");
-    const desktopPointer = window.matchMedia(
-      "(min-width: 1025px) and (pointer: fine)",
-    );
-    let frame = 0;
-    const resetDepth = () => {
-      hero?.style.setProperty("--nw-depth-x", "0px");
-      hero?.style.setProperty("--nw-depth-y", "0px");
-    };
-    const moveDepth = (event: PointerEvent) => {
-      if (!desktopPointer.matches || !hero) return;
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const rect = hero.getBoundingClientRect();
-        const x = Math.max(
-          -1,
-          Math.min(1, ((event.clientX - rect.left) / rect.width) * 2 - 1),
-        );
-        const y = Math.max(
-          -1,
-          Math.min(1, ((event.clientY - rect.top) / rect.height) * 2 - 1),
-        );
-        hero.style.setProperty("--nw-depth-x", `${x * 4}px`);
-        hero.style.setProperty("--nw-depth-y", `${y * 3}px`);
-      });
-    };
-    hero?.addEventListener("pointermove", moveDepth, { passive: true });
-    hero?.addEventListener("pointerleave", resetDepth);
-
-    let heroVisible = true;
-    const updateAmbient = () =>
-      root.classList.toggle("ed-art-visible", heroVisible && !document.hidden);
-    document.addEventListener("visibilitychange", updateAmbient);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === hero) {
-            heroVisible = entry.isIntersecting;
-            updateAmbient();
-            return;
-          }
           if (!entry.isIntersecting || revealed.current.has(entry.target))
             return;
           revealed.current.add(entry.target);
@@ -136,16 +98,9 @@ export default function EditorialExperience({
         ".ed-dossier, .ed-snapshot-strip, .ed-story-board, .ed-method-board, .ed-offer-paper",
       )
       .forEach((element) => observer.observe(element));
-    if (hero) observer.observe(hero);
-    updateAmbient();
     return () => {
       observer.disconnect();
-      document.removeEventListener("visibilitychange", updateAmbient);
-      root.classList.remove("ed-motion-ready", "ed-art-visible");
-      cancelAnimationFrame(frame);
-      hero?.removeEventListener("pointermove", moveDepth);
-      hero?.removeEventListener("pointerleave", resetDepth);
-      resetDepth();
+      root.classList.remove("ed-motion-ready");
       controls.forEach((control) => control.stop());
       originalStyles.forEach((style, element) => {
         element.style.opacity = style.opacity;

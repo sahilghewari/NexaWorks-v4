@@ -120,49 +120,7 @@
     var(--nw-canvas) 47%
   );
 }
-.glass-hero-art {
-  position: absolute;
-  width: min(1100px, 87vw);
-  top: -35px;
-  right: -130px;
-  z-index: -1;
-  pointer-events: none;
-  transform: translate3d(var(--nw-depth-x, 0px), var(--nw-depth-y, 0px), 0);
-  transition: transform 700ms ease-out;
-  mask-image: linear-gradient(
-    90deg,
-    transparent,
-    black 25%,
-    black 90%,
-    transparent
-  );
-}
-.glass-hero-art {
-  mask-image:
-    linear-gradient(90deg, transparent, black 25%, black 90%, transparent),
-    linear-gradient(0deg, transparent, black 18%, black 85%, transparent);
-  mask-composite: intersect;
-}
-.ed-hero::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 620px;
-  height: 260px;
-  left: -220px;
-  bottom: -90px;
-  background: url("/brand/liquid-ribbon-v1.webp") center 80% / cover no-repeat;
-  transform: rotate(165deg);
-  opacity: 0.28;
-  pointer-events: none;
-  mask-image: linear-gradient(0deg, transparent, black 45%, transparent);
-}
-.glass-hero-art img {
-  display: block;
-  width: 100%;
-  height: auto;
-  mix-blend-mode: multiply;
-}
+
 .ed-hero-layout {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
@@ -1725,11 +1683,6 @@
     min-height: 850px;
     padding-block: 70px 85px;
   }
-  .glass-hero-art {
-    right: -70px;
-    width: 1200px;
-    top: -60px;
-  }
 }
 @media (max-width: 1150px) {
   .ed-wrap {
@@ -1964,16 +1917,7 @@
   .ed-hero-note span {
     font-size: 9px;
   }
-  .glass-hero-art {
-    width: 145%;
-    right: -45%;
-    top: auto;
-    bottom: -25px;
-    opacity: 0.85;
-    transform: none;
-    transition: none;
-    mask-image: linear-gradient(0deg, black, black 65%, transparent);
-  }
+
   .nw-spatial-interface {
     width: 100%;
     max-width: 560px;
@@ -2499,10 +2443,6 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .glass-hero-art {
-    transform: none;
-    transition: none;
-  }
   .ed-chart-line {
     animation: none;
   }
@@ -2547,12 +2487,6 @@
   font-size: 9px;
 }
 @media (max-width: 800px) {
-  .glass-hero-art {
-    mask-composite: add;
-  }
-  .ed-hero::after {
-    display: none;
-  }
   .ed-account-sheet,
   .is-detailed .ed-account-sheet {
     grid-template-columns: 1fr;
@@ -2620,31 +2554,9 @@
   font-size: 10px;
 }
 @media (max-width: 800px) {
-  .glass-hero-art {
-    top: 640px;
-    bottom: auto;
-    width: 150%;
-    right: -55%;
-    opacity: 0.72;
-    mask-image: linear-gradient(
-      0deg,
-      transparent,
-      black 25%,
-      black 75%,
-      transparent
-    );
-  }
-  .glass-hero-art img {
-    animation: none;
-  }
   .ed-chart-controls button,
   .is-detailed .ed-chart-controls button {
     min-height: 44px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .glass-hero-art img {
-    animation: none;
   }
 }
 
@@ -3071,40 +2983,6 @@
     stroke-dashoffset: 100;
   }
 }
-@keyframes ed-ribbon-drift {
-  from {
-    transform: translate3d(-5px, -4px, 0) scale(1);
-  }
-  to {
-    transform: translate3d(7px, 5px, 0) scale(1.015);
-  }
-}
-@media (min-width: 1025px) and (prefers-reduced-motion: no-preference) {
-  .ed-motion-ready .glass-hero-art img {
-    animation: ed-ribbon-drift 15s ease-in-out infinite alternate;
-    animation-play-state: paused;
-  }
-  .ed-art-visible .glass-hero-art img {
-    animation-play-state: running;
-  }
-}
-@media (min-width: 801px) and (max-width: 1024px) and (prefers-reduced-motion: no-preference) {
-  .ed-motion-ready .glass-hero-art img {
-    animation: ed-ribbon-drift 18s ease-in-out infinite alternate;
-    animation-play-state: paused;
-  }
-  .ed-art-visible .glass-hero-art img {
-    animation-play-state: running;
-  }
-  @keyframes ed-ribbon-drift {
-    from {
-      transform: translate3d(-2px, -2px, 0) scale(1);
-    }
-    to {
-      transform: translate3d(3px, 3px, 0) scale(1.01);
-    }
-  }
-}
 .ed-button svg,
 .ed-hero .ed-inline-link svg {
   transition: transform 200ms ease;
@@ -3177,13 +3055,7 @@
   background: linear-gradient(180deg, #f3f1fc, var(--nw-canvas));
 }
 @media (prefers-reduced-motion: reduce) {
-  .ed-home
-    :is(
-      .glass-hero-art img,
-      .ed-health-progress,
-      .ed-chart-line,
-      .ed-evidence-item > div
-    ) {
+  .ed-home :is(.ed-health-progress, .ed-chart-line, .ed-evidence-item > div) {
     animation: none !important;
   }
   .ed-home

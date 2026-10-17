@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -18,6 +17,7 @@ import SampleBriefForm from "@/components/marketing/SampleBriefForm";
 import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
+import LiquidGlassBackground from "@/components/marketing/LiquidGlassBackground";
 import "./editorial-home.css";
 
 export const metadata = { alternates: { canonical: "/" } };
@@ -79,16 +79,7 @@ export default function Home() {
   return (
     <EditorialExperience>
       <section className="ed-hero" aria-labelledby="ed-hero-title">
-        <div className="glass-hero-art" aria-hidden="true">
-          <Image
-            src="/brand/liquid-ribbon-v1.webp"
-            alt=""
-            width={1536}
-            height={1024}
-            priority
-            sizes="(max-width: 768px) 100vw, 1000px"
-          />
-        </div>
+        <LiquidGlassBackground />
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
             <p className="ed-eyebrow">
