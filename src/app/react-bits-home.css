@@ -1,0 +1,108 @@
+/* NexaWorks art direction layered over React Bits AeroShards and SpotlightCard. */
+.nw-reactbits-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 76% 25%, rgba(207, 201, 255, 0.30), transparent 38%),
+    radial-gradient(ellipse at 88% 72%, rgba(181, 219, 255, 0.24), transparent 35%),
+    linear-gradient(125deg, #fbfaff 0%, #f4f1ff 48%, #f9fbff 100%);
+}
+.nw-hero-ambient {
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+  opacity: 0.9;
+  background:
+    radial-gradient(ellipse at 74% 32%, rgba(192, 180, 255, 0.28), transparent 32%),
+    radial-gradient(ellipse at 85% 64%, rgba(165, 208, 255, 0.22), transparent 31%);
+}
+.nw-hero-ambient::before,
+.nw-hero-ambient::after {
+  content: "";
+  position: absolute;
+  width: 76%;
+  height: 58%;
+  right: -7%;
+  top: 16%;
+  border: 1px solid rgba(150, 137, 231, 0.22);
+  border-radius: 48% 52% 42% 58% / 45% 40% 60% 55%;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.9),
+    0 0 0 18px rgba(255,255,255,.11),
+    0 0 0 38px rgba(162,153,235,.06);
+  transform: rotate(-16deg);
+}
+.nw-hero-ambient::after {
+  width: 67%;
+  height: 76%;
+  top: 12%;
+  right: -2%;
+  border-color: rgba(151, 190, 246, 0.22);
+  border-radius: 55% 45% 57% 43% / 38% 55% 45% 62%;
+  transform: rotate(18deg);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.88),
+    0 0 0 16px rgba(255,255,255,.1),
+    0 0 0 34px rgba(164,190,246,.06);
+}
+.nw-reactbits-background[data-motion="on"] .nw-hero-ambient {
+  animation: nw-glass-drift 24s ease-in-out infinite alternate;
+}
+.nw-aero-shards,
+.nw-reactbits-background .aero-shards {
+  position: absolute !important;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0.78;
+}
+.nw-reactbits-background .aero-shards-canvas {
+  mix-blend-mode: multiply;
+}
+@keyframes nw-glass-drift {
+  from { transform: translate3d(-0.6%, -0.5%, 0) scale(1); }
+  to { transform: translate3d(0.7%, 0.6%, 0) scale(1.025); }
+}
+
+/* React Bits SpotlightCard defaults tuned for the quiet NexaWorks palette. */
+.nw-dashboard-spotlight,
+.nw-price-spotlight {
+  position: relative;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 22px !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  min-width: 0;
+}
+.nw-dashboard-spotlight { width: 100%; }
+.nw-dashboard-spotlight > .ed-dossier {
+  margin: 0;
+  width: 100%;
+  border-radius: 22px;
+}
+.ed-price-grid > .nw-price-spotlight { height: 100%; }
+.nw-price-spotlight > .ed-price-card {
+  height: 100%;
+  margin: 0;
+  border-radius: 22px;
+}
+.nw-dashboard-spotlight .spotlight-card__light,
+.nw-price-spotlight .spotlight-card__light { mix-blend-mode: multiply; }
+.nw-dashboard-spotlight .spotlight-card__edge,
+.nw-price-spotlight .spotlight-card__edge { filter: blur(1px); }
+
+@media (max-width: 760px) {
+  .nw-reactbits-background .aero-shards { opacity: 0.42; }
+  .nw-hero-ambient { inset: -8%; }
+  .nw-hero-ambient::before { width: 100%; right: -35%; }
+  .nw-hero-ambient::after { width: 92%; right: -28%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nw-reactbits-background[data-motion="on"] .nw-hero-ambient { animation: none !important; }
+}
