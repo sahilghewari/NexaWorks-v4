@@ -24,7 +24,7 @@ export default function Footer({
         />
       </div>
       {/* Giant closing CTA */}
-      <div className="container-nw pt-20 pb-16 md:pt-32 md:pb-24">
+      <div className="nw-final-content container-nw pt-20 pb-16 md:pt-32 md:pb-24">
         <h2 className="text-white mb-8 max-w-4xl">
           {enterprise ? (
             <>
@@ -42,8 +42,8 @@ export default function Footer({
         </h2>
         {enterprise && (
           <p className="nw-final-description">
-            20 accounts. 5 business days. Evidence-backed priorities and a clear
-            readout to decide what happens next.
+            20 accounts. Five business days after data access. Evidence-backed
+            priorities and a 45-minute readout to decide what happens next.
           </p>
         )}
         <div className="nw-footer-actions">
@@ -73,7 +73,7 @@ export default function Footer({
         className="container-nw py-12"
         style={{ borderTop: "1px solid var(--nw-line-dark)" }}
       >
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-12">
+        <div className="nw-footer-links grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-12">
           <div>
             <p
               className="eyebrow mb-4"

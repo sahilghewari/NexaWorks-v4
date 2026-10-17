@@ -21,8 +21,8 @@ export default function EditorialExperience({
       controls.push(
         animate(
           element,
-          { opacity: [0.5, 1], y: [12, 0] },
-          { duration: 0.42, delay: Math.min(i * 0.045, 0.2), ease: "easeOut" },
+          { opacity: [0.95, 1], y: [8, 0] },
+          { duration: 0.35, delay: Math.min(i * 0.035, 0.12), ease: "easeOut" },
         ),
       ),
     );

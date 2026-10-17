@@ -156,13 +156,13 @@ export default function Home() {
             </div>
             <div>
               <strong>5 business days.</strong>
-              <span>From your data to a clear readout.</span>
+              <span>After data access, with a clear readout.</span>
             </div>
             <Link
               href="/account-risk-snapshot"
-              aria-label="Explore the free Account Risk Snapshot"
+              className="ed-snapshot-intro-cta"
             >
-              <ArrowUpRight size={28} strokeWidth={1} />
+              Get your free Snapshot <ArrowUpRight size={17} />
             </Link>
           </div>
         </div>
@@ -425,11 +425,28 @@ export default function Home() {
               attention, the evidence behind each, and a readout to decide what
               happens next.
             </p>
+            <div
+              className="ed-offer-facts"
+              aria-label="Snapshot scope and readout"
+            >
+              <span>
+                <strong>20</strong> accounts
+              </span>
+              <span>
+                <strong>5</strong> business days*
+              </span>
+              <span>
+                <strong>45</strong> minute readout
+              </span>
+            </div>
+            <p className="ed-offer-timing">
+              *Five business days after data access.
+            </p>
             <Link
               href="/account-risk-snapshot"
               className="ed-button ed-button-primary"
             >
-              Request your free Snapshot <ArrowUpRight size={17} />
+              Get your free Snapshot <ArrowUpRight size={17} />
             </Link>
             <p className="ed-offer-fit">
               For B2B SaaS · 100+ employees · At least two data sources
@@ -533,15 +550,22 @@ export default function Home() {
                 className={`ed-price-card ${offer.featured ? "is-featured" : ""}`}
               >
                 <div className="ed-price-top">
-                  <span className="ed-micro">{offer.label}</span>
+                  <div className="ed-price-stage">
+                    <span aria-hidden="true">{offer.label.slice(0, 2)}</span>
+                    <span className="ed-micro">
+                      {offer.label.split(" / ")[1]}
+                    </span>
+                  </div>
                   {offer.featured && (
                     <span className="ed-price-badge">PROVE THE WORKFLOW</span>
                   )}
                 </div>
                 <h3>{offer.name}</h3>
                 <p>{offer.description}</p>
-                <div className="ed-price-value">{offer.price}</div>
-                <span className="ed-price-timing">{offer.timing}</span>
+                <div className="ed-price-facts">
+                  <div className="ed-price-value">{offer.price}</div>
+                  <span className="ed-price-timing">{offer.timing}</span>
+                </div>
                 <ul>
                   {offer.items.map((item) => (
                     <li key={item}>
@@ -565,7 +589,7 @@ export default function Home() {
           </p>
           <div className="ed-audit-row">
             <div>
-              <span className="ed-micro">ANOTHER WAY TO START</span>
+              <span className="ed-micro">AUDIT / ANOTHER WAY TO START</span>
               <p>
                 Signal Stack Audit <span>· $1,500 · 3 business days</span>
               </p>
@@ -597,11 +621,17 @@ export default function Home() {
               Browse the Signal Library <ArrowUpRight size={16} />
             </Link>
           </div>
-          <h2>
-            A little more
-            <br />
-            <em>perspective.</em>
-          </h2>
+          <div className="ed-reading-intro">
+            <h2>
+              A little more
+              <br />
+              <em>perspective.</em>
+            </h2>
+            <p>
+              Field notes, practical tools, and a closer look at customer
+              intelligence.
+            </p>
+          </div>
           <div className="ed-reading-grid">
             <Link href="/guides/green-then-gone" className="ed-reading-card">
               <div
@@ -615,7 +645,9 @@ export default function Home() {
                 </div>
                 <small>GREEN, THEN GONE.</small>
               </div>
-              <span className="ed-micro">FIELD NOTES / RENEWAL RISK</span>
+              <span className="ed-micro">
+                FEATURED FIELD NOTE / RENEWAL RISK
+              </span>
               <h3>When green accounts churn.</h3>
               <p>What the dashboard sees—and what it can miss.</p>
               <ArrowUpRight size={22} className="ed-reading-arrow" />
@@ -682,9 +714,7 @@ export default function Home() {
             <h2>
               Good intelligence
               <br />
-              comes with
-              <br />
-              <em>accountability.</em>
+              comes with <em>accountability.</em>
             </h2>
             <p>
               Work directly with Sahil, the founder of NexaWorks. A clear scope,
@@ -694,19 +724,49 @@ export default function Home() {
               Meet the founder <ArrowUpRight size={16} />
             </Link>
           </div>
+          <div className="ed-founder-identity">
+            <span className="ed-micro">THE PERSON BEHIND THE WORK</span>
+            <div className="ed-founder-name">
+              <span aria-hidden="true" className="ed-founder-initial">
+                S
+              </span>
+              <div>
+                <strong>Sahil</strong>
+                <span>Founder, NexaWorks</span>
+              </div>
+            </div>
+            <ul className="ed-founder-principles">
+              <li>
+                <span>01</span> A clear scope.
+              </li>
+              <li>
+                <span>02</span> Evidence you can question.
+              </li>
+              <li>
+                <span>03</span> Direct accountability.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section className="ed-sample-section" aria-labelledby="sample-title">
+        <div className="ed-wrap">
           <div className="ed-brief-form" id="sample-brief">
-            <span className="ed-micro">TAKE A CLOSER LOOK</span>
-            <FileText size={28} strokeWidth={1} />
-            <h3>
-              Let the work
-              <br />
-              <em>speak for itself.</em>
-            </h3>
-            <p>
-              Get an illustrative meeting brief in your inbox. See how sources,
-              signals and next steps come together.
-            </p>
-            <SampleBriefForm />
+            <div className="ed-sample-copy">
+              <span className="ed-micro">
+                <FileText size={16} aria-hidden="true" /> TAKE A CLOSER LOOK
+              </span>
+              <h3 id="sample-title">
+                Let the work <em>speak for itself.</em>
+              </h3>
+              <p>
+                Get an illustrative meeting brief in your inbox. See how
+                sources, signals and next steps come together.
+              </p>
+            </div>
+            <div className="ed-sample-action">
+              <SampleBriefForm />
+            </div>
           </div>
         </div>
       </section>
