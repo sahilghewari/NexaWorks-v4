@@ -9,9 +9,15 @@ function mountBackground() {
   let effect;
   let intersection;
   let disconnected = false;
+  let stateIndex = 0;
+  const states = [];
   const element = { dataset: { motion: "paused" }, closest: () => element };
   const preference = new EventTarget();
   preference.matches = false;
+  const wide = new EventTarget();
+  wide.matches = true;
+  const desktop = new EventTarget();
+  desktop.matches = true;
   const document = new EventTarget();
   document.hidden = false;
   const loadedModule = { exports: {} };
@@ -35,7 +41,16 @@ function mountBackground() {
     require: (name) =>
       name === "react"
         ? {
-            useId: () => "glass-test",
+            useState: (initial) => {
+              const index = stateIndex++;
+              states[index] = initial;
+              return [
+                initial,
+                (value) => {
+                  states[index] = value;
+                },
+              ];
+            },
             useRef: () => ({ current: element }),
             useEffect: (fn) => {
               effect = fn;
@@ -43,8 +58,17 @@ function mountBackground() {
           }
         : name === "react/jsx-runtime"
           ? { jsx: () => null, jsxs: () => null }
-          : { default: {} },
-    window: { matchMedia: () => preference },
+          : name === "next/dynamic"
+            ? { default: () => () => null }
+            : { default: {} },
+    window: {
+      matchMedia: (query) =>
+        query.includes("prefers-reduced-motion")
+          ? preference
+          : query.includes("801")
+            ? wide
+            : desktop,
+    },
     document,
     IntersectionObserver: class {
       constructor(callback) {
@@ -60,6 +84,9 @@ function mountBackground() {
   const cleanup = effect();
   return {
     element,
+    enabled: () => states[0],
+    paused: () => states[1],
+    wide,
     preference,
     document,
     cleanup,
@@ -71,11 +98,15 @@ function mountBackground() {
 test("glass runs only while visible, foregrounded and motion is allowed", () => {
   const bg = mountBackground();
   assert.equal(bg.element.dataset.motion, "paused");
+  assert.equal(bg.enabled(), false);
   bg.visible(true);
   assert.equal(bg.element.dataset.motion, "running");
+  assert.equal(bg.enabled(), true);
   bg.document.hidden = true;
   bg.document.dispatchEvent(new Event("visibilitychange"));
   assert.equal(bg.element.dataset.motion, "paused");
+  assert.equal(bg.enabled(), true);
+  assert.equal(bg.paused(), true);
   bg.document.hidden = false;
   bg.document.dispatchEvent(new Event("visibilitychange"));
   assert.equal(bg.element.dataset.motion, "running");
@@ -83,11 +114,18 @@ test("glass runs only while visible, foregrounded and motion is allowed", () => 
   assert.equal(bg.element.dataset.motion, "paused");
   bg.visible(true);
   assert.equal(bg.element.dataset.motion, "running");
+  bg.wide.matches = false;
+  bg.wide.dispatchEvent(new Event("change"));
+  assert.equal(bg.element.dataset.motion, "paused");
+  bg.wide.matches = true;
+  bg.wide.dispatchEvent(new Event("change"));
+  assert.equal(bg.element.dataset.motion, "running");
   bg.preference.matches = true;
   bg.preference.dispatchEvent(new Event("change"));
   assert.equal(bg.element.dataset.motion, "paused");
   bg.document.dispatchEvent(new Event("visibilitychange"));
   assert.equal(bg.element.dataset.motion, "paused");
+  assert.equal(bg.enabled(), false);
   bg.preference.matches = false;
   bg.preference.dispatchEvent(new Event("change"));
   assert.equal(bg.element.dataset.motion, "running");
