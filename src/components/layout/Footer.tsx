@@ -2,122 +2,312 @@ import Image from "next/image";
 
 import Link from "next/link";
 
-export default function Footer({ enterprise = false }: { enterprise?: boolean }) {
+export default function Footer({
+  enterprise = false,
+}: {
+  enterprise?: boolean;
+}) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={`section-dark ${enterprise ? "nw-editorial-footer" : ""}`} style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
-      <svg
-        className="nw-footer-network"
-        viewBox="0 0 600 500"
-        fill="none"
-        aria-hidden="true"
-      >
-        <g stroke="#819bd7" strokeWidth=".7">
-          <circle cx="330" cy="240" r="170" opacity=".35" />
-          <ellipse
-            cx="330"
-            cy="240"
-            rx="170"
-            ry="60"
-            transform="rotate(-30 330 240)"
-          />
-          <ellipse
-            cx="330"
-            cy="240"
-            rx="170"
-            ry="70"
-            transform="rotate(50 330 240)"
-          />
-          <ellipse
-            cx="330"
-            cy="240"
-            rx="225"
-            ry="90"
-            transform="rotate(-20 330 240)"
-            opacity=".6"
-          />
-          <path
-            d="M185 150L410 90 480 290 245 390 185 150 480 290M245 390L410 90"
-            opacity=".5"
-          />
-        </g>
-        <g fill="#a0cbeb">
-          <circle cx="185" cy="150" r="3" />
-          <circle cx="410" cy="90" r="3" />
-          <circle cx="480" cy="290" r="3" />
-          <circle cx="245" cy="390" r="3" />
-        </g>
-      </svg>
+    <footer
+      className={`section-dark ${enterprise ? "nw-editorial-footer" : ""}`}
+      style={{ borderTop: "1px solid var(--nw-line-dark)" }}
+    >
+      <div className="nw-footer-art" aria-hidden="true">
+        <Image
+          src="/brand/liquid-ribbon-v1.webp"
+          alt=""
+          width={1536}
+          height={1024}
+          sizes="(max-width: 768px) 60vw, 650px"
+        />
+      </div>
       {/* Giant closing CTA */}
       <div className="container-nw pt-20 pb-16 md:pt-32 md:pb-24">
         <h2 className="text-white mb-8 max-w-4xl">
-          {enterprise ? <>The signal is there.<br />Let’s find it.</> : <>One workflow.<br />3–5 systems.<br />4–6 weeks.</>}
+          {enterprise ? (
+            <>
+              Get your free
+              <br />
+              <em>Account Risk Snapshot.</em>
+            </>
+          ) : (
+            <>
+              A clearer view.
+              <br />
+              <em>A better next step.</em>
+            </>
+          )}
         </h2>
-        <Link
-          href="/contact"
-          className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
-          style={{ backgroundColor: "var(--nw-accent)" }}
+        {enterprise && (
+          <p className="nw-final-description">
+            20 accounts. 5 business days. Evidence-backed priorities and a clear
+            readout to decide what happens next.
+          </p>
+        )}
+        <div className="nw-footer-actions">
+          {enterprise && (
+            <Link href="/account-risk-snapshot" className="nw-final-primary">
+              Get your free Snapshot <span aria-hidden="true">↗</span>
+            </Link>
+          )}
+          <Link
+            href="/contact"
+            className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
+            style={{ backgroundColor: "var(--nw-accent)" }}
+          >
+            Book a discovery call
+          </Link>
+        </div>
+        <p
+          className="eyebrow mt-4"
+          style={{ color: "var(--nw-dark-soft)", fontSize: "12px" }}
         >
-          Book a discovery call
-        </Link>
-        <p className="eyebrow mt-4" style={{ color: "var(--nw-dark-soft)", fontSize: "12px" }}>
           Founder replies within one business day.
         </p>
       </div>
 
       {/* Sitemap */}
-      <div className="container-nw py-12" style={{ borderTop: "1px solid var(--nw-line-dark)" }}>
+      <div
+        className="container-nw py-12"
+        style={{ borderTop: "1px solid var(--nw-line-dark)" }}
+      >
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-12">
           <div>
-            <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Services</p>
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "var(--nw-dark-soft)" }}
+            >
+              Services
+            </p>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/account-risk-snapshot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Account Risk Snapshot</Link></li>
-              <li><Link href="/customer-health-score-consultant" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Health Score Consultant</Link></li>
-              <li><Link href="/tools/health-score-back-tester" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Health Score Back-tester</Link></li>
-              <li><Link href="/tools/signal-stack-audit" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Signal Stack Audit</Link></li>
-              <li><Link href="/customer-intelligence-blueprint" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Blueprint</Link></li>
-              <li><Link href="/customer-intelligence-pilot" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Intelligence Pilot</Link></li>
-              <li><Link href="/signals" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Signal Library</Link></li>
-              <li><Link href="/customer-success-ai" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Customer Success AI</Link></li>
+              <li>
+                <Link
+                  href="/account-risk-snapshot"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Account Risk Snapshot
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/customer-health-score-consultant"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Health Score Consultant
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/health-score-back-tester"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Health Score Back-tester
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/signal-stack-audit"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Signal Stack Audit
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/customer-intelligence-blueprint"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Intelligence Blueprint
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/customer-intelligence-pilot"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Intelligence Pilot
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/signals"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Signal Library
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/customer-success-ai"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Customer Success AI
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Company</p>
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "var(--nw-dark-soft)" }}
+            >
+              Company
+            </p>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/about" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>About</Link></li>
-              <li><Link href="/faq" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>FAQ</Link></li>
-              <li><Link href="/contact" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Contact</Link></li>
+              <li>
+                <Link
+                  href="/about"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Legal</p>
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "var(--nw-dark-soft)" }}
+            >
+              Legal
+            </p>
             <ul className="space-y-3 text-sm">
-              <li><Link href="/terms" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Terms of Service</Link></li>
-              <li><Link href="/privacy" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Privacy Policy</Link></li>
-              <li><Link href="/refund-policy" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Refund Policy</Link></li>
-              <li><Link href="/cancellation-policy" className="transition-colors" style={{ color: "var(--nw-warm-400)" }}>Cancellation Policy</Link></li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/refund-policy"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cancellation-policy"
+                  className="transition-colors"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  Cancellation Policy
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Contact</p>
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "var(--nw-dark-soft)" }}
+            >
+              Contact
+            </p>
             <ul className="space-y-3 text-sm">
-              <li><a href="tel:+918356954152" style={{ color: "var(--nw-warm-400)" }}>+91 83569 54152</a></li>
-              <li><a href="mailto:hello@nexaworks.tech" style={{ color: "var(--nw-warm-400)" }}>hello@nexaworks.tech</a></li>
+              <li>
+                <a
+                  href="tel:+918356954152"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  +91 83569 54152
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@nexaworks.tech"
+                  style={{ color: "var(--nw-warm-400)" }}
+                >
+                  hello@nexaworks.tech
+                </a>
+              </li>
             </ul>
           </div>
           <div>
-            <p className="eyebrow mb-4" style={{ color: "var(--nw-dark-soft)" }}>Status</p>
-            <ul className="space-y-3 text-sm" style={{ color: "var(--nw-warm-400)" }}>
-              <li className="eyebrow" style={{ fontSize: "12px" }}>Booking Q4 2026</li>
-              <li className="eyebrow" style={{ fontSize: "12px" }}>Founding-client pricing active</li>
+            <p
+              className="eyebrow mb-4"
+              style={{ color: "var(--nw-dark-soft)" }}
+            >
+              Status
+            </p>
+            <ul
+              className="space-y-3 text-sm"
+              style={{ color: "var(--nw-warm-400)" }}
+            >
+              <li className="eyebrow" style={{ fontSize: "12px" }}>
+                Booking Q4 2026
+              </li>
+              <li className="eyebrow" style={{ fontSize: "12px" }}>
+                Founding-client pricing active
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 text-xs" style={{ borderTop: "1px solid var(--nw-line-dark)", color: "var(--nw-warm-400)" }}>
-          <div className="flex items-center gap-2.5 font-semibold tracking-tight" style={{ fontFamily: "var(--font-display)", color: "white", fontSize: "16px" }}>
-            <Image src="/logo.png" alt="NexaWorks" width={28} height={28} style={{ objectFit: "contain" }} />
+        <div
+          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 text-xs"
+          style={{
+            borderTop: "1px solid var(--nw-line-dark)",
+            color: "var(--nw-warm-400)",
+          }}
+        >
+          <div
+            className="flex items-center gap-2.5 font-semibold tracking-tight"
+            style={{
+              fontFamily: "var(--font-display)",
+              color: "white",
+              fontSize: "16px",
+            }}
+          >
+            <Image
+              src="/logo.png"
+              alt="NexaWorks"
+              width={28}
+              height={28}
+              style={{ objectFit: "contain" }}
+            />
             nexaworks
           </div>
           <p>© {year} NexaWorks. All rights reserved.</p>

@@ -26,7 +26,7 @@ export default function EditorialExperience({
         ),
       ),
     );
-    const environment = scope.current.querySelector(".nw-environment");
+    const environment = scope.current.querySelector(".glass-hero-art");
     if (environment)
       controls.push(
         animate(
@@ -59,20 +59,12 @@ export default function EditorialExperience({
           -1,
           Math.min(1, ((event.clientY - rect.top) / rect.height) * 2 - 1),
         );
-        heroElement.style.setProperty("--nw-depth-x", `${x * 10}px`);
-        heroElement.style.setProperty("--nw-depth-y", `${y * 7}px`);
+        heroElement.style.setProperty("--nw-depth-x", `${x * 6}px`);
+        heroElement.style.setProperty("--nw-depth-y", `${y * 4}px`);
       });
     };
     heroElement?.addEventListener("pointermove", moveDepth, { passive: true });
     heroElement?.addEventListener("pointerleave", resetDepth);
-    // Pause the only continuous effects when the hero leaves the viewport.
-    const environmentObserver = new IntersectionObserver(([entry]) => {
-      heroElement?.classList.toggle(
-        "nw-environment-paused",
-        !entry.isIntersecting,
-      );
-    });
-    if (heroElement) environmentObserver.observe(heroElement);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -94,7 +86,6 @@ export default function EditorialExperience({
       .forEach((element: Element) => observer.observe(element));
     return () => {
       observer.disconnect();
-      environmentObserver.disconnect();
       cancelAnimationFrame(frame);
       heroElement?.removeEventListener("pointermove", moveDepth);
       heroElement?.removeEventListener("pointerleave", resetDepth);

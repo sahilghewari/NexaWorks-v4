@@ -23,3 +23,7 @@ The implementation is project-specific code using the existing Framer Motion/Mot
 These are visual references, not copied component source. The user's explicit request for glassmorphism supersedes the older no-glass guideline in `design-standard/01_Philosophy_and_Tokens.md` for this homepage treatment.
 
 > The generated glass artwork is retained as an asset but is not used by the current cinematic homepage. The current product visuals are HTML/SVG.
+
+## Liquid-glass identity (2026-10-17)
+
+`public/brand/liquid-ribbon-v1.webp` is original built-in imagegen artwork, 1536×1024, 87,046 bytes. It replaces the orbital hero direction and appears as a decorative material behind real HTML. Full prompt, font licensing, usage and verification are documented in `liquid-glass-redesign.md`. The four local WOFF2 files under `src/app/fonts/` are distributed under their included SIL Open Font Licenses.

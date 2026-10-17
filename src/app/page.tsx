@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -7,7 +8,6 @@ import {
   Database,
   FileText,
   Fingerprint,
-  Headphones,
   Layers3,
   LockKeyhole,
   MessageSquareText,
@@ -18,9 +18,7 @@ import SampleBriefForm from "@/components/marketing/SampleBriefForm";
 import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
-import IntelligenceEnvironment from "@/components/marketing/IntelligenceEnvironment";
 import "./editorial-home.css";
-import "./cinematic-home.css";
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -81,7 +79,16 @@ export default function Home() {
   return (
     <EditorialExperience>
       <section className="ed-hero" aria-labelledby="ed-hero-title">
-        <IntelligenceEnvironment />
+        <div className="glass-hero-art" aria-hidden="true">
+          <Image
+            src="/brand/liquid-ribbon-v1.webp"
+            alt=""
+            width={1536}
+            height={1024}
+            priority
+            sizes="(max-width: 768px) 100vw, 1000px"
+          />
+        </div>
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
             <p className="ed-eyebrow">
@@ -110,22 +117,19 @@ export default function Home() {
                 Explore the example <ArrowRight size={15} />
               </Link>
             </div>
-            <p className="ed-hero-note">
-              FOUNDER-LED. HUMAN-REVIEWED. EVIDENCE-ATTACHED.
-            </p>
-            <div className="ed-hero-margin">
-              <span />
-              <p>
-                A clearer view of your accounts.
-                <br />
-                Built on the tools you already own.
-              </p>
+            <div className="ed-hero-note">
+              <span>
+                <Fingerprint size={15} /> Founder-led
+              </span>
+              <span>
+                <ShieldCheck size={15} /> Human-reviewed
+              </span>
+              <span>
+                <Layers3 size={15} /> Evidence-attached
+              </span>
             </div>
           </div>
           <div className="nw-spatial-interface">
-            <div className="nw-interface-coordinate" aria-hidden="true">
-              NEXAWORKS / INTELLIGENCE LAYER <span>01 — ACCOUNT VIEW</span>
-            </div>
             <EditorialSnapshot />
           </div>
         </div>
@@ -309,10 +313,39 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        className="ed-section ed-product-detail"
+        id="account-intelligence"
+        aria-labelledby="detail-title"
+      >
+        <div className="ed-wrap">
+          <div className="ed-section-head">
+            <p className="ed-eyebrow">02 / THE ACCOUNT, IN PERSPECTIVE</p>
+            <span className="ed-micro">ILLUSTRATIVE EXAMPLE</span>
+          </div>
+          <div className="ed-detail-heading">
+            <h2 id="detail-title">
+              The evidence together.
+              <br />
+              <em>The next step, clearer.</em>
+            </h2>
+            <p>
+              Explore the account. Follow the signals back to their sources. See
+              why the next conversation matters.
+            </p>
+          </div>
+          <EditorialSnapshot detailed />
+          <p className="ed-detail-disclaimer">
+            An example of the intelligence we deliver. A founder-led service
+            alongside your existing stack.
+          </p>
+        </div>
+      </section>
+
       <section className="ed-section ed-approach">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">02 / HOW WE WORK</p>
+            <p className="ed-eyebrow">03 / HOW WE WORK</p>
             <span className="ed-micro">YOUR STACK. A CLEARER PICTURE.</span>
           </div>
           <div className="ed-approach-heading">
@@ -327,64 +360,37 @@ export default function Home() {
             </p>
           </div>
           <div className="ed-method-board">
-            <div className="ed-method-sources">
-              <span className="ed-micro">01 / YOUR EXISTING SOURCES</span>
-              {[
-                {
-                  icon: Database,
-                  title: "CRM & product",
-                  detail: "Accounts, renewals, adoption",
-                },
-                {
-                  icon: MessageSquareText,
-                  title: "Calls & conversations",
-                  detail: "Champions, goals, sentiment",
-                },
-                {
-                  icon: Headphones,
-                  title: "Support & tickets",
-                  detail: "Blockers, friction, escalations",
-                },
-              ].map((source) => (
-                <div key={source.title}>
-                  <source.icon size={20} strokeWidth={1.3} />
-                  <div>
-                    <h3>{source.title}</h3>
-                    <p>{source.detail}</p>
-                  </div>
+            {[
+              {
+                icon: Database,
+                name: "Connect",
+                text: "Bring the context from your existing systems. Read-only access or exports.",
+              },
+              {
+                icon: Network,
+                name: "Extract",
+                text: "Find the people and product signals. Attach the source evidence.",
+              },
+              {
+                icon: ShieldCheck,
+                name: "Review",
+                text: "A human reviews the findings, the rationale and the commercial context.",
+              },
+              {
+                icon: FileText,
+                name: "Next step",
+                text: "A clear priority list. A useful brief. A better-informed conversation.",
+              },
+            ].map((step, i) => (
+              <div className="ed-process-step" key={step.name}>
+                <div className="ed-process-icon">
+                  <step.icon size={25} strokeWidth={1.4} />
                 </div>
-              ))}
-            </div>
-            <div className="ed-method-center">
-              <span className="ed-method-line" aria-hidden="true" />
-              <div className="ed-method-mark">
-                <Network size={43} strokeWidth={1} />
+                <span className="ed-micro">0{i + 1}</span>
+                <h3>{step.name}</h3>
+                <p>{step.text}</p>
               </div>
-              <span className="ed-micro">02 / CONNECT & REVIEW</span>
-              <p>
-                Extract the signals.
-                <br />
-                Attach the evidence.
-                <br />
-                Review with a human.
-              </p>
-            </div>
-            <div className="ed-method-output">
-              <span className="ed-micro">03 / A CLEAR NEXT STEP</span>
-              <FileText size={28} strokeWidth={1} />
-              <h3>
-                Ready for the
-                <br />
-                next conversation.
-              </h3>
-              <p>
-                Account briefs. Weekly priorities. Renewal and expansion
-                signals.
-              </p>
-              <span className="ed-method-destination">
-                Slack / Email / Your workflow
-              </span>
-            </div>
+            ))}
           </div>
           <div className="ed-method-assurance">
             <span>
@@ -406,7 +412,7 @@ export default function Home() {
       <section className="ed-section ed-offer" id="services">
         <div className="ed-wrap ed-offer-layout">
           <div>
-            <p className="ed-eyebrow">03 / A CLEARER PLACE TO BEGIN</p>
+            <p className="ed-eyebrow">04 / A CLEARER PLACE TO BEGIN</p>
             <h2>
               Start with the
               <br />
@@ -504,7 +510,7 @@ export default function Home() {
       <section className="ed-section ed-engagements" id="pricing">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">04 / THE ENGAGEMENTS</p>
+            <p className="ed-eyebrow">05 / THE ENGAGEMENTS</p>
             <span className="ed-micro">
               FIXED SCOPE. A SHARED DEFINITION OF SUCCESS.
             </span>
@@ -586,7 +592,7 @@ export default function Home() {
       <section className="ed-section ed-reading">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">05 / THE READING ROOM</p>
+            <p className="ed-eyebrow">06 / THE READING ROOM</p>
             <Link href="/signals" className="ed-inline-link">
               Browse the Signal Library <ArrowUpRight size={16} />
             </Link>

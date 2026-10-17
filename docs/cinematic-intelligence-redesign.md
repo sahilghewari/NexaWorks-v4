@@ -1,3 +1,5 @@
+> This records the earlier cinematic implementation. The current light redesign is documented in `liquid-glass-redesign.md`.
+
 # NexaWorks — cinematic intelligence redesign
 
 Implemented in the existing Next.js project, on draft PR #26. Preview: http://127.0.0.1:3004/. Not deployed to production.
