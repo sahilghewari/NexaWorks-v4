@@ -3,6 +3,7 @@ import Script from "next/script";
 import MarketingChrome from "@/components/layout/MarketingChrome";
 import "./globals.css";
 import "./marketing-system.css";
+import "./react-bits-home.css";
 
 export const viewport: Viewport = {
   width: "device-width",

@@ -18,7 +18,8 @@ import SampleBriefForm from "@/components/marketing/SampleBriefForm";
 import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
-import IntelligenceEnvironment from "@/components/marketing/IntelligenceEnvironment";
+import ReactBitsHeroBackground from "@/components/react-bits/ReactBitsHeroBackground";
+import SpotlightCard from "@/components/react-bits/SpotlightCard";
 import "./editorial-home.css";
 import "./cinematic-home.css";
 
@@ -81,7 +82,7 @@ export default function Home() {
   return (
     <EditorialExperience>
       <section className="ed-hero" aria-labelledby="ed-hero-title">
-        <IntelligenceEnvironment />
+        <ReactBitsHeroBackground />
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
             <p className="ed-eyebrow">
@@ -126,7 +127,22 @@ export default function Home() {
             <div className="nw-interface-coordinate" aria-hidden="true">
               NEXAWORKS / INTELLIGENCE LAYER <span>01 — ACCOUNT VIEW</span>
             </div>
-            <EditorialSnapshot />
+            <SpotlightCard
+              className="nw-dashboard-spotlight"
+              theme="light"
+              spotlightColor="#8D7AFF"
+              intensity={0.18}
+              spotlightSize={420}
+              softness={0.84}
+              borderGlow={0.24}
+              proximity={110}
+              smoothing={0.28}
+              ambient={false}
+              flare={false}
+              grain={0}
+            >
+              <EditorialSnapshot />
+            </SpotlightCard>
           </div>
         </div>
       </section>
@@ -522,8 +538,22 @@ export default function Home() {
           </div>
           <div className="ed-price-grid">
             {offers.map((offer) => (
-              <article
+              <SpotlightCard
                 key={offer.name}
+                className="nw-price-spotlight"
+                theme="light"
+                spotlightColor="#8D7AFF"
+                intensity={0.13}
+                spotlightSize={280}
+                softness={0.88}
+                borderGlow={0.2}
+                proximity={100}
+                smoothing={0.3}
+                ambient={false}
+                flare={false}
+                grain={0}
+              >
+              <article
                 className={`ed-price-card ${offer.featured ? "is-featured" : ""}`}
               >
                 <div className="ed-price-top">
@@ -550,6 +580,7 @@ export default function Home() {
                   <ArrowUpRight size={16} />
                 </Link>
               </article>
+              </SpotlightCard>
             ))}
           </div>
           <p className="ed-pricing-fine">
