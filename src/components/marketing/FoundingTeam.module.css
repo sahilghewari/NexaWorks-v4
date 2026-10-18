@@ -1,0 +1,48 @@
+.roster {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 26px;
+  display: grid;
+  gap: 20px;
+}
+.person {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+.initial {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 60px;
+  border-radius: 28px 28px 10px 10px;
+  background: var(--glass-lavender);
+  color: var(--glass-accent-text);
+  font: italic 36px/1 var(--nw-font-serif);
+}
+.name {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--nw-ink);
+  font: 400 29px/1.15 var(--nw-font-serif);
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+}
+.role {
+  display: block;
+  color: var(--nw-ink-soft);
+  font: 12px/1.6 var(--nw-font-sans);
+}
+@media (max-width: 400px) {
+  .person {
+    gap: 12px;
+  }
+  .name {
+    font-size: 27px;
+  }
+  .role {
+    font-size: 11px;
+  }
+}
