@@ -16,6 +16,7 @@ import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
 import LiquidGlassBackground from "@/components/marketing/LiquidGlassBackground";
+import FoundingTeam from "@/components/marketing/FoundingTeam";
 import SignalBento from "@/components/marketing/SignalBento";
 import "./editorial-home.css";
 import "./signal-surfaces.css";
@@ -439,8 +440,8 @@ export default function Home() {
               <em>Build on the evidence.</em>
             </h2>
             <p>
-              Work directly with the founder. Agree the question, the scope and
-              the price before the work begins.
+              Work directly with the founding team. Agree the question, the
+              scope and the price before the work begins.
             </p>
           </div>
           <div className="ed-price-grid">
@@ -610,31 +611,24 @@ export default function Home() {
       <section className="ed-section ed-founder">
         <div className="ed-wrap ed-founder-layout">
           <div>
-            <p className="ed-eyebrow">A HUMAN AT THE OTHER END.</p>
+            <p className="ed-eyebrow">THE PEOPLE BEHIND THE WORK.</p>
             <h2>
               Good intelligence
               <br />
               comes with <em>accountability.</em>
             </h2>
             <p>
-              Work directly with Sahil, the founder of NexaWorks. A clear scope,
-              evidence you can question, and a person who owns the work.
+              Work directly with Sahil, Mangala Sawant and Pavan Babar—the
+              founding team of NexaWorks. A clear scope, evidence you can
+              question, and people who own the work.
             </p>
             <Link href="/about" className="ed-inline-link">
-              Meet the founder <ArrowUpRight size={16} />
+              Meet the founders <ArrowUpRight size={16} />
             </Link>
           </div>
           <div className="ed-founder-identity">
-            <span className="ed-micro">THE PERSON BEHIND THE WORK</span>
-            <div className="ed-founder-name">
-              <span aria-hidden="true" className="ed-founder-initial">
-                S
-              </span>
-              <div>
-                <strong>Sahil</strong>
-                <span>Founder, NexaWorks</span>
-              </div>
-            </div>
+            <span className="ed-micro">THE NEXAWORKS FOUNDING TEAM</span>
+            <FoundingTeam />
             <ul className="ed-founder-principles">
               <li>
                 <span>01</span> A clear scope.
