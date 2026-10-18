@@ -293,23 +293,30 @@ export default function Footer({
             color: "var(--nw-warm-400)",
           }}
         >
-          <div
-            className="flex items-center gap-2.5 font-semibold tracking-tight"
+          <Link
+            href="/"
+            className="inline-flex min-h-11 shrink-0 items-center gap-2.5 font-semibold tracking-tight"
             style={{
               fontFamily: "var(--font-display)",
-              color: "white",
-              fontSize: "16px",
+              color: "var(--nw-ink)",
+              fontSize: "18px",
+              lineHeight: 1,
             }}
           >
-            <Image
-              src="/logo.png"
-              alt="NexaWorks"
-              width={28}
-              height={28}
-              style={{ objectFit: "contain" }}
-            />
-            nexaworks
-          </div>
+            <span
+              className="flex shrink-0 items-center justify-center rounded-lg shadow-sm"
+              style={{ backgroundColor: "#0A0A0C", width: 32, height: 32 }}
+            >
+              <Image
+                src="/logo.png"
+                alt=""
+                width={26}
+                height={26}
+                style={{ objectFit: "contain" }}
+              />
+            </span>
+            <span>nexaworks</span>
+          </Link>
           <p>© {year} NexaWorks. All rights reserved.</p>
         </div>
       </div>
