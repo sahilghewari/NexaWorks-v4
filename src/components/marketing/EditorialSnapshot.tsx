@@ -153,7 +153,7 @@ export default function EditorialSnapshot({
       )}
       <div className="ed-dossier-content">
         <div className="ed-dossier-folio">
-          <span>ACCOUNT INTELLIGENCE / WORKED EXAMPLE</span>
+          <span>SIGNAL SEAT RISK BRIEF / WORKED EXAMPLE</span>
           <span>ILLUSTRATIVE DATA / 0{selected + 1}</span>
         </div>
         <div className="ed-account-tabs" aria-label="Explore example accounts">
@@ -442,8 +442,8 @@ export default function EditorialSnapshot({
           <small>{account.next}</small>
         </div>
         <p className="ed-dossier-note">
-          An example of the intelligence we deliver. A service built around your
-          stack.
+          An illustrative example of the daily Risk Brief. Built around the
+          stack you already own.
         </p>
       </div>
     </div>
