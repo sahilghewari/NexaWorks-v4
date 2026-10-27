@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     q: "How long before we see value?",
-    a: "The Account Risk Snapshot shows you your 20 riskiest accounts in five business days, free, before any contract. A full pilot runs four to six weeks. There is no multi-month implementation.",
+    a: "Signal Seat shows each CSM their top 5 at-risk accounts every morning at 8am, starting within 48 hours. The first 14 days are free, before any contract, and there is no multi-month implementation.",
   },
   {
     q: "Who is this for?",
@@ -86,11 +86,11 @@ export default function CustomerSuccessAIPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 pb-4">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
-              Get the free Snapshot <ArrowRight size={18} className="ml-2" />
+              Start your 14 free days <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link
               href="/signals"
@@ -234,17 +234,17 @@ export default function CustomerSuccessAIPage() {
             See it on your data before you pay for anything.
           </h2>
           <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--nw-ink-soft)" }}>
-            The Account Risk Snapshot is the signal layer working on your accounts, free,
-            in five business days: your 20 riskiest accounts ranked, with the signals
-            behind each one. If it doesn&apos;t show you something your health score
-            missed, don&apos;t hire us.
+            Signal Seat is the signal layer working on your accounts every morning:
+            each CSM&apos;s top 5 at-risk accounts, ranked, with the signals behind
+            each one. The first 14 days are free — if it doesn&apos;t show you
+            something your health score missed, don&apos;t pay us.
           </p>
           <Link
-            href="/account-risk-snapshot"
+            href="/signal-seat"
             className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
             style={{ backgroundColor: "var(--nw-ink)" }}
           >
-            Get the free Snapshot <ArrowRight size={18} className="ml-2" />
+            Start your 14 free days <ArrowRight size={18} className="ml-2" />
           </Link>
         </div>
       </section>

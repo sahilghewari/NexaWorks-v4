@@ -9,16 +9,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://nexaworks.tech/account-risk-snapshot',
+      url: 'https://nexaworks.tech/signal-seat',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://nexaworks.tech/customer-health-score-consultant',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
+      priority: 1,
     },
     {
       url: 'https://nexaworks.tech/customer-success-ai',
@@ -46,24 +40,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://nexaworks.tech/tools/health-score-back-tester',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://nexaworks.tech/tools/signal-stack-audit',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://nexaworks.tech/customer-intelligence-blueprint',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://nexaworks.tech/customer-intelligence-pilot',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,

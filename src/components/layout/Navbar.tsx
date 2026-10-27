@@ -34,9 +34,9 @@ export default function Navbar({
   }, [isOpen]);
 
   const links = [
-    { name: "Services", href: "/#services" },
+    { name: "Signal Seat", href: "/signal-seat" },
     { name: "Method", href: "/#method" },
-    { name: "Pricing", href: "/#pricing" },
+    { name: "Pricing", href: "/signal-seat#pricing" },
     { name: "FAQ", href: "/faq" },
     { name: "About", href: "/about" },
   ];
@@ -106,7 +106,7 @@ export default function Navbar({
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/signal-seat#trial"
               className="inline-flex h-9 items-center justify-center rounded-full px-5 text-[13px] font-medium text-white transition-colors"
               style={{
                 backgroundColor: "var(--nw-ink)",
@@ -119,7 +119,7 @@ export default function Navbar({
                 (e.currentTarget.style.backgroundColor = "var(--nw-ink)")
               }
             >
-              Book a discovery call
+              Start 14 free days
             </Link>
           </nav>
 
@@ -179,12 +179,12 @@ export default function Navbar({
           </nav>
           <div className="flex flex-col gap-4 mt-auto pt-8 pb-4">
             <Link
-              href="/contact"
+              href="/signal-seat#trial"
               className="flex h-14 items-center justify-center rounded-full text-base font-medium text-white"
               style={{ backgroundColor: "var(--nw-ink)" }}
               onClick={() => setIsOpen(false)}
             >
-              Book a discovery call
+              Start 14 free days
             </Link>
             <a
               href="tel:+918356954152"

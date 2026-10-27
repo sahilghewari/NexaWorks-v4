@@ -186,11 +186,11 @@ export default async function SignalSourcePage({
 
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
               style={{ backgroundColor: "var(--nw-ink)", color: "white" }}
             >
-              Get your free Account Risk Snapshot <ArrowRight size={18} className="ml-2" />
+              Start your 14 free days <ArrowRight size={18} className="ml-2" />
             </Link>
             <p className="text-sm" style={{ color: "var(--nw-ink-soft)" }}>
               We run signals like these against your 20 riskiest accounts — before

@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What do I do with the results?",
-    a: "The three blind spots are ordered by impact, each linked to the signal guide for that source with concrete detection logic. If you want the full version — us reviewing your actual stack instead of a questionnaire — that's the $1,500 Signal Stack Audit engagement, delivered in 3 business days.",
+    a: "The three blind spots are ordered by impact, each linked to the signal guide for that source with concrete detection logic. If you want those signals watched on your live accounts every morning, that is Signal Seat — $50 per CSM per month, with the first 14 days free.",
   },
   {
     q: "How honest should I be?",
@@ -72,11 +72,11 @@ export default function SignalStackAuditPage() {
           </div>
           <div className="mt-12">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
-              Get the free Snapshot <ArrowRight size={18} className="ml-2" />
+              Start your 14 free days <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
         </div>

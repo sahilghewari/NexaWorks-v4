@@ -28,9 +28,9 @@ export default function Footer({
         <h2 className="text-white mb-8 max-w-4xl">
           {enterprise ? (
             <>
-              Get your free
+              Start your 14 free days
               <br />
-              <em>Account Risk Snapshot.</em>
+              <em>of Signal Seat.</em>
             </>
           ) : (
             <>
@@ -42,14 +42,14 @@ export default function Footer({
         </h2>
         {enterprise && (
           <p className="nw-final-description">
-            20 accounts. Five business days after data access. Evidence-backed
-            priorities and a 45-minute readout to decide what happens next.
+            $50 per CSM per month after the trial. A daily 8am Risk Brief, a
+            weekly Renewal Radar, no implementation fee and no annual contract.
           </p>
         )}
         <div className="nw-footer-actions">
           {enterprise && (
-            <Link href="/account-risk-snapshot" className="nw-final-primary">
-              Get your free Snapshot <span aria-hidden="true">↗</span>
+            <Link href="/signal-seat#trial" className="nw-final-primary">
+              Start your 14 free days <span aria-hidden="true">↗</span>
             </Link>
           )}
           <Link
@@ -84,20 +84,11 @@ export default function Footer({
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/account-risk-snapshot"
+                  href="/signal-seat"
                   className="transition-colors"
                   style={{ color: "var(--nw-warm-400)" }}
                 >
-                  Account Risk Snapshot
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/customer-health-score-consultant"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Health Score Consultant
+                  Signal Seat
                 </Link>
               </li>
               <li>
@@ -107,33 +98,6 @@ export default function Footer({
                   style={{ color: "var(--nw-warm-400)" }}
                 >
                   Health Score Back-tester
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/signal-stack-audit"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Signal Stack Audit
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/customer-intelligence-blueprint"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Intelligence Blueprint
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/customer-intelligence-pilot"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Intelligence Pilot
                 </Link>
               </li>
               <li>
@@ -277,10 +241,10 @@ export default function Footer({
               style={{ color: "var(--nw-warm-400)" }}
             >
               <li className="eyebrow" style={{ fontSize: "12px" }}>
-                Booking Q4 2026
+                Signal Seat founding cohort open
               </li>
               <li className="eyebrow" style={{ fontSize: "12px" }}>
-                Founding-client pricing active
+                First 20 companies · $50 locked for 24 months
               </li>
             </ul>
           </div>

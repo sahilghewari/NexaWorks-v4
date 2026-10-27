@@ -45,20 +45,21 @@ export const metadata: Metadata = {
     template: "%s | NexaWorks",
   },
   description:
-    "Founder-led customer intelligence services for B2B SaaS. Fixed-price pilots that unify your CRM, calls, and support data into evidence-backed risk and opportunity signals.",
+    "NexaWorks Signal Seat sends each CSM a daily 8am Risk Brief in Slack or email: the top at-risk accounts, the exact signals, the renewal date and the next move. $50 per CSM per month, live in 48 hours.",
   keywords: [
-    "customer intelligence consulting",
-    "customer success operations consulting",
-    "renewal risk consulting",
-    "B2B SaaS data consulting",
-    "churn analysis consulting",
+    "churn early warning",
+    "customer success signals",
+    "renewal risk alerts",
+    "daily risk brief for CSMs",
+    "Signal Seat",
+    "B2B SaaS customer success",
   ],
   metadataBase: new URL("https://nexaworks.tech"),
   robots: { index: true, follow: true },
   openGraph: {
     title: "NexaWorks — Customer Intelligence for B2B SaaS",
     description:
-      "Fixed-price intelligence pilots that surface churn risks and expansion signals weeks earlier.",
+      "A daily 8am Risk Brief that surfaces churn risks and expansion signals weeks earlier — $50 per CSM per month.",
     url: "https://nexaworks.tech",
     siteName: "NexaWorks",
     type: "website",
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "NexaWorks — Customer Intelligence for B2B SaaS",
-    description: "Fixed-price intelligence pilots for B2B SaaS CS teams.",
+    description: "Daily churn warnings in Slack for B2B SaaS CS teams. $50 per CSM per month.",
     images: ["/og-image.webp"],
   },
 };
@@ -104,12 +105,12 @@ export default function RootLayout({
       {
         "@type": "Service",
         "@id": "https://nexaworks.tech/#service",
-        name: "Customer Intelligence Blueprint",
+        name: "NexaWorks Signal Seat",
         provider: {
           "@id": "https://nexaworks.tech/#organization",
         },
         description:
-          "A 10-day diagnostic engagement to map your CS workflows, assess data, and build a pilot architecture.",
+          "A daily churn early-warning service for B2B SaaS CS teams: an 8am Risk Brief in Slack or email with each CSM's top 5 at-risk accounts, the signals behind each one, a weekly Renewal Radar, expansion signals and ready-to-approve drafts. $50 per CSM per month.",
       },
     ],
   };

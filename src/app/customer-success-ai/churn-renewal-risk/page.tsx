@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Can you prove this works on our data before we pay?",
-    a: "That's what the Account Risk Snapshot is: your 20 riskiest accounts, ranked, with the signals behind each one — free, in five business days, before any contract. If it doesn't surface risk your current process missed, don't hire us.",
+    a: "That's what Signal Seat does every morning: each CSM's top 5 at-risk accounts, ranked, with the signals behind each one. The first 14 days are free, before any contract. If it doesn't surface risk your current process missed, don't pay us.",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function ChurnRenewalRiskPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 pb-4">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
@@ -147,11 +147,11 @@ export default function ChurnRenewalRiskPage() {
           </div>
           <div className="mt-12 flex flex-col sm:flex-row gap-6">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
-              Get the free Snapshot <ArrowRight size={18} className="ml-2" />
+              Start your 14 free days <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">

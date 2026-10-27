@@ -155,27 +155,27 @@ export default function SignalStackAudit() {
           className="rounded-xl p-8 md:p-10"
           style={{ backgroundColor: 'var(--nw-dark)', color: 'white' }}
         >
-          <h3 className="text-2xl mb-4 text-white">Want the full audit, done for you?</h3>
+          <h3 className="text-2xl mb-4 text-white">Want these signals watched every morning?</h3>
           <p className="mb-8" style={{ color: 'var(--nw-dark-soft)' }}>
-            The Signal Stack Audit is a $1,500 fixed-price engagement: we review your actual
-            stack — not a questionnaire — and deliver a written report on the signals
-            you&apos;re capturing, the ones you&apos;re blind to, and the three
-            highest-leverage fixes. Delivered in 3 business days.
+            Signal Seat applies this same signal logic to your live accounts every
+            working day: a daily 8am Risk Brief in Slack or email, a weekly Renewal
+            Radar, and drafts your CSMs approve. $50 per CSM per month — and the
+            first 14 days are free, with no card.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/contact"
+              href="/signal-seat"
               className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white"
               style={{ backgroundColor: 'var(--nw-accent)' }}
             >
-              Get the audit — $1,500 <ArrowRight size={18} className="ml-2" />
+              See Signal Seat <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white"
               style={{ border: '1px solid var(--nw-line-dark)' }}
             >
-              Or start free with the Snapshot
+              Start your 14 free days
             </Link>
           </div>
         </div>

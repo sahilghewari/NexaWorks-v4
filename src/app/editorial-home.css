@@ -3063,3 +3063,14 @@
     transform: none !important;
   }
 }
+
+/* Signal Seat single-offer pricing: one wide card, centred in the grid. */
+.ed-price-grid.ed-price-grid-single {
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .ed-price-grid.ed-price-grid-single {
+    grid-template-columns: 1fr;
+  }
+}
