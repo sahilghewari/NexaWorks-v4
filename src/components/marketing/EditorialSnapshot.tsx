@@ -143,19 +143,9 @@ export default function EditorialSnapshot({
               </button>
             ))}
           </nav>
-          <div className="ed-sidebar-note">
-            <Check size={15} aria-hidden="true" />
-            Illustrative data.
-            <br />
-            Human perspective.
-          </div>
         </aside>
       )}
       <div className="ed-dossier-content">
-        <div className="ed-dossier-folio">
-          <span>SIGNAL SEAT RISK BRIEF / WORKED EXAMPLE</span>
-          <span>ILLUSTRATIVE DATA / 0{selected + 1}</span>
-        </div>
         <div className="ed-account-tabs" aria-label="Explore example accounts">
           {accounts.map((item, i) => (
             <button
@@ -441,10 +431,7 @@ export default function EditorialSnapshot({
           <p>{account.action}</p>
           <small>{account.next}</small>
         </div>
-        <p className="ed-dossier-note">
-          An illustrative example of the daily Risk Brief. Built around the
-          stack you already own.
-        </p>
+        <p className="ed-dossier-note">Illustrative example</p>
       </div>
     </div>
   );
