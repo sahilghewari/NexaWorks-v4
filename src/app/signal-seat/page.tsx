@@ -146,9 +146,6 @@ export default function SignalSeatPage() {
       {/* Hero */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-4xl page-intro">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-            NexaWorks Signal Seat · $50 per CSM / month
-          </p>
           <h1 className="mb-8" style={{ color: "var(--nw-ink)" }}>
             Every churn gives a warning. Your team just sees it too late.
           </h1>
@@ -196,9 +193,6 @@ export default function SignalSeatPage() {
       {/* Sample brief */}
       <section className="sp-section" style={{ backgroundColor: "white" }}>
         <div className="container-nw max-w-4xl">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-            Inside the brief · Illustrative example
-          </p>
           <h2 className="text-3xl mb-8" style={{ color: "var(--nw-ink)" }}>
             What lands at 8am
           </h2>
@@ -245,9 +239,6 @@ export default function SignalSeatPage() {
       {/* What each seat gets */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-4xl">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-            What each seat gets
-          </p>
           <h2 className="text-3xl mb-12" style={{ color: "var(--nw-ink)" }}>
             That is the whole product. No feature soup.
           </h2>
@@ -275,9 +266,6 @@ export default function SignalSeatPage() {
       {/* How it works */}
       <section className="sp-section" style={{ backgroundColor: "white" }}>
         <div className="container-nw max-w-4xl">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-            How it works
-          </p>
           <h2 className="text-3xl mb-12" style={{ color: "var(--nw-ink)" }}>
             Live in 48 hours. Here is the honest version.
           </h2>
@@ -303,9 +291,6 @@ export default function SignalSeatPage() {
       {/* The DIY objection */}
       <section className="sp-section" style={{ backgroundColor: "var(--nw-dark)", color: "white" }}>
         <div className="container-nw max-w-4xl">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-dark-soft)" }}>
-            The honest objection
-          </p>
           <h2 className="text-3xl mb-8 text-white">
             &ldquo;Could we not just do this in Claude?&rdquo;
           </h2>
@@ -326,9 +311,6 @@ export default function SignalSeatPage() {
       {/* Pricing */}
       <section className="sp-section" id="pricing" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-4xl">
-          <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-            Pricing · One offer, one price
-          </p>
           <h2 className="text-3xl mb-8" style={{ color: "var(--nw-ink)" }}>
             $50 per CSM per month. That is the price.
           </h2>
@@ -478,9 +460,6 @@ export default function SignalSeatPage() {
         <div className="container-nw max-w-5xl">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             <div>
-              <p className="eyebrow mb-6" style={{ color: "var(--nw-accent)" }}>
-                Start the trial
-              </p>
               <h2 className="text-3xl mb-6" style={{ color: "var(--nw-ink)" }}>
                 Start my 14 free days
               </h2>
