@@ -52,9 +52,6 @@ export default function Home() {
         <LiquidGlassBackground />
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
-            <p className="ed-eyebrow">
-              <span /> NEXAWORKS SIGNAL SEAT · DAILY CHURN WARNINGS
-            </p>
             <h1 id="ed-hero-title">
               Your top five
               <br />
@@ -83,9 +80,6 @@ export default function Home() {
                 <Fingerprint size={15} /> $50 per CSM / month
               </span>
               <span>
-                <ShieldCheck size={15} /> Live in 48 hours
-              </span>
-              <span>
                 <Layers3 size={15} /> No card for the trial
               </span>
             </div>
@@ -102,7 +96,6 @@ export default function Home() {
         <div className="ed-wrap">
           <div className="ed-snapshot-strip">
             <div>
-              <span className="ed-micro">SIGNAL SEAT / THE 3-RISK PROMISE</span>
               <h2>
                 If we miss the warning,
                 <br />
@@ -157,10 +150,6 @@ export default function Home() {
 
       <section className="ed-section ed-perspective" id="method">
         <div className="ed-wrap">
-          <div className="ed-section-head">
-            <p className="ed-eyebrow">01 / THE WARNING SIGNS</p>
-            <span className="ed-micro">THE SCORE CAN LOOK GREEN.</span>
-          </div>
           <div className="ed-perspective-intro">
             <h2>
               A healthy score.
@@ -192,10 +181,6 @@ export default function Home() {
         aria-labelledby="detail-title"
       >
         <div className="ed-wrap">
-          <div className="ed-section-head">
-            <p className="ed-eyebrow">02 / INSIDE THE 8AM RISK BRIEF</p>
-            <span className="ed-micro">ILLUSTRATIVE EXAMPLE</span>
-          </div>
           <div className="ed-detail-heading">
             <h2 id="detail-title">
               The warning, the evidence.
@@ -208,19 +193,11 @@ export default function Home() {
             </p>
           </div>
           <EditorialSnapshot detailed />
-          <p className="ed-detail-disclaimer">
-            Illustrative example. Your brief is built from your accounts and
-            delivered in Slack or email.
-          </p>
         </div>
       </section>
 
       <section className="ed-section ed-approach">
         <div className="ed-wrap">
-          <div className="ed-section-head">
-            <p className="ed-eyebrow">03 / HOW SIGNAL SEAT WORKS</p>
-            <span className="ed-micro">LIVE IN 48 HOURS. NO NEW DASHBOARD.</span>
-          </div>
           <div className="ed-approach-heading">
             <h2>
               Connect your tools.
@@ -285,7 +262,6 @@ export default function Home() {
       <section className="ed-section ed-offer" id="services">
         <div className="ed-wrap ed-offer-layout">
           <div>
-            <p className="ed-eyebrow">04 / WHAT EACH SEAT GETS</p>
             <h2>
               One brief.
               <br />
@@ -327,10 +303,6 @@ export default function Home() {
           </div>
           <div className="ed-offer-paper">
             <div className="ed-paper-fold" aria-hidden="true" />
-            <div className="ed-story-card-label">
-              <Layers3 size={20} />
-              <span>YOUR SIGNAL SEAT / EVERY WORKING DAY</span>
-            </div>
             <h3>
               The signal was there.
               <br />
@@ -378,7 +350,6 @@ export default function Home() {
             </summary>
             <div className="ed-intake-layout">
               <div>
-                <p className="ed-eyebrow">START THE TRIAL</p>
                 <h2>
                   Tell us where
                   <br />
@@ -399,12 +370,6 @@ export default function Home() {
 
       <section className="ed-section ed-engagements" id="pricing">
         <div className="ed-wrap">
-          <div className="ed-section-head">
-            <p className="ed-eyebrow">05 / PRICING</p>
-            <span className="ed-micro">
-              ONE OFFER. ONE PRICE. NO LADDER.
-            </span>
-          </div>
           <div className="ed-engagements-heading">
             <h2>
               Start free.
@@ -422,19 +387,7 @@ export default function Home() {
               <article
                 key={offer.name}
                 className={`ed-price-card ${offer.featured ? "is-featured" : ""}`}
-              >
-                <div className="ed-price-top">
-                  <div className="ed-price-stage">
-                    <span aria-hidden="true">{offer.label.slice(0, 2)}</span>
-                    <span className="ed-micro">
-                      {offer.label.split(" / ")[1]}
-                    </span>
-                  </div>
-                  {offer.featured && (
-                    <span className="ed-price-badge">14 DAYS FREE</span>
-                  )}
-                </div>
-                <h3>{offer.name}</h3>
+              ><h3>{offer.name}</h3>
                 <p>{offer.description}</p>
                 <div className="ed-price-facts">
                   <div className="ed-price-value">{offer.price}</div>
@@ -484,7 +437,6 @@ export default function Home() {
       <section className="ed-section ed-reading">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">06 / THE READING ROOM</p>
             <Link href="/signals" className="ed-inline-link">
               Browse the Signal Library <ArrowUpRight size={16} />
             </Link>
@@ -513,9 +465,6 @@ export default function Home() {
                 </div>
                 <small>GREEN, THEN GONE.</small>
               </div>
-              <span className="ed-micro">
-                FEATURED FIELD NOTE / RENEWAL RISK
-              </span>
               <h3>When green accounts churn.</h3>
               <p>What the dashboard sees—and what it can miss.</p>
               <ArrowUpRight size={22} className="ed-reading-arrow" />
@@ -536,7 +485,6 @@ export default function Home() {
                 </div>
                 <small>TEST IT AGAINST THE OUTCOME.</small>
               </div>
-              <span className="ed-micro">FREE TOOL / BACK-TESTER</span>
               <h3>Put your score to the test.</h3>
               <p>
                 Check catch rates and false alarms. Your data stays in your
@@ -562,9 +510,6 @@ export default function Home() {
                 </div>
                 <small>CONTEXT, CONNECTED.</small>
               </div>
-              <span className="ed-micro">
-                PERSPECTIVE / YOUR EXISTING STACK
-              </span>
               <h3>A layer, alongside your platform.</h3>
               <p>
                 Where customer intelligence fits in the tools you already own.
@@ -578,7 +523,6 @@ export default function Home() {
       <section className="ed-section ed-founder">
         <div className="ed-wrap ed-founder-layout">
           <div>
-            <p className="ed-eyebrow">THE PEOPLE BEHIND THE WORK.</p>
             <h2>
               Good intelligence
               <br />
@@ -594,7 +538,6 @@ export default function Home() {
             </Link>
           </div>
           <div className="ed-founder-identity">
-            <span className="ed-micro">THE NEXAWORKS FOUNDING TEAM</span>
             <FoundingTeam />
             <ul className="ed-founder-principles">
               <li>
@@ -614,9 +557,6 @@ export default function Home() {
         <div className="ed-wrap">
           <div className="ed-brief-form" id="sample-brief">
             <div className="ed-sample-copy">
-              <span className="ed-micro">
-                <FileText size={16} aria-hidden="true" /> TAKE A CLOSER LOOK
-              </span>
               <h3 id="sample-title">
                 Let the work <em>speak for itself.</em>
               </h3>
