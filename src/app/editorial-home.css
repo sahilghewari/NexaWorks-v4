@@ -3074,3 +3074,201 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Signal Seat brief views (Risk Brief / Renewal Radar / Drafts). */
+.ed-brief-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+.ed-brief-head strong {
+  font: 600 13px/1.4 var(--nw-font-sans);
+  letter-spacing: -0.02em;
+  color: var(--nw-ink);
+}
+.ed-brief-head span {
+  font-size: 9px;
+  color: var(--nw-ink-soft);
+  white-space: nowrap;
+}
+.ed-brief-signals {
+  display: grid;
+}
+.ed-brief-signals > div {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--glass-line);
+}
+.ed-brief-signals > div > svg {
+  padding: 6px;
+  height: 27px;
+  width: 27px;
+  border-radius: 7px;
+  color: var(--glass-critical);
+  background: #ffeaf0;
+}
+.ed-brief-signals > div:nth-child(2) > svg {
+  color: var(--glass-warning);
+  background: #fff0da;
+}
+.ed-brief-signals > div:nth-child(3) > svg {
+  color: #3163a7;
+  background: #e8f1ff;
+}
+.ed-brief-signals > div > span {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--nw-ink);
+}
+.ed-brief-signals > div > small {
+  font: 8px/1.5 var(--nw-font-sans);
+  color: var(--glass-accent-text);
+  background: var(--glass-lavender);
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+.ed-brief-rows {
+  display: grid;
+}
+.ed-brief-row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--glass-line);
+}
+.ed-brief-row > b {
+  font: 500 9px var(--nw-font-mono);
+  color: var(--glass-accent-text);
+}
+.ed-brief-row strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nw-ink);
+}
+.ed-brief-row small {
+  display: block;
+  font-size: 9px;
+  line-height: 1.5;
+  color: var(--nw-ink-soft);
+}
+.ed-brief-row > span {
+  font-size: 9px;
+  color: var(--nw-ink-soft);
+  white-space: nowrap;
+}
+.ed-brief-expansion {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-top: 11px;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--nw-ink);
+}
+.ed-brief-expansion svg {
+  color: var(--glass-positive);
+  flex-shrink: 0;
+}
+.ed-brief-sheet {
+  grid-template-columns: 1fr;
+}
+.ed-radar {
+  padding-top: 10px;
+}
+.ed-radar-intro {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--nw-ink-soft);
+  max-width: 420px;
+}
+.ed-radar-list {
+  display: grid;
+  margin-top: 10px;
+}
+.ed-radar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  padding: 13px 2px;
+  border-bottom: 1px solid var(--glass-line);
+  text-align: left;
+}
+.ed-radar-row:first-child {
+  border-top: 1px solid var(--glass-line);
+}
+.ed-radar-row strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--nw-ink);
+}
+.ed-radar-row small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--nw-ink-soft);
+}
+.ed-radar-row > span {
+  font: 500 10px var(--nw-font-mono);
+  color: var(--glass-accent-text);
+  white-space: nowrap;
+}
+.ed-radar-row:hover strong {
+  color: var(--glass-accent-text);
+}
+.ed-draft {
+  padding-top: 10px;
+}
+.ed-draft-paper {
+  background: white;
+  border: 1px solid var(--glass-line);
+  border-radius: 10px;
+  padding: 18px;
+}
+.ed-draft-paper p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--nw-ink-soft);
+  margin-top: 10px;
+}
+.ed-draft-paper .ed-draft-subject {
+  font-weight: 600;
+  color: var(--nw-ink);
+  margin-top: 0;
+}
+.ed-draft-paper .ed-draft-sign {
+  font-size: 10px;
+  color: var(--glass-accent-text);
+  margin-top: 14px;
+}
+.ed-draft-note {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--nw-ink-soft);
+  margin-top: 12px;
+  max-width: 460px;
+}
+@media (max-width: 640px) {
+  .ed-brief-row {
+    grid-template-columns: 14px minmax(0, 1fr);
+  }
+  .ed-brief-row > span {
+    grid-column: 2;
+  }
+  .ed-radar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
