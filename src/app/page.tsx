@@ -12,7 +12,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import SampleBriefForm from "@/components/marketing/SampleBriefForm";
-import SnapshotIntakeForm from "@/components/marketing/SnapshotIntakeForm";
+import TrialStartForm from "@/components/marketing/TrialStartForm";
 import EditorialExperience from "@/components/marketing/EditorialExperience";
 import EditorialSnapshot from "@/components/marketing/EditorialSnapshot";
 import LiquidGlassBackground from "@/components/marketing/LiquidGlassBackground";
@@ -25,54 +25,23 @@ export const metadata = { alternates: { canonical: "/" } };
 
 const offers = [
   {
-    label: "01 / DIAGNOSE",
-    name: "Intelligence Blueprint",
-    price: "$3,500",
-    timing: "10 business days",
-    description: "A clear plan before you commit to a build.",
+    label: "01 / SIGNAL SEAT",
+    name: "Signal Seat",
+    price: "$50",
+    timing: "per CSM / month · ₹3,999 in India",
+    description:
+      "Your daily churn early-warning system, delivered in Slack or email.",
     items: [
-      "Data & workflow map",
-      "5–15 strategic account review",
-      "Prioritized use cases",
-      "Pilot architecture & ROI hypothesis",
+      "Daily 8am Risk Brief with your top 5 accounts",
+      "Weekly Renewal Radar for the next 90 days",
+      "Expansion signals, flagged the same day",
+      "Done-for-you drafts — the CSM approves before anything sends",
+      "Unlimited accounts · $0 implementation · Live in 48 hours",
     ],
-    href: "/customer-intelligence-blueprint",
-    cta: "Explore the Blueprint",
-    note: "Fully credited toward the Pilot",
-  },
-  {
-    label: "02 / PROVE",
-    name: "Intelligence Pilot",
-    price: "$9,500–$18,000",
-    timing: "4–6 weeks",
-    description: "One workflow. Your data. Evidence your team can use.",
-    items: [
-      "One-click meeting briefs",
-      "Chronological account timelines",
-      "Evidence-backed risk & opportunity signals",
-      "Weekly portfolio action lists in Slack or email",
-      "Pilot-results report & production proposal",
-    ],
-    href: "/customer-intelligence-pilot",
-    cta: "Explore the Pilot",
-    note: "Most pilots land around $15,000",
+    href: "/signal-seat#trial",
+    cta: "Start your 14 free days",
+    note: "14 days free · No card · Month-to-month · Cancel in one click",
     featured: true,
-  },
-  {
-    label: "03 / SCALE",
-    name: "Custom Build",
-    price: "Scoped with you",
-    timing: "Your workflows & systems",
-    description: "Extend what works into your everyday operations.",
-    items: [
-      "Custom integrations with your stack",
-      "Scope built around your workflows and data",
-      "Direct access to the people doing the work",
-      "Pricing agreed after discovery",
-    ],
-    href: "/contact",
-    cta: "Discuss your workflow",
-    note: "Fixed scope, agreed together",
   },
 ];
 
@@ -84,40 +53,40 @@ export default function Home() {
         <div className="ed-wrap ed-hero-layout">
           <div className="ed-hero-copy">
             <p className="ed-eyebrow">
-              <span /> CUSTOMER INTELLIGENCE, WITH PERSPECTIVE.
+              <span /> NEXAWORKS SIGNAL SEAT · DAILY CHURN WARNINGS
             </p>
             <h1 id="ed-hero-title">
-              See what
+              Your top five
               <br />
-              the numbers
+              accounts at risk.
               <br />
-              <em>aren’t saying.</em>
+              <em>Every morning at 8.</em>
             </h1>
             <p className="ed-hero-description">
-              Behind every renewal is a relationship. We connect the people
-              signals with the product signals, so your next conversation starts
-              with the whole story.
+              Signal Seat reads the warnings across your CRM, calls, tickets
+              and product data, then sends each CSM a brief in Slack or email
+              with the reason, the renewal date and the next move.
             </p>
             <div className="ed-actions">
               <Link
-                href="/account-risk-snapshot"
+                href="/signal-seat#trial"
                 className="ed-button ed-button-primary"
               >
-                Get your free Snapshot <ArrowUpRight size={17} />
+                Start your 14 free days <ArrowUpRight size={17} />
               </Link>
               <Link href="#intelligence-demo" className="ed-inline-link">
-                Explore the example <ArrowRight size={15} />
+                See a sample Risk Brief <ArrowRight size={15} />
               </Link>
             </div>
             <div className="ed-hero-note">
               <span>
-                <Fingerprint size={15} /> Founder-led
+                <Fingerprint size={15} /> $50 per CSM / month
               </span>
               <span>
-                <ShieldCheck size={15} /> Human-reviewed
+                <ShieldCheck size={15} /> Live in 48 hours
               </span>
               <span>
-                <Layers3 size={15} /> Evidence-attached
+                <Layers3 size={15} /> No card for the trial
               </span>
             </div>
           </div>
@@ -128,33 +97,35 @@ export default function Home() {
       </section>
       <section
         className="nw-snapshot-transition"
-        aria-label="Free Account Risk Snapshot"
+        aria-label="NexaWorks Signal Seat promise"
       >
         <div className="ed-wrap">
           <div className="ed-snapshot-strip">
             <div>
-              <span className="ed-micro">THE FREE ACCOUNT RISK SNAPSHOT</span>
+              <span className="ed-micro">SIGNAL SEAT / THE 3-RISK PROMISE</span>
               <h2>
-                Perspective first.
+                If we miss the warning,
                 <br />
-                <em>Then the next move.</em>
+                <em>month one is free.</em>
               </h2>
             </div>
             <div>
-              <strong>20 accounts.</strong>
+              <strong>14 days free.</strong>
               <span>
-                Evidence-backed priorities, with the signals behind each.
+                No card. See the brief on your own accounts before you pay.
               </span>
             </div>
             <div>
-              <strong>5 business days.</strong>
-              <span>After data access, with a clear readout.</span>
+              <strong>3 missed risks.</strong>
+              <span>
+                If we do not flag three risks your team missed, month one is free.
+              </span>
             </div>
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat#trial"
               className="ed-snapshot-intro-cta"
             >
-              Get your free Snapshot <ArrowUpRight size={17} />
+              Start your 14 free days <ArrowUpRight size={17} />
             </Link>
           </div>
         </div>
@@ -187,8 +158,8 @@ export default function Home() {
       <section className="ed-section ed-perspective" id="method">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">01 / THE MISSING CONTEXT</p>
-            <span className="ed-micro">LOOK BETWEEN THE METRICS.</span>
+            <p className="ed-eyebrow">01 / THE WARNING SIGNS</p>
+            <span className="ed-micro">THE SCORE CAN LOOK GREEN.</span>
           </div>
           <div className="ed-perspective-intro">
             <h2>
@@ -202,8 +173,9 @@ export default function Home() {
                 adoption is falling, and a critical issue is still open.
               </p>
               <p>
-                Each system holds a piece. We bring the pieces together so your
-                team can see what needs attention—and why.
+                Each system holds a piece. Signal Seat brings the pieces
+                together every morning, ranks them by risk and renewal date,
+                and tells the CSM what to do next.
               </p>
               <Link href="/guides/green-then-gone" className="ed-inline-link">
                 Read: green, then gone <ArrowUpRight size={16} />
@@ -221,24 +193,24 @@ export default function Home() {
       >
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">02 / THE ACCOUNT, IN PERSPECTIVE</p>
+            <p className="ed-eyebrow">02 / INSIDE THE 8AM RISK BRIEF</p>
             <span className="ed-micro">ILLUSTRATIVE EXAMPLE</span>
           </div>
           <div className="ed-detail-heading">
             <h2 id="detail-title">
-              The evidence together.
+              The warning, the evidence.
               <br />
               <em>The next step, clearer.</em>
             </h2>
             <p>
-              Explore the account. Follow the signals back to their sources. See
-              why the next conversation matters.
+              Explore an illustrative brief: the account, the exact signals
+              behind the risk, and one clear action for the CSM.
             </p>
           </div>
           <EditorialSnapshot detailed />
           <p className="ed-detail-disclaimer">
-            An example of the intelligence we deliver. A founder-led service
-            alongside your existing stack.
+            Illustrative example. Your brief is built from your accounts and
+            delivered in Slack or email.
           </p>
         </div>
       </section>
@@ -246,18 +218,18 @@ export default function Home() {
       <section className="ed-section ed-approach">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">03 / HOW WE WORK</p>
-            <span className="ed-micro">YOUR STACK. A CLEARER PICTURE.</span>
+            <p className="ed-eyebrow">03 / HOW SIGNAL SEAT WORKS</p>
+            <span className="ed-micro">LIVE IN 48 HOURS. NO NEW DASHBOARD.</span>
           </div>
           <div className="ed-approach-heading">
             <h2>
-              Connect the context.
+              Connect your tools.
               <br />
               <em>Keep your stack.</em>
             </h2>
             <p>
-              A scoped intelligence service alongside your CS platform. Evidence
-              comes together. Your people stay in control.
+              Signal Seat sits on top of the CS platform you already own. We
+              run the daily work; your CSMs stay in control.
             </p>
           </div>
           <div className="ed-method-board">
@@ -265,22 +237,22 @@ export default function Home() {
               {
                 icon: Database,
                 name: "Connect",
-                text: "Bring the context from your existing systems. Read-only access or exports.",
+                text: "Give read-only access to your CRM, support desk, calls and product data — or start with CSV exports.",
               },
               {
                 icon: Network,
-                name: "Extract",
-                text: "Find the people and product signals. Attach the source evidence.",
+                name: "We read",
+                text: "Every day, we connect champion, usage, ticket and renewal signals across your systems.",
               },
               {
                 icon: ShieldCheck,
-                name: "Review",
-                text: "A human reviews the findings, the rationale and the commercial context.",
+                name: "Human check",
+                text: "The top flags are spot-checked before the brief ships, so the CSM sees evidence, not a mystery score.",
               },
               {
                 icon: FileText,
-                name: "Next step",
-                text: "A clear priority list. A useful brief. A better-informed conversation.",
+                name: "8am brief",
+                text: "Each CSM gets their top 5 accounts in Slack or email, with one next move and a draft ready to approve.",
               },
             ].map((step, i) => (
               <div className="ed-process-step" key={step.name}>
@@ -295,17 +267,17 @@ export default function Home() {
           </div>
           <div className="ed-method-assurance">
             <span>
-              <LockKeyhole size={16} /> Read-only access or exports
+              <LockKeyhole size={16} /> Read-only access or CSV start
             </span>
             <span>
-              <Fingerprint size={16} /> Source-backed context
+              <Fingerprint size={16} /> Nothing is auto-sent
             </span>
             <span>
-              <ShieldCheck size={16} /> Your team reviews and acts
+              <ShieldCheck size={16} /> Your team approves every draft
             </span>
           </div>
-          <Link href="/customer-success-ai" className="ed-inline-link">
-            Inside the approach <ArrowUpRight size={17} />
+          <Link href="/signal-seat" className="ed-inline-link">
+            See the full offer <ArrowUpRight size={17} />
           </Link>
         </div>
       </section>
@@ -313,69 +285,69 @@ export default function Home() {
       <section className="ed-section ed-offer" id="services">
         <div className="ed-wrap ed-offer-layout">
           <div>
-            <p className="ed-eyebrow">04 / A CLEARER PLACE TO BEGIN</p>
+            <p className="ed-eyebrow">04 / WHAT EACH SEAT GETS</p>
             <h2>
-              Start with the
+              One brief.
               <br />
-              accounts you
+              Every morning.
               <br />
-              <em>can’t afford to miss.</em>
+              <em>No dashboard.</em>
             </h2>
             <p className="ed-section-description">
-              Your free Account Risk Snapshot: the 20 accounts that need
-              attention, the evidence behind each, and a readout to decide what
-              happens next.
+              Every CSM with a Signal Seat gets the same daily system: risk
+              first, renewals in view, expansion flagged, and the follow-up
+              already drafted.
             </p>
             <div
               className="ed-offer-facts"
-              aria-label="Snapshot scope and readout"
+              aria-label="Signal Seat delivery facts"
             >
               <span>
-                <strong>20</strong> accounts
+                <strong>8am</strong> Risk Brief
               </span>
               <span>
-                <strong>5</strong> business days*
+                <strong>Top 5</strong> accounts
               </span>
               <span>
-                <strong>45</strong> minute readout
+                <strong>48h</strong> to first brief*
               </span>
             </div>
             <p className="ed-offer-timing">
-              *Five business days after data access.
+              *After read-only access or a CSV export is in place.
             </p>
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat#trial"
               className="ed-button ed-button-primary"
             >
-              Get your free Snapshot <ArrowUpRight size={17} />
+              Start your 14 free days <ArrowUpRight size={17} />
             </Link>
             <p className="ed-offer-fit">
-              For B2B SaaS · 100+ employees · At least two data sources
+              For B2B SaaS teams with 5–30 CSMs on HubSpot or Salesforce
             </p>
           </div>
           <div className="ed-offer-paper">
             <div className="ed-paper-fold" aria-hidden="true" />
             <div className="ed-story-card-label">
               <Layers3 size={20} />
-              <span>YOUR SNAPSHOT / AT A GLANCE</span>
+              <span>YOUR SIGNAL SEAT / EVERY WORKING DAY</span>
             </div>
             <h3>
-              A point of view.
+              The signal was there.
               <br />
-              <em>Backed by evidence.</em>
+              <em>Now it lands at 8am.</em>
             </h3>
             {[
               {
-                title: "A ranked attention list",
-                text: "Your 20 riskiest accounts, with 3–5 signals behind each.",
+                title: "Daily Risk Brief",
+                text: "Top 5 accounts ranked by risk and ARR, with the exact signals and renewal dates.",
               },
               {
-                title: "The context that matters",
-                text: "People and product signals across up to three sources.",
+                title: "Weekly Renewal Radar",
+                text: "Every renewal in the next 90 days, sorted by risk — not just by date.",
               },
               {
-                title: "A conversation about action",
-                text: "A 45-minute readout, five business days after data access.",
+                title: "Expansion signals and drafts",
+                text: "Usage limits, new teams and new stakeholders flagged the same day, with a draft ready to approve.",
               },
             ].map((item, i) => (
               <div className="ed-deliverable-row" key={item.title}>
@@ -388,38 +360,38 @@ export default function Home() {
               </div>
             ))}
             <div className="ed-paper-bottom">
-              <span>No contract. No platform to buy.</span>
-              <span>Four Snapshots / month</span>
+              <span>14 days free · No card</span>
+              <span>$50 per CSM / month</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="ed-intake-section">
+      <section className="ed-intake-section" id="trial">
         <div className="ed-wrap">
           <details className="ed-intake">
             <summary>
-              <span>Ready for a clearer picture?</span>
+              <span>Start your 14 free days</span>
               <span>
-                Request your Snapshot here <ArrowUpRight size={19} />
+                No card · No contract · Live in 48 hours <ArrowUpRight size={19} />
               </span>
             </summary>
             <div className="ed-intake-layout">
               <div>
-                <p className="ed-eyebrow">YOUR FIRST STEP</p>
+                <p className="ed-eyebrow">START THE TRIAL</p>
                 <h2>
                   Tell us where
                   <br />
-                  to begin.
+                  to send the first brief.
                 </h2>
                 <p>
-                  Share your contact details and available data sources. We’ll
-                  discuss read-only access or exports with you after your
-                  request.
+                  Share your contact details and the tools your team uses.
+                  We’ll reply within one business day to arrange read-only
+                  access or a simple CSV start.
                 </p>
-                <p>No data access is granted by this form.</p>
+                <p>No payment or data access is granted by this form.</p>
               </div>
-              <SnapshotIntakeForm />
+              <TrialStartForm />
             </div>
           </details>
         </div>
@@ -428,23 +400,24 @@ export default function Home() {
       <section className="ed-section ed-engagements" id="pricing">
         <div className="ed-wrap">
           <div className="ed-section-head">
-            <p className="ed-eyebrow">05 / THE ENGAGEMENTS</p>
+            <p className="ed-eyebrow">05 / PRICING</p>
             <span className="ed-micro">
-              FIXED SCOPE. A SHARED DEFINITION OF SUCCESS.
+              ONE OFFER. ONE PRICE. NO LADDER.
             </span>
           </div>
           <div className="ed-engagements-heading">
             <h2>
-              Start small.
+              Start free.
               <br />
-              <em>Build on the evidence.</em>
+              <em>Stay because it works.</em>
             </h2>
             <p>
-              Work directly with the founding team. Agree the question, the
-              scope and the price before the work begins.
+              No implementation project, no annual contract and no per-account
+              fees. If the first 14 days do not surface risks your team missed,
+              the 3-Risk Promise applies.
             </p>
           </div>
-          <div className="ed-price-grid">
+          <div className="ed-price-grid ed-price-grid-single">
             {offers.map((offer) => (
               <article
                 key={offer.name}
@@ -458,7 +431,7 @@ export default function Home() {
                     </span>
                   </div>
                   {offer.featured && (
-                    <span className="ed-price-badge">PROVE THE WORKFLOW</span>
+                    <span className="ed-price-badge">14 DAYS FREE</span>
                   )}
                 </div>
                 <h3>{offer.name}</h3>
@@ -484,33 +457,27 @@ export default function Home() {
             ))}
           </div>
           <p className="ed-pricing-fine">
-            Pilot founding-client pricing is offered in exchange for feedback
-            and permission for a measured case study. Final price depends on
-            sources, accounts and integrations.
+            <strong>The 3-Risk Promise:</strong> if we do not flag at least 3
+            genuine risks your team had not already caught in the first 14 days,
+            month 1 is free — and we show you exactly what we checked.
           </p>
           <div className="ed-audit-row">
             <div>
-              <span className="ed-micro">AUDIT / ANOTHER WAY TO START</span>
+              <span className="ed-micro">THE OLD WAY / ENTERPRISE CS PLATFORMS</span>
               <p>
-                Signal Stack Audit <span>· $1,500 · 3 business days</span>
+                Around $50,000 a year
+                <span> plus $10,000–$50,000 implementation and a dedicated admin</span>
               </p>
             </div>
-            <Link href="/contact" className="ed-inline-link">
-              Discuss an audit <ArrowUpRight size={17} />
+            <Link href="/signal-seat#pricing" className="ed-inline-link">
+              See the full comparison <ArrowUpRight size={17} />
             </Link>
           </div>
-          <details className="ed-follow-on">
-            <summary>Follow-on engagements & regional pricing</summary>
-            <p>
-              Renewal Risk & Expansion Intelligence ($30K–$75K) ·
-              Deal-to-Delivery Assurance ($40K–$100K+) · Managed Improvement
-              ($3K–$15K/mo).
-            </p>
-            <p>
-              Based in India? We price in ₹ for Indian companies. Mention it
-              when you <Link href="/contact">reach out</Link>.
-            </p>
-          </details>
+          <p className="ed-pricing-fine">
+            Founding terms for the first 20 companies: the $50 price is locked
+            for 24 months. Minimum 3 seats. India pricing is ₹3,999 per CSM per
+            month, on the same terms.
+          </p>
         </div>
       </section>
 

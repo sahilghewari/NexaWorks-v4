@@ -243,17 +243,17 @@ export default function SignalsHubPage() {
             Want these signals running on your accounts?
           </h2>
           <p className="text-lg mb-10" style={{ color: "var(--nw-dark-soft)" }}>
-            The Signal Stack Audit maps which of these 40 signals your stack can
-            already detect, which data you&apos;re missing, and where your blind
-            spots are. Three business days, $1,500, async.
+            Signal Seat watches these signals across your CRM, tickets, calls
+            and product data, and sends each CSM their top 5 at-risk accounts
+            every morning at 8am. $50 per CSM per month.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
               style={{ backgroundColor: "var(--nw-accent)", color: "white" }}
             >
-              Get your free Account Risk Snapshot <ArrowRight size={18} className="ml-2" />
+              Start your 14 free days <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link
               href="/contact"
