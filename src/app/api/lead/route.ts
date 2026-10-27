@@ -27,7 +27,7 @@ const ASSETS: Record<string, { filename: string; content: string; title: string;
 
 export async function POST(req: Request) {
   try {
-    const { name, email, source, asset, company, website, competitors, role, dataSources, referrer, submissionId } = await req.json();
+    const { name, email, source, asset, company, website, competitors, role, csmSeats, dataSources, referrer, submissionId } = await req.json();
     // Idempotency key: retries of the same form attempt reuse it. Included in
     // the notification so the CRM poller can dedupe duplicate submissions.
     const sid = submissionId || `no-sid-${Date.now()}`;
@@ -63,27 +63,31 @@ export async function POST(req: Request) {
     // poller dedupes), so a lead is never silently lost.
     const isSnapshot = source === "ai-visibility-snapshot";
     const isRiskSnapshot = source === "account-risk-snapshot";
+    const isSignalSeatTrial = source === "signal-seat-trial";
     try {
       await transporter.sendMail({
       from: `"NexaWorks Leads" <${smtpUser}>`,
       to: "sahil@nexaworks.tech", // send the notification here
       // BCC the founder's Gmail so the SDR poller can capture the lead into the
       // CRM automatically (Zoho Mail API scopes do not permit inbox reads).
-      bcc: isRiskSnapshot ? "sahilghewari6@gmail.com" : undefined,
+      bcc: isRiskSnapshot || isSignalSeatTrial ? "sahilghewari6@gmail.com" : undefined,
       replyTo: email, // clicking reply will reply to the visitor
-      subject: isRiskSnapshot
-        ? `New Account Risk Snapshot Request: ${name} — ${company || "no company"}`
-        : isSnapshot
-          ? `New Snapshot Lead: ${name} — ${company || "no company"}`
-          : `New Lead: ${name}`,
+      subject: isSignalSeatTrial
+        ? `New Signal Seat Trial Request: ${name} — ${company || "no company"} (${csmSeats || "?"} CSMs)`
+        : isRiskSnapshot
+          ? `New Account Risk Snapshot Request: ${name} — ${company || "no company"}`
+          : isSnapshot
+            ? `New Snapshot Lead: ${name} — ${company || "no company"}`
+            : `New Lead: ${name}`,
       html: `
-        <h2>New Lead Registration${isRiskSnapshot ? " (Account Risk Snapshot)" : isSnapshot ? " (AI Visibility Snapshot)" : ""}</h2>
+        <h2>New Lead Registration${isSignalSeatTrial ? " (Signal Seat Trial)" : isRiskSnapshot ? " (Account Risk Snapshot)" : isSnapshot ? " (AI Visibility Snapshot)" : ""}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
         ${website ? `<p><strong>Website:</strong> ${website}</p>` : ""}
         ${competitors ? `<p><strong>Competitors:</strong> ${competitors}</p>` : ""}
         ${role ? `<p><strong>Role:</strong> ${role}</p>` : ""}
+        ${csmSeats ? `<p><strong>CSM seats requested:</strong> ${csmSeats}</p>` : ""}
         ${dataSources && dataSources.length ? `<p><strong>Data sources available:</strong> ${dataSources.join(", ")}</p>` : ""}
         <p><strong>How they heard about us:</strong> ${referrer || source || "Not provided"}</p>
         <p><strong>Asset requested:</strong> ${asset && ASSETS[asset] ? ASSETS[asset].title : "None"}</p>
@@ -157,6 +161,34 @@ export async function POST(req: Request) {
       }
     }
 
+    // 1d. Confirm the Signal Seat trial request to the lead (a confirmation
+    // failure must not break lead capture — the founder notification above
+    // already landed).
+    if (isSignalSeatTrial) {
+      try {
+        await transporter.sendMail({
+          from: `"NexaWorks" <${smtpUser}>`,
+          to: email,
+          replyTo: "hello@nexaworks.tech",
+          subject: "Your Signal Seat trial request is in",
+          html: `
+            <p>Hi ${name},</p>
+            <p>We got your request — your 14 free days of Signal Seat for <strong>${company || "your company"}</strong> are being set up.</p>
+            <p>Here's what happens next:</p>
+            <ol>
+              <li>We reply within <strong>one business day</strong> to arrange read-only access to your CRM, support, calls and product data — or a simple CSV start.</li>
+              <li>Your first 8am Risk Brief can land within <strong>48 hours</strong> of access being in place.</li>
+              <li>No card and no contract for the trial. If we do not flag at least <strong>3 genuine risks your team had not already caught</strong> in the first 14 days, month 1 is free.</li>
+            </ol>
+            <p>Nothing else to do for now. If you don't hear from us, reply to this email.</p>
+            <p>— Sahil, Founder @ NexaWorks</p>
+          `,
+        });
+      } catch (confirmError) {
+        console.error(`[lead:confirm] sid=${sid} source=${source} email=${email} FAILED (lead already captured)`, confirmError);
+      }
+    }
+
     // 2. Fulfill the lead magnet automatically (a fulfillment failure must not break lead capture)
     if (asset && ASSETS[asset]) {
       const a = ASSETS[asset];
@@ -170,9 +202,9 @@ export async function POST(req: Request) {
             <p>Hi${name && name !== "Sample brief request" ? ` ${name}` : ""},</p>
             <p>As promised — your <strong>${a.title}</strong> is attached.</p>
             <p>${a.intro}</p>
-            <p>If you want to see what this looks like built from <i>your</i> data, start with the free
-            <a href="https://nexaworks.tech/account-risk-snapshot">Account Risk Snapshot</a> — your 20 riskiest
-            accounts, ranked, in five business days.</p>
+            <p>If you want to see what this looks like built from <i>your</i> data, try
+            <a href="https://nexaworks.tech/signal-seat">Signal Seat</a> — a daily 8am Risk Brief with your
+            top 5 at-risk accounts. 14 days free, no card.</p>
             <p>— Sahil, Founder @ NexaWorks</p>
           `,
           attachments: [

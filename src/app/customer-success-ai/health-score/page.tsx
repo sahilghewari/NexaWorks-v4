@@ -194,11 +194,11 @@ export default function HealthScorePage() {
               Test your score free <ArrowRight size={18} className="ml-2" />
             </Link>
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
               style={{ border: "1px solid var(--nw-line-light)", color: "var(--nw-ink)" }}
             >
-              Get the free Snapshot
+              Start your 14 free days
             </Link>
           </div>
           <div className="mt-10">

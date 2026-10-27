@@ -25,7 +25,7 @@ const signalFirstWhen = [
 const faqs = [
   {
     q: "Isn't this page biased? You sell the signal layer.",
-    a: "We sell both paths honestly: the signal layer, and the Blueprint that architects it. But we'd rather you buy the right thing than buy from us — a customer who bought the wrong architecture churns, and we know what churn looks like. The 'when to buy' list above is real; we've sent prospects to platforms when they were the right answer.",
+    a: "We sell the signal layer — Signal Seat — and we will tell you honestly when a platform is the right answer instead. A customer who bought the wrong architecture churns, and we know what churn looks like. The 'when to buy' list above is real; we've sent prospects to platforms when they were the right answer.",
   },
   {
     q: "What does a CS platform implementation actually cost?",
@@ -55,7 +55,7 @@ export default function BuildVsBuyPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 pb-4">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
@@ -120,11 +120,11 @@ export default function BuildVsBuyPage() {
           </div>
           <div className="mt-12">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
-              Get the free Snapshot <ArrowRight size={18} className="ml-2" />
+              Start your 14 free days <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
         </div>
