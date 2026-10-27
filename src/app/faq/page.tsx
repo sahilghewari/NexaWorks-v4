@@ -1,40 +1,48 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "FAQ — Customer Intelligence",
-  description: "Frequently asked questions about NexaWorks customer intelligence consulting, pricing, and process.",
+  title: "FAQ — Signal Seat",
+  description: "Frequently asked questions about NexaWorks Signal Seat: the daily 8am Risk Brief, pricing, the 14-day free trial, data access and cancellation.",
   alternates: { canonical: "/faq" },
 };
 
 export default function FAQPage() {
   const faqs = [
     {
-      q: "We have no case studies yet — why should we trust you?",
-      a: "We are a 1-year-old firm, which means you get direct, dedicated access to the founder. We don't hand your project off to junior associates. We offer a scoped, fixed-price 10-day Blueprint so you can evaluate our work on your own data before committing to a larger pilot."
+      q: "What is Signal Seat, in one line?",
+      a: "Your daily churn early-warning system. Every working morning at 8am, each CSM gets their top 5 at-risk accounts in Slack or email — with the exact signals, the renewal date and one recommended next move."
+    },
+    {
+      q: "What does it cost?",
+      a: "Signal Seat is $50 per CSM per month, flat — ₹3,999 per CSM per month in India. Unlimited accounts, no per-account fees, $0 implementation, month-to-month. The first 14 days are free and no card is needed to start."
+    },
+    {
+      q: "What is the 3-Risk Promise?",
+      a: "If, in the first 14 days, we do not flag at least 3 genuine risks your team had not already caught, month 1 is free too — and we show you exactly what we checked."
     },
     {
       q: "How is this different from our Gainsight health scores?",
-      a: "Gainsight health scores often rely on structured product metrics and lagging indicators. We build intelligence pipelines that read unstructured data—support tickets, Gong transcripts, and emails—to find the nuance and sentiment that health scores miss."
+      a: "Health scores mostly weight structured, lagging metrics. Signal Seat reads the unstructured signals too — champion changes, call and ticket patterns, usage narrowing — and ranks accounts by risk and renewal date every morning. It sits on top of the platform you already own; it does not replace it."
     },
     {
       q: "What data access do you need?",
-      a: "For the Blueprint, we typically need read-only access to a subset of your CRM (e.g., Salesforce), your support desk (e.g., Zendesk), and call recordings (e.g., Gong). We do not require write access."
+      a: "Read-only access to your CRM (HubSpot or Salesforce), your support desk, call transcripts and product usage data — or you can start from CSV exports. We never need write access, and your data is never used to train models."
     },
     {
-      q: "Do you replace our CS platform?",
-      a: "No. We augment your existing tools. Our intelligence can be delivered via Slack, email, or written directly back into your CRM/CS platform via API as custom fields or notes."
+      q: "How fast can we start?",
+      a: "After a short connect call and access (or a CSV) being in place, the first Risk Brief lands within 48 hours. There is no implementation project and no new dashboard for your team to learn."
     },
     {
-      q: "What does the pilot cost?",
-      a: "The Customer Intelligence Pilot is currently offered at founding-client pricing of $9,500–$18,000 — most pilots land around $15,000 — in exchange for your feedback and permission to publish a measured case study. Final pricing is set on a scoping call based on your data sources, accounts in scope, and integrations. Once we have 3-5 measurable client outcomes, standard pricing will begin at $25,000+."
+      q: "Does Signal Seat ever message our customers?",
+      a: "Never automatically. For every flagged account we prepare a ready draft — a save email, a QBR outline or an internal escalation note — and the CSM always reviews, edits and sends it themselves."
     },
     {
-      q: "How does the Blueprint credit work?",
-      a: "If you start with the $3,500 Customer Revenue Intelligence Blueprint, that entire fee is fully credited toward your Pilot if you decide to proceed with implementation. You carry no financial risk to evaluate the architecture."
+      q: "Can we cancel?",
+      a: "Yes. Signal Seat is month-to-month and you can cancel in one click — no annual lock-in and no exit call. On cancellation we delete your data within 7 days and confirm it in writing."
     },
     {
-      q: "Who owns the work — do you need our engineers?",
-      a: "We build and run the initial pipeline. We require your IT/Ops team for initial API provisioning (usually 1-2 hours of their time), but we do the heavy lifting. At the end of the pilot, we provide the architecture so your team can own it long-term if desired."
+      q: "Who is it for?",
+      a: "B2B SaaS teams with roughly 100–500 staff, 5–30 CSMs and 100–1,000 customer accounts, already using HubSpot or Salesforce with Slack and a support desk. If you have under 50 accounts, a spreadsheet is honestly fine."
     }
   ];
 
@@ -63,10 +71,10 @@ export default function FAQPage() {
             FAQ
           </p>
           <h1 className="mb-16" style={{ color: "var(--nw-ink)" }}>Frequently Asked Questions</h1>
-          
+
           <div className="mb-16 p-8" style={{ backgroundColor: "white", border: "1px solid var(--nw-line-light)" }}>
-            <h3 className="mb-4" style={{ color: "var(--nw-ink)" }}>What is customer intelligence consulting?</h3>
-            <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>Customer intelligence consulting is a specialized service that helps B2B SaaS companies unify their unstructured customer data (calls, emails, support tickets) with CRM records to proactively identify churn risks and expansion opportunities before they happen.</p>
+            <h3 className="mb-4" style={{ color: "var(--nw-ink)" }}>What is NexaWorks Signal Seat?</h3>
+            <p className="text-lg leading-relaxed" style={{ color: "var(--nw-ink-soft)" }}>Signal Seat is a daily churn early-warning service for B2B SaaS customer success teams. It watches your CRM, tickets, calls and product usage, and sends each CSM a short brief at 8am with the accounts that need attention that day — before the renewal is already lost.</p>
           </div>
 
           <div className="space-y-12">
@@ -80,13 +88,13 @@ export default function FAQPage() {
 
           <div className="mt-16 p-12 text-center" style={{ backgroundColor: "var(--nw-dark)", color: "white" }}>
             <h2 className="mb-6">Still have questions?</h2>
-            <p className="mb-8 max-w-md mx-auto" style={{ color: "var(--nw-dark-soft)" }}>The best way to figure out if we can help is to show us your workflow.</p>
+            <p className="mb-8 max-w-md mx-auto" style={{ color: "var(--nw-dark-soft)" }}>The fastest way to judge Signal Seat is to see it on your own accounts. The first 14 days are free, with no card.</p>
             <Link
-              href="/contact"
+              href="/signal-seat#trial"
               className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
               style={{ backgroundColor: "var(--nw-accent)", color: "white" }}
             >
-              Book a discovery call
+              Start your 14 free days
             </Link>
           </div>
         </div>

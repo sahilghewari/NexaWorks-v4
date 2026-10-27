@@ -90,7 +90,7 @@ export default function AttentionListPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 pb-4">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
@@ -218,7 +218,7 @@ export default function AttentionListPage() {
           </div>
           <div className="mt-12">
             <Link
-              href="/account-risk-snapshot"
+              href="/signal-seat"
               className="inline-flex h-14 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
               style={{ backgroundColor: "var(--nw-ink)" }}
             >
