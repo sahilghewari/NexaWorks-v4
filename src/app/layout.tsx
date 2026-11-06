@@ -60,7 +60,6 @@ export const metadata: Metadata = {
     title: "NexaWorks — Customer Intelligence for B2B SaaS",
     description:
       "A daily 8am Risk Brief that surfaces churn risks and expansion signals weeks earlier — $50 per CSM per month.",
-    url: "https://nexaworks.tech",
     siteName: "NexaWorks",
     type: "website",
     locale: "en_US",
