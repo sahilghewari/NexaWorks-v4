@@ -123,6 +123,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="ed-muster-band" aria-label="Muster AI">
+        <div className="ed-wrap ed-muster-inner">
+          <div>
+            <p className="ed-micro ed-muster-micro">
+              NEW FROM NEXAWORKS — MUSTER AI
+            </p>
+            <h2>
+              Software shows you the work.
+              <br />
+              <em>Muster AI does it.</em>
+            </h2>
+            <p className="ed-muster-copy">
+              Muster AI is an AI customer success manager. It watches every
+              account, shows the reason behind every health score, and drafts
+              the follow-ups, renewals and QBRs — your team only approves.
+              Even the accounts nobody has time for.
+            </p>
+          </div>
+          <div className="ed-muster-actions">
+            <Link href="/muster" className="ed-muster-button">
+              Watch the 65-second film <ArrowUpRight size={17} />
+            </Link>
+            <span>
+              Free 2-month pilot · Live in days · No implementation fee
+            </span>
+          </div>
+        </div>
+      </section>
+
       <section
         className="ed-sources-strip"
         aria-label="Examples of source systems"
