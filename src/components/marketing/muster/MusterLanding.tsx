@@ -88,7 +88,16 @@ export default function MusterLanding() {
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={0.15}>
-            <div className="mu-film-shell" id="film">
+            <div className="mu-film-frame" id="film">
+              <div className="mu-film-bar" aria-hidden="true">
+                <span className="mu-film-dots">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+                <span className="mu-film-url">app.muster.ai</span>
+                <span className="mu-film-live">The film · 65 sec</span>
+              </div>
               <FilmPlayer />
             </div>
             <ul className="mu-microproof">
@@ -132,6 +141,11 @@ export default function MusterLanding() {
             <h2 className="mu-h2">
               It does the work. <span className="mu-h2-quiet">You approve it.</span>
             </h2>
+            <p className="mu-intro">
+              Thirteen specialist agents run a simple loop on every account —
+              the same loop a great CSM runs, except it never sleeps, never
+              forgets, and shows its working.
+            </p>
           </ScrollReveal>
           <div className="mu-steps">
             {STEPS.map((step, i) => (
@@ -156,6 +170,10 @@ export default function MusterLanding() {
               A CSM&rsquo;s whole job,{" "}
               <span className="mu-h2-quiet">handled in the open.</span>
             </h2>
+            <p className="mu-intro">
+              Not another dashboard to check. The surfaces below are where the
+              work lands — drafted, evidenced, and waiting for a person.
+            </p>
           </ScrollReveal>
 
           <div className="mu-bento">
@@ -299,6 +317,10 @@ export default function MusterLanding() {
             <h2 className="mu-h2">
               Software shows. <span className="mu-h2-quiet">Muster does.</span>
             </h2>
+            <p className="mu-intro">
+              CS platforms hand your team more screens to work. Muster hands
+              them finished work to approve.
+            </p>
           </ScrollReveal>
           <div className="mu-compare">
             <ScrollReveal animation="fade-up">
