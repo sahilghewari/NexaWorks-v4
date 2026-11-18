@@ -18,6 +18,7 @@
   --line-soft: rgba(59, 32, 84, 0.08);
   --shadow: 0 24px 60px -24px rgba(59, 32, 84, 0.18);
   background: var(--paper);
+  overflow-x: clip;
   color: var(--ink);
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   font-size: 16px;
