@@ -11,7 +11,7 @@ export default function FilmPlayer() {
         <video
           className="mu-player-media"
           src="/muster/muster-film-web.mp4"
-          poster="/muster/poster-endcard.jpg"
+          poster="/muster/poster-hero.jpg"
           controls
           autoPlay
           playsInline
@@ -24,7 +24,7 @@ export default function FilmPlayer() {
           aria-label="Play the Muster AI film (1 minute 5 seconds)"
         >
           <img
-            src="/muster/poster-endcard.jpg"
+            src="/muster/poster-hero.jpg"
             alt="Muster AI — your AI customer success manager"
           />
           <span className="mu-play-disc" aria-hidden="true">
