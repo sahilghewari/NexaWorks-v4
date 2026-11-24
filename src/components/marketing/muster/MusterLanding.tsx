@@ -95,8 +95,6 @@ export default function MusterLanding() {
                   <span />
                   <span />
                 </span>
-                <span className="mu-film-url">app.muster.ai</span>
-                <span className="mu-film-live">The film · 65 sec</span>
               </div>
               <FilmPlayer />
             </div>
