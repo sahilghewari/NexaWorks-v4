@@ -3,13 +3,26 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, RotateCcw } from "lucide-react";
-import { AppFrame, ApprovalsScreen, HealthScreen, TodayScreen } from "./screens";
+import {
+  Account360Screen,
+  AccountsScreen,
+  AppFrame,
+  HealthScreen,
+  RenewalBriefScreen,
+  RenewalsScreen,
+  RevenueScreen,
+} from "./screens";
 
+/** One hint per click. The last entry is the finished state. */
 const STEPS = [
-  "Muster flagged Brightwell overnight. Click the account.",
+  "Every customer, one list. Brightwell dropped to At risk overnight. Open it.",
+  "The champion's email bounced. Open Health to see why the score fell.",
   "Every reason links to its record. Click the second one.",
-  "That is the proof. Now open the save play Muster drafted.",
-  "Read the draft, then approve it.",
+  "That is the proof. Now see what it does to the renewal.",
+  "Renewals, lowest confidence first. Brightwell renews in 52 days. Open its brief.",
+  "Muster drafted a plan to save it. Adopt it into the renewal.",
+  "Adopted. Now see what is at stake in Revenue.",
+  "$186K is now covered by an active renewal plan, tracked to the outcome. Click to finish.",
   "Done",
 ];
 
@@ -25,8 +38,8 @@ export default function ProductTour() {
   const next = () => {
     const n = Math.min(step + 1, total);
     setStep(n);
-    // Let the "Sent" state land first, then show the closing card.
-    if (n === total) timer.current = window.setTimeout(() => setShowEnd(true), 1100);
+    // Let the last state land first, then show the closing card.
+    if (n === total) timer.current = window.setTimeout(() => setShowEnd(true), 700);
   };
   const restart = () => {
     window.clearTimeout(timer.current);
@@ -40,6 +53,8 @@ export default function ProductTour() {
     if (showEnd) endRef.current?.focus();
   }, [showEnd]);
 
+  const hint = STEPS[Math.min(step, total - 1)];
+
   return (
     <div className="mh-tour">
       <div className="mh-tour-progress" aria-hidden="true">
@@ -49,30 +64,55 @@ export default function ProductTour() {
       </div>
       <div className="mh-shot mh-tour-shot" aria-live="polite">
         {step === 0 && (
-          <AppFrame active="Today">
-            <TodayScreen hotRow onRow={next} hint={STEPS[0]} step={label} />
+          <AppFrame active="Accounts">
+            <AccountsScreen hotRow onRow={next} hint={hint} step={label} />
           </AppFrame>
         )}
-        {(step === 1 || step === 2) && (
-          <AppFrame active="Health">
+        {step === 1 && (
+          <AppFrame active="Accounts" crumb="Brightwell Logistics">
+            <Account360Screen hotTab onTab={next} hint={hint} step={label} />
+          </AppFrame>
+        )}
+        {(step === 2 || step === 3) && (
+          <AppFrame active="Accounts" crumb="Brightwell Logistics">
             <HealthScreen
-              hotReason={step === 1}
+              hotReason={step === 2}
               onReason={next}
-              openReason={step === 2}
-              hotDraft={step === 2}
+              openReason={step === 3}
+              hotDraft={step === 3}
               onDraft={next}
-              hint={STEPS[step]}
+              draftLabel="See the renewal it puts at risk"
+              hint={hint}
               step={label}
             />
           </AppFrame>
         )}
-        {(step === 3 || step === 4) && (
-          <AppFrame active="Approvals">
-            <ApprovalsScreen
-              hotApprove={step === 3}
-              onApprove={next}
-              approved={step === 4}
-              hint={STEPS[3]}
+        {step === 4 && (
+          <AppFrame active="Renewals">
+            <RenewalsScreen hotRow onRow={next} hint={hint} step={label} />
+          </AppFrame>
+        )}
+        {(step === 5 || step === 6) && (
+          <AppFrame active="Renewals" crumb="Brightwell Logistics">
+            <RenewalBriefScreen
+              hotAdopt={step === 5}
+              onAdopt={next}
+              adopted={step === 6}
+              hotRevenue={step === 6}
+              onRevenue={next}
+              hint={hint}
+              step={label}
+            />
+          </AppFrame>
+        )}
+        {step >= 7 && (
+          <AppFrame active="Revenue">
+            <RevenueScreen
+              saveActive
+              activeLabel="Renewal plan adopted today"
+              hotSave={step === 7}
+              onSave={next}
+              hint={hint}
               step={label}
             />
           </AppFrame>
@@ -88,11 +128,12 @@ export default function ProductTour() {
             >
               <p className="mh-eyebrow">Demo complete</p>
               <h3 id="mh-tour-end-title">
-                That was one workflow, <em>in four clicks.</em>
+                That was one workflow, <em>in eight clicks.</em>
               </h3>
               <p>
-                This short click-through shows one Muster feature: turning a signal into approved work. The full
-                product also runs onboarding, renewals, expansion, QBR prep and Ask AI across every account.
+                This short click-through follows one account from a risk signal to a renewal plan and the revenue it
+                protects. The full product also runs onboarding, approvals, expansion, QBR prep and Ask AI across every
+                account.
               </p>
               <div className="mh-tour-card-actions">
                 <Link href="/contact" className="mh-btn mh-btn-violet">

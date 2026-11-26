@@ -2,20 +2,24 @@
 
 import { useState } from "react";
 import {
+  AccountsScreen,
   AppFrame,
   ApprovalsScreen,
   AskScreen,
   HealthScreen,
   RenewalsScreen,
+  RevenueScreen,
   TodayScreen,
   type ScreenName,
 } from "./screens";
 
 const TABS: { name: ScreenName; line: string }[] = [
   { name: "Today", line: "Start the day with the accounts that need you." },
+  { name: "Accounts", line: "Every customer in one list, with health and the CSM's own read." },
   { name: "Approvals", line: "Drafted work, waiting for a yes." },
   { name: "Health", line: "Every score shows its reasons." },
   { name: "Renewals", line: "The next 90 days, ranked by confidence." },
+  { name: "Revenue", line: "Expected billing and ARR at risk, traced to the records." },
   { name: "Ask AI", line: "Ask anything. Every answer cites its records." },
 ];
 
@@ -23,12 +27,16 @@ function Screen({ name }: { name: ScreenName }) {
   switch (name) {
     case "Today":
       return <TodayScreen />;
+    case "Accounts":
+      return <AccountsScreen />;
     case "Approvals":
       return <ApprovalsScreen />;
     case "Health":
       return <HealthScreen />;
     case "Renewals":
       return <RenewalsScreen />;
+    case "Revenue":
+      return <RevenueScreen />;
     case "Ask AI":
       return <AskScreen />;
   }

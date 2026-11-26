@@ -54,7 +54,7 @@ export default function Home() {
             <h2 id="tour-title">
               Click through <em>Muster.</em>
             </h2>
-            <p>Follow the highlight. Four clicks, from signal to sent.</p>
+            <p>Follow the highlight. Eight clicks, from a risk signal to the renewal and the revenue it protects.</p>
           </header>
         </div>
         <ProductTour />
