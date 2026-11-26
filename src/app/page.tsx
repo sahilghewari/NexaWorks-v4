@@ -56,8 +56,8 @@ export default function Home() {
             </h2>
             <p>Follow the highlight. Four clicks, from signal to sent.</p>
           </header>
-          <ProductTour />
         </div>
+        <ProductTour />
       </section>
 
       <section className="mh-section mh-section-tint" id="integrations" aria-labelledby="int-title">

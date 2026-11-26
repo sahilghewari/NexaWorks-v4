@@ -1013,35 +1013,70 @@
 .mh-faq {
   border-top: 1px solid var(--line);
 }
-.mh-faq details {
+.mh-faq-item {
   border-bottom: 1px solid var(--line);
 }
-.mh-faq summary {
-  list-style: none;
-  cursor: pointer;
+.mh-faq-item h3 {
+  margin: 0;
+  font: inherit;
+}
+.mh-faq-item button {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
   padding: 22px 0;
+  text-align: left;
   font-size: 1.08rem;
   font-weight: 500;
+  color: var(--ink);
+  transition: color 0.25s ease;
 }
-.mh-faq summary::-webkit-details-marker {
-  display: none;
+.mh-faq-item button:hover,
+.mh-faq-item.is-open button {
+  color: var(--violet);
 }
-.mh-faq summary svg {
+.mh-faq-item button svg {
   flex: none;
   color: var(--violet);
-  transition: transform 0.25s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.mh-faq details[open] summary svg {
+.mh-faq-item.is-open button svg {
   transform: rotate(45deg);
 }
-.mh-faq details p {
+.mh-faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.3s ease;
+}
+.mh-faq-item.is-open .mh-faq-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.mh-faq-panel > div {
+  overflow: hidden;
+  min-height: 0;
+}
+.mh-faq-panel p {
   padding: 0 40px 24px 0;
   color: var(--ink-soft);
   line-height: 1.65;
+  transform: translateY(-6px);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mh-faq-item.is-open .mh-faq-panel p {
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-faq-panel,
+  .mh-faq-panel p,
+  .mh-faq-item button svg {
+    transition: none;
+  }
 }
 
 /* ---------- final CTA ---------- */
@@ -1204,4 +1239,251 @@
     top: -5px;
     margin: 0;
   }
+}
+
+/* ---------- live demo: near full screen, with margins ---------- */
+.mh-tour {
+  width: min(1480px, calc(100% - 64px));
+  max-width: none;
+  margin: 0 auto;
+}
+.mh-tour .mh-shot {
+  max-width: none;
+}
+.mh-tour .mh-app {
+  grid-template-columns: 236px 1fr;
+  min-height: min(80vh, 800px);
+  border-radius: 22px;
+  font-size: 15px;
+}
+.mh-tour .mh-app-side {
+  padding: 24px 16px;
+}
+.mh-tour .mh-app-brand {
+  font-size: 13px;
+}
+.mh-tour .mh-app-side nav button {
+  height: 42px;
+  font-size: 15px;
+}
+.mh-tour .mh-app-top {
+  padding: 18px 32px;
+}
+.mh-tour .mh-app-body {
+  padding: 36px 40px 44px;
+}
+.mh-tour .mh-app-h {
+  font-size: 30px;
+}
+.mh-tour .mh-app-sub {
+  font-size: 15px;
+}
+.mh-tour .mh-stats {
+  gap: 14px;
+  margin-top: 26px;
+}
+.mh-tour .mh-stat {
+  padding: 18px 20px;
+}
+.mh-tour .mh-stat span {
+  font-size: 13px;
+}
+.mh-tour .mh-stat strong {
+  font-size: 30px;
+}
+.mh-tour .mh-list {
+  margin-top: 24px;
+}
+.mh-tour .mh-row {
+  padding: 18px 14px;
+}
+.mh-tour .mh-health {
+  gap: 26px;
+}
+.mh-tour .mh-health-score {
+  padding: 26px;
+}
+.mh-tour .mh-ring {
+  width: 210px;
+}
+.mh-tour .mh-ring strong {
+  font-size: 60px;
+}
+.mh-tour .mh-reason {
+  padding: 16px;
+}
+.mh-tour .mh-reason strong {
+  font-size: 16px;
+}
+.mh-tour .mh-reason span,
+.mh-tour .mh-draft-head em {
+  font-size: 13px;
+}
+.mh-tour .mh-draft {
+  margin-top: 26px;
+  padding: 26px 30px;
+}
+.mh-tour .mh-draft > p:not(.mh-draft-to) {
+  font-size: 17px;
+  max-width: 60ch;
+}
+.mh-tour .mh-btn-ghost,
+.mh-tour .mh-btn-primary {
+  height: 42px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.mh-tour .mh-queue span {
+  padding: 15px 18px;
+}
+.mh-tour .mh-hot-tip {
+  font-size: 14px;
+  max-width: min(340px, 80vw);
+}
+@media (max-width: 900px) {
+  .mh-tour {
+    width: calc(100% - 32px);
+  }
+  .mh-tour .mh-app {
+    min-height: 0;
+  }
+  .mh-tour .mh-app-body {
+    padding: 22px 18px 26px;
+  }
+  .mh-tour .mh-app-h {
+    font-size: 22px;
+  }
+  .mh-tour .mh-stat strong {
+    font-size: 22px;
+  }
+  .mh-tour .mh-ring {
+    width: 120px;
+  }
+  .mh-tour .mh-ring strong {
+    font-size: 34px;
+  }
+  .mh-tour .mh-draft > p:not(.mh-draft-to) {
+    font-size: 15px;
+  }
+}
+@media (max-width: 700px) {
+  .mh-tour .mh-app {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- end-of-demo card ---------- */
+.mh-tour-end {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(20, 12, 28, 0.38);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: mh-fade 0.35s ease both;
+}
+@keyframes mh-fade {
+  from {
+    opacity: 0;
+  }
+}
+.mh-tour-card {
+  width: min(540px, 100%);
+  padding: 40px 40px 32px;
+  border-radius: 24px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 40px 90px -30px rgba(20, 12, 28, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: mh-in 0.45s 0.05s ease both;
+  outline: none;
+}
+.mh-tour-card h3 {
+  margin-top: 14px;
+  font: 400 clamp(1.9rem, 3.4vw, 2.6rem) / 1.05 var(--serif);
+  letter-spacing: -0.02em;
+}
+.mh-tour-card h3 em {
+  font-style: italic;
+  color: var(--violet);
+}
+.mh-tour-card > p:not(.mh-eyebrow) {
+  margin-top: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-size: 15.5px;
+}
+.mh-tour-card-actions {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.mh-tour-card-actions .mh-btn-ghost-dark {
+  height: 48px;
+  font-size: 15px;
+}
+.mh-btn-violet {
+  background: var(--violet);
+  color: #fff;
+}
+.mh-btn-violet:hover {
+  background: #3d1a55;
+}
+.mh-tour-card small {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: #9a90a4;
+}
+@media (max-width: 700px) {
+  .mh-tour-end {
+    padding: 12px;
+    border-radius: 18px;
+  }
+  .mh-tour-card {
+    padding: 30px 22px 24px;
+  }
+}
+
+/* ---------- Soft Aurora hero background ---------- */
+.soft-aurora {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.soft-aurora__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.mh-hero-copy {
+  position: relative;
+}
+/* Spans the full width behind the hero copy and reaches into the top of the film,
+   so the glow sits like a horizon just above the video. */
+.mh-aurora {
+  position: absolute;
+  top: -148px;
+  bottom: -150px;
+  left: 50%;
+  width: 100vw;
+  height: auto;
+  translate: -50% 0;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, transparent 0, #000 25%, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 25%, #000 80%, transparent 100%);
+}
+.mh-hero .mh-film-stage {
+  background: linear-gradient(to bottom, transparent 0 50%, var(--paper) 50% 100%);
 }

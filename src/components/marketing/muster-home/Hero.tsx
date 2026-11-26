@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
+import SoftAurora from "./SoftAurora";
 
 /**
  * Hero with the product film. On load the film's top half sits inside the hero; as the
@@ -12,6 +13,8 @@ export default function Hero() {
   const frameRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  // Hovering or focusing "Book a demo" speeds the aurora and its colour shift up.
+  const [boost, setBoost] = useState(false);
 
   useEffect(() => {
     const frame = frameRef.current;
@@ -58,6 +61,21 @@ export default function Hero() {
     <section className="mh-hero" aria-labelledby="mh-hero-title">
       <div className="mh-hero-glow" aria-hidden="true" />
       <div className="mh-wrap mh-hero-copy">
+        <SoftAurora
+          className="mh-aurora"
+          color1="#f0a58a"
+          color2="#9b5fd4"
+          spectrum={0.2}
+          colorSpeed={boost ? 3.2 : 0.6}
+          speed={boost ? 1.6 : 0.45}
+          scale={1.4}
+          brightness={0.85}
+          bandHeight={0.27}
+          bandSpread={0.95}
+          mouseInfluence={0.2}
+          clickPulse={false}
+          opacity={0.9}
+        />
         <p className="mh-eyebrow mh-eyebrow-dark">
           <span className="mh-live" /> AI customer success manager
         </p>
@@ -68,7 +86,14 @@ export default function Hero() {
           Muster watches every account, explains every score and drafts the work. Your team approves.
         </p>
         <div className="mh-hero-ctas">
-          <Link href="/contact" className="mh-btn mh-btn-light">
+          <Link
+            href="/contact"
+            className="mh-btn mh-btn-light"
+            onMouseEnter={() => setBoost(true)}
+            onMouseLeave={() => setBoost(false)}
+            onFocus={() => setBoost(true)}
+            onBlur={() => setBoost(false)}
+          >
             Book a demo <ArrowUpRight size={16} />
           </Link>
           <Link href="#tour" className="mh-btn mh-btn-outline">
