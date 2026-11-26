@@ -1,14 +1,15 @@
 import Script from "next/script";
 import ContactForm from "@/components/marketing/ContactForm";
+import { BOOK_DEMO_URL } from "@/lib/booking";
 
 export const metadata = {
-  title: "Contact Us & Discovery Call",
-  description: "Schedule a discovery call with the founder or get our Customer Intelligence architecture guide.",
+  title: "Book a demo",
+  description: "Book a 15-minute intro call to see Muster AI on your own accounts.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/nexaworkss/waitlist";
+  const calendlyUrl = BOOK_DEMO_URL;
 
   const widgetUrl = new URL(calendlyUrl);
   widgetUrl.searchParams.set("hide_gdpr_banner", "1");
@@ -18,11 +19,11 @@ export default function ContactPage() {
       <section className="sp-section" style={{ backgroundColor: "var(--nw-canvas)" }}>
         <div className="container-nw max-w-6xl page-intro">
           <p className="eyebrow mb-6 text-center" style={{ color: "var(--nw-accent)" }}>
-            Discovery
+            Book a demo
           </p>
-          <h1 className="mb-4 text-center" style={{ color: "var(--nw-ink)" }}>Let&apos;s talk about your data.</h1>
+          <h1 className="mb-4 text-center" style={{ color: "var(--nw-ink)" }}>See Muster on your own accounts.</h1>
           <p className="text-xl text-center mb-8 max-w-2xl mx-auto" style={{ color: "var(--nw-ink-soft)" }}>
-            Talk directly with the founder about your CS workflows, the signals your team needs, and whether a scoped engagement fits.
+            A 15-minute intro call with the Muster AI team: your CS workflow, the signals that matter to you, and a look at the product.
           </p>
 
           <p className="text-center text-sm mb-10" style={{ color: "var(--nw-ink-soft)" }}>Choose a time below, or <a href={calendlyUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">open the booking calendar in a new tab</a>.</p>

@@ -9,6 +9,7 @@ import Faq from "@/components/marketing/muster-home/Faq";
 import SignalBento from "@/components/marketing/SignalBento";
 import "./signal-surfaces.css";
 import "./muster-home.css";
+import { BOOK_DEMO_LINK } from "@/lib/booking";
 
 export const metadata: Metadata = {
   title: { absolute: "Muster AI · The AI customer success manager" },
@@ -92,7 +93,7 @@ export default function Home() {
             See Muster on <em>your own accounts.</em>
           </h2>
           <div className="mh-hero-ctas">
-            <Link href="/contact" className="mh-btn mh-btn-light">
+            <Link {...BOOK_DEMO_LINK} className="mh-btn mh-btn-light">
               Book a demo <ArrowUpRight size={16} />
             </Link>
             <Link href="#tour" className="mh-btn mh-btn-outline">

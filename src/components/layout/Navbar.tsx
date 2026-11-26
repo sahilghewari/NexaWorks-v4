@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { MusterLockup } from "@/components/brand/MusterMark";
+import { BOOK_DEMO_LINK } from "@/lib/booking";
 
 const LINKS = [
   { name: "Product", href: "/#product" },
@@ -70,7 +71,7 @@ export default function Navbar({ enterprise = false }: { enterprise?: boolean })
           </nav>
 
           <div className="mx-header-actions">
-            <Link href="/contact" className="mx-header-cta">
+            <Link {...BOOK_DEMO_LINK} className="mx-header-cta">
               Book a demo
             </Link>
             <button
@@ -124,7 +125,7 @@ export default function Navbar({ enterprise = false }: { enterprise?: boolean })
           </nav>
           <div className="mt-auto flex flex-col gap-4 pb-4 pt-8">
             <Link
-              href="/contact"
+              {...BOOK_DEMO_LINK}
               className="flex h-14 items-center justify-center rounded-full text-base font-medium text-white"
               style={{ backgroundColor: "#5B2A7A" }}
               onClick={() => setIsOpen(false)}

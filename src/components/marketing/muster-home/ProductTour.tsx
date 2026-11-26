@@ -12,6 +12,7 @@ import {
   RenewalsScreen,
   RevenueScreen,
 } from "./screens";
+import { BOOK_DEMO_LINK } from "@/lib/booking";
 
 /** One hint per click. The last entry is the finished state. */
 const STEPS = [
@@ -136,7 +137,7 @@ export default function ProductTour() {
                 account.
               </p>
               <div className="mh-tour-card-actions">
-                <Link href="/contact" className="mh-btn mh-btn-violet">
+                <Link {...BOOK_DEMO_LINK} className="mh-btn mh-btn-violet">
                   Book a demo <ArrowUpRight size={16} />
                 </Link>
                 <button type="button" className="mh-btn mh-btn-ghost-dark" onClick={restart}>

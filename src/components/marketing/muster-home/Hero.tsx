@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Volume2, VolumeX } from "lucide-react";
 import SoftAurora from "./SoftAurora";
+import { BOOK_DEMO_LINK } from "@/lib/booking";
 
 /**
  * Hero with the product film. On load the film's top half sits inside the hero; as the
@@ -87,7 +88,7 @@ export default function Hero() {
         </p>
         <div className="mh-hero-ctas">
           <Link
-            href="/contact"
+            {...BOOK_DEMO_LINK}
             className="mh-btn mh-btn-light"
             onMouseEnter={() => setBoost(true)}
             onMouseLeave={() => setBoost(false)}

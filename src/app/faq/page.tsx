@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MUSTER_FAQS } from "@/components/marketing/muster-home/faqs";
+import { BOOK_DEMO_LINK } from "@/lib/booking";
 
 export const metadata = {
   title: "FAQ: Muster AI",
@@ -49,7 +50,7 @@ export default function FAQPage() {
             <h2 className="mb-6">Still have questions?</h2>
             <p className="mb-8 max-w-md mx-auto" style={{ color: "var(--nw-dark-soft)" }}>The fastest way to judge Muster is to see it on your own accounts.</p>
             <Link
-              href="/contact"
+              {...BOOK_DEMO_LINK}
               className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium transition-colors"
               style={{ backgroundColor: "var(--nw-accent)", color: "white" }}
             >

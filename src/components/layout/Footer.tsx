@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MusterLockup } from "@/components/brand/MusterMark";
+import { BOOK_DEMO_URL } from "@/lib/booking";
 
 const COLUMNS = [
   {
@@ -14,7 +15,7 @@ const COLUMNS = [
   {
     title: "Get started",
     links: [
-      { name: "Book a demo", href: "/contact" },
+      { name: "Book a demo", href: BOOK_DEMO_URL },
       { name: "Watch the film", href: "/#film" },
     ],
   },
@@ -53,7 +54,13 @@ export default function Footer({}: { enterprise?: boolean }) {
               <ul>
                 {col.links.map((l) => (
                   <li key={l.name}>
-                    <Link href={l.href}>{l.name}</Link>
+                    {l.href.startsWith("http") ? (
+                      <a href={l.href} target="_blank" rel="noopener noreferrer">
+                        {l.name}
+                      </a>
+                    ) : (
+                      <Link href={l.href}>{l.name}</Link>
+                    )}
                   </li>
                 ))}
               </ul>
