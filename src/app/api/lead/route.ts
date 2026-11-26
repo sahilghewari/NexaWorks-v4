@@ -123,7 +123,7 @@ export async function POST(req: Request) {
               <li>Your snapshot lands in this inbox within <strong>3 business days</strong> — with 3 concrete gaps.</li>
             </ol>
             <p>Nothing else to do. If you don't see it, reply to this email.</p>
-            <p>— Sahil, Founder @ NexaWorks</p>
+            <p>— Sahil, Co-founder @ NexaWorks</p>
           `,
         });
       } catch (confirmError) {
@@ -150,7 +150,7 @@ export async function POST(req: Request) {
               <li>Your Snapshot lands within <strong>five business days</strong> — free, before you sign anything.</li>
             </ol>
             <p>Nothing else to do for now. If you don't hear from us, reply to this email.</p>
-            <p>— Sahil, Founder @ NexaWorks</p>
+            <p>— Sahil, Co-founder @ NexaWorks</p>
           `,
         });
       } catch (confirmError) {
@@ -181,7 +181,7 @@ export async function POST(req: Request) {
               <li>No card and no contract for the trial. If we do not flag at least <strong>3 genuine risks your team had not already caught</strong> in the first 14 days, month 1 is free.</li>
             </ol>
             <p>Nothing else to do for now. If you don't hear from us, reply to this email.</p>
-            <p>— Sahil, Founder @ NexaWorks</p>
+            <p>— Sahil, Co-founder @ NexaWorks</p>
           `,
         });
       } catch (confirmError) {
@@ -205,7 +205,7 @@ export async function POST(req: Request) {
             <p>If you want to see what this looks like built from <i>your</i> data, try
             <a href="https://nexaworks.tech/signal-seat">Signal Seat</a> — a daily 8am Risk Brief with your
             top 5 at-risk accounts. 14 days free, no card.</p>
-            <p>— Sahil, Founder @ NexaWorks</p>
+            <p>— Sahil, Co-founder @ NexaWorks</p>
           `,
           attachments: [
             {

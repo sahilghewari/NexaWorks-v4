@@ -10,7 +10,7 @@ export default function SchemaMarkup() {
     "founder": {
       "@type": "Person",
       "name": "Sahil",
-      "jobTitle": "Founder & Chief Architect",
+      "jobTitle": "Co-founder",
       "knowsAbout": ["Artificial Intelligence", "System Architecture", "Python", "FastAPI"]
     },
     "address": {

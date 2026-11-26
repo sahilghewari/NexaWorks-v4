@@ -1,7 +1,7 @@
 import styles from "./FoundingTeam.module.css";
 
 const founders = [
-  { name: "Sahil", initial: "S", role: "Founder" },
+  { name: "Sahil", initial: "S", role: "Co-founder" },
   {
     name: "Mangala Sawant",
     initial: "M",

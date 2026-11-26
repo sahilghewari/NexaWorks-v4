@@ -1,22 +1,38 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { MusterLockup } from "@/components/brand/MusterMark";
 
-export default function Navbar({
-  enterprise = false,
-}: {
-  enterprise?: boolean;
-}) {
+const LINKS = [
+  { name: "Product", href: "/#product" },
+  { name: "Live demo", href: "/#tour" },
+  { name: "Integrations", href: "/#integrations" },
+  { name: "FAQ", href: "/#faq" },
+];
+
+/**
+ * Muster AI site header. On the homepage it floats over the dark hero and turns into
+ * light glass once the page scrolls; everywhere else it is light from the start.
+ */
+export default function Navbar({ enterprise = false }: { enterprise?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(!enterprise);
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (!enterprise) return;
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [enterprise]);
 
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!isOpen || !dialog) return;
-    // Native modal behavior keeps focus inside the menu and makes the page inert.
+    // Native modal behaviour keeps focus inside the menu and makes the page inert.
     dialog.showModal();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -33,111 +49,40 @@ export default function Navbar({
     };
   }, [isOpen]);
 
-  const links = [
-    { name: "Signal Seat", href: "/signal-seat" },
-    { name: "Method", href: "/#method" },
-    { name: "Pricing", href: "/signal-seat#pricing" },
-    { name: "FAQ", href: "/faq" },
-    { name: "About", href: "/about" },
-  ];
+  const dark = enterprise && !scrolled;
 
   return (
     <>
       <header
-        className={`sticky top-0 z-50 w-full ${enterprise ? "ed-site-header" : ""}`}
-        style={{
-          backgroundColor: enterprise
-            ? "rgba(248, 248, 255, 0.86)"
-            : "var(--nw-canvas)",
-          backdropFilter: enterprise ? "blur(16px)" : undefined,
-          WebkitBackdropFilter: enterprise ? "blur(16px)" : undefined,
-          borderBottom: "1px solid var(--nw-line-light)",
-        }}
+        className={`mx-header ${enterprise ? "is-overlay" : ""} ${dark ? "is-dark" : "is-light"}`}
       >
-        <div className="container-nw flex h-14 items-center justify-between">
-          {/* Logo */}
-          <Link
-            href={enterprise ? "/#top" : "/"}
-            className={`flex items-center gap-2.5 text-lg font-semibold tracking-tight ${enterprise ? "ed-wordmark" : ""}`}
-            style={{
-              color: "var(--nw-ink)",
-              fontFamily: "var(--font-display)",
-            }}
-          >
-            <div
-              className="flex items-center justify-center rounded-lg shadow-sm"
-              style={{
-                backgroundColor: "#0A0A0C",
-                width: "32px",
-                height: "32px",
-                border: "1px solid rgba(255,255,255,0.1)",
-              }}
-            >
-              <Image
-                src="/logo.png"
-                alt=""
-                width={26}
-                height={26}
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-            nexaworks
+        <div className="mx-header-inner">
+          <Link href="/" aria-label="Muster AI home" className="mx-header-logo">
+            <MusterLockup reversed={dark} />
           </Link>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-[13px] font-medium transition-colors"
-                style={{
-                  color: "var(--nw-ink-soft)",
-                  transitionDuration: "var(--nw-dur-fast)",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = "var(--nw-ink)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = "var(--nw-ink-soft)")
-                }
-              >
+          <nav className="mx-header-nav" aria-label="Main">
+            {LINKS.map((link) => (
+              <Link key={link.name} href={link.href}>
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/signal-seat#trial"
-              className="inline-flex h-9 items-center justify-center rounded-full px-5 text-[13px] font-medium text-white transition-colors"
-              style={{
-                backgroundColor: "var(--nw-ink)",
-                transitionDuration: "var(--nw-dur-fast)",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "var(--nw-accent)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.backgroundColor = "var(--nw-ink)")
-              }
-            >
-              Start 14 free days
-            </Link>
           </nav>
 
-          {/* Mobile Toggle */}
-          <button
-            className="md:hidden p-3"
-            style={{ color: "var(--nw-ink)" }}
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Open menu"
-            aria-expanded={isOpen}
-            aria-controls="mobile-navigation"
-          >
-            {isOpen ? (
-              <X size={22} strokeWidth={1.5} />
-            ) : (
-              <Menu size={22} strokeWidth={1.5} />
-            )}
-          </button>
+          <div className="mx-header-actions">
+            <Link href="/contact" className="mx-header-cta">
+              Book a demo
+            </Link>
+            <button
+              className="mx-header-toggle"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Open menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+            >
+              {isOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+            </button>
+          </div>
         </div>
       </header>
       <dialog
@@ -148,8 +93,8 @@ export default function Navbar({
         className="mobile-navigation"
       >
         <div className="flex min-h-full flex-col p-6">
-          <div className="flex items-center justify-between mb-8">
-            <span className="text-lg font-semibold">nexaworks</span>
+          <div className="mb-8 flex items-center justify-between">
+            <MusterLockup />
             <button
               type="button"
               autoFocus
@@ -161,13 +106,13 @@ export default function Navbar({
             </button>
           </div>
           <nav aria-label="Mobile" className="flex flex-col gap-4">
-            {links.map((link) => (
+            {LINKS.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className="tracking-tight"
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontFamily: "var(--font-editorial), Georgia, serif",
                   fontSize: "clamp(2rem, 6vw, 3rem)",
                   color: "var(--nw-ink)",
                 }}
@@ -177,22 +122,15 @@ export default function Navbar({
               </Link>
             ))}
           </nav>
-          <div className="flex flex-col gap-4 mt-auto pt-8 pb-4">
+          <div className="mt-auto flex flex-col gap-4 pb-4 pt-8">
             <Link
-              href="/signal-seat#trial"
+              href="/contact"
               className="flex h-14 items-center justify-center rounded-full text-base font-medium text-white"
-              style={{ backgroundColor: "var(--nw-ink)" }}
+              style={{ backgroundColor: "#5B2A7A" }}
               onClick={() => setIsOpen(false)}
             >
-              Start 14 free days
+              Book a demo
             </Link>
-            <a
-              href="tel:+918356954152"
-              className="text-center text-sm"
-              style={{ color: "var(--nw-ink-soft)" }}
-            >
-              +91 83569 54152
-            </a>
           </div>
         </div>
       </dialog>

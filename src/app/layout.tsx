@@ -3,6 +3,7 @@ import Script from "next/script";
 import localFont from "next/font/local";
 import MarketingChrome from "@/components/layout/MarketingChrome";
 import "./globals.css";
+import "./muster-brand.css";
 import "./marketing-system.css";
 
 const displayFont = localFont({
@@ -41,12 +42,15 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "NexaWorks — Customer Intelligence for B2B SaaS",
-    template: "%s | NexaWorks",
+    default: "Muster AI · The AI customer success manager",
+    template: "%s | Muster AI",
   },
   description:
-    "NexaWorks Signal Seat sends each CSM a daily 8am Risk Brief in Slack or email: the top at-risk accounts, the exact signals, the renewal date and the next move. $50 per CSM per month, live in 48 hours.",
+    "Muster AI by NexaWorks is an AI customer success manager for B2B SaaS: it watches every account, shows the reason behind every health score, and drafts the follow-ups, renewals and QBRs. Your team approves. Free 2-month pilot, no implementation fee.",
   keywords: [
+    "AI customer success manager",
+    "Muster AI",
+    "AI CSM",
     "churn early warning",
     "customer success signals",
     "renewal risk alerts",
@@ -57,9 +61,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nexaworks.tech"),
   robots: { index: true, follow: true },
   openGraph: {
-    title: "NexaWorks — Customer Intelligence for B2B SaaS",
+    title: "Muster AI · The AI customer success manager",
     description:
-      "A daily 8am Risk Brief that surfaces churn risks and expansion signals weeks earlier — $50 per CSM per month.",
+      "Muster AI is the CSM, not CSM software: it watches every account, explains every score and drafts the work. Free 2-month pilot.",
     siteName: "NexaWorks",
     type: "website",
     locale: "en_US",
@@ -68,14 +72,14 @@ export const metadata: Metadata = {
         url: "/og-image.webp",
         width: 1024,
         height: 1024,
-        alt: "NexaWorks — Customer Intelligence for B2B SaaS",
+        alt: "Muster AI · The AI customer success manager",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NexaWorks — Customer Intelligence for B2B SaaS",
-    description: "Daily churn warnings in Slack for B2B SaaS CS teams. $50 per CSM per month.",
+    title: "Muster AI · The AI customer success manager",
+    description: "Muster AI: an AI customer success manager that drafts the work. Your team approves it.",
     images: ["/og-image.webp"],
   },
 };
@@ -100,6 +104,18 @@ export default function RootLayout({
           email: "hello@nexaworks.tech",
           contactType: "customer support",
         },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://nexaworks.tech/#muster",
+        name: "Muster AI",
+        applicationCategory: "BusinessApplication",
+        url: "https://nexaworks.tech/muster",
+        publisher: {
+          "@id": "https://nexaworks.tech/#organization",
+        },
+        description:
+          "An AI customer success manager for B2B SaaS. It watches every account across CRM, billing, support and product data, shows the reason behind every health score, and drafts outreach, save plays, renewal plans and QBR prep for human approval.",
       },
       {
         "@type": "Service",

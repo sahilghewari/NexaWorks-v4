@@ -1,288 +1,68 @@
-import Image from "next/image";
-
 import Link from "next/link";
+import { MusterLockup } from "@/components/brand/MusterMark";
 
-export default function Footer({
-  enterprise = false,
-}: {
-  enterprise?: boolean;
-}) {
+const COLUMNS = [
+  {
+    title: "Product",
+    links: [
+      { name: "Inside Muster", href: "/#product" },
+      { name: "Live demo", href: "/#tour" },
+      { name: "Integrations", href: "/#integrations" },
+      { name: "FAQ", href: "/faq" },
+    ],
+  },
+  {
+    title: "Get started",
+    links: [
+      { name: "Book a demo", href: "/contact" },
+      { name: "Watch the film", href: "/#film" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Refund Policy", href: "/refund-policy" },
+      { name: "Cancellation Policy", href: "/cancellation-policy" },
+    ],
+  },
+  {
+    title: "Contact",
+    links: [
+      { name: "hello@nexaworks.tech", href: "mailto:hello@nexaworks.tech" },
+      { name: "+91 83569 54152", href: "tel:+918356954152" },
+    ],
+  },
+];
+
+// `enterprise` is kept for the shared chrome's signature; the footer is the same on every page.
+export default function Footer({}: { enterprise?: boolean }) {
   const year = new Date().getFullYear();
-
   return (
-    <footer
-      className={`section-dark ${enterprise ? "nw-editorial-footer" : ""}`}
-      style={{ borderTop: "1px solid var(--nw-line-dark)" }}
-    >
-      <div className="nw-footer-art" aria-hidden="true">
-        <Image
-          src="/brand/liquid-ribbon-v1.webp"
-          alt=""
-          width={1536}
-          height={1024}
-          sizes="(max-width: 768px) 60vw, 650px"
-        />
+    <footer className="mx-footer">
+      <div className="mx-footer-inner">
+        <div className="mx-footer-brand">
+          <MusterLockup />
+          <p>The AI customer success manager.</p>
+        </div>
+        <div className="mx-footer-cols">
+          {COLUMNS.map((col) => (
+            <div key={col.title}>
+              <p className="mx-footer-h">{col.title}</p>
+              <ul>
+                {col.links.map((l) => (
+                  <li key={l.name}>
+                    <Link href={l.href}>{l.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-      {/* Giant closing CTA */}
-      <div className="nw-final-content container-nw pt-20 pb-16 md:pt-32 md:pb-24">
-        <h2 className="text-white mb-8 max-w-4xl">
-          {enterprise ? (
-            <>
-              Start your 14 free days
-              <br />
-              <em>of Signal Seat.</em>
-            </>
-          ) : (
-            <>
-              A clearer view.
-              <br />
-              <em>A better next step.</em>
-            </>
-          )}
-        </h2>
-        {enterprise && (
-          <p className="nw-final-description">
-            $50 per CSM per month after the trial. A daily 8am Risk Brief, a
-            weekly Renewal Radar, no implementation fee and no annual contract.
-          </p>
-        )}
-        <div className="nw-footer-actions">
-          {enterprise && (
-            <Link href="/signal-seat#trial" className="nw-final-primary">
-              Start your 14 free days <span aria-hidden="true">↗</span>
-            </Link>
-          )}
-          <Link
-            href="/contact"
-            className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-medium text-white transition-colors"
-            style={{ backgroundColor: "var(--nw-accent)" }}
-          >
-            Book a discovery call
-          </Link>
-        </div>
-        <p
-          className="eyebrow mt-4"
-          style={{ color: "var(--nw-dark-soft)", fontSize: "12px" }}
-        >
-          Founder replies within one business day.
-        </p>
-      </div>
-
-      {/* Sitemap */}
-      <div
-        className="container-nw py-12"
-        style={{ borderTop: "1px solid var(--nw-line-dark)" }}
-      >
-        <div className="nw-footer-links grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12 mb-12">
-          <div>
-            <p
-              className="eyebrow mb-4"
-              style={{ color: "var(--nw-dark-soft)" }}
-            >
-              Services
-            </p>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/signal-seat"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Signal Seat
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tools/health-score-back-tester"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Health Score Back-tester
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/signals"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Signal Library
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/customer-success-ai"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Customer Success AI
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p
-              className="eyebrow mb-4"
-              style={{ color: "var(--nw-dark-soft)" }}
-            >
-              Company
-            </p>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/about"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p
-              className="eyebrow mb-4"
-              style={{ color: "var(--nw-dark-soft)" }}
-            >
-              Legal
-            </p>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/terms"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/refund-policy"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Refund Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/cancellation-policy"
-                  className="transition-colors"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  Cancellation Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p
-              className="eyebrow mb-4"
-              style={{ color: "var(--nw-dark-soft)" }}
-            >
-              Contact
-            </p>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="tel:+918356954152"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  +91 83569 54152
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:hello@nexaworks.tech"
-                  style={{ color: "var(--nw-warm-400)" }}
-                >
-                  hello@nexaworks.tech
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p
-              className="eyebrow mb-4"
-              style={{ color: "var(--nw-dark-soft)" }}
-            >
-              Status
-            </p>
-            <ul
-              className="space-y-3 text-sm"
-              style={{ color: "var(--nw-warm-400)" }}
-            >
-              <li className="eyebrow" style={{ fontSize: "12px" }}>
-                Signal Seat founding cohort open
-              </li>
-              <li className="eyebrow" style={{ fontSize: "12px" }}>
-                First 20 companies · $50 locked for 24 months
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8 text-xs"
-          style={{
-            borderTop: "1px solid var(--nw-line-dark)",
-            color: "var(--nw-warm-400)",
-          }}
-        >
-          <Link
-            href="/"
-            className="inline-flex min-h-11 shrink-0 items-center gap-2.5 font-semibold tracking-tight"
-            style={{
-              fontFamily: "var(--font-display)",
-              color: "var(--nw-ink)",
-              fontSize: "18px",
-              lineHeight: 1,
-            }}
-          >
-            <span
-              className="flex shrink-0 items-center justify-center rounded-lg shadow-sm"
-              style={{ backgroundColor: "#0A0A0C", width: 32, height: 32 }}
-            >
-              <Image
-                src="/logo.png"
-                alt=""
-                width={26}
-                height={26}
-                style={{ objectFit: "contain" }}
-              />
-            </span>
-            <span>nexaworks</span>
-          </Link>
-          <p>© {year} NexaWorks. All rights reserved.</p>
-        </div>
+      <div className="mx-footer-base">
+        <span>© {year} NexaWorks. Muster AI is a NexaWorks product.</span>
       </div>
     </footer>
   );
