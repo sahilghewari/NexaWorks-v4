@@ -54,17 +54,18 @@ export async function POST(req: Request) {
   }
 
   const record = { name, email, title, linkedin: linkedinUrl.toString(), location, whatsapp };
-  const savedToSheet = await saveToSheet(record);
+  const sheet = await saveToSheet(record);
+  const savedToSheet = sheet === "saved";
 
   const smtpHost = process.env.SMTP_HOST || process.env.EMAIL_HOST || "smtp.gmail.com";
   const smtpPort = process.env.SMTP_PORT || process.env.EMAIL_PORT || "465";
   const smtpUser = process.env.SMTP_USER || process.env.EMAIL_USER || process.env.EMAIL || process.env.MAIL_USER;
   const smtpPass = process.env.SMTP_PASS || process.env.EMAIL_PASS || process.env.EMAIL_PASSWORD || process.env.MAIL_PASS;
   if (!smtpUser || !smtpPass) {
-    if (savedToSheet) return NextResponse.json({ success: true });
+    if (savedToSheet) return NextResponse.json({ success: true, sheet });
     console.error("[community] no sheet and no SMTP credentials; refusing to drop the application");
     return NextResponse.json(
-      { error: "Applications are paused for a moment. Please email hello@nexaworks.tech." },
+      { error: "Applications are paused for a moment. Please email hello@nexaworks.tech.", sheet },
       { status: 500 },
     );
   }
@@ -100,38 +101,51 @@ export async function POST(req: Request) {
         <p><strong>Based in:</strong> ${e.location}</p>
         <p><strong>WhatsApp:</strong> ${e.whatsapp}</p>
         <p><strong>Time:</strong> ${new Date().toISOString()}</p>
-        <p>${savedToSheet ? "Saved to the Muster Community Applications sheet." : "Not saved to the sheet; add it by hand."} Approve by sending the WhatsApp community invite.</p>
+        <p>${savedToSheet ? "Saved to the Muster Community Applications sheet." : `Not saved to the sheet (${sheet}); add it by hand.`} Approve by sending the WhatsApp community invite.</p>
       `,
     });
     console.log(`[community] application recorded email=${email}`);
   } catch (err) {
     console.error(`[community] application email FAILED email=${email}`, err);
     if (!savedToSheet) {
-      return NextResponse.json({ error: "Could not send your application. Please try again." }, { status: 500 });
+      return NextResponse.json({ error: "Could not send your application. Please try again.", sheet }, { status: 500 });
     }
   }
 
-  return NextResponse.json({ success: true });
+  // `sheet` is a non-sensitive status for debugging: saved, not_configured, rejected, or failed.
+  return NextResponse.json({ success: true, sheet });
 }
 
-/** Appends the application to the Google Sheet. Returns false if not configured or it fails. */
-async function saveToSheet(record: Record<string, string>): Promise<boolean> {
-  const url = process.env.COMMUNITY_SHEET_WEBHOOK;
-  if (!url) return false;
+/** Appends the application to the Google Sheet and reports what happened. */
+async function saveToSheet(record: Record<string, string>): Promise<"saved" | "not_configured" | "rejected" | "failed"> {
+  const url = process.env.COMMUNITY_SHEET_WEBHOOK?.trim().replace(/^["']|["']$/g, "");
+  if (!url) {
+    console.error("[community] COMMUNITY_SHEET_WEBHOOK is not set on this deployment");
+    return "not_configured";
+  }
   try {
     const res = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify(record),
       redirect: "follow",
-      signal: AbortSignal.timeout(10000),
+      signal: AbortSignal.timeout(15000),
     });
-    const data = (await res.json().catch(() => null)) as { ok?: boolean } | null;
-    if (!res.ok || !data?.ok) throw new Error(`sheet responded ${res.status}`);
-    console.log(`[community] saved to sheet email=${record.email}`);
-    return true;
+    const text = await res.text();
+    let ok = false;
+    try {
+      ok = JSON.parse(text)?.ok === true;
+    } catch {
+      /* not JSON: Google returned an error page */
+    }
+    if (ok) {
+      console.log(`[community] saved to sheet email=${record.email}`);
+      return "saved";
+    }
+    console.error(`[community] sheet rejected status=${res.status} body=${text.slice(0, 200)}`);
+    return "rejected";
   } catch (err) {
     console.error(`[community] sheet save FAILED email=${record.email}`, err);
-    return false;
+    return "failed";
   }
 }
