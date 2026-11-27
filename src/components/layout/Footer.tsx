@@ -17,6 +17,7 @@ const COLUMNS = [
     links: [
       { name: "Book a demo", href: BOOK_DEMO_URL },
       { name: "Watch the film", href: "/#film" },
+      { name: "Community", href: "/community" },
     ],
   },
   {
