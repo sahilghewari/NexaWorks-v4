@@ -1,4 +1,5 @@
 import CommunityForm from "./CommunityForm";
+import WhatsAppIcon from "./WhatsAppIcon";
 import "./community.css";
 
 export const metadata = {
@@ -18,6 +19,12 @@ export default function CommunityPage() {
         <p className="cm-sub">
           A small, invite-only group for CS leaders and CSMs. Tell us a little about you and we will review your
           application.
+        </p>
+        <p className="cm-wa-note">
+          <span className="cm-wa-badge">
+            <WhatsAppIcon size={18} />
+          </span>
+          Once approved, we will add you to our private WhatsApp group.
         </p>
         <CommunityForm />
       </div>
